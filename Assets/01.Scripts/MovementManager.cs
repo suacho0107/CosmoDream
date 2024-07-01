@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//player에 적용
+
 public class MovementManager : MonoBehaviour
 {
     //맵 배경
