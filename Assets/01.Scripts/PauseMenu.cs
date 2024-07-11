@@ -8,7 +8,6 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject menuSet;
     private bool isPaused = false;
-    private EventSystem eventSystem;
     void Start()
     {
         GameLoad();
