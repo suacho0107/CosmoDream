@@ -313,6 +313,7 @@ GameObject:
   - component: {fileID: 907291905}
   - component: {fileID: 907291904}
   - component: {fileID: 907291908}
+  - component: {fileID: 907291909}
   m_Layer: 0
   m_Name: Interaction object
   m_TagString: Untagged
@@ -428,6 +429,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursorManager: {fileID: 454692231}
+--- !u!114 &907291909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907291903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2108221f3688b034291d68d562df0991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 40
 --- !u!1 &949586729
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,9 +551,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1990416260}
   - component: {fileID: 1990416259}
-  - component: {fileID: 1990416258}
+  - component: {fileID: 1990416263}
   - component: {fileID: 1990416261}
   - component: {fileID: 1990416262}
+  - component: {fileID: 1990416264}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -547,19 +562,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1990416258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1990416257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 256d853a84c86a9419c4ba9afc39794d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movePower: 4
 --- !u!212 &1990416259
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -649,6 +651,36 @@ Rigidbody2D:
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!58 &1990416262
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990416257}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &1990416263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990416257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 256d853a84c86a9419c4ba9afc39794d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movePower: 4
+  interactDistance: 0.6
+--- !u!58 &1990416264
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
