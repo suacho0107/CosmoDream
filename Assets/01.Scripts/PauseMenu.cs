@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour
     private bool isPaused = false;
     void Start()
     {
-        GameLoad();
+       //GameLoad();
     }
 
     void Update()
@@ -29,7 +29,7 @@ public class PauseMenu : MonoBehaviour
 
         }
     }
-
+    /*
     public void GameSave()
     {
         //Playerprefs로 저장
@@ -40,6 +40,7 @@ public class PauseMenu : MonoBehaviour
     {
 
     }
+    */
     public void GameExit()
     {
         //SceneManager.LoadScene("");
@@ -52,7 +53,7 @@ public class PauseMenu : MonoBehaviour
         isPaused = true;
     }
 
-    void ResumeGame()
+    public void ResumeGame()
     {
         menuSet.SetActive(false);
         Time.timeScale = 1f; // 게임 시간 다시 진행
