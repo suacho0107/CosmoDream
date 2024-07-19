@@ -19,8 +19,12 @@ public class MovementManager : MonoBehaviour
     public GameObject rightMap;
     public GameObject backMap;
 
+    public int pos = 25; //맵 이동 후 위치
+
     private bool isMove; //맵 이동 플래그
     private string scanMoveTag; //스캔된 이동방향 태그
+
+    private FadeController fadeController;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -28,19 +32,13 @@ public class MovementManager : MonoBehaviour
         scanMoveTag = collision.gameObject.tag;
     }
 
-    /*
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        isMove = false;
-        scanMoveTag = null;
-    }
-    */
-
     private void Start()
     {
         //초기 설정
-        ActivateOnly(centerMap);
-        ChangeBG(centerBG);
+        //ActivateOnly(centerMap);
+        //ChangeBG(centerBG);
+
+        fadeController = FindObjectOfType<FadeController>();
     }
 
     private void Update()
@@ -87,15 +85,12 @@ public class MovementManager : MonoBehaviour
             ChangeBG(rightBG);
         }
 
-        //플레이어 이동
-        Vector3 playerPosition = transform.position;
-        playerPosition.x = 25;
-        transform.position = playerPosition;
-        //카메라 이동
+        StartCoroutine(FadeAndMove(pos));
     }
 
     private void MoveToRight() //오른쪽으로 이동
     {
+        /*
         if (leftMap.activeSelf)
         {
             ActivateOnly(centerMap);
@@ -116,12 +111,9 @@ public class MovementManager : MonoBehaviour
             ActivateOnly(leftMap);
             ChangeBG(leftBG);
         }
+        */
 
-        //플레이어 이동
-        Vector3 playerPosition = transform.position;
-        playerPosition.x = -25;
-        transform.position = playerPosition;
-        //카메라 이동
+        StartCoroutine(FadeAndMove(-pos));
     }
 
     private void ActivateOnly(GameObject toActive)
@@ -136,6 +128,28 @@ public class MovementManager : MonoBehaviour
 
     private void ChangeBG(Sprite newBG)
     {
-        Background = newBG;
+        if(newBG != null)
+        {
+            Background = newBG;
+        }
+    }
+
+    private void movePlayer(int _pos)
+    {
+        //플레이어 이동
+        Vector3 playerPosition = transform.position;
+        playerPosition.x = _pos;
+        transform.position = playerPosition;
+        //카메라 이동
+        Camera.main.transform.position = new Vector3(_pos, Camera.main.transform.position.y, Camera.main.transform.position.z);
+    }
+
+    private IEnumerator FadeAndMove(int _pos)
+    {
+        yield return StartCoroutine(fadeController.FadeIn());
+
+        movePlayer(_pos);
+        yield return new WaitForSeconds(0.5f);
+        yield return StartCoroutine(fadeController.FadeOut());
     }
 }

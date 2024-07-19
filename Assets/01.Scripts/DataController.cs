@@ -72,8 +72,10 @@ public class DataController : MonoBehaviour
         Debug.Log("저장 완료");
     }
 
+    /*
     private void OnApplicationQuit()
     {
         SaveGameData();
     }
+    */
 }
