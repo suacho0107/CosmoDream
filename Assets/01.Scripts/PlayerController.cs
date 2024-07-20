@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rigid;
+
+    public bool isMove = true;
     public float movePower = 4.0f;
     public float interactDistance = 0.6f;
     private List<Interactable> Interactables = new List<Interactable>();
@@ -16,7 +18,10 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Move();
+        if (isMove)
+        {
+            Move();
+        }
     }
 
     void Update()
@@ -70,5 +75,11 @@ public class PlayerController : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, interactDistance);
+    }
+
+    // 외부에서 isMove 변수 설정을 위한 메서드
+    public void SetMove(bool isMove)
+    {
+        isMove = this.isMove;
     }
 }
