@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rigid;
+    Animator animator;
 
     public bool isMove = true;
     public float movePower = 6.0f;
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rigid = gameObject.GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -38,15 +40,22 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetAxisRaw("Horizontal") < 0)
         {
+            animator.SetBool("isWalking", true);
             moveVelocity = Vector3.left;
             transform.localScale = new Vector3(-1, 1, 1);
         }
 
         else if (Input.GetAxisRaw("Horizontal") > 0)
         {
+            animator.SetBool("isWalking", true);
             moveVelocity = Vector3.right;
             transform.localScale = new Vector3(1, 1, 1);
         }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
+
 
         transform.position += moveVelocity * movePower * Time.deltaTime;
     }
