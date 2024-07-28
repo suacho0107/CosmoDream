@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 197648725}
   - component: {fileID: 197648726}
   m_Layer: 0
-  m_Name: "\uCF54\uC2A4\uBAA8\uB4DC\uB9BC_\uAC74\uBB3C3"
+  m_Name: building3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 334226979}
   - component: {fileID: 334226980}
   m_Layer: 0
-  m_Name: "\uCF54\uC2A4\uBAA8\uB4DC\uB9BC_\uAC74\uBB3C4"
+  m_Name: building4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -334,7 +334,7 @@ GameObject:
   - component: {fileID: 421761499}
   - component: {fileID: 421761500}
   m_Layer: 0
-  m_Name: "\uCF54\uC2A4\uBAA8\uB4DC\uB9BC_\uBC14\uB2E52"
+  m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 424031838}
   - component: {fileID: 424031839}
   m_Layer: 0
-  m_Name: "\uCF54\uC2A4\uBAA8\uB4DC\uB9BC_\uAC74\uBB3C1"
+  m_Name: building1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -502,7 +502,7 @@ GameObject:
   - component: {fileID: 460993660}
   - component: {fileID: 460993661}
   m_Layer: 0
-  m_Name: "\uCF54\uC2A4\uBAA8\uB4DC\uB9BC_\uBC30\uACBD 2"
+  m_Name: background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -620,7 +620,7 @@ GameObject:
   - component: {fileID: 588287175}
   - component: {fileID: 588287176}
   m_Layer: 0
-  m_Name: "\uCF54\uC2A4\uBAA8\uB4DC\uB9BC_\uD50C\uB808\uC774\uC5B43"
+  m_Name: other Player3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -704,7 +704,7 @@ GameObject:
   - component: {fileID: 658654438}
   - component: {fileID: 658654439}
   m_Layer: 0
-  m_Name: "\uCF54\uC2A4\uBAA8\uB4DC\uB9BC_NPC2"
+  m_Name: NPC2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -788,7 +788,7 @@ GameObject:
   - component: {fileID: 739654231}
   - component: {fileID: 739654232}
   m_Layer: 0
-  m_Name: "\uCF54\uC2A4\uBAA8\uB4DC\uB9BC_\uAC74\uBB3C2"
+  m_Name: building2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -872,7 +872,7 @@ GameObject:
   - component: {fileID: 805520797}
   - component: {fileID: 805520798}
   m_Layer: 0
-  m_Name: "\uCF54\uC2A4\uBAA8\uB4DC\uB9BC_YUNOH\uC544\uD30C\uD2B8"
+  m_Name: YUNOH home
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1034,7 +1034,7 @@ GameObject:
   - component: {fileID: 1311947829}
   - component: {fileID: 1311947830}
   m_Layer: 0
-  m_Name: "\uCF54\uC2A4\uBAA8\uB4DC\uB9BC_\uD50C\uB808\uC774\uC5B44"
+  m_Name: other Player4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
