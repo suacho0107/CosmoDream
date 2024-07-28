@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 197648725}
   - component: {fileID: 197648726}
   m_Layer: 0
-  m_Name: "\uCF54\uC2A4\uBAA8\uB4DC\uB9BC_\uAC74\uBB3C3"
+  m_Name: building3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -180,7 +180,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197648724}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 75.1, y: 1.1300001, z: 0}
+  m_LocalPosition: {x: 65.92, y: 1.1300001, z: 0}
   m_LocalScale: {x: 1.0810812, y: 1.0810812, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -227,7 +227,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ef6b340f4644a124f8e64f67f0ff12b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 334226979}
   - component: {fileID: 334226980}
   m_Layer: 0
-  m_Name: "\uCF54\uC2A4\uBAA8\uB4DC\uB9BC_\uAC74\uBB3C4"
+  m_Name: building4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -264,7 +264,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 334226978}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 98.3, y: 1.13, z: 0}
+  m_LocalPosition: {x: 85.45, y: 1.13, z: 0}
   m_LocalScale: {x: 1.0810812, y: 1.0810812, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -311,7 +311,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 62fda0c68aaecc94f98b182c29be06a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -334,7 +334,7 @@ GameObject:
   - component: {fileID: 421761499}
   - component: {fileID: 421761500}
   m_Layer: 0
-  m_Name: "\uCF54\uC2A4\uBAA8\uB4DC\uB9BC_\uBC14\uB2E52"
+  m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -348,8 +348,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421761498}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.499, y: -3.894001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 7.4476, y: -3.894001, z: 0}
+  m_LocalScale: {x: 1.1415, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 75161482}
@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 424031838}
   - component: {fileID: 424031839}
   m_Layer: 0
-  m_Name: "\uCF54\uC2A4\uBAA8\uB4DC\uB9BC_\uAC74\uBB3C1"
+  m_Name: building1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -479,7 +479,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: e630951719086d046ac2d233b0d1c7e4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -502,7 +502,7 @@ GameObject:
   - component: {fileID: 460993660}
   - component: {fileID: 460993661}
   m_Layer: 0
-  m_Name: "\uCF54\uC2A4\uBAA8\uB4DC\uB9BC_\uBC30\uACBD 2"
+  m_Name: background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -516,8 +516,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460993659}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 52.0386, y: 0, z: 0}
-  m_LocalScale: {x: 1.2653881, y: 1, z: 0}
+  m_LocalPosition: {x: 46.4687, y: 0, z: 0}
+  m_LocalScale: {x: 1.1511235, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 838838398}
@@ -620,7 +620,7 @@ GameObject:
   - component: {fileID: 588287175}
   - component: {fileID: 588287176}
   m_Layer: 0
-  m_Name: "\uCF54\uC2A4\uBAA8\uB4DC\uB9BC_\uD50C\uB808\uC774\uC5B43"
+  m_Name: other Player3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -634,7 +634,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 588287174}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.2, y: -1.2600001, z: 0}
+  m_LocalPosition: {x: 28.5, y: -1.2600001, z: 0}
   m_LocalScale: {x: 1.0810812, y: 1.0810812, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -704,7 +704,7 @@ GameObject:
   - component: {fileID: 658654438}
   - component: {fileID: 658654439}
   m_Layer: 0
-  m_Name: "\uCF54\uC2A4\uBAA8\uB4DC\uB9BC_NPC2"
+  m_Name: NPC2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -788,7 +788,7 @@ GameObject:
   - component: {fileID: 739654231}
   - component: {fileID: 739654232}
   m_Layer: 0
-  m_Name: "\uCF54\uC2A4\uBAA8\uB4DC\uB9BC_\uAC74\uBB3C2"
+  m_Name: building2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -802,7 +802,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739654230}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28.2, y: 1.1300001, z: 0}
+  m_LocalPosition: {x: 24.72, y: 1.1300001, z: 0}
   m_LocalScale: {x: 1.0810812, y: 1.0810812, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -849,7 +849,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 92d3d725bedf01d4a8fadd0e51a3fbf7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -872,7 +872,7 @@ GameObject:
   - component: {fileID: 805520797}
   - component: {fileID: 805520798}
   m_Layer: 0
-  m_Name: "\uCF54\uC2A4\uBAA8\uB4DC\uB9BC_YUNOH\uC544\uD30C\uD2B8"
+  m_Name: YUNOH home
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -886,7 +886,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805520796}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 50.9, y: 1.1300001, z: 0}
+  m_LocalPosition: {x: 45.1, y: 1.1300001, z: 0}
   m_LocalScale: {x: 1.0810812, y: 1.0810812, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -933,7 +933,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 393d41780f89d3e4d872f15637e44732, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1034,7 +1034,7 @@ GameObject:
   - component: {fileID: 1311947829}
   - component: {fileID: 1311947830}
   m_Layer: 0
-  m_Name: "\uCF54\uC2A4\uBAA8\uB4DC\uB9BC_\uD50C\uB808\uC774\uC5B44"
+  m_Name: other Player4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1048,7 +1048,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311947828}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 44.8, y: -1.2600001, z: 0}
+  m_LocalPosition: {x: 74.4, y: -1.2600001, z: 0}
   m_LocalScale: {x: 1.0810812, y: 1.0810812, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

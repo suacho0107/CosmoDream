@@ -21,6 +21,8 @@ public class MovementManager : MonoBehaviour
 
     public int pos = 25; //맵 이동 후 위치
 
+    public CanvasGroup fadePanel; //페이드 패널
+
     private bool isMove; //맵 이동 플래그
     private string scanMoveTag; //스캔된 이동방향 태그
 
@@ -35,8 +37,8 @@ public class MovementManager : MonoBehaviour
     private void Start()
     {
         //초기 설정
-        //ActivateOnly(centerMap);
-        //ChangeBG(centerBG);
+        ActivateOnly(centerMap);
+        ChangeBG(centerBG);
 
         fadeController = FindObjectOfType<FadeController>();
     }
@@ -90,7 +92,6 @@ public class MovementManager : MonoBehaviour
 
     private void MoveToRight() //오른쪽으로 이동
     {
-        /*
         if (leftMap.activeSelf)
         {
             ActivateOnly(centerMap);
@@ -111,7 +112,6 @@ public class MovementManager : MonoBehaviour
             ActivateOnly(leftMap);
             ChangeBG(leftBG);
         }
-        */
 
         StartCoroutine(FadeAndMove(-pos));
     }
@@ -146,10 +146,10 @@ public class MovementManager : MonoBehaviour
 
     private IEnumerator FadeAndMove(int _pos)
     {
-        yield return StartCoroutine(fadeController.FadeIn());
+        yield return StartCoroutine(fadeController.FadeIn(fadePanel));
 
         movePlayer(_pos);
         yield return new WaitForSeconds(0.5f);
-        yield return StartCoroutine(fadeController.FadeOut());
+        yield return StartCoroutine(fadeController.FadeOut(fadePanel));
     }
 }
