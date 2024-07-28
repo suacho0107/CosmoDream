@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rigid;
 
     public bool isMove = true;
-    public float movePower = 4.0f;
+    public float movePower = 6.0f;
     public float interactDistance = 0.6f;
     private List<Interactable> Interactables = new List<Interactable>();
 
