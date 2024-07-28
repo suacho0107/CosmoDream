@@ -8,15 +8,19 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject menuSet;
     private bool isPaused = false;
+
+    private FadeController fadeController;
+
     void Start()
     {
-       //GameLoad();
+        //GameLoad();
+        fadeController = FindObjectOfType<FadeController>();
     }
 
     void Update()
     {
         // 서브 메뉴
-        if (Input.GetButtonDown("Cancel"))
+        if (Input.GetButtonDown("Cancel") && !fadeController.isFade)
         {
             if (isPaused)
             {

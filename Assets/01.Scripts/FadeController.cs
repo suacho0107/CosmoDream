@@ -7,8 +7,11 @@ public class FadeController : MonoBehaviour
     public CanvasGroup fadePanel;
     public float fadeDuration = 1f;
 
+    public bool isFade = false;
     public IEnumerator FadeIn()
     {
+        isFade = true;
+
         float time = 0f;
         while (time < fadeDuration)
         {
@@ -29,5 +32,7 @@ public class FadeController : MonoBehaviour
             yield return null;
         }
         fadePanel.alpha = 0f;
+
+        isFade = false;
     }
 }
