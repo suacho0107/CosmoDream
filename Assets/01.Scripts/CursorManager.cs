@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class CursorManager : MonoBehaviour
 {
-    Texture2D hand;
-    Texture2D original;
+    public Sprite handSprite;
+    public Sprite originalSprite;
+    private Texture2D hand;
+    private Texture2D original;
 
     void Start()
     {
-        original = Resources.Load<Texture2D>("cursor1");
-        hand = Resources.Load<Texture2D>("cursor2");
+        hand = SpriteToTexture2D(handSprite);
+        original = SpriteToTexture2D(originalSprite);
     }
 
     public void OnMouseOver()
@@ -20,6 +22,24 @@ public class CursorManager : MonoBehaviour
 
     public void OnMouseExit()
     {
-        Cursor.SetCursor(original, new Vector2(0, 0), CursorMode.Auto);
+        Cursor.SetCursor(original, Vector2.zero, CursorMode.Auto);
     }
+
+    private Texture2D SpriteToTexture2D(Sprite sprite)
+    {
+        if (sprite.rect.width != sprite.texture.width)
+        {
+            Texture2D newText = new Texture2D((int)sprite.rect.width, (int)sprite.rect.height);
+            Color[] newColors = sprite.texture.GetPixels((int)sprite.textureRect.x,
+                                                        (int)sprite.textureRect.y,
+                                                        (int)sprite.textureRect.width,
+                                                        (int)sprite.textureRect.height);
+            newText.SetPixels(newColors);
+            newText.Apply();
+            return newText;
+        }
+        else
+            return sprite.texture;
+    }
+
 }

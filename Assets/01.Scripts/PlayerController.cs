@@ -5,18 +5,25 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rigid;
-    public float movePower = 4.0f;
+    Animator animator;
+
+    public bool isMove = true;
+    public float movePower = 6.0f;
     public float interactDistance = 0.6f;
     private List<Interactable> Interactables = new List<Interactable>();
 
     void Start()
     {
         rigid = gameObject.GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
     {
-        Move();
+        if (isMove)
+        {
+            Move();
+        }
     }
 
     void Update()
@@ -33,15 +40,22 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetAxisRaw("Horizontal") < 0)
         {
+            animator.SetBool("isWalking", true);
             moveVelocity = Vector3.left;
             transform.localScale = new Vector3(-1, 1, 1);
         }
 
         else if (Input.GetAxisRaw("Horizontal") > 0)
         {
+            animator.SetBool("isWalking", true);
             moveVelocity = Vector3.right;
             transform.localScale = new Vector3(1, 1, 1);
         }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
+
 
         transform.position += moveVelocity * movePower * Time.deltaTime;
     }
@@ -70,5 +84,11 @@ public class PlayerController : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, interactDistance);
+    }
+
+    // 외부에서 isMove 변수 설정을 위한 메서드
+    public void SetMove(bool isMove)
+    {
+        isMove = this.isMove;
     }
 }
