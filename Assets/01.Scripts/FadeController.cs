@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class FadeController : MonoBehaviour
 {
-    public CanvasGroup fadePanel;
     public float fadeDuration = 1f;
 
     public bool isFade = false;
-    public IEnumerator FadeIn()
+    public IEnumerator FadeIn(CanvasGroup fadeTarget)
     {
         isFade = true;
 
@@ -16,22 +15,22 @@ public class FadeController : MonoBehaviour
         while (time < fadeDuration)
         {
             time += Time.deltaTime;
-            fadePanel.alpha = Mathf.Clamp01(time / fadeDuration);
+            fadeTarget.alpha = Mathf.Clamp01(time / fadeDuration);
             yield return null;
         }
-        fadePanel.alpha = 1.0f;
+        fadeTarget.alpha = 1.0f;
     }
 
-    public IEnumerator FadeOut()
+    public IEnumerator FadeOut(CanvasGroup fadeTarget)
     {
         float time = 0f;
         while (time < fadeDuration)
         {
             time += Time.deltaTime;
-            fadePanel.alpha = 1.0f - Mathf.Clamp01(time / fadeDuration);
+            fadeTarget.alpha = 1.0f - Mathf.Clamp01(time / fadeDuration);
             yield return null;
         }
-        fadePanel.alpha = 0f;
+        fadeTarget.alpha = 0f;
 
         isFade = false;
     }
