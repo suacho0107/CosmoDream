@@ -19,9 +19,9 @@ public class MovementManager : MonoBehaviour
     public GameObject rightMap;
     public GameObject backMap;
 
-    public int pos = 25; //맵 이동 후 위치
-
     public CanvasGroup fadePanel; //페이드 패널
+
+    public int pos = 25; //맵 이동 후 위치
 
     private bool isMove; //맵 이동 플래그
     private string scanMoveTag; //스캔된 이동방향 태그
