@@ -10,15 +10,22 @@ public class NoteManager : MonoBehaviour
     [SerializeField] Transform tfNoteAppear = null;
     [SerializeField] GameObject goNote = null;
 
+    private TimingManager timingManager;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Note"))
         {
+            timingManager.boxNoteList.Remove(collision.gameObject);
             Destroy(collision.gameObject);
         }
     }
-    // Update is called once per frame
-    void Update()
+
+    private void Start()
+    {
+        timingManager = GetComponent<TimingManager>();
+    }
+
+    private void Update()
     {
         currentTime += Time.deltaTime;
 
@@ -26,6 +33,7 @@ public class NoteManager : MonoBehaviour
         {
             GameObject t_note = Instantiate(goNote, tfNoteAppear.position, Quaternion.identity);
             t_note.transform.SetParent(this.transform);
+            timingManager.boxNoteList.Add(t_note);
             currentTime -= 60d / bpm;
         }
     }

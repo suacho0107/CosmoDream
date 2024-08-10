@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 794638902}
   - component: {fileID: 794638903}
   m_Layer: 0
-  m_Name: "\uAC70\uC2E4_\uD604\uAD00\uBB38"
+  m_Name: mainDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -361,7 +361,7 @@ GameObject:
   - component: {fileID: 1020035389}
   - component: {fileID: 1020035390}
   m_Layer: 0
-  m_Name: "\uAC70\uC2E4_\uBCBD"
+  m_Name: wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -445,7 +445,7 @@ GameObject:
   - component: {fileID: 1040868117}
   - component: {fileID: 1040868118}
   m_Layer: 0
-  m_Name: "\uAC70\uC2E4_\uB2EC\uB825"
+  m_Name: callender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -529,7 +529,7 @@ GameObject:
   - component: {fileID: 1272570767}
   - component: {fileID: 1272570768}
   m_Layer: 0
-  m_Name: "\uAC70\uC2E4_\uBC14\uB2E5"
+  m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
