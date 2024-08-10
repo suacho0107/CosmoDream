@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject talkPanel;
     public Text talkText;
     public int talkIndex;
+    public Image portraitImg;
 
     public GameObject scanObject;
     public bool isAction;
@@ -20,17 +21,10 @@ public class GameManager : MonoBehaviour
 
     public void Action(GameObject scanObj)
     {
-        if (isAction) // 상호작용 종료
-        {
-            isAction = false;
-        }
-        else // 상호작용 시작
-        {
-            isAction = true;
-            scanObject = scanObj;
-            ObjData objData = scanObject.GetComponent<ObjData>();
-            Talk(objData.id, objData.isNpc);
-        }
+        scanObject = scanObj;
+        ObjData objData = scanObject.GetComponent<ObjData>();
+        Talk(objData.id, objData.isNpc);
+
         talkPanel.SetActive(isAction);
     }
 
@@ -38,13 +32,25 @@ public class GameManager : MonoBehaviour
     {
         string talkData = talkManager.GetTalk(id, talkIndex);
 
-        if(isNpc)
+        if (talkData == null)
+        {
+            isAction = false;
+            talkIndex = 0;
+            return;
+        }
+
+        if (isNpc)
         {
             talkText.text = talkData;
+            portraitImg.color = new Color(1, 1, 1, 1);
         }
         else
         {
             talkText.text = talkData;
+            portraitImg.color = new Color(1, 1, 1, 0);
         }
+
+        isAction = true;
+        talkIndex++;
     }
 }
