@@ -5,10 +5,13 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public TalkManager talkManager;
     public GameObject talkPanel;
     public Text talkText;
+    public int talkIndex;
+
     public GameObject scanObject;
-    public bool isMove;
+    public bool isAction;
 
     void Start()
     {
@@ -17,17 +20,31 @@ public class GameManager : MonoBehaviour
 
     public void Action(GameObject scanObj)
     {
-        if (isMove) // 상호작용 시작
+        if (isAction) // 상호작용 종료
         {
-            isMove = false;
-            scanObject = scanObj;
-            talkText.text = scanObject.name + "과 상호작용";
-            talkPanel.SetActive(true);
+            isAction = false;
         }
-        else // 상호작용 종료
+        else // 상호작용 시작
         {
-            isMove = true;
-            talkPanel.SetActive(false);
+            isAction = true;
+            scanObject = scanObj;
+            ObjData objData = scanObject.GetComponent<ObjData>();
+            Talk(objData.id, objData.isNpc);
+        }
+        talkPanel.SetActive(isAction);
+    }
+
+    void Talk(int id, bool isNpc)
+    {
+        string talkData = talkManager.GetTalk(id, talkIndex);
+
+        if(isNpc)
+        {
+            talkText.text = talkData;
+        }
+        else
+        {
+            talkText.text = talkData;
         }
     }
 }

@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rigid;
     Animator animator;
     public float movePower = 6.0f;
+    public bool isMove;
 
     public GameManager manager;
     private GameObject scanObject;
@@ -25,10 +26,10 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && scanObject != null)
         {
-            manager.Action(scanObject);
+            manager.Action(scanObject); // 스페이스바 상호작용
         }
 
-        if (!manager.isMove)
+        if (manager.isAction)
         {
             animator.SetBool("isWalking", false);
         }
@@ -36,8 +37,9 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (manager.isMove)
+        if (!manager.isAction)
         {
+            isMove = true;
             Move();
         }
 
@@ -79,6 +81,6 @@ public class PlayerController : MonoBehaviour
     // 외부에서 isMove 변수 설정을 위한 메서드
     public void SetMove(bool canMove)
     {
-        manager.isMove = canMove;
+        isMove = canMove;
     }
 }
