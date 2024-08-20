@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public GameObject scanObject;
     public bool isAction;
 
+    private ObjData objData;
+
     void Start()
     {
         talkPanel.SetActive(false);
@@ -23,9 +25,31 @@ public class GameManager : MonoBehaviour
     {
         scanObject = scanObj;
         ObjData objData = scanObject.GetComponent<ObjData>();
-        Talk(objData.id, objData.isNpc);
 
-        talkPanel.SetActive(isAction);
+        if (objData == null) return;
+
+    switch (objData.objectType)
+    {
+        case ObjData.ObjectType.Talkable:
+            Talk(objData.id, objData.isNpc);
+            break;
+
+        case ObjData.ObjectType.SceneChange:
+            Talk(objData.id, objData.isNpc);
+            SceneChange sceneChanger = scanObj.GetComponent<SceneChange>();
+            if (isAction == false)
+                sceneChanger.ChangeScene();
+            break;
+
+        case ObjData.ObjectType.ImageDisplay:
+            DisplayImage(objData.id); // 이미지 표시를 위한 함수 (아래 설명)
+            Talk(objData.id, objData.isNpc);
+            if (isAction == false)
+                HideImage();
+            break;
+    }
+    
+    talkPanel.SetActive(isAction);
     }
 
     void Talk(int id, bool isNpc)
@@ -52,5 +76,17 @@ public class GameManager : MonoBehaviour
 
         isAction = true;
         talkIndex++;
+    }
+    void DisplayImage(int id)
+    {
+        // id에 맞는 이미지를 표시하도록 수정할까 고민중인 부분.. 지금은 gameObject로 직접 할당하여 사용
+        ObjData objData = scanObject.GetComponent<ObjData>();
+        objData.Display.SetActive(true);
+    }
+
+    void HideImage()
+    {
+        ObjData objData = scanObject.GetComponent<ObjData>();
+        objData.Display.SetActive(false);
     }
 }

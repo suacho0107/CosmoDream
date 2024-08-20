@@ -32,6 +32,15 @@ public class TalkManager : MonoBehaviour
         //portraitData.Add(1000 + 1,);
         //portraitData.Add(1000 + 2,);
         //portraitData.Add(1000 + 3,);
+
+        // 스테이지 2
+        talkData.Add(211, new string[] { "화장대 위에 사진 퍼즐이 놓여있다." });
+        talkData.Add(231, new string[] { "베개에 사진이 끼어있다." });
+        talkData.Add(241, new string[] { "가족앨범이다. 분명 우리 가족사진과 똑같지만….. 내가 빠져있다.",
+        "맨 끝에 이건 뭐지?",
+        "...",
+        "가족앨범 사이에 끼워져 있는 가위를 얻었다." });
+        talkData.Add(242, new string[] { "퍼즐을 찾았다." });
     }
 
     public string GetTalk(int id, int talkIndex)
