@@ -9,24 +9,24 @@ EditorBuildSettings:
     path: Assets/00.Scenes/Prologue.unity
     guid: ba623fc32d46a24448330b0288611500
   - enabled: 1
-    path: Assets/00.Scenes/2-1.unity
+    path: Assets/00.Scenes/Stage2/2-1.unity
     guid: e852cf06f5be07847ac7d4085df65976
   - enabled: 1
-    path: Assets/00.Scenes/2-2.unity
+    path: Assets/00.Scenes/Stage2/2-2.unity
     guid: 54ceebc28a7c54bf2aa1b9dd9a228864
   - enabled: 1
-    path: Assets/00.Scenes/2-3.unity
+    path: Assets/00.Scenes/Stage2/2-3.unity
     guid: b04544c29d86146d39a5be225bd06827
   - enabled: 1
-    path: Assets/00.Scenes/2-4.unity
+    path: Assets/00.Scenes/Stage2/2-4.unity
     guid: e04dad133d9af4264ae4911c2f6c2821
   - enabled: 1
-    path: Assets/00.Scenes/2-5 puzzle1.unity
+    path: Assets/00.Scenes/Stage2/2-5 puzzle1.unity
     guid: 15c58459b08154852af6ef3a17cc6919
   - enabled: 1
-    path: Assets/00.Scenes/2-5 puzzle2.unity
+    path: Assets/00.Scenes/Stage2/2-5 puzzle2.unity
     guid: 165bb6ee5ad8e4347b171453f5a6ff84
   - enabled: 1
-    path: Assets/00.Scenes/2-5 puzzle3.unity
+    path: Assets/00.Scenes/Stage2/2-5 puzzle3.unity
     guid: 7884e7bc63b93498c82653e0135d53ef
   m_configObjects: {}
