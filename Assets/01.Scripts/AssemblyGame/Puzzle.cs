@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Puzzle : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerDownHandler, IPointerUpHandler
+public class Puzzle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField]
     private Transform targetObject; // 목표 오브젝트
@@ -42,9 +42,9 @@ public class Puzzle : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHa
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (!locked)
+        if (!isLocked)
         {
-            // 캔버스에서 마우스 포인터 위******ㅛ치를 로컬 좌표로 변환
+            // 캔버스에서 마우스 포인터 위치를 로컬 좌표로 변환
             Vector2 localPoint;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(boundaryObject, eventData.position, eventData.pressEventCamera, out localPoint);
 
@@ -55,24 +55,18 @@ public class Puzzle : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHa
             // 위치를 업데이트합니다.
             rectTransform.anchoredPosition = new Vector2(clampedX, clampedY);
         }
-        else
-        {
-            // 오브젝트가 고정된 경우, 고정 위치로 설정합니다.
-            rectTransform.anchoredPosition = targetObject.GetComponent<RectTransform>().anchoredPosition;
-            Debug.Log("고정");
-        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (!locked)
+        if (!isLocked)
         {
             float distance = Vector2.Distance(rectTransform.anchoredPosition, targetObject.GetComponent<RectTransform>().anchoredPosition);
 
             // 퍼즐 조각의 회전 각도와 목표 오브젝트의 회전 각도 차이
             float rotationDifference = Mathf.Abs(rectTransform.rotation.eulerAngles.z - targetObject.rotation.eulerAngles.z);
 
-            // 거리가 50 이하이고 회전 차이가 1도 이하일 때 타겟 위치로 붙도록 합니다.
+            // 거리가 30 이하이고 회전 차이가 1도 이하일 때 타겟 위치로 붙도록 합니다.
             if (distance <= 30f && rotationDifference <= 1f)
             {
                 // 오브젝트를 타겟의 위치와 회전에 맞춥니다.
@@ -82,6 +76,9 @@ public class Puzzle : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHa
                 // 고정 상태로 설정합니다.
                 isLocked = true;
                 locked = true;
+
+                // 고정된 후 한 번만 "고정" 디버그 로그 출력
+                Debug.Log("고정");
             }
         }
     }
@@ -101,7 +98,7 @@ public class Puzzle : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHa
 
     public void RotateImage()
     {
-        if (!locked)
+        if (!isLocked)
         {
             // 이미지의 현재 Z축 회전 각도
             float currentRotation = rectTransform.rotation.eulerAngles.z;
