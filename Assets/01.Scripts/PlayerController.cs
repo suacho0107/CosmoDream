@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        manager = FindObjectOfType<GameManager>();
         rigid = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         dirVec = Vector2.right; // 기본 방향 오른쪽
