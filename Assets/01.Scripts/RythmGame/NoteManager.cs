@@ -15,7 +15,7 @@ public class NoteManager : MonoBehaviour
     {
         if (collision.CompareTag("Note"))
         {
-            timingManager.boxNoteList.Remove(collision.gameObject);
+            timingManager.boxNoteList.Remove(collision.gameObject);  //노트 리스트에 노트 제거
             Destroy(collision.gameObject);
         }
     }
@@ -29,11 +29,12 @@ public class NoteManager : MonoBehaviour
     {
         currentTime += Time.deltaTime;
 
+        //노트 출현 관련
         if(currentTime >= 60d / bpm)
         {
             GameObject t_note = Instantiate(goNote, tfNoteAppear.position, Quaternion.identity);
             t_note.transform.SetParent(this.transform);
-            timingManager.boxNoteList.Add(t_note);
+            timingManager.boxNoteList.Add(t_note); //노트 리스트에 노트 추가
             currentTime -= 60d / bpm;
         }
     }

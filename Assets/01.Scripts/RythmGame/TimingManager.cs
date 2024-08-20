@@ -10,8 +10,11 @@ public class TimingManager : MonoBehaviour
     [SerializeField] RectTransform[] timingRect = null;
     Vector2[] timingBoxs = null;
 
+    private EffectManager effectManager;
+
     void Start()
     {
+        effectManager = FindObjectOfType<EffectManager>();
         //타이밍 박스 perfect->miss
         timingBoxs = new Vector2[timingRect.Length];
         for(int i = 0;i < timingRect.Length; i++)
@@ -30,12 +33,14 @@ public class TimingManager : MonoBehaviour
             {
                 if(timingBoxs[x].x <= t_notePosX && t_notePosX <= timingBoxs[x].y)
                 {
-                    Debug.Log("Hit" + x);
+                    boxNoteList[i].GetComponent<Note>().HideNote();
+                    boxNoteList.RemoveAt(i);
+                    effectManager.JudgementEffect(x);
                     return;
                 }
             }
         }
 
-        Debug.Log("Miss");
+        effectManager.JudgementEffect(timingBoxs.Length);
     }
 }
