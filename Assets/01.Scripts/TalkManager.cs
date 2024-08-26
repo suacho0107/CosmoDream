@@ -5,28 +5,27 @@ using UnityEngine;
 public class TalkManager : MonoBehaviour
 {
     Dictionary<int, string[]> talkData;
-    // Dictionary<int, Sprite> portraitData;
+    Dictionary<int, Sprite> portraitData;
 
-    // public Sprite[] portraitArr;
+    public Sprite[] portraitArr;
 
     void Awake()
     {
         talkData = new Dictionary<int, string[]>();
-        // portraitData = new Dictionary<int, Sprite>();
+        portraitData = new Dictionary<int, Sprite>();
         GenerateData();
     }
 
     void GenerateData()
     {
         // npc
-        talkData.Add(1000, new string[] { "그것도 모르고 게임을 샀어요? 제2의 인생을 사는 게임이잖아요." });
-        talkData.Add(2000, new string[] { "코스모역에 오신 것을 환영합니다! 즐거운 메타버스 생활 되세요!" });
-        talkData.Add(3000, new string[] { "헉 지정 영역 밖으로 빠져나오다니! 여긴 웬일이야?",
-            "어? 아니구나. 죄송합니다, 친한 NPC랑 착각했어요!" });
-
-        // obj
-        talkData.Add(100, new string[] { "현실 날짜와 시간이 똑같다.", "실시간 동기화가 되어있나.." });
-        talkData.Add(200, new string[] { "꿈꾸는 인생을 이뤄봐요!" });
+        talkData.Add(11011, new string[] { "여긴 뭐하는 곳이죠…?",
+        "그것도 모르고 게임을 샀어요? 제2의 인생을 사는 게임이잖아요." });
+        talkData.Add(11012, new string[] { "코스모역에 오신 것을 환영합니다!", "즐거운 메타버스 생활 되세요!" });
+        talkData.Add(11013, new string[] { "헉 지정 영역 밖으로 빠져나오다니! 여긴 웬일이야?",
+        "뭐?", "어? 아니구나. 죄송합니다, 친한 NPC랑 착각했어요!" });
+        talkData.Add(11004, new string[] { "현실 날짜와 시간이 똑같다.", "실시간 동기화가 되어있나.." });
+        talkData.Add(11005, new string[] { "꿈꾸는 인생을 이뤄봐요!" });
 
         //portraitData.Add(1000 + 0,);
         //portraitData.Add(1000 + 1,);
@@ -41,6 +40,8 @@ public class TalkManager : MonoBehaviour
         "...",
         "가족앨범 사이에 끼워져 있는 가위를 얻었다." });
         talkData.Add(242, new string[] { "퍼즐을 찾았다." });
+
+        talkData.Add(12011, new string[] { "굉장히 친숙하게 생겼다. 우리 집 아파트와 거의 유사하다." });
     }
 
     public string GetTalk(int id, int talkIndex)

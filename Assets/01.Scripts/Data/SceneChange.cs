@@ -11,4 +11,9 @@ public class SceneChange : MonoBehaviour
     {
         SceneManager.LoadScene(SceneIndex);
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        ChangeScene();
+    }
 }
