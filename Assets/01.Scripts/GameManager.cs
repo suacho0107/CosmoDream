@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public TalkManager talkManager;
     public BubbleManager bubbleManager;
+    PlayerController playerController;
+
     public GameObject talkPanel;
     public Text UINameText;
     public Text UITalkText;
@@ -22,6 +24,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         talkManager = FindObjectOfType<TalkManager>();
+        playerController = FindObjectOfType<PlayerController>();
         talkPanel.SetActive(false);
     }
 
@@ -77,6 +80,7 @@ public class GameManager : MonoBehaviour
         if (talkData == null)
         {
             isTalk = false;
+            playerController.SetMove(true);
             talkIndex = 0;
             return;
         }
