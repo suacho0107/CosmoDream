@@ -6,37 +6,22 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public TalkManager talkManager;
+    public BubbleManager bubbleManager;
     public GameObject talkPanel;
-    public Text talkText;
-    public int talkIndex;
+    public Text UINameText;
+    public Text UITalkText;
     public Image portraitImg;
 
-    public GameObject bubbleCanvas;
-    public GameObject bubblePrefab;
-    private Queue<GameObject> bubblePool = new Queue<GameObject>();
-
     public GameObject scanObject;
-    public bool isAction;
+    public bool isTalk; // 대화창 표시중인지 여부
+    public string playerName; // 나중에 다 구현되면 다른 스크립트에서 받아서 사용
 
     private ObjData objData;
+    public int talkIndex;
 
     void Start()
     {
         talkPanel.SetActive(false);
-        InitBubblePool(5);
-    }
-
-    void InitBubblePool(int count)
-    {
-        Transform bubbleCanvasTransform = bubbleCanvas.transform;
-
-        for (int i = 0; i < count; i++)
-        {
-            var bubble = Instantiate(bubblePrefab);
-            bubble.transform.SetParent(bubbleCanvasTransform, false);
-            bubble.SetActive(false);
-            bubblePool.Enqueue(bubble);
-        }
     }
 
     public void Action(GameObject scanObj)
@@ -46,86 +31,63 @@ public class GameManager : MonoBehaviour
 
         if (objData == null) return;
 
-    switch (objData.objectType)
-    {
-        case ObjData.ObjectType.Talkable:
-            Talk(objData.id, objData.isNpc);
-            break;
+        switch (objData.objectType)
+        {
+            case ObjData.ObjectType.Talkable:
+                Talk(objData.id, objData.isNpc);
+                break;
 
-        case ObjData.ObjectType.SceneChange:
-            Talk(objData.id, objData.isNpc);
-            SceneChange sceneChanger = scanObj.GetComponent<SceneChange>();
-            if (isAction == false)
+            case ObjData.ObjectType.SceneChange:
+                if (objData.id == 0) // id가 0인 경우 대화창 없이 바로 씬 전환
+                {
+                SceneChange sceneChanger = scanObj.GetComponent<SceneChange>();
                 sceneChanger.ChangeScene();
-            break;
+                return;
+                }
+                else
+                {
+                Talk(objData.id, objData.isNpc);
+                SceneChange sceneChanger = scanObj.GetComponent<SceneChange>();
+                if (!isTalk)
+                    sceneChanger.ChangeScene();
+                }
+                break;
 
-        case ObjData.ObjectType.ImageDisplay:
-            DisplayImage(objData.id); // 이미지 표시를 위한 함수 (아래 설명)
-            Talk(objData.id, objData.isNpc);
-            if (isAction == false)
-                HideImage();
-            break;
-        case ObjData.ObjectType.NpcBubble:
-            Bubble(objData.id);
-            break;
-    }
+            case ObjData.ObjectType.ImageDisplay:
+                DisplayImage(objData.id);
+                Talk(objData.id, objData.isNpc);
+                if (!isTalk)
+                    HideImage();
+                break;
+
+            case ObjData.ObjectType.NpcBubble:
+                bubbleManager.StartBubbleInteraction(scanObject, objData.id);
+                break;
+        }
     
-    talkPanel.SetActive(isAction);
+        talkPanel.SetActive(isTalk);
     }
 
     void Talk(int id, bool isNpc)
     {
-        string talkData = talkManager.GetTalk(id, talkIndex);
+        string speakerName;
+        string talkData = talkManager.GetTalk(id, talkIndex, out speakerName);
 
         if (talkData == null)
         {
-            isAction = false;
+            isTalk = false;
             talkIndex = 0;
             return;
         }
 
-        if (isNpc)
-        {
-            talkText.text = talkData;
-            portraitImg.color = new Color(1, 1, 1, 1);
-        }
-        else
-        {
-            talkText.text = talkData;
-            portraitImg.color = new Color(1, 1, 1, 0);
-        }
+        UINameText.text = (speakerName == "플레이어") ? playerName : speakerName;
+        UITalkText.text = talkData;
 
-        isAction = true;
+        // portraitImg.sprite = talkManager.GetPortrait(id,int.Parse(talkData.Split(':')[1]));
+        // portraitImg.color = isNpc ? new Color(1, 1, 1, 1) : new Color(1, 1, 1, 0);
+
+        isTalk = true;
         talkIndex++;
-    }
-
-    void Bubble(int id)
-    {
-        string talkData = talkManager.GetTalk(id, talkIndex);
-        
-        if (talkData == null)
-        {
-            isAction = false;
-            talkIndex = 0;
-            return;
-        }
-
-        // 프리팹을 풀에서 가져옴
-        var bubble = bubblePool.Dequeue();
-        bubble.SetActive(true);
-        // 텍스트 설정
-        var bubbleText = bubble.GetComponentInChildren<Text>();
-        bubbleText.text = talkData;
-        // 말풍선을 NPC의 자식으로 설정
-        bubble.transform.SetParent(scanObject.transform);
-        // 말풍선 위치 조정
-        var bubbleTransform = bubble.GetComponent<RectTransform>();
-        bubbleTransform.localPosition = new Vector3(0, 1, 0);  // NPC 위에 말풍선 위치 설정
-
-        talkIndex++;
-
-        // 일정 시간 후 말풍선 비활성화, 풀에 반환
-        // StartCoroutine(HideBubble(bubble, 3f));
     }
 
     void DisplayImage(int id)

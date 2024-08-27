@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
             manager.Action(scanObject); // 스페이스바 상호작용
         }
 
-        if (manager.isAction)
+        if (manager.isTalk)
         {
             animator.SetBool("isWalking", false);
         }
@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!manager.isAction)
+        if (!manager.isTalk)
         {
             isMove = true;
             Move();
