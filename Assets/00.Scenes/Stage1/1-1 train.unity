@@ -263,6 +263,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 200
   isNpc: 0
+  objectType: 0
+  Display: {fileID: 0}
 --- !u!1 &256582651
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,6 +405,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 100
   isNpc: 0
+  objectType: 0
+  Display: {fileID: 0}
 --- !u!1 &358102109
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,6 +1168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2000
   isNpc: 1
+  objectType: 0
+  Display: {fileID: 0}
 --- !u!1 &813215672
 GameObject:
   m_ObjectHideFlags: 0
@@ -2518,6 +2524,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1000
   isNpc: 1
+  objectType: 0
+  Display: {fileID: 0}
 --- !u!1 &1873927660
 GameObject:
   m_ObjectHideFlags: 0
@@ -2737,6 +2745,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3000
   isNpc: 1
+  objectType: 0
+  Display: {fileID: 0}
 --- !u!1 &1920612268
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Puzzle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerDownHandler, IPointerUpHandler
+public class Puzzle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [SerializeField]
     private Transform targetObject; // 목표 오브젝트
@@ -16,6 +14,7 @@ public class Puzzle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     private Canvas canvas;
     private bool isLocked = false; // 고정 여부
     private float pressTime = 0f; // 버튼을 누르고 있는 시간을 저장하는 변수
+    private PuzzleManager puzzleManager; // 퍼즐 매니저 참조
 
     void Start()
     {
@@ -31,13 +30,21 @@ public class Puzzle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
     void SetBoundarySize()
     {
-        // boundaryObject의 크기를 가져와서 이동 가능한 범위로 설정
         boundarySize = boundaryObject.rect.size / 2f;
+    }
+
+    public void SetPuzzleManager(PuzzleManager manager)
+    {
+        puzzleManager = manager;
+    }
+
+    public bool IsLocked()
+    {
+        return isLocked;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        // 드래그 시작 시 아무 동작을 하지 않습니다.
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -61,21 +68,30 @@ public class Puzzle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     {
         if (!isLocked)
         {
-            float distance = Vector2.Distance(rectTransform.anchoredPosition, targetObject.GetComponent<RectTransform>().anchoredPosition);
+            // 자식 오브젝트의 절대 위치를 가져오기
+            Vector3 targetPosition = targetObject.GetComponent<RectTransform>().position;
 
-            // 퍼즐 조각의 회전 각도와 목표 오브젝트의 회전 각도 차이
-            float rotationDifference = Mathf.Abs(rectTransform.rotation.eulerAngles.z - targetObject.rotation.eulerAngles.z);
+            // 퍼즐 조각의 절대 위치 가져오기
+            Vector3 puzzlePosition = rectTransform.position;
 
-            // 거리가 30 이하이고 회전 차이가 1도 이하일 때 타겟 위치로 붙도록 합니다.
-            if (distance <= 30f && rotationDifference <= 1f)
+            // 절대 위치를 사용하여 거리 계산
+            float distance = Vector2.Distance(puzzlePosition, targetPosition);
+
+            // 거리가 30 이하일 때 타겟 위치로 붙도록 합니다.
+            if (distance <= 30f)
             {
-                // 오브젝트를 타겟의 위치와 회전에 맞춥니다.
-                rectTransform.anchoredPosition = targetObject.GetComponent<RectTransform>().anchoredPosition;
-                rectTransform.rotation = targetObject.rotation;
+                // 오브젝트를 타겟의 위치로 맞춥니다.
+                rectTransform.position = targetPosition;
 
                 // 고정 상태로 설정합니다.
                 isLocked = true;
                 locked = true;
+
+                // 퍼즐 매니저에 알림
+                if (puzzleManager != null)
+                {
+                    puzzleManager.CheckPuzzleCompletion();
+                }
 
                 // 고정된 후 한 번만 "고정" 디버그 로그 출력
                 Debug.Log("고정");
@@ -83,31 +99,13 @@ public class Puzzle : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
         }
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    void Update()
     {
-        pressTime = Time.time; // 버튼을 누른 시간 기록
-    }
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        if (Time.time - pressTime < 0.3f) // 짧은 클릭으로 회전
+        if (isLocked && targetObject != null)
         {
-            RotateImage();
-        }
-    }
-
-    public void RotateImage()
-    {
-        if (!isLocked)
-        {
-            // 이미지의 현재 Z축 회전 각도
-            float currentRotation = rectTransform.rotation.eulerAngles.z;
-
-            // 90도씩 회전
-            float newRotation = currentRotation + 90f;
-
-            // 회전 적용
-            rectTransform.rotation = Quaternion.Euler(0, 0, newRotation);
+            // 목표 오브젝트의 위치가 변경된 경우, 퍼즐 조각을 목표 오브젝트의 위치에 맞춥니다.
+            Vector3 targetPosition = targetObject.GetComponent<RectTransform>().position;
+            rectTransform.position = targetPosition;
         }
     }
 }
