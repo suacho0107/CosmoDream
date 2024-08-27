@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(isMove);
         if (Input.GetKeyDown(KeyCode.Space) && scanObject != null)
         {
             manager.Action(scanObject); // 스페이스바 상호작용
@@ -33,12 +34,12 @@ public class PlayerController : MonoBehaviour
 
         if (manager.isTalk)
         {
-            animator.SetBool("isWalking", false);
             isMove = false;
         }
-        else if (!manager.isTalk && !isMove)
+
+        if (!isMove)
         {
-            isMove = true;
+            animator.SetBool("isWalking", false);
         }
     }
 
