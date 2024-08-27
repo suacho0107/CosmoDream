@@ -263,7 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 11005
   isNpc: 0
-  objectType: 1
+  objectType: 0
   Display: {fileID: 0}
 --- !u!1 &246161496
 GameObject:
@@ -502,7 +502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 11004
   isNpc: 0
-  objectType: 1
+  objectType: 0
   Display: {fileID: 0}
 --- !u!1 &358102109
 GameObject:
@@ -1130,7 +1130,7 @@ MonoBehaviour:
   portraitImg: {fileID: 0}
   scanObject: {fileID: 0}
   isTalk: 0
-  playerName: 
+  playerName: asdf
   talkIndex: 0
 --- !u!4 &796022352
 Transform:

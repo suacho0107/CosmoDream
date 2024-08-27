@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject scanObject;
     public bool isTalk; // 대화창 표시중인지 여부
-    public string playerName; // 나중에 다 구현되면 다른 스크립트에서 받아서 사용
+    public string playerName = "player1"; // 나중에 다 구현되면 다른 스크립트에서 받아서 사용
 
     private ObjData objData;
     public int talkIndex;
