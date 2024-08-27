@@ -19,6 +19,7 @@ public class ObjData : MonoBehaviour
     public enum ObjectType
     {
         Talkable,
+        NpcBubble,
         SceneChange,
         ImageDisplay
     }

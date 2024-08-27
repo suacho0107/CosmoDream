@@ -20,6 +20,7 @@ public class MovementManager : MonoBehaviour
     private string scanMoveTag; //스캔된 이동방향 태그
 
     private FadeController fadeController;
+    private PlayerController playerController;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -33,6 +34,7 @@ public class MovementManager : MonoBehaviour
         ActivateOnly(centerMap);
 
         fadeController = FindObjectOfType<FadeController>();
+        playerController = FindObjectOfType<PlayerController>();
     }
 
     private void Update()
@@ -42,10 +44,12 @@ public class MovementManager : MonoBehaviour
             switch (scanMoveTag)
             {
                 case "Right":
-                    MoveToRight();
+                    //MoveToRight();
+                    StartCoroutine(FadeAndMove(pos, 1));
                     break;
                 case "Left":
-                    MoveToLeft();
+                    //MoveToLeft();
+                    StartCoroutine(FadeAndMove(pos, -1));
                     break;
                 default:
                     break;
@@ -56,6 +60,7 @@ public class MovementManager : MonoBehaviour
         scanMoveTag = null;
     }
 
+    /*
     private void MoveToLeft() //왼쪽으로 이동
     {
         if (leftMap.activeSelf)
@@ -77,7 +82,9 @@ public class MovementManager : MonoBehaviour
 
         StartCoroutine(FadeAndMove(pos));
     }
+    */
 
+    /*
     private void MoveToRight() //오른쪽으로 이동
     {
         if (leftMap.activeSelf)
@@ -99,6 +106,7 @@ public class MovementManager : MonoBehaviour
 
         StartCoroutine(FadeAndMove(-pos));
     }
+    */
 
     private void ActivateOnly(GameObject toActive)
     {
@@ -120,12 +128,52 @@ public class MovementManager : MonoBehaviour
         Camera.main.transform.position = new Vector3(_pos, Camera.main.transform.position.y, Camera.main.transform.position.z);
     }
 
-    private IEnumerator FadeAndMove(int _pos)
+    private IEnumerator FadeAndMove(int _pos, int dir)
     {
+        playerController.SetMove(false);
         yield return StartCoroutine(fadeController.FadeIn(fadePanel));
 
         movePlayer(_pos);
+        if(dir == -1) //left
+        {
+            if (leftMap.activeSelf)
+            {
+                ActivateOnly(backMap);
+            }
+            else if (centerMap.activeSelf)
+            {
+                ActivateOnly(leftMap);
+            }
+            else if (rightMap.activeSelf)
+            {
+                ActivateOnly(centerMap);
+            }
+            else if (backMap.activeSelf)
+            {
+                ActivateOnly(rightMap);
+            }
+        }
+        else if(dir == 1) //right
+        {
+            if (leftMap.activeSelf)
+            {
+                ActivateOnly(centerMap);
+            }
+            else if (centerMap.activeSelf)
+            {
+                ActivateOnly(rightMap);
+            }
+            else if (rightMap.activeSelf)
+            {
+                ActivateOnly(backMap);
+            }
+            else if (backMap.activeSelf)
+            {
+                ActivateOnly(leftMap);
+            }
+        }
         yield return new WaitForSeconds(0.5f);
         yield return StartCoroutine(fadeController.FadeOut(fadePanel));
+        playerController.SetMove(true);
     }
 }
