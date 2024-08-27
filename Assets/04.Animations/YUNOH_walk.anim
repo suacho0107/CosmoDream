@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: YUNOH_idle
+  m_Name: YUNOH_walk
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,6 +20,12 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
+      value: {fileID: 21300000, guid: 71e936e4b9402e64e809c679d915cccc, type: 3}
+    - time: 0.2
+      value: {fileID: 21300000, guid: 47adeea66d596024d90e5ba203d85615, type: 3}
+    - time: 0.41666666
+      value: {fileID: 21300000, guid: 4564b728a5fcdd74bacf1e7f81f65730, type: 3}
+    - time: 0.6166667
       value: {fileID: 21300000, guid: 71e936e4b9402e64e809c679d915cccc, type: 3}
     attribute: m_Sprite
     path: 
@@ -41,12 +47,15 @@ AnimationClip:
       isPPtrCurve: 1
     pptrCurveMapping:
     - {fileID: 21300000, guid: 71e936e4b9402e64e809c679d915cccc, type: 3}
+    - {fileID: 21300000, guid: 47adeea66d596024d90e5ba203d85615, type: 3}
+    - {fileID: 21300000, guid: 4564b728a5fcdd74bacf1e7f81f65730, type: 3}
+    - {fileID: 21300000, guid: 71e936e4b9402e64e809c679d915cccc, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.016666668
+    m_StopTime: 0.6333333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
