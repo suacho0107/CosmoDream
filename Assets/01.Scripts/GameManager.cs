@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        talkManager = FindObjectOfType<TalkManager>();
         talkPanel.SetActive(false);
     }
 

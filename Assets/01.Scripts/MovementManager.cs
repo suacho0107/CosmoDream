@@ -6,15 +6,6 @@ using UnityEngine;
 
 public class MovementManager : MonoBehaviour
 {
-    /*
-    //맵 배경
-    Sprite Background; //현재 배경
-    public Sprite leftBG;
-    public Sprite centerBG;
-    public Sprite rightBG;
-    public Sprite backBG;
-    */
-
     //맵 당 오브젝트 묶음
     public GameObject leftMap;
     public GameObject centerMap;
@@ -23,7 +14,7 @@ public class MovementManager : MonoBehaviour
 
     public CanvasGroup fadePanel; //페이드 패널
 
-    public int pos = 25; //맵 이동 후 위치
+    public int pos = 25; //맵 이동 후 위치(각자 조절)
 
     private bool isMove; //맵 이동 플래그
     private string scanMoveTag; //스캔된 이동방향 태그
@@ -40,7 +31,6 @@ public class MovementManager : MonoBehaviour
     {
         //초기 설정
         ActivateOnly(centerMap);
-        //ChangeBG(centerBG);
 
         fadeController = FindObjectOfType<FadeController>();
     }
@@ -71,22 +61,18 @@ public class MovementManager : MonoBehaviour
         if (leftMap.activeSelf)
         {
             ActivateOnly(backMap);
-            //ChangeBG(backBG);
         }
         else if (centerMap.activeSelf)
         {
             ActivateOnly(leftMap);
-            //ChangeBG(leftBG);
         }
         else if (rightMap.activeSelf)
         {
             ActivateOnly(centerMap);
-            //ChangeBG(centerBG);
         }
         else if (backMap.activeSelf)
         {
             ActivateOnly(rightMap);
-            //ChangeBG(rightBG);
         }
 
         StartCoroutine(FadeAndMove(pos));
@@ -97,22 +83,18 @@ public class MovementManager : MonoBehaviour
         if (leftMap.activeSelf)
         {
             ActivateOnly(centerMap);
-            //ChangeBG(centerBG);
         }
         else if (centerMap.activeSelf)
         {
             ActivateOnly(rightMap);
-            //ChangeBG(rightBG);
         }
         else if (rightMap.activeSelf)
         {
             ActivateOnly(backMap);
-            //ChangeBG(backBG);
         }
         else if (backMap.activeSelf)
         {
             ActivateOnly(leftMap);
-            //ChangeBG(leftBG);
         }
 
         StartCoroutine(FadeAndMove(-pos));
@@ -127,16 +109,6 @@ public class MovementManager : MonoBehaviour
 
         toActive.SetActive(true);
     }
-
-    /*
-    private void ChangeBG(Sprite newBG)
-    {
-        if(newBG != null)
-        {
-            Background = newBG;
-        }
-    }
-    */
 
     private void movePlayer(int _pos)
     {
