@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         dirVec = Vector2.right; // 기본 방향 오른쪽
+        isMove = true;
     }
 
     void Update()
@@ -33,14 +34,18 @@ public class PlayerController : MonoBehaviour
         if (manager.isTalk)
         {
             animator.SetBool("isWalking", false);
+            isMove = false;
+        }
+        else if (!manager.isTalk && !isMove)
+        {
+            isMove = true;
         }
     }
 
     void FixedUpdate()
     {
-        if (!manager.isTalk)
+        if (isMove)
         {
-            isMove = true;
             Move();
         }
 
