@@ -57,23 +57,28 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 moveVelocity = Vector3.zero;
 
-        if (Input.GetAxisRaw("Horizontal") < 0)
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
             animator.SetBool("isWalking", true);
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
+
+        if (Input.GetAxisRaw("Horizontal") < 0)
+        {
+            //animator.SetBool("isWalking", true);
             moveVelocity = Vector3.left;
             transform.localScale = new Vector3(-1, 1, 1);
             dirVec = Vector2.left;
         }
         else if (Input.GetAxisRaw("Horizontal") > 0)
         {
-            animator.SetBool("isWalking", true);
+            //animator.SetBool("isWalking", true);
             moveVelocity = Vector3.right;
             transform.localScale = new Vector3(1, 1, 1);
             dirVec = Vector2.right;
-        }
-        else
-        {
-            animator.SetBool("isWalking", false);
         }
 
         transform.position += moveVelocity * movePower * Time.deltaTime;
