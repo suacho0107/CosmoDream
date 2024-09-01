@@ -26,7 +26,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(isMove);
         if (Input.GetKeyDown(KeyCode.Space) && scanObject != null)
         {
             manager.Action(scanObject); // 스페이스바 상호작용
