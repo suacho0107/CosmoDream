@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class CenterFlame : MonoBehaviour
 {
-    private AudioSource audio;
+    //오디오 관리 스크립트
+
+    public AudioSource audio;
     private bool musicStart = false;
 
     private void Start()

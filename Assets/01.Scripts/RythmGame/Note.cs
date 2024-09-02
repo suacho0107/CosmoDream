@@ -5,6 +5,32 @@ using UnityEngine.UI;
 
 public class Note : MonoBehaviour
 {
+    /*
+    public float NoteSpeed;
+    public bool hasStarted;
+
+    private void Start()
+    {
+        NoteSpeed = NoteSpeed / 60f;
+    }
+
+    private void Update()
+    {
+        if (!hasStarted)
+        {
+            if(Input.anyKeyDown)
+            {
+                hasStarted = true;
+            }
+        }
+        else
+        {
+            transform.position += Vector3.right * NoteSpeed * Time.deltaTime;
+        }
+    }
+    */
+
+    
     public float noteSpeed = 400;
 
     Image noteImage;
@@ -16,11 +42,12 @@ public class Note : MonoBehaviour
 
     void Update()
     {
-        transform.localPosition += Vector3.right * noteSpeed * Time.deltaTime;
+        transform.localPosition -= Vector3.right * noteSpeed * Time.deltaTime;
     }
 
     public void HideNote()
     {
         noteImage.enabled = false;
     }
+    
 }

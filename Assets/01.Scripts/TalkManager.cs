@@ -78,6 +78,18 @@ public class TalkManager : MonoBehaviour
         "가족앨범 사이에 끼워져 있는 가위를 얻었다." });
         talkData.Add(24002, new string[] { "퍼즐을 찾았다." });
 
+
+        talkData.Add(40001, new string[] { "그 당시에 유행했던 LP판. \nLP판 3개를 찾아서 리듬게임을 해보자." }); //LP판
+        talkData.Add(40002, new string[] { "13년 전에 개봉한 영화다. \n포스터 뒤에 LP판이 아슬아슬하게 숨겨져 있다.", "LP판을 얻었다." }); //포스터
+        talkData.Add(40003, new string[] { "서랍 속에 여러가지 잡동사니들이 들어있다. \n필기구들이 어지럽혀져 있다.", "필기구들 사이에 파묻혀 있는 LP판을 찾아냈다!" }); //서랍
+        talkData.Add(40004, new string[] { "책들 사이에 lp판이 끼어있다. \n손상되지 않았어야 할텐데…." }); //책장(lp판 획득)
+        talkData.Add(40005, new string[] { "책상 위에 메모지와 읽다 만 책, \n그리고… 송곳이 보인다. ",
+                "책을 읽다 메모를 한 듯 하다.", "대충 아날로그로 되어있는 인간의 기억을 디지털 신호로 바꾼다…는 내용이다. \n내 동생이 좋아할 만한 책이다." , "근데 왜 책상 위에 송곳이 있는 것일까? \n위험하니 치워야지.", 
+                "송곳을 챙겼다." }); //책상
+        talkData.Add(40006, new string[] { "그 당시에 금지됐던 논란의 금서다.", "조금 불쾌하다. \n어떻게 사람을 데이터화 시키지?", "만년필을 발견했다." }); //초록색 책
+        talkData.Add(40007, new string[] { "응…?" }); //노란책 책장
+        talkData.Add(40008, new string[] { "마지막 음악까지 연주했다." }); //클리어
+
     }
 
     public string GetTalk(int id, int talkIndex)
