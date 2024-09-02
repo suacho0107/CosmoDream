@@ -133,9 +133,10 @@ public class MovementManager : MonoBehaviour
         playerController.SetMove(false);
         yield return StartCoroutine(fadeController.FadeIn(fadePanel));
 
-        movePlayer(_pos);
         if(dir == -1) //left
         {
+            movePlayer(_pos);
+
             if (leftMap.activeSelf)
             {
                 ActivateOnly(backMap);
@@ -155,6 +156,8 @@ public class MovementManager : MonoBehaviour
         }
         else if(dir == 1) //right
         {
+            movePlayer(-_pos);
+
             if (leftMap.activeSelf)
             {
                 ActivateOnly(centerMap);
