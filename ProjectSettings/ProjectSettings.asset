@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: CosmoDream
-  defaultCursor: {fileID: 2800000, guid: 42de71f87f8d3a14fa6271dd39cf934e, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 1a5952d0dc3505d4bbd890343cb4ae23, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1

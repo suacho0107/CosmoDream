@@ -95,6 +95,11 @@ public class GameManager : MonoBehaviour
         talkIndex++;
     }
 
+    public void EnterTalk(int id, bool isNpc)
+    {
+        Talk(objData.id, objData.isNpc);
+    }
+
     void DisplayImage(int id)
     {
         // id에 맞는 이미지를 표시하도록 수정할까 고민중인 부분.. 지금은 gameObject로 직접 할당하여 사용

@@ -18,6 +18,7 @@ public class TalkManager : MonoBehaviour
     void GenerateData()
     {
         // 110
+        talkData.Add(11010, new string[] { "여긴… 게임 세계? 근처에 뭐가 있나 보자." });
         talkData.Add(11011, new string[] { "플레이어:여긴 뭐하는 곳이죠…?",
         "그것도 모르고 게임을 샀어요? 제2의 인생을 사는 게임이잖아요." });
         talkData.Add(11012, new string[] { "코스모역에 오신 것을 환영합니다!", "즐거운 메타버스 생활 되세요!" });
@@ -69,7 +70,7 @@ public class TalkManager : MonoBehaviour
         //portraitData.Add(1000 + 2,);
         //portraitData.Add(1000 + 3,);
 
-        // 210±240
+        // 210~240
         talkData.Add(21001, new string[] { "화장대 위에 사진 퍼즐이 놓여있다." });
         talkData.Add(23001, new string[] { "베개에 사진이 끼어있다." });
         talkData.Add(24001, new string[] { "가족앨범이다. 분명 우리 가족사진과 똑같지만….. 내가 빠져있다.",
