@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/00.Scenes/Prologue/Prologue.unity
+    path: Assets/00.Scenes/Prologue/0-1 Prologue.unity
     guid: ba623fc32d46a24448330b0288611500
   - enabled: 1
     path: Assets/00.Scenes/Stage1/1-1 train.unity
