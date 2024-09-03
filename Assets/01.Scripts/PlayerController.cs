@@ -89,6 +89,15 @@ public class PlayerController : MonoBehaviour
         transform.position += moveVelocity * movePower * Time.deltaTime;
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enter"))
+        {
+            //manager.EnterTalk(other.gameObject);
+            Destroy(other.gameObject);
+        }
+    }
+
     // 외부에서 isMove 변수 설정을 위한 메서드
     public void SetMove(bool canMove)
     {

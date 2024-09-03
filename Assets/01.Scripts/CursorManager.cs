@@ -26,20 +26,29 @@ public class CursorManager : MonoBehaviour
     }
 
     private Texture2D SpriteToTexture2D(Sprite sprite)
+{
+    if (sprite.rect.width != sprite.texture.width)
     {
-        if (sprite.rect.width != sprite.texture.width)
-        {
-            Texture2D newText = new Texture2D((int)sprite.rect.width, (int)sprite.rect.height);
-            Color[] newColors = sprite.texture.GetPixels((int)sprite.textureRect.x,
-                                                         (int)sprite.textureRect.y,
-                                                         (int)sprite.textureRect.width,
-                                                         (int)sprite.textureRect.height);
-            newText.SetPixels(newColors);
-            newText.Apply();
-            return newText;
-        }
-        else
-            return sprite.texture;
+        Texture2D newText = new Texture2D((int)sprite.rect.width, (int)sprite.rect.height, TextureFormat.RGBA32, false);
+        newText.filterMode = FilterMode.Point;
+        newText.wrapMode = TextureWrapMode.Clamp;
+
+        Color[] newColors = sprite.texture.GetPixels((int)sprite.textureRect.x,
+                                                     (int)sprite.textureRect.y,
+                                                     (int)sprite.textureRect.width,
+                                                     (int)sprite.textureRect.height);
+        newText.SetPixels(newColors);
+        newText.Apply();
+        return newText;
     }
+    else
+    {
+        Texture2D newText = new Texture2D(sprite.texture.width, sprite.texture.height, TextureFormat.RGBA32, false);
+        newText.SetPixels(sprite.texture.GetPixels());
+        newText.Apply();
+        return newText;
+    }
+}
+
 
 }

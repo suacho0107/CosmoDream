@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LinkedObject : MonoBehaviour
+public class GameController : MonoBehaviour
 {
     private LineManager lineManager;
     private bool isDrawing = false;
@@ -55,24 +55,20 @@ public class LinkedObject : MonoBehaviour
     private bool IsPosConnection(GameObject obj1, GameObject obj2)
     {
         // obj1과 obj2가 가능한 연결 조합에 포함되어 있는지 확인
-        return (obj1.name == "Circle1" || obj1.name == "Circle2") &&
-               (obj2.name == "Circle1" || obj2.name == "Circle2") ||
-               (obj1.name == "Circle1" || obj1.name == "Circle3") &&
-               (obj2.name == "Circle1" || obj2.name == "Circle3") ||
-               (obj1.name == "Circle2" || obj1.name == "Circle3") &&
-               (obj2.name == "Circle2" || obj2.name == "Circle3") ||
-               (obj1.name == "Circle3" || obj1.name == "Circle4") &&
-               (obj2.name == "Circle3" || obj2.name == "Circle4") ||
-               (obj1.name == "Circle4" || obj1.name == "Circle5") &&
-               (obj2.name == "Circle4" || obj2.name == "Circle5") ||
-               (obj1.name == "Circle4" || obj1.name == "Circle6") &&
-               (obj2.name == "Circle4" || obj2.name == "Circle6") ||
-               (obj1.name == "Circle5" || obj1.name == "Circle6") &&
-               (obj2.name == "Circle5" || obj2.name == "Circle6");
+        return (obj1.name == "GC1" || obj1.name == "GC2") &&
+               (obj2.name == "GC1" || obj2.name == "GC2") ||
+               (obj1.name == "GC1" || obj1.name == "GC3") &&
+               (obj2.name == "GC1" || obj2.name == "GC3") ||
+               (obj1.name == "GC2" || obj1.name == "GC3") &&
+               (obj2.name == "GC2" || obj2.name == "GC3") ||
+               (obj1.name == "GC3" || obj1.name == "GC4") &&
+               (obj2.name == "GC3" || obj2.name == "GC4") ||
+               (obj1.name == "GC4" || obj1.name == "GC5") &&
+               (obj2.name == "GC4" || obj2.name == "GC5") ||
+               (obj1.name == "GC4" || obj1.name == "GC6") &&
+               (obj2.name == "GC4" || obj2.name == "GC6") ||
+               (obj1.name == "GC5" || obj1.name == "GC6") &&
+               (obj2.name == "GC5" || obj2.name == "GC6");
     }
 
-    //public void SetSelected(bool selected)
-    //{
-    //    //spriteRenderer.enabled = selected;
-    //}
 }
