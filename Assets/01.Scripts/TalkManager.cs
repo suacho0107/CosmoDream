@@ -17,6 +17,12 @@ public class TalkManager : MonoBehaviour
 
     void GenerateData()
     {
+        // 910
+        talkData.Add(91001, new string[] { "내 모습이다." });
+        talkData.Add(91002, new string[] { "잘 정리해둔 이삿짐.", "옷가지와 여러가지 물건들이 담겨져 있다." });
+        talkData.Add(91003, new string[] { "도시 전체가 보인다. 이제 이 도시도 안녕이겠지." });
+        talkData.Add(92001, new string[] { "이제 거실은 끝. 남은 건 동생방이겠지 ..." });
+
         // 110
         talkData.Add(11011, new string[] { "플레이어:여긴 뭐하는 곳이죠…?",
         "그것도 모르고 게임을 샀어요? 제2의 인생을 사는 게임이잖아요." });
