@@ -65,4 +65,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/00.Scenes/Stage2/2-5 puzzle3.unity
     guid: 7884e7bc63b93498c82653e0135d53ef
+  - enabled: 1
+    path: Assets/00.Scenes/Prologue/Prologue.unity
+    guid: df392e810f803264d91964f3e7240a38
+  - enabled: 1
+    path: Assets/00.Scenes/Prologue/Prologue 2.unity
+    guid: 59d678ff3b109c847899d3acdc0f8b6f
+  - enabled: 1
+    path: Assets/00.Scenes/Prologue/Prologue 3.unity
+    guid: 17f92ab8cb4d40f4a9a095be54e00c04
   m_configObjects: {}

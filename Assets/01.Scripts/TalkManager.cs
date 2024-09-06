@@ -21,7 +21,12 @@ public class TalkManager : MonoBehaviour
         talkData.Add(91001, new string[] { "내 모습이다." });
         talkData.Add(91002, new string[] { "잘 정리해둔 이삿짐.", "옷가지와 여러가지 물건들이 담겨져 있다." });
         talkData.Add(91003, new string[] { "도시 전체가 보인다. 이제 이 도시도 안녕이겠지." });
-        talkData.Add(92001, new string[] { "이제 거실은 끝. 남은 건 동생방이겠지 ..." });
+        talkData.Add(91004, new string[] { "이제 거실은 끝. 남은 건 동생방이겠지 ..." });
+
+        //920
+        talkData.Add(92001, new string[] { "아주 어릴 때 찍은 동생과 나." });
+        talkData.Add(92002, new string[] { "가족사진이다.", "나와 부모님, 동생이 있다." });
+        talkData.Add(92003, new string[] { "정리할 건 이거밖에 없네." });
 
         // 110
         talkData.Add(11010, new string[] { "여긴… 게임 세계? 근처에 뭐가 있나 보자." });
@@ -97,6 +102,14 @@ public class TalkManager : MonoBehaviour
         talkData.Add(40007, new string[] { "응…?" }); //노란책 책장
         talkData.Add(40008, new string[] { "마지막 음악까지 연주했다." }); //클리어
 
+        //510
+        talkData.Add(51001, new string[] { "나와 동생이 어릴 적 자주 갖고 놀던 장난감 상자다.","동생은 항상 블록 놀이를 고집했었지만, 난 로봇 싸움 놀이를 좋아했다."
+,"그땐 공룡같은 걸 좋아했었지…","내가 항상 이겼던 기억이 있다."
+ });
+        talkData.Add(51002, new string[] { "뭐든 있는 창고의 선반이다.", "YUNOH가 만든 조립 장난감도 있다!" }); //puzzle1
+        talkData.Add(51003, new string[] { "해체되어 있는 장난감이 눈에 띈다." }); //puzzle2
+        talkData.Add(51004, new string[] { "바닥에 해체된 장난감이 널부러져 있다.", "조립해버려야겠다." }); //puzzle3
+        talkData.Add(51005, new string[] { "구급 상자가 두개나 있다. 하나는 상비약이 가지런히 정리되어있다.", "다른 하나는 먹다 만 약들이 가득하다. 동생이 먹었었던 약과 똑같다." }); //FirstAidKit
     }
 
     public string GetTalk(int id, int talkIndex)
