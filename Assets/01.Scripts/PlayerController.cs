@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Enter"))
         {
-            //manager.EnterTalk(other.gameObject);
+            manager.EnterTalk(other.gameObject);
             Destroy(other.gameObject);
         }
     }

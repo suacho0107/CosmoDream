@@ -95,9 +95,17 @@ public class GameManager : MonoBehaviour
         talkIndex++;
     }
 
-    public void EnterTalk(int id, bool isNpc)
+    public void EnterTalk(GameObject obj)
     {
-        Talk(objData.id, objData.isNpc);
+        ObjData objData = obj.GetComponent<ObjData>();
+        int id = objData.id; // ObjData에서 id 가져오기
+        string speakerName;
+        string talkData = talkManager.GetTalk(id, talkIndex, out speakerName);
+
+        isTalk = true;
+        UINameText.text = "";
+        UITalkText.text = talkData;
+        talkPanel.SetActive(true);
     }
 
     void DisplayImage(int id)
