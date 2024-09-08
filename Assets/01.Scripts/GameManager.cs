@@ -58,10 +58,12 @@ public class GameManager : MonoBehaviour
                 break;
 
             case ObjData.ObjectType.ImageDisplay:
-                DisplayImage(objData.id);
+                DisplayImage(scanObj);
                 Talk(objData.id, objData.isNpc);
                 if (!isTalk)
+                {
                     HideImage();
+                }
                 break;
 
             case ObjData.ObjectType.NpcBubble:
@@ -98,7 +100,7 @@ public class GameManager : MonoBehaviour
     public void EnterTalk(GameObject obj)
     {
         ObjData objData = obj.GetComponent<ObjData>();
-        int id = objData.id; // ObjData에서 id 가져오기
+        int id = objData.id;
         string speakerName;
         string talkData = talkManager.GetTalk(id, talkIndex, out speakerName);
 
@@ -108,14 +110,18 @@ public class GameManager : MonoBehaviour
         talkPanel.SetActive(true);
     }
 
-    void DisplayImage(int id)
+    void DisplayImage(GameObject obj)
     {
         // id에 맞는 이미지를 표시하도록 수정할까 고민중인 부분.. 지금은 gameObject로 직접 할당하여 사용
+        ObjData objData = obj.GetComponent<ObjData>();
         objData.Display.SetActive(true);
     }
 
     void HideImage()
     {
-        objData.Display.SetActive(false);
+        if (objData != null && objData.Display != null)
+            objData.Display.SetActive(false);
+        else
+            Debug.LogWarning("null");
     }
 }
