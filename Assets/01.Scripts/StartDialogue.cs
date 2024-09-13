@@ -6,10 +6,9 @@ public class StartDialogue : MonoBehaviour
 {
     public GameObject textbox;
     public GameObject EndCursor;
-    public Text ScriptText_dialogue;  // UI Text component for dialogue
-    public string[] dialogue = { };    // Array for dialogue strings
-
-    public int dialogue_count = 0;    // To track current dialogue index
+    public Text ScriptText_dialogue;  
+    public string[] dialogue = { };   
+    public int dialogue_count = 0;  
 
     void Start()
     {

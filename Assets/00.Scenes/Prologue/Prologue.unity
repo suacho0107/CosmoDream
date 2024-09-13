@@ -784,7 +784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textbox: {fileID: 921766945}
-  EndCursor: {fileID: 502513370}
+  EndCursor: {fileID: 1490088263}
   ScriptText_dialogue: {fileID: 1712640960}
   dialogue:
   - "\uB09C \uB0A8\uC740 \uC9D0\uC744 \uB9C8\uC800 \uC815\uB9AC\uD574\uC57C \uD55C\uB2E4."
