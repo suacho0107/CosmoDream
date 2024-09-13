@@ -309,8 +309,8 @@ MonoBehaviour:
   talkManager: {fileID: 695012428}
   bubbleCanvas: {fileID: 2062527707}
   bubblePrefab: {fileID: 2513834186045841962, guid: 0cbef6f5cb43f466e98e3295c7f222f5, type: 3}
-  bubbleIndex: 0
-  isBubble: 0
+  bubbleIndex: 91000
+  isBubble: 1
 --- !u!114 &148361950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,7 +427,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -1.6195829}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -438,7 +438,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.27, y: 1.51}
+  m_Size: {x: 1.27, y: 3.089428}
   m_EdgeRadius: 0
 --- !u!114 &244404250
 MonoBehaviour:
@@ -469,6 +469,7 @@ MonoBehaviour:
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
+  canvas: {fileID: 0}
 --- !u!1 &379112488
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,6 +919,7 @@ MonoBehaviour:
   backMap: {fileID: 1953898275}
   fadePanel: {fileID: 1218073020}
   pos: 8
+  useFadeOnStart: 1
 --- !u!1 &588980251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,7 +1188,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -1.4188081}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1197,7 +1199,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.11, y: 1.18}
+  m_Size: {x: 2.11, y: 1.9830992}
   m_EdgeRadius: 0
 --- !u!114 &657167326
 MonoBehaviour:
@@ -1228,6 +1230,7 @@ MonoBehaviour:
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
+  canvas: {fileID: 0}
 --- !u!1 &695012427
 GameObject:
   m_ObjectHideFlags: 0
@@ -2349,6 +2352,7 @@ MonoBehaviour:
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
+  canvas: {fileID: 0}
 --- !u!1 &1551772461
 GameObject:
   m_ObjectHideFlags: 0
@@ -2449,7 +2453,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.5487844}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2460,7 +2464,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.08, y: 1.18}
+  m_Size: {x: 2.08, y: 2.2775686}
   m_EdgeRadius: 0
 --- !u!114 &1551772465
 MonoBehaviour:
@@ -2491,6 +2495,7 @@ MonoBehaviour:
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
+  canvas: {fileID: 0}
 --- !u!1 &1744292949
 GameObject:
   m_ObjectHideFlags: 0
@@ -2591,7 +2596,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -1.458963}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2602,7 +2607,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.1, y: 1.05}
+  m_Size: {x: 2.1, y: 1.826329}
   m_EdgeRadius: 0
 --- !u!114 &1744292953
 MonoBehaviour:
@@ -2633,6 +2638,7 @@ MonoBehaviour:
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
+  canvas: {fileID: 0}
 --- !u!1 &1842379307
 GameObject:
   m_ObjectHideFlags: 0

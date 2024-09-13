@@ -1130,6 +1130,7 @@ MonoBehaviour:
   backMap: {fileID: 1953898275}
   fadePanel: {fileID: 1218073020}
   pos: 8
+  useFadeOnStart: 1
 --- !u!1 &640993680
 GameObject:
   m_ObjectHideFlags: 0

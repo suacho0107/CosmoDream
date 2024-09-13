@@ -18,6 +18,8 @@ public class BubbleManager : MonoBehaviour
     void Start()
     {
         InitBubblePool(5);
+
+
     }
 
     void InitBubblePool(int count)
