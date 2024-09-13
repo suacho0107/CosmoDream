@@ -91,6 +91,10 @@ public class TalkManager : MonoBehaviour
         "가족앨범 사이에 끼워져 있는 가위를 얻었다." });
         talkData.Add(24002, new string[] { "퍼즐을 찾았다." });
 
+        // 310
+        talkData.Add(31001, new string[] { "TV 화면에 콘솔 게임이 떠있다.", "13년 전에 히트를 쳤던 게임이다. ", "게임 칩 하나를 얻었다. 나머지 칩도 찾아보자." });
+        talkData.Add(31002, new string[] { "“게임 칩을 찾아보자.”" });
+        talkData.Add(31003, new string[] { "퍼즐을 찾았다." });
 
         talkData.Add(40001, new string[] { "그 당시에 유행했던 LP판. \nLP판 3개를 찾아서 리듬게임을 해보자." }); //LP판
         talkData.Add(40002, new string[] { "13년 전에 개봉한 영화다. \n포스터 뒤에 LP판이 아슬아슬하게 숨겨져 있다.", "LP판을 얻었다." }); //포스터
