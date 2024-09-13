@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,62 +18,62 @@ public class TalkManager : MonoBehaviour
     void GenerateData()
     {
         // 910
-        talkData.Add(91000, new string[] { "³­ ³²Àº ÁüÀ» ¸¶Àú Á¤¸®ÇØ¾ß ÇÑ´Ù. ", "ÅÂ¾î³ª¼­ Ã¹ ÀÌ»ç. ºÎ¸ð´ÔÀº ¸ÕÀú »õ·Î¿î ÁýÀ¸·Î °¡¼Ì´Ù." });
-        talkData.Add(91001, new string[] { "³» ¸ð½ÀÀÌ´Ù." });
-        talkData.Add(91002, new string[] { "Àß Á¤¸®ÇØµÐ ÀÌ»ñÁü.", "¿Ê°¡Áö¿Í ¿©·¯°¡Áö ¹°°ÇµéÀÌ ´ã°ÜÁ® ÀÖ´Ù." });
-        talkData.Add(91003, new string[] { "µµ½Ã ÀüÃ¼°¡ º¸ÀÎ´Ù. ÀÌÁ¦ ÀÌ µµ½Ãµµ ¾È³çÀÌ°ÚÁö." });
-        talkData.Add(91004, new string[] { "ÀÌÁ¦ °Å½ÇÀº ³¡. ³²Àº °Ç µ¿»ý¹æÀÌ°ÚÁö ..." });
+        talkData.Add(91000, new string[] { "ë‚œ ë‚¨ì€ ì§ì„ ë§ˆì € ì •ë¦¬í•´ì•¼ í•œë‹¤. ", "íƒœì–´ë‚˜ì„œ ì²« ì´ì‚¬. ë¶€ëª¨ë‹˜ì€ ë¨¼ì € ìƒˆë¡œìš´ ì§‘ìœ¼ë¡œ ê°€ì…¨ë‹¤." });
+        talkData.Add(91001, new string[] { "ë‚´ ëª¨ìŠµì´ë‹¤." });
+        talkData.Add(91002, new string[] { "ìž˜ ì •ë¦¬í•´ë‘” ì´ì‚¿ì§.", "ì˜·ê°€ì§€ì™€ ì—¬ëŸ¬ê°€ì§€ ë¬¼ê±´ë“¤ì´ ë‹´ê²¨ì ¸ ìžˆë‹¤." });
+        talkData.Add(91003, new string[] { "ë„ì‹œ ì „ì²´ê°€ ë³´ì¸ë‹¤. ì´ì œ ì´ ë„ì‹œë„ ì•ˆë…•ì´ê² ì§€." });
+        talkData.Add(91004, new string[] { "ì´ì œ ê±°ì‹¤ì€ ë. ë‚¨ì€ ê±´ ë™ìƒë°©ì´ê² ì§€ ..." });
 
         //920
-        talkData.Add(92001, new string[] { "¾ÆÁÖ ¾î¸± ¶§ ÂïÀº µ¿»ý°ú ³ª." });
-        talkData.Add(92002, new string[] { "°¡Á·»çÁøÀÌ´Ù.", "³ª¿Í ºÎ¸ð´Ô, µ¿»ýÀÌ ÀÖ´Ù." });
-        talkData.Add(92003, new string[] { "Á¤¸®ÇÒ °Ç ÀÌ°Å¹Û¿¡ ¾ø³×." });
+        talkData.Add(92001, new string[] { "ì•„ì£¼ ì–´ë¦´ ë•Œ ì°ì€ ë™ìƒê³¼ ë‚˜." });
+        talkData.Add(92002, new string[] { "ê°€ì¡±ì‚¬ì§„ì´ë‹¤.", "ë‚˜ì™€ ë¶€ëª¨ë‹˜, ë™ìƒì´ ìžˆë‹¤." });
+        talkData.Add(92003, new string[] { "ì •ë¦¬í•  ê±´ ì´ê±°ë°–ì— ì—†ë„¤." });
 
         // 110
-        talkData.Add(11010, new string[] { "¿©±ä¡¦ °ÔÀÓ ¼¼°è? ±ÙÃ³¿¡ ¹¹°¡ ÀÖ³ª º¸ÀÚ." });
-        talkData.Add(11011, new string[] { "ÇÃ·¹ÀÌ¾î:¿©±ä ¹¹ÇÏ´Â °÷ÀÌÁÒ¡¦?",
-        "±×°Íµµ ¸ð¸£°í °ÔÀÓÀ» »ò¾î¿ä? Á¦2ÀÇ ÀÎ»ýÀ» »ç´Â °ÔÀÓÀÌÀÝ¾Æ¿ä." });
-        talkData.Add(11012, new string[] { "ÄÚ½º¸ð¿ª¿¡ ¿À½Å °ÍÀ» È¯¿µÇÕ´Ï´Ù!", "Áñ°Å¿î ¸ÞÅ¸¹ö½º »ýÈ° µÇ¼¼¿ä!" });
-        talkData.Add(11013, new string[] { "Çä ÁöÁ¤ ¿µ¿ª ¹ÛÀ¸·Î ºüÁ®³ª¿À´Ù´Ï! ¿©±ä À¢ÀÏÀÌ¾ß?",
-        "ÇÃ·¹ÀÌ¾î:...³×?", "¾î? ¾Æ´Ï±¸³ª. ÁË¼ÛÇÕ´Ï´Ù, Ä£ÇÑ NPC¶û Âø°¢Çß¾î¿ä!" });
-        talkData.Add(11004, new string[] { "Çö½Ç ³¯Â¥¿Í ½Ã°£ÀÌ ¶È°°´Ù.", "½Ç½Ã°£ µ¿±âÈ­°¡ µÇ¾îÀÖ³ª.." });
-        talkData.Add(11005, new string[] { "²Þ²Ù´Â ÀÎ»ýÀ» ÀÌ·ïºÁ¿ä!" });
+        talkData.Add(11010, new string[] { "ì—¬ê¸´â€¦ ê²Œìž„ ì„¸ê³„? ê·¼ì²˜ì— ë­ê°€ ìžˆë‚˜ ë³´ìž." });
+        talkData.Add(11011, new string[] { "í”Œë ˆì´ì–´:ì—¬ê¸´ ë­í•˜ëŠ” ê³³ì´ì£ â€¦?",
+        "ê·¸ê²ƒë„ ëª¨ë¥´ê³  ê²Œìž„ì„ ìƒ€ì–´ìš”? ì œ2ì˜ ì¸ìƒì„ ì‚¬ëŠ” ê²Œìž„ì´ìž–ì•„ìš”." });
+        talkData.Add(11012, new string[] { "ì½”ìŠ¤ëª¨ì—­ì— ì˜¤ì‹  ê²ƒì„ í™˜ì˜í•©ë‹ˆë‹¤!", "ì¦ê±°ìš´ ë©”íƒ€ë²„ìŠ¤ ìƒí™œ ë˜ì„¸ìš”!" });
+        talkData.Add(11013, new string[] { "í—‰ ì§€ì • ì˜ì—­ ë°–ìœ¼ë¡œ ë¹ ì ¸ë‚˜ì˜¤ë‹¤ë‹ˆ! ì—¬ê¸´ ì›¬ì¼ì´ì•¼?",
+        "í”Œë ˆì´ì–´:...ë„¤?", "ì–´? ì•„ë‹ˆêµ¬ë‚˜. ì£„ì†¡í•©ë‹ˆë‹¤, ì¹œí•œ NPCëž‘ ì°©ê°í–ˆì–´ìš”!" });
+        talkData.Add(11004, new string[] { "í˜„ì‹¤ ë‚ ì§œì™€ ì‹œê°„ì´ ë˜‘ê°™ë‹¤.", "ì‹¤ì‹œê°„ ë™ê¸°í™”ê°€ ë˜ì–´ìžˆë‚˜.." });
+        talkData.Add(11005, new string[] { "ê¿ˆê¾¸ëŠ” ì¸ìƒì„ ì´ë¤„ë´ìš”!" });
 
         // 120
-        talkData.Add(12001, new string[] { "±²ÀåÈ÷ Ä£¼÷ÇÏ°Ô »ý°å´Ù. ¿ì¸® Áý ¾ÆÆÄÆ®¿Í °ÅÀÇ À¯»çÇÏ´Ù." });
+        talkData.Add(12001, new string[] { "êµ‰ìž¥ížˆ ì¹œìˆ™í•˜ê²Œ ìƒê²¼ë‹¤. ìš°ë¦¬ ì§‘ ì•„íŒŒíŠ¸ì™€ ê±°ì˜ ìœ ì‚¬í•˜ë‹¤." });
         talkData.Add(12002, new string[] { "(...)" });
-        talkData.Add(12003, new string[] { "¿À·£¸¸¿¡ Á¢¼ÓÇÏ½Å °Í °°Àºµ¥..." });
+        talkData.Add(12003, new string[] { "ì˜¤ëžœë§Œì— ì ‘ì†í•˜ì‹  ê²ƒ ê°™ì€ë°..." });
         talkData.Add(12004, new string[] { "(...)" });
 
         // 131
-        talkData.Add(13111, new string[] { "YUNOH:¾È³ç! »õ·Î¿î Ä£±¸³×? ³­ ÀÌ°÷ÀÇ °ü¸®ÀÚ À¯³ë¾ß.",
-        "ÇÃ·¹ÀÌ¾î:(ÀÍ¼÷ÇÑ ´À³¦ÀÌ µç´Ù.) ¾È³ç. ÀÌ°÷¿¡ Ã³À½ ¿ÍºÃ´Âµ¥ ¹¹ºÎÅÍ ÇÏ¸é ÁÁÀ»±î?",
-        "YUNOH:³»°¡ ¾È³»ÇØÁÙ°Ô! ÀÏ´Ü ÀÌ ¾ÆÆÄÆ®ºÎÅÍ ±¸°æÇØº¼±î?"});
+        talkData.Add(13111, new string[] { "YUNOH:ì•ˆë…•! ìƒˆë¡œìš´ ì¹œêµ¬ë„¤? ë‚œ ì´ê³³ì˜ ê´€ë¦¬ìž ìœ ë…¸ì•¼.",
+        "í”Œë ˆì´ì–´:(ìµìˆ™í•œ ëŠë‚Œì´ ë“ ë‹¤.) ì•ˆë…•. ì´ê³³ì— ì²˜ìŒ ì™€ë´¤ëŠ”ë° ë­ë¶€í„° í•˜ë©´ ì¢‹ì„ê¹Œ?",
+        "YUNOH:ë‚´ê°€ ì•ˆë‚´í•´ì¤„ê²Œ! ì¼ë‹¨ ì´ ì•„íŒŒíŠ¸ë¶€í„° êµ¬ê²½í•´ë³¼ê¹Œ?"});
 
         // 132
-        talkData.Add(13211, new string[] { "YUNOH:¿©±â´Â µå¸² ¾ÆÆÄÆ®¾ß. ³»°¡ Áö¾ú¾î!",
-        "ÇÃ·¹ÀÌ¾î:(¾ÆÆÄÆ® ÀÌ¸§ ÁøÂ¥ ´ëÃæ Áö¾ú´Ù¡¦.) °æÄ¡°¡ Âü ÁÁ³×.",
-        "YUNOH:±×Ä¡? ÀÌÁ¦ ¿©±â°¡ ³ÊÀÇ °ÅÁÖ °ø°£ÀÌ µÉ °Å¾ß.", "YUNOH:... ...", "YUNOH:À½...", "ÇÃ·¹ÀÌ¾î:¿Ö ±×·¡?",
-        "YUNOH:ºó ¹æÀÌ ¾ø¾î¡¦ ¹Ì¾ÈÇØ. \n»õ·Î¿î °ø°£À» ´Ù ÁöÀ» ¶§±îÁö ³» Áý¿¡¼­ Áö³»¾ß°Ú´Ù! ³» Áý ±¸°æ½ÃÄÑÁÙ°Ô!"});
+        talkData.Add(13211, new string[] { "YUNOH:ì—¬ê¸°ëŠ” ë“œë¦¼ ì•„íŒŒíŠ¸ì•¼. ë‚´ê°€ ì§€ì—ˆì–´!",
+        "í”Œë ˆì´ì–´:(ì•„íŒŒíŠ¸ ì´ë¦„ ì§„ì§œ ëŒ€ì¶© ì§€ì—ˆë‹¤â€¦.) ê²½ì¹˜ê°€ ì°¸ ì¢‹ë„¤.",
+        "YUNOH:ê·¸ì¹˜? ì´ì œ ì—¬ê¸°ê°€ ë„ˆì˜ ê±°ì£¼ ê³µê°„ì´ ë  ê±°ì•¼.", "YUNOH:... ...", "YUNOH:ìŒ...", "í”Œë ˆì´ì–´:ì™œ ê·¸ëž˜?",
+        "YUNOH:ë¹ˆ ë°©ì´ ì—†ì–´â€¦ ë¯¸ì•ˆí•´. \nìƒˆë¡œìš´ ê³µê°„ì„ ë‹¤ ì§€ì„ ë•Œê¹Œì§€ ë‚´ ì§‘ì—ì„œ ì§€ë‚´ì•¼ê² ë‹¤! ë‚´ ì§‘ êµ¬ê²½ì‹œì¼œì¤„ê²Œ!"});
 
         // 141~143
-        talkData.Add(14111, new string[] { "ÇÃ·¹ÀÌ¾î:(¿ì¸® ÁýÀ» µÚÁý¾î ³õÀº °Í °°ÀÌ »ý°å¾î.)"});
-        talkData.Add(14102, new string[] { "±× ¹æÀÌ ¾Æ´Ï¾ß!"});
-        talkData.Add(14103, new string[] { "¾î¸± ¶§ ¿ì¸® Áý¿¡ ÀÖ¾ú´ø ¼îÆÄ¶û ¶È°°ÀÌ »ý°å´Ù."});
-        talkData.Add(14304, new string[] { "µµ½Ã ÀüÃ¼°¡ º¸ÀÎ´Ù. ¸ÞÅ¸¹ö½º ¼¼°è¶ó ±×·±°¡, È®½ÇÈ÷ ºñÇö½ÇÀûÀÌ¾ß."});
+        talkData.Add(14111, new string[] { "í”Œë ˆì´ì–´:(ìš°ë¦¬ ì§‘ì„ ë’¤ì§‘ì–´ ë†“ì€ ê²ƒ ê°™ì´ ìƒê²¼ì–´.)"});
+        talkData.Add(14102, new string[] { "ê·¸ ë°©ì´ ì•„ë‹ˆì•¼!"});
+        talkData.Add(14103, new string[] { "ì–´ë¦´ ë•Œ ìš°ë¦¬ ì§‘ì— ìžˆì—ˆë˜ ì‡¼íŒŒëž‘ ë˜‘ê°™ì´ ìƒê²¼ë‹¤."});
+        talkData.Add(14304, new string[] { "ë„ì‹œ ì „ì²´ê°€ ë³´ì¸ë‹¤. ë©”íƒ€ë²„ìŠ¤ ì„¸ê³„ë¼ ê·¸ëŸ°ê°€, í™•ì‹¤ížˆ ë¹„í˜„ì‹¤ì ì´ì•¼."});
 
         // 151
-        talkData.Add(15111, new string[] { "YUNOH:¿©±â°¡ ³» ¹æÀÌ¾ß! ³»°¡ Á÷Á¢ ¸¸µç ÆÛÁñµéÀÌ ÀÖÀ¸´Ï±î ½É½ÉÇÏÁø ¾ÊÀ»°Å¾ß.",
-        "ÆÛÁñµéÀ» Ç®¾îº¼·¡? (¼±ÅÃÁö)" });
-        talkData.Add(15102, new string[] { "YUNOH:ÆÛÁñÀº Ç®°í °¡!"});
+        talkData.Add(15111, new string[] { "YUNOH:ì—¬ê¸°ê°€ ë‚´ ë°©ì´ì•¼! ë‚´ê°€ ì§ì ‘ ë§Œë“  í¼ì¦ë“¤ì´ ìžˆìœ¼ë‹ˆê¹Œ ì‹¬ì‹¬í•˜ì§„ ì•Šì„ê±°ì•¼.",
+        "í¼ì¦ë“¤ì„ í’€ì–´ë³¼ëž˜? (ì„ íƒì§€)" });
+        talkData.Add(15102, new string[] { "YUNOH:í¼ì¦ì€ í’€ê³  ê°€!"});
 
         // 152
-        talkData.Add(15201, new string[] { "ÇÃ·¹ÀÌ¾î:ºÎ¸ð´ÔÀÌ¶û ³Ê¾ß?", "YUNOH:ÀÀ!", "ÇÃ·¹ÀÌ¾î:³Ê È¤½Ã ÇüÁ¦´Â ¾ø¾î?",
-        "YUNOH:À½... ±Û½ê?" });
-        talkData.Add(15202, new string[] { "YUNOH:±×°Ç ´Ù¸¥ NPCµéÀÌ¶û ÂïÀº ½ºÅ©¸°¼¦ÀÌ¾ß!" });
+        talkData.Add(15201, new string[] { "í”Œë ˆì´ì–´:ë¶€ëª¨ë‹˜ì´ëž‘ ë„ˆì•¼?", "YUNOH:ì‘!", "í”Œë ˆì´ì–´:ë„ˆ í˜¹ì‹œ í˜•ì œëŠ” ì—†ì–´?",
+        "YUNOH:ìŒ... ê¸€ìŽ„?" });
+        talkData.Add(15202, new string[] { "YUNOH:ê·¸ê±´ ë‹¤ë¥¸ NPCë“¤ì´ëž‘ ì°ì€ ìŠ¤í¬ë¦°ìƒ·ì´ì•¼!" });
 
         // 153
-        talkData.Add(15301, new string[] { "ÀÌ°Ç ¼± ÇÏ³ª·Î ¸ðµç Á¡µéÀ» ºóÆ´¾øÀÌ ÀÌ¾îÁÖ¸é µÅ. ½±Áö?" });
+        talkData.Add(15301, new string[] { "ì´ê±´ ì„  í•˜ë‚˜ë¡œ ëª¨ë“  ì ë“¤ì„ ë¹ˆí‹ˆì—†ì´ ì´ì–´ì£¼ë©´ ë¼. ì‰½ì§€?" });
 
 
                
@@ -83,45 +83,45 @@ public class TalkManager : MonoBehaviour
         //portraitData.Add(1000 + 3,);
 
         // 210~240
-        talkData.Add(21001, new string[] { "È­Àå´ë À§¿¡ »çÁø ÆÛÁñÀÌ ³õ¿©ÀÖ´Ù." });
-        talkData.Add(23001, new string[] { "º£°³¿¡ »çÁøÀÌ ³¢¾îÀÖ´Ù." });
-        talkData.Add(24001, new string[] { "°¡Á·¾Ù¹üÀÌ´Ù. ºÐ¸í ¿ì¸® °¡Á·»çÁø°ú ¶È°°Áö¸¸¡¦.. ³»°¡ ºüÁ®ÀÖ´Ù.",
-        "¸Ç ³¡¿¡ ÀÌ°Ç ¹¹Áö?",
+        talkData.Add(21001, new string[] { "í™”ìž¥ëŒ€ ìœ„ì— ì‚¬ì§„ í¼ì¦ì´ ë†“ì—¬ìžˆë‹¤." });
+        talkData.Add(23001, new string[] { "ë² ê°œì— ì‚¬ì§„ì´ ë¼ì–´ìžˆë‹¤." });
+        talkData.Add(24001, new string[] { "ê°€ì¡±ì•¨ë²”ì´ë‹¤. ë¶„ëª… ìš°ë¦¬ ê°€ì¡±ì‚¬ì§„ê³¼ ë˜‘ê°™ì§€ë§Œâ€¦.. ë‚´ê°€ ë¹ ì ¸ìžˆë‹¤.",
+        "ë§¨ ëì— ì´ê±´ ë­ì§€?",
         "...",
-        "°¡Á·¾Ù¹ü »çÀÌ¿¡ ³¢¿öÁ® ÀÖ´Â °¡À§¸¦ ¾ò¾ú´Ù." });
-        talkData.Add(24002, new string[] { "ÆÛÁñÀ» Ã£¾Ò´Ù." });
+        "ê°€ì¡±ì•¨ë²” ì‚¬ì´ì— ë¼ì›Œì ¸ ìžˆëŠ” ê°€ìœ„ë¥¼ ì–»ì—ˆë‹¤." });
+        talkData.Add(24002, new string[] { "í¼ì¦ì„ ì°¾ì•˜ë‹¤." });
 
         // 310
-        talkData.Add(31001, new string[] { "TV È­¸é¿¡ ÄÜ¼Ö °ÔÀÓÀÌ ¶°ÀÖ´Ù.", "13³â Àü¿¡ È÷Æ®¸¦ ÃÆ´ø °ÔÀÓÀÌ´Ù. ", "°ÔÀÓ Ä¨ ÇÏ³ª¸¦ ¾ò¾ú´Ù. ³ª¸ÓÁö Ä¨µµ Ã£¾Æº¸ÀÚ." }); // TV ÃÖÃÊ »óÈ£ÀÛ¿ë
-        talkData.Add(31002, new string[] { "¡°°ÔÀÓ Ä¨À» Ã£¾Æº¸ÀÚ.¡±" }); // TV »óÈ£ÀÛ¿ë
-        talkData.Add(31003, new string[] { "µµ½Ã ÀüÃ¼°¡ º¸ÀÎ´Ù. ", "¸ÞÅ¸¹ö½º ¼¼°è¶ó ±×·±°¡, È®½ÇÈ÷ ºñÇö½ÇÀûÀÌ´Ù. ", 
-            "Ã¢Æ²¿¡ ¾Æ½½¾Æ½½ÇÏ°Ô ³õ¿©ÀÖ´Â °ÔÀÓÄ¨À» Ã£¾Ò´Ù.", "¡¦ ¿Ö ¿©±â¿¡ °ÔÀÓÄ¨ÀÌ ÀÖÁö¡¦?" }); // Ã¢¹®
-        talkData.Add(31004, new string[] { "13³â Àü¿¡ ¸ØÃçÀÖ´Ù. ", "´Þ·Â »çÀÌ¿¡¼­ °ÔÀÓ Ä¨À» Ã£¾Ò´Ù.", "¡¦ ¿Ö ¿©±â¿¡ °ÔÀÓÄ¨ÀÌ ÀÖÁö¡¦?" }); // ´Þ·Â
-        talkData.Add(31005, new string[] { "³» ¸ð½ÀÀÌ´Ù." });
-        talkData.Add(31006, new string[] { "¼ÒÆÄ »çÀÌ¿¡ ½ÃÇèÁö¿Í È­ÀÌÆ®°¡ ¼û°ÜÁ® ÀÖ´Ù.", "½ÃÇèÁö¿¡ Á¡¼ö¸¦ Á¶ÀÛÇÑ ÈçÀûÀÌ º¸ÀÎ´Ù.",
-            "µ¿»ýÀº Ç×»ó 100Á¡À» ¸Â¾Æ¿ÔÁö¸¸, ³ª´Â ±×·¯Áö ¸øÇß´ø ±â¾ïÀÌ µç´Ù.", "? È­ÀÌÆ®¸¦ È¹µæÇß´Ù ?" }); // ¼ÒÆÄ
-        talkData.Add(31007, new string[] { "ÆÛÁñºÎÅÍ ´Ù Ç®ÀÚ." }); // ´Ù¸¥ ¹æ ¹® »óÈ£ÀÛ¿ë ½Ã
-        talkData.Add(31008, new string[] { "¸¶Áö¸· °ÔÀÓÄ¨±îÁö Å¬¸®¾îÇß´Ù." });
+        talkData.Add(31001, new string[] { "TV í™”ë©´ì— ì½˜ì†” ê²Œìž„ì´ ë– ìžˆë‹¤.", "13ë…„ ì „ì— ížˆíŠ¸ë¥¼ ì³¤ë˜ ê²Œìž„ì´ë‹¤. ", "ê²Œìž„ ì¹© í•˜ë‚˜ë¥¼ ì–»ì—ˆë‹¤. ë‚˜ë¨¸ì§€ ì¹©ë„ ì°¾ì•„ë³´ìž." }); // TV ìµœì´ˆ ìƒí˜¸ìž‘ìš©
+        talkData.Add(31002, new string[] { "â€œê²Œìž„ ì¹©ì„ ì°¾ì•„ë³´ìž.â€" }); // TV ìƒí˜¸ìž‘ìš©
+        talkData.Add(31003, new string[] { "ë„ì‹œ ì „ì²´ê°€ ë³´ì¸ë‹¤. ", "ë©”íƒ€ë²„ìŠ¤ ì„¸ê³„ë¼ ê·¸ëŸ°ê°€, í™•ì‹¤ížˆ ë¹„í˜„ì‹¤ì ì´ë‹¤. ", 
+            "ì°½í‹€ì— ì•„ìŠ¬ì•„ìŠ¬í•˜ê²Œ ë†“ì—¬ìžˆëŠ” ê²Œìž„ì¹©ì„ ì°¾ì•˜ë‹¤.", "â€¦ ì™œ ì—¬ê¸°ì— ê²Œìž„ì¹©ì´ ìžˆì§€â€¦?" }); // ì°½ë¬¸
+        talkData.Add(31004, new string[] { "13ë…„ ì „ì— ë©ˆì¶°ìžˆë‹¤. ", "ë‹¬ë ¥ ì‚¬ì´ì—ì„œ ê²Œìž„ ì¹©ì„ ì°¾ì•˜ë‹¤.", "â€¦ ì™œ ì—¬ê¸°ì— ê²Œìž„ì¹©ì´ ìžˆì§€â€¦?" }); // ë‹¬ë ¥
+        talkData.Add(31005, new string[] { "ë‚´ ëª¨ìŠµì´ë‹¤." });
+        talkData.Add(31006, new string[] { "ì†ŒíŒŒ ì‚¬ì´ì— ì‹œí—˜ì§€ì™€ í™”ì´íŠ¸ê°€ ìˆ¨ê²¨ì ¸ ìžˆë‹¤.", "ì‹œí—˜ì§€ì— ì ìˆ˜ë¥¼ ì¡°ìž‘í•œ í”ì ì´ ë³´ì¸ë‹¤.",
+            "ë™ìƒì€ í•­ìƒ 100ì ì„ ë§žì•„ì™”ì§€ë§Œ, ë‚˜ëŠ” ê·¸ëŸ¬ì§€ ëª»í–ˆë˜ ê¸°ì–µì´ ë“ ë‹¤.", "â€” í™”ì´íŠ¸ë¥¼ íšë“í–ˆë‹¤ â€”" }); // ì†ŒíŒŒ
+        talkData.Add(31007, new string[] { "í¼ì¦ë¶€í„° ë‹¤ í’€ìž." }); // ë‹¤ë¥¸ ë°© ë¬¸ ìƒí˜¸ìž‘ìš© ì‹œ
+        talkData.Add(31008, new string[] { "ë§ˆì§€ë§‰ ê²Œìž„ì¹©ê¹Œì§€ í´ë¦¬ì–´í–ˆë‹¤." });
 
-        talkData.Add(40001, new string[] { "±× ´ç½Ã¿¡ À¯ÇàÇß´ø LPÆÇ. \nLPÆÇ 3°³¸¦ Ã£¾Æ¼­ ¸®µë°ÔÀÓÀ» ÇØº¸ÀÚ." }); //LPÆÇ
-        talkData.Add(40002, new string[] { "13³â Àü¿¡ °³ºÀÇÑ ¿µÈ­´Ù. \nÆ÷½ºÅÍ µÚ¿¡ LPÆÇÀÌ ¾Æ½½¾Æ½½ÇÏ°Ô ¼û°ÜÁ® ÀÖ´Ù.", "LPÆÇÀ» ¾ò¾ú´Ù." }); //Æ÷½ºÅÍ
-        talkData.Add(40003, new string[] { "¼­¶ø ¼Ó¿¡ ¿©·¯°¡Áö Àâµ¿»ç´ÏµéÀÌ µé¾îÀÖ´Ù. \nÇÊ±â±¸µéÀÌ ¾îÁö·´ÇôÁ® ÀÖ´Ù.", "ÇÊ±â±¸µé »çÀÌ¿¡ ÆÄ¹¯Çô ÀÖ´Â LPÆÇÀ» Ã£¾Æ³Â´Ù!" }); //¼­¶ø
-        talkData.Add(40004, new string[] { "Ã¥µé »çÀÌ¿¡ lpÆÇÀÌ ³¢¾îÀÖ´Ù. \n¼Õ»óµÇÁö ¾Ê¾Ò¾î¾ß ÇÒÅÙµ¥¡¦." }); //Ã¥Àå(lpÆÇ È¹µæ)
-        talkData.Add(40005, new string[] { "Ã¥»ó À§¿¡ ¸Þ¸ðÁö¿Í ÀÐ´Ù ¸¸ Ã¥, \n±×¸®°í¡¦ ¼Û°÷ÀÌ º¸ÀÎ´Ù. ",
-                "Ã¥À» ÀÐ´Ù ¸Þ¸ð¸¦ ÇÑ µí ÇÏ´Ù.", "´ëÃæ ¾Æ³¯·Î±×·Î µÇ¾îÀÖ´Â ÀÎ°£ÀÇ ±â¾ïÀ» µðÁöÅÐ ½ÅÈ£·Î ¹Ù²Û´Ù¡¦´Â ³»¿ëÀÌ´Ù. \n³» µ¿»ýÀÌ ÁÁ¾ÆÇÒ ¸¸ÇÑ Ã¥ÀÌ´Ù." , "±Ùµ¥ ¿Ö Ã¥»ó À§¿¡ ¼Û°÷ÀÌ ÀÖ´Â °ÍÀÏ±î? \nÀ§ÇèÇÏ´Ï Ä¡¿ö¾ßÁö.", 
-                "¼Û°÷À» Ã¬°å´Ù." }); //Ã¥»ó
-        talkData.Add(40006, new string[] { "±× ´ç½Ã¿¡ ±ÝÁöµÆ´ø ³í¶õÀÇ ±Ý¼­´Ù.", "Á¶±Ý ºÒÄèÇÏ´Ù. \n¾î¶»°Ô »ç¶÷À» µ¥ÀÌÅÍÈ­ ½ÃÅ°Áö?", "¸¸³âÇÊÀ» ¹ß°ßÇß´Ù." }); //ÃÊ·Ï»ö Ã¥
-        talkData.Add(40007, new string[] { "ÀÀ¡¦?" }); //³ë¶õÃ¥ Ã¥Àå
-        talkData.Add(40008, new string[] { "¸¶Áö¸· À½¾Ç±îÁö ¿¬ÁÖÇß´Ù." }); //Å¬¸®¾î
+        talkData.Add(40001, new string[] { "ê·¸ ë‹¹ì‹œì— ìœ í–‰í–ˆë˜ LPíŒ. \nLPíŒ 3ê°œë¥¼ ì°¾ì•„ì„œ ë¦¬ë“¬ê²Œìž„ì„ í•´ë³´ìž." }); //LPíŒ
+        talkData.Add(40002, new string[] { "13ë…„ ì „ì— ê°œë´‰í•œ ì˜í™”ë‹¤. \ní¬ìŠ¤í„° ë’¤ì— LPíŒì´ ì•„ìŠ¬ì•„ìŠ¬í•˜ê²Œ ìˆ¨ê²¨ì ¸ ìžˆë‹¤.", "LPíŒì„ ì–»ì—ˆë‹¤." }); //í¬ìŠ¤í„°
+        talkData.Add(40003, new string[] { "ì„œëž ì†ì— ì—¬ëŸ¬ê°€ì§€ ìž¡ë™ì‚¬ë‹ˆë“¤ì´ ë“¤ì–´ìžˆë‹¤. \ní•„ê¸°êµ¬ë“¤ì´ ì–´ì§€ëŸ½í˜€ì ¸ ìžˆë‹¤.", "í•„ê¸°êµ¬ë“¤ ì‚¬ì´ì— íŒŒë¬»í˜€ ìžˆëŠ” LPíŒì„ ì°¾ì•„ëƒˆë‹¤!" }); //ì„œëž
+        talkData.Add(40004, new string[] { "ì±…ë“¤ ì‚¬ì´ì— lpíŒì´ ë¼ì–´ìžˆë‹¤. \nì†ìƒë˜ì§€ ì•Šì•˜ì–´ì•¼ í• í…ë°â€¦." }); //ì±…ìž¥(lpíŒ íšë“)
+        talkData.Add(40005, new string[] { "ì±…ìƒ ìœ„ì— ë©”ëª¨ì§€ì™€ ì½ë‹¤ ë§Œ ì±…, \nê·¸ë¦¬ê³ â€¦ ì†¡ê³³ì´ ë³´ì¸ë‹¤. ",
+                "ì±…ì„ ì½ë‹¤ ë©”ëª¨ë¥¼ í•œ ë“¯ í•˜ë‹¤.", "ëŒ€ì¶© ì•„ë‚ ë¡œê·¸ë¡œ ë˜ì–´ìžˆëŠ” ì¸ê°„ì˜ ê¸°ì–µì„ ë””ì§€í„¸ ì‹ í˜¸ë¡œ ë°”ê¾¼ë‹¤â€¦ëŠ” ë‚´ìš©ì´ë‹¤. \në‚´ ë™ìƒì´ ì¢‹ì•„í•  ë§Œí•œ ì±…ì´ë‹¤." , "ê·¼ë° ì™œ ì±…ìƒ ìœ„ì— ì†¡ê³³ì´ ìžˆëŠ” ê²ƒì¼ê¹Œ? \nìœ„í—˜í•˜ë‹ˆ ì¹˜ì›Œì•¼ì§€.", 
+                "ì†¡ê³³ì„ ì±™ê²¼ë‹¤." }); //ì±…ìƒ
+        talkData.Add(40006, new string[] { "ê·¸ ë‹¹ì‹œì— ê¸ˆì§€ëë˜ ë…¼ëž€ì˜ ê¸ˆì„œë‹¤.", "ì¡°ê¸ˆ ë¶ˆì¾Œí•˜ë‹¤. \nì–´ë–»ê²Œ ì‚¬ëžŒì„ ë°ì´í„°í™” ì‹œí‚¤ì§€?", "ë§Œë…„í•„ì„ ë°œê²¬í–ˆë‹¤." }); //ì´ˆë¡ìƒ‰ ì±…
+        talkData.Add(40007, new string[] { "ì‘â€¦?" }); //ë…¸ëž€ì±… ì±…ìž¥
+        talkData.Add(40008, new string[] { "ë§ˆì§€ë§‰ ìŒì•…ê¹Œì§€ ì—°ì£¼í–ˆë‹¤." }); //í´ë¦¬ì–´
 
         //510
-        talkData.Add(51001, new string[] { "³ª¿Í µ¿»ýÀÌ ¾î¸± Àû ÀÚÁÖ °®°í ³î´ø Àå³­°¨ »óÀÚ´Ù.","µ¿»ýÀº Ç×»ó ºí·Ï ³îÀÌ¸¦ °íÁýÇß¾úÁö¸¸, ³­ ·Îº¿ ½Î¿ò ³îÀÌ¸¦ ÁÁ¾ÆÇß´Ù."
-,"±×¶© °ø·æ°°Àº °É ÁÁ¾ÆÇß¾úÁö¡¦","³»°¡ Ç×»ó ÀÌ°å´ø ±â¾ïÀÌ ÀÖ´Ù."
+        talkData.Add(51001, new string[] { "ë‚˜ì™€ ë™ìƒì´ ì–´ë¦´ ì  ìžì£¼ ê°–ê³  ë†€ë˜ ìž¥ë‚œê° ìƒìžë‹¤.","ë™ìƒì€ í•­ìƒ ë¸”ë¡ ë†€ì´ë¥¼ ê³ ì§‘í–ˆì—ˆì§€ë§Œ, ë‚œ ë¡œë´‡ ì‹¸ì›€ ë†€ì´ë¥¼ ì¢‹ì•„í–ˆë‹¤."
+,"ê·¸ë• ê³µë£¡ê°™ì€ ê±¸ ì¢‹ì•„í–ˆì—ˆì§€â€¦","ë‚´ê°€ í•­ìƒ ì´ê²¼ë˜ ê¸°ì–µì´ ìžˆë‹¤."
  });
-        talkData.Add(51002, new string[] { "¹¹µç ÀÖ´Â Ã¢°íÀÇ ¼±¹ÝÀÌ´Ù.", "YUNOH°¡ ¸¸µç Á¶¸³ Àå³­°¨µµ ÀÖ´Ù!" }); //puzzle1
-        talkData.Add(51003, new string[] { "ÇØÃ¼µÇ¾î ÀÖ´Â Àå³­°¨ÀÌ ´«¿¡ ¶è´Ù." }); //puzzle2
-        talkData.Add(51004, new string[] { "¹Ù´Ú¿¡ ÇØÃ¼µÈ Àå³­°¨ÀÌ ³ÎºÎ·¯Á® ÀÖ´Ù.", "Á¶¸³ÇØ¹ö·Á¾ß°Ú´Ù." }); //puzzle3
-        talkData.Add(51005, new string[] { "±¸±Þ »óÀÚ°¡ µÎ°³³ª ÀÖ´Ù. ÇÏ³ª´Â »óºñ¾àÀÌ °¡Áö·±È÷ Á¤¸®µÇ¾îÀÖ´Ù.", "´Ù¸¥ ÇÏ³ª´Â ¸Ô´Ù ¸¸ ¾àµéÀÌ °¡µæÇÏ´Ù. µ¿»ýÀÌ ¸Ô¾ú¾ú´ø ¾à°ú ¶È°°´Ù." }); //FirstAidKit
+        talkData.Add(51002, new string[] { "ë­ë“  ìžˆëŠ” ì°½ê³ ì˜ ì„ ë°˜ì´ë‹¤.", "YUNOHê°€ ë§Œë“  ì¡°ë¦½ ìž¥ë‚œê°ë„ ìžˆë‹¤!" }); //puzzle1
+        talkData.Add(51003, new string[] { "í•´ì²´ë˜ì–´ ìžˆëŠ” ìž¥ë‚œê°ì´ ëˆˆì— ëˆë‹¤." }); //puzzle2
+        talkData.Add(51004, new string[] { "ë°”ë‹¥ì— í•´ì²´ëœ ìž¥ë‚œê°ì´ ë„ë¶€ëŸ¬ì ¸ ìžˆë‹¤.", "ì¡°ë¦½í•´ë²„ë ¤ì•¼ê² ë‹¤." }); //puzzle3
+        talkData.Add(51005, new string[] { "êµ¬ê¸‰ ìƒìžê°€ ë‘ê°œë‚˜ ìžˆë‹¤. í•˜ë‚˜ëŠ” ìƒë¹„ì•½ì´ ê°€ì§€ëŸ°ížˆ ì •ë¦¬ë˜ì–´ìžˆë‹¤.", "ë‹¤ë¥¸ í•˜ë‚˜ëŠ” ë¨¹ë‹¤ ë§Œ ì•½ë“¤ì´ ê°€ë“í•˜ë‹¤. ë™ìƒì´ ë¨¹ì—ˆì—ˆë˜ ì•½ê³¼ ë˜‘ê°™ë‹¤." }); //FirstAidKit
     }
 
     public string GetTalk(int id, int talkIndex)
@@ -136,11 +136,11 @@ public class TalkManager : MonoBehaviour
 
         if (parts.Length == 2)
         {
-            return parts[1]; // ´ë»ç¸¸ ¹ÝÈ¯
+            return parts[1]; // ëŒ€ì‚¬ë§Œ ë°˜í™˜
         }
         else
         {
-            return talkEntry; // ÀÌ¸§ ¾ø´Â ´ë»ç ¹ÝÈ¯¤·
+            return talkEntry; // ì´ë¦„ ì—†ëŠ” ëŒ€ì‚¬ ë°˜í™˜ã…‡
         }
     }
 
