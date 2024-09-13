@@ -8,7 +8,6 @@ public class ObjData : MonoBehaviour
     public bool isNpc;
     public ObjectType objectType;
     public GameObject Display;
-    public Canvas canvas;
 
     void Start() {
         if (Display == null)
