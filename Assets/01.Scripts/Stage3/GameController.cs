@@ -5,7 +5,6 @@ public class GameController : MonoBehaviour
     private LineManager lineManager;
     private bool isDrawing = false;
     private SpriteRenderer spriteRenderer;
-
     void Start()
     {
         lineManager = FindObjectOfType<LineManager>();

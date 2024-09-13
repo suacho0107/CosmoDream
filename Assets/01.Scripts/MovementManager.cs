@@ -15,6 +15,7 @@ public class MovementManager : MonoBehaviour
     public CanvasGroup fadePanel; //페이드 패널
 
     public int pos = 25; //맵 이동 후 위치(각자 조절)
+    public bool useFadeOnStart = true;
 
     private bool isMove; //맵 이동 플래그
     private string scanMoveTag; //스캔된 이동방향 태그
@@ -35,6 +36,13 @@ public class MovementManager : MonoBehaviour
 
         fadeController = FindObjectOfType<FadeController>();
         playerController = FindObjectOfType<PlayerController>();
+
+        // 씬 시작 시 페이드 기능을 사용할 경우
+        if (useFadeOnStart)
+        {
+            StartCoroutine(StartSceneFade());
+        }
+
     }
 
     private void Update()
@@ -178,5 +186,10 @@ public class MovementManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         yield return StartCoroutine(fadeController.FadeOut(fadePanel));
         playerController.SetMove(true);
+    }
+    private IEnumerator StartSceneFade()
+    {
+        // 씬 시작 시 페이드아웃 효과
+        yield return StartCoroutine(fadeController.FadeOut(fadePanel));
     }
 }

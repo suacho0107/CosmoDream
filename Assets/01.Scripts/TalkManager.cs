@@ -18,6 +18,7 @@ public class TalkManager : MonoBehaviour
     void GenerateData()
     {
         // 910
+        talkData.Add(91000, new string[] { "난 남은 짐을 마저 정리해야 한다. ", "태어나서 첫 이사. 부모님은 먼저 새로운 집으로 가셨다." });
         talkData.Add(91001, new string[] { "내 모습이다." });
         talkData.Add(91002, new string[] { "잘 정리해둔 이삿짐.", "옷가지와 여러가지 물건들이 담겨져 있다." });
         talkData.Add(91003, new string[] { "도시 전체가 보인다. 이제 이 도시도 안녕이겠지." });

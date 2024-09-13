@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; // UI 사용을 위한 네임스페이스 추가
 
 public class LineManager : MonoBehaviour
 {
     public GameObject linePrefab; // LineRenderer prefab
+    public Button resetButton; // 초기화 버튼
 
     private LineRenderer currentLineRenderer;
     private List<LineRenderer> lineRenderers = new List<LineRenderer>();
@@ -11,6 +13,12 @@ public class LineManager : MonoBehaviour
     private bool isDrawing = false;
     private GameObject lastConnectedObject = null;
     private const int maxConnections = 7;
+
+    void Start()
+    {
+        // 초기화 버튼 클릭 이벤트 설정
+        resetButton.onClick.AddListener(ResetLines);
+    }
 
     void Update()
     {
@@ -50,7 +58,7 @@ public class LineManager : MonoBehaviour
                 }
 
                 lastConnectedObject = connectedObject;
-                //lastConnectedObject.GetComponent<LinkedObject>().SetSelected(true);
+                // lastConnectedObject.GetComponent<LinkedObject>().SetSelected(true);
 
                 Debug.Log(currentLineRenderer.GetPosition(0) + " is connected to " + endPos);
 
@@ -80,5 +88,23 @@ public class LineManager : MonoBehaviour
     public bool CanSelect(GameObject obj)
     {
         return lastConnectedObject == null || lastConnectedObject == obj;
+    }
+
+    // 버튼 클릭 시 호출되는 메서드
+    private void ResetLines()
+    {
+        // 현재 그려진 모든 라인 제거
+        foreach (var lineRenderer in lineRenderers)
+        {
+            Destroy(lineRenderer.gameObject);
+        }
+
+        // 상태 초기화
+        lineRenderers.Clear();
+        connectedPairs.Clear();
+        lastConnectedObject = null;
+        isDrawing = false;
+
+        Debug.Log("라인 초기화 완료.");
     }
 }
