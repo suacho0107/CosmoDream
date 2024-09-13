@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class JigsawPuzzle : MonoBehaviour
 {
@@ -22,5 +23,10 @@ public class JigsawPuzzle : MonoBehaviour
             }
         }
         return true;
+    }
+
+    public void RetryGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

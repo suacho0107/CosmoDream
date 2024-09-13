@@ -55,7 +55,7 @@ public class TalkManager : MonoBehaviour
         "YUNOH:그치? 이제 여기가 너의 거주 공간이 될 거야.", "YUNOH:... ...", "YUNOH:음...", "플레이어:왜 그래?",
         "YUNOH:빈 방이 없어… 미안해. \n새로운 공간을 다 지을 때까지 내 집에서 지내야겠다! 내 집 구경시켜줄게!"});
 
-        // 141
+        // 141~143
         talkData.Add(14111, new string[] { "플레이어:(우리 집을 뒤집어 놓은 것 같이 생겼어.)"});
         talkData.Add(14102, new string[] { "그 방이 아니야!"});
         talkData.Add(14103, new string[] { "어릴 때 우리 집에 있었던 쇼파랑 똑같이 생겼다."});

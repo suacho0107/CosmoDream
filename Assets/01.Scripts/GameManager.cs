@@ -58,11 +58,25 @@ public class GameManager : MonoBehaviour
                 break;
 
             case ObjData.ObjectType.ImageDisplay:
-                DisplayImage(scanObj);
-                Talk(objData.id, objData.isNpc);
+                if (objData.id == 0) // id가 0인 경우 대화창 없이 바로 이미지 띄움
+                {
+                    DisplayImage(scanObj);
+                    isTalk = true;
+                    Invoke("HideImage", 3f);
+                    isTalk = false;
+                    return;
+                }
+                else
+                {
+                    DisplayImage(scanObj);
+                    Talk(objData.id, objData.isNpc);
+                }
                 if (!isTalk)
                 {
-                    HideImage();
+                    HideImage(scanObj);
+                    if (objData.id == 24001)
+                    // 한번만 대화 가능하게 하고 싶을 때 여기에 '|| id코드' 적어주시면 됩니다
+                        Destroy(scanObj);
                 }
                 break;
 
@@ -112,16 +126,13 @@ public class GameManager : MonoBehaviour
 
     void DisplayImage(GameObject obj)
     {
-        // id에 맞는 이미지를 표시하도록 수정할까 고민중인 부분.. 지금은 gameObject로 직접 할당하여 사용
         ObjData objData = obj.GetComponent<ObjData>();
         objData.Display.SetActive(true);
     }
 
-    void HideImage()
+    public void HideImage(GameObject obj)
     {
-        if (objData != null && objData.Display != null)
-            objData.Display.SetActive(false);
-        else
-            Debug.LogWarning("null");
+        ObjData objData = obj.GetComponent<ObjData>();
+        objData.Display.SetActive(false);
     }
 }
