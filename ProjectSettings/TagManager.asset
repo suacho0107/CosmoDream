@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Note
   - Enter
+  - upperNote
+  - lowerNote
   layers:
   - Default
   - TransparentFX

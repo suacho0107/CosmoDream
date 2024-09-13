@@ -47,6 +47,7 @@ public class Note : MonoBehaviour
 
     public void HideNote()
     {
+        //Destroy(this);
         noteImage.enabled = false;
     }
     

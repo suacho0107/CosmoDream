@@ -1,0 +1,8 @@
+{
+    "bpm": 120,
+    "notes": [
+        { "time": 0.5, "lane": "upper" },
+        { "time": 1.0, "lane": "lower" },
+        { "time": 1.5, "lane": "upper" }
+    ]
+}
