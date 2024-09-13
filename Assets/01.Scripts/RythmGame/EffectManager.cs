@@ -11,6 +11,6 @@ public class EffectManager : MonoBehaviour
 
     public void JudgementEffect(int num)
     {
-        judgementImage.sprite = judgementSprite[num];
+        //judgementImage.sprite = judgementSprite[num];
     }
 }
