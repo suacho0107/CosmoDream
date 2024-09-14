@@ -344,8 +344,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633b897ad26705e4e858f6a2ee78a3cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handSprite: {fileID: 21300000, guid: c1ea3fc0e653d1147916ded34b02894c, type: 3}
-  originalSprite: {fileID: 21300000, guid: 42de71f87f8d3a14fa6271dd39cf934e, type: 3}
+  handSprite: {fileID: 21300000, guid: 814b71870b0ef4d4d8dbdaee2bb37f85, type: 3}
+  originalSprite: {fileID: 21300000, guid: 1a5952d0dc3505d4bbd890343cb4ae23, type: 3}
 --- !u!4 &123946795
 Transform:
   m_ObjectHideFlags: 0
@@ -811,6 +811,7 @@ MonoBehaviour:
   backMap: {fileID: 1953898275}
   fadePanel: {fileID: 1218073020}
   pos: 8
+  useFadeOnStart: 1
 --- !u!1 &553904241
 GameObject:
   m_ObjectHideFlags: 0

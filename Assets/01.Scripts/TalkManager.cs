@@ -73,8 +73,6 @@ public class TalkManager : MonoBehaviour
 
         // 153
         talkData.Add(15301, new string[] { "이건 선 하나로 모든 점들을 빈틈없이 이어주면 돼. 쉽지?" });
-
-
                
         //portraitData.Add(1000 + 0,);
         //portraitData.Add(1000 + 1,);
@@ -83,7 +81,8 @@ public class TalkManager : MonoBehaviour
 
         // 210~240
         talkData.Add(21001, new string[] { "화장대 위에 사진 퍼즐이 놓여있다." });
-        talkData.Add(22001, new string[] { "퍼즐을 찾았다." });
+        talkData.Add(22001, new string[] { "어릴 때 내가 부모님께 선물로 드린 오르골이 있다.",
+        "내가 유치원에서 조립했던 것 같은데...", "내 물건들이 왜 있는 거지?" });
         talkData.Add(23001, new string[] { "베개에 사진이 끼어있다." });
         talkData.Add(24001, new string[] { "가족앨범이다. 분명 우리 가족사진과 똑같지만….. 내가 빠져있다.",
         "맨 끝에 이건 뭐지?",

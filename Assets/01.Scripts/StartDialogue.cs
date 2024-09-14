@@ -12,6 +12,8 @@ public class StartDialogue : MonoBehaviour
     public int dialogue_count = 0;    // To track current dialogue index
     private PlayerController playerController;  // PlayerController reference
 
+    public float WaitTime;
+
     void Start()
     {
         // PlayerController 인스턴스를 찾음
@@ -28,7 +30,7 @@ public class StartDialogue : MonoBehaviour
 
     IEnumerator ShowDialogueWithDelay()
     {
-        yield return new WaitForSeconds(2f); // 1초 대기
+        yield return new WaitForSeconds(WaitTime); // n초 대기
 
         // 첫 대사 표시 및 텍스트 활성화
         textbox.gameObject.SetActive(true);
