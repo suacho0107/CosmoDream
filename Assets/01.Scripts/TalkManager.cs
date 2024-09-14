@@ -30,7 +30,6 @@ public class TalkManager : MonoBehaviour
         talkData.Add(92003, new string[] { "정리할 건 이거밖에 없네." });
 
         // 110
-        talkData.Add(11010, new string[] { "여긴… 게임 세계? 근처에 뭐가 있나 보자." });
         talkData.Add(11011, new string[] { "플레이어:여긴 뭐하는 곳이죠…?",
         "그것도 모르고 게임을 샀어요? 제2의 인생을 사는 게임이잖아요." });
         talkData.Add(11012, new string[] { "코스모역에 오신 것을 환영합니다!", "즐거운 메타버스 생활 되세요!" });
