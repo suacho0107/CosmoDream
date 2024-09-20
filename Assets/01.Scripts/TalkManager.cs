@@ -30,7 +30,6 @@ public class TalkManager : MonoBehaviour
         talkData.Add(92003, new string[] { "정리할 건 이거밖에 없네." });
 
         // 110
-        talkData.Add(11010, new string[] { "여긴… 게임 세계? 근처에 뭐가 있나 보자." });
         talkData.Add(11011, new string[] { "플레이어:여긴 뭐하는 곳이죠…?",
         "그것도 모르고 게임을 샀어요? 제2의 인생을 사는 게임이잖아요." });
         talkData.Add(11012, new string[] { "코스모역에 오신 것을 환영합니다!", "즐거운 메타버스 생활 되세요!" });
@@ -84,6 +83,7 @@ public class TalkManager : MonoBehaviour
 
         // 210~240
         talkData.Add(21001, new string[] { "화장대 위에 사진 퍼즐이 놓여있다." });
+        talkData.Add(22001, new string[] { "퍼즐을 찾았다." });
         talkData.Add(23001, new string[] { "베개에 사진이 끼어있다." });
         talkData.Add(24001, new string[] { "가족앨범이다. 분명 우리 가족사진과 똑같지만….. 내가 빠져있다.",
         "맨 끝에 이건 뭐지?",
@@ -92,16 +92,15 @@ public class TalkManager : MonoBehaviour
         talkData.Add(24002, new string[] { "퍼즐을 찾았다." });
 
         // 310
-        talkData.Add(31001, new string[] { "TV 화면에 콘솔 게임이 떠있다.", "13년 전에 히트를 쳤던 게임이다. ", "게임 칩 하나를 얻었다. 나머지 칩도 찾아보자." }); // TV 최초 상호작용
-        talkData.Add(31002, new string[] { "“게임 칩을 찾아보자.”" }); // TV 상호작용
-        talkData.Add(31003, new string[] { "도시 전체가 보인다. ", "메타버스 세계라 그런가, 확실히 비현실적이다. ", 
-            "창틀에 아슬아슬하게 놓여있는 게임칩을 찾았다.", "… 왜 여기에 게임칩이 있지…?" }); // 창문
-        talkData.Add(31004, new string[] { "13년 전에 멈춰있다. ", "달력 사이에서 게임 칩을 찾았다.", "… 왜 여기에 게임칩이 있지…?" }); // 달력
-        talkData.Add(31005, new string[] { "내 모습이다." });
-        talkData.Add(31006, new string[] { "소파 사이에 시험지와 화이트가 숨겨져 있다.", "시험지에 점수를 조작한 흔적이 보인다.",
-            "동생은 항상 100점을 맞아왔지만, 나는 그러지 못했던 기억이 든다.", "— 화이트를 획득했다 —" }); // 소파
-        talkData.Add(31007, new string[] { "퍼즐부터 다 풀자." }); // 다른 방 문 상호작용 시
-        talkData.Add(31008, new string[] { "마지막 게임칩까지 클리어했다." });
+        talkData.Add(31001, new string[] { "TV 화면에 콘솔 게임이 떠있다.", "13년 전에 히트를 쳤던 게임이다. ", 
+            "게임 칩 하나를 얻었다. 나머지 칩도 찾아보자." }); // TV 최초 상호작용
+
+        talkData.Add(31002, new string[] { "“게임 칩을 찾아보자.”" }); // TV 상호작용 (게임칩 x)
+        talkData.Add(31003, new string[] { "도시 전체가 보인다. \n메타버스 세계라 그런가, 확실히 비현실적이다. ", "창틀에 아슬아슬하게 놓여있는 게임칩을 찾았다.","왜 여기에 게임칩이 있지…?"});
+        talkData.Add(31004, new string[] { "13년 전에 멈춰있다.","달력 사이에서 게임 칩을 찾았다.","왜 여기에 게임칩이 있지…?" });
+        talkData.Add(31005, new string[] { "내 모습이다." }); // 거울
+        talkData.Add(31006, new string[] { "소파 사이에 시험지와 화이트가 숨겨져 있다.","시험지에 점수를 조작한 흔적이 보인다.\n 동생은 항상 100점을 맞아왔지만, 나는 그러지 못했던 기억이 든다.","— 화이트를 획득했다 —" }); // 소파
+        talkData.Add(31005, new string[] { "퍼즐부터 다 풀자" }); // 다른 방 문
 
         talkData.Add(40001, new string[] { "그 당시에 유행했던 LP판. \nLP판 3개를 찾아서 리듬게임을 해보자." }); //LP판
         talkData.Add(40002, new string[] { "13년 전에 개봉한 영화다. \n포스터 뒤에 LP판이 아슬아슬하게 숨겨져 있다.", "LP판을 얻었다." }); //포스터
