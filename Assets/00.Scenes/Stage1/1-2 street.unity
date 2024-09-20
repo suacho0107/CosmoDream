@@ -562,7 +562,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 381790231}
-  - component: {fileID: 381790233}
   - component: {fileID: 381790232}
   m_Layer: 0
   m_Name: BubbleManager
@@ -603,22 +602,6 @@ MonoBehaviour:
   bubblePrefab: {fileID: 2513834186045841962, guid: 0cbef6f5cb43f466e98e3295c7f222f5, type: 3}
   bubbleIndex: 0
   isBubble: 0
---- !u!114 &381790233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 381790230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a289e9e4750836438416fd99bc283dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  portraitArr:
-  - {fileID: 21300000, guid: e53995475705e1f4297d12ff18ec0ca3, type: 3}
-  - {fileID: 21300000, guid: 9647480f3d3ec164e863f4b175beb913, type: 3}
-  - {fileID: 21300000, guid: 727a5eacd692eb149976a8aac02c7228, type: 3}
 --- !u!1 &421761498
 GameObject:
   m_ObjectHideFlags: 0
@@ -1806,6 +1789,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1157235238}
   - component: {fileID: 1157235237}
+  - component: {fileID: 1157235239}
   m_Layer: 0
   m_Name: TalkManager
   m_TagString: Untagged
@@ -1844,6 +1828,18 @@ Transform:
   m_Father: {fileID: 1528737709}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1157235239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157235236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 842ae6e3965fc414797daa529580ca4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1311947828
 GameObject:
   m_ObjectHideFlags: 0
@@ -2432,7 +2428,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82befdfa03a4f41409cdeeef70f80b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  talkManager: {fileID: 1157235237}
   bubbleManager: {fileID: 381790232}
   talkPanel: {fileID: 250687278}
   UINameText: {fileID: 689696366}

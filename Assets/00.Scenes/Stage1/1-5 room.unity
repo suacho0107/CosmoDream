@@ -1886,7 +1886,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82befdfa03a4f41409cdeeef70f80b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  talkManager: {fileID: 1653436328}
   bubbleManager: {fileID: 2026646144}
   talkPanel: {fileID: 1213599753}
   UINameText: {fileID: 2028682449}
@@ -2338,6 +2337,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1653436329}
   - component: {fileID: 1653436328}
+  - component: {fileID: 1653436330}
   m_Layer: 0
   m_Name: TalkManager
   m_TagString: Untagged
@@ -2376,6 +2376,18 @@ Transform:
   m_Father: {fileID: 964466829}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1653436330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653436327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 842ae6e3965fc414797daa529580ca4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1669057060
 GameObject:
   m_ObjectHideFlags: 0
