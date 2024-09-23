@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
         instance = this;
         transform.SetParent(null);
         DontDestroyOnLoad(gameObject);
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
     #endregion
 
@@ -25,20 +27,15 @@ public class GameManager : MonoBehaviour
     
     TalkManager talkManager;
     BubbleManager bubbleManager;
-    PlayerController playerController;
     ObjData objData;
     public bool isTalk;
 
-    void Start()
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         talkManager = FindObjectOfType<TalkManager>();
         bubbleManager = FindObjectOfType<BubbleManager>();
-        playerController = FindObjectOfType<PlayerController>();
-
-        talkManager.OnTalkStart += () => isTalk = true;
-        talkManager.OnTalkEnd += () => isTalk = false;
     }
-
+    
     public void Action(GameObject scanObj)
     {
         scanObject = scanObj;
@@ -108,14 +105,5 @@ public class GameManager : MonoBehaviour
     {
         ObjData objData = obj.GetComponent<ObjData>();
         objData.Display.SetActive(false);
-    }
-
-    void OnDestroy()
-    {
-         if (talkManager != null)
-        {
-            talkManager.OnTalkStart -= () => isTalk = true;
-            talkManager.OnTalkEnd -= () => isTalk = false;
-        }
     }
 }

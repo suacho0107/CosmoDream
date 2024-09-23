@@ -1,4 +1,3 @@
-// PlayerController.cs
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,9 +23,6 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         dirVec = Vector2.right; // 기본 방향 오른쪽
         isMove = true;
-
-        talkManager.OnTalkStart += DisableMovement;
-        talkManager.OnTalkEnd += EnableMovement;
     }
 
     void Update()
@@ -35,7 +31,12 @@ public class PlayerController : MonoBehaviour
         {
             manager.Action(scanObject); // 스페이스바 상호작용
         }
-        
+
+        if (manager.isTalk)
+        {
+            isMove = false;
+        }
+
         if (!isMove)
         {
             animator.SetBool("isWalking", false);
@@ -62,9 +63,9 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 moveVelocity = Vector3.zero;
 
-        if (Input.GetKey(KeyCode.LeftShift)) // Shift 키를 눌러서 달리기
+        if (Input.GetKey(KeyCode.LeftShift)) // Shift키로 달리기
         {
-            movePower = 10.0f; // 달리기
+            movePower = 10.0f;
         }
         else
         {
@@ -86,26 +87,6 @@ public class PlayerController : MonoBehaviour
 
         transform.position += moveVelocity * movePower * Time.deltaTime;
         animator.SetBool("isWalking", moveVelocity != Vector3.zero);
-    }
-
-    void DisableMovement()
-    {
-        isMove = false;
-        animator.SetBool("isWalking", false);
-    }
-
-    void EnableMovement()
-    {
-        isMove = true;
-    }
-
-    void OnDestroy()
-    {
-        if (talkManager != null)
-        {
-            talkManager.OnTalkStart -= DisableMovement;
-            talkManager.OnTalkEnd -= EnableMovement;
-        }
     }
 
     // 외부에서 isMove 변수 설정을 위한 메서드

@@ -6,43 +6,41 @@ using UnityEngine.UI;
 
 public class TalkManager : MonoBehaviour
 {
-    private static TalkManager instance;
-    public static TalkManager Instance
-    {
-        get
-        { return instance; }
-    }
+    // private static TalkManager instance;
+    // public static TalkManager Instance
+    // {
+    //     get
+    //     { return instance; }
+    // }
 
-    #region Singleton
-    private void Awake()
-    {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
+    // #region Singleton
+    // private void Awake()
+    // {
+    //     if (instance != null)
+    //     {
+    //         Destroy(gameObject);
+    //         return;
+    //     }
 
-        instance = this;
-        transform.SetParent(null);
-        DontDestroyOnLoad(gameObject);
+    //     instance = this;
+    //     transform.SetParent(null);
+    //     DontDestroyOnLoad(gameObject);
 
-        var canvas = talkPanel.transform.root.gameObject;
-        DontDestroyOnLoad(canvas); // 캔버스1도 같이 싱글톤화
-    }
-    #endregion
-
-    public event Action OnTalkStart;
-    public event Action OnTalkEnd;
+    //     var canvas = talkPanel.transform.root.gameObject;
+    //     DontDestroyOnLoad(canvas); // 캔버스1도 같이 싱글톤화
+    // }
+    // #endregion
     
     public GameObject talkPanel;
     public Text UINameText;
     public Text UITalkText;
     // public Image portraitImg;
-    public string playerName = "player1"; // 나중에 다 구현되면 받아서 사용
+    public string playerName = "플레이어"; // 나중에 다 구현되면 받아서 사용
     public int talkIndex;
 
     ObjData objData;
     GameManager gameManager;
+    PlayerController playerController;
 
     // public Sprite[] portraitArr;
     TalkData talkDataScript;
@@ -50,20 +48,23 @@ public class TalkManager : MonoBehaviour
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        playerController = FindObjectOfType<PlayerController>();
         talkDataScript = FindObjectOfType<TalkData>();
         talkPanel.SetActive(false);
     }
 
     public void Talk(int id)
     {
-        OnTalkStart?.Invoke();
+        gameManager.isTalk = true;
+        playerController.SetMove(false);
         string speakerName;
         string talkData = GetTalk(id, talkIndex, out speakerName);
 
         if (talkData == null)
         {
             talkPanel.SetActive(false);
-            OnTalkEnd?.Invoke();
+            gameManager.isTalk = false;
+            playerController.SetMove(true);
             talkIndex = 0;
             return;
         }

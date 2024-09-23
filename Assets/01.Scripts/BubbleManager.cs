@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class BubbleManager : MonoBehaviour
 {
-    public static BubbleManager instance;
-    
     public GameObject bubbleCanvas;
     public GameObject bubblePrefab;
 
@@ -18,25 +16,10 @@ public class BubbleManager : MonoBehaviour
     int id;
     GameObject scanObject;
 
-    private void Awake()
-    {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        instance = this;
-        transform.SetParent(null);
-        DontDestroyOnLoad(gameObject);
-
-        DontDestroyOnLoad(bubbleCanvas);
-    }
-
     void Start()
     {
         InitBubblePool(5);
-        talkManager = TalkManager.Instance;
+        talkManager = FindObjectOfType<TalkManager>();
     }
 
     void InitBubblePool(int count)

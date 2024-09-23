@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &18502396
 RectTransform:
   m_ObjectHideFlags: 0
@@ -457,7 +457,7 @@ MonoBehaviour:
   talkPanel: {fileID: 18502395}
   UINameText: {fileID: 1215723140}
   UITalkText: {fileID: 2092911336}
-  playerName: "\uD50C\uB808\uC774\uC5B4\uC774\uB9841"
+  playerName: 123
   talkIndex: 0
 --- !u!1 &547378073
 GameObject:
@@ -614,7 +614,7 @@ GameObject:
   m_Component:
   - component: {fileID: 838838398}
   m_Layer: 0
-  m_Name: ' Bgr'
+  m_Name: back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1157,7 +1157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1536816150
 RectTransform:
   m_ObjectHideFlags: 0
