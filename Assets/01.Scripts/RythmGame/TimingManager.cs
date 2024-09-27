@@ -7,7 +7,6 @@ public class TimingManager : MonoBehaviour
     public List<GameObject> upperLaneNotes = new List<GameObject>();
     public List<GameObject> lowerLaneNotes = new List<GameObject>();
 
-    [SerializeField] Transform Center = null;
     // 0: Perfect, 1: Great, 2: Miss
     [SerializeField] RectTransform[] timingRect = null;
     Vector2[] timingBoxs = null;
@@ -26,6 +25,12 @@ public class TimingManager : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        CheckMiss("upper");
+        CheckMiss("lower");
+    }
+
     public void CheckTiming(string lane)
     {
         Debug.Log("함수 실행");
@@ -35,9 +40,9 @@ public class TimingManager : MonoBehaviour
         for (int i = 0; i < noteList.Count; i++)
         {
             float t_notePosX = noteList[i].transform.localPosition.x;
-
+            
             // 판정은 Perfect -> Great -> Miss 순서로 이루어짐 (작은 영역부터 검사)
-            for (int x = 0; x < timingBoxs.Length; x++)
+            for (int x = 0; x < timingBoxs.Length - 1; x++)
             {
                 if (timingBoxs[x].x <= t_notePosX && t_notePosX <= timingBoxs[x].y)
                 {
@@ -53,5 +58,24 @@ public class TimingManager : MonoBehaviour
 
         // 해당 범위에 없는 경우 Miss 처리
         //effectManager.JudgementEffect(timingBoxs.Length);
+    }
+
+    public void CheckMiss(string lane)
+    {
+        List<GameObject> noteList = lane == "upper" ? upperLaneNotes : lowerLaneNotes;
+
+        for (int i = 0; i < noteList.Count; i++)
+        {
+            float t_notePosX = noteList[i].transform.localPosition.x;
+
+            // Miss 영역에 해당하면 즉시 Miss 처리
+            if (timingBoxs[2].x <= t_notePosX && t_notePosX <= timingBoxs[2].y) // Miss 영역에 해당
+            {
+                noteList.RemoveAt(i); // 리스트에서 제거
+                effectManager.JudgementEffect(2, lane); // Miss 판정 출력
+                Debug.Log("Miss 처리됨");
+                return;
+            }
+        }
     }
 }

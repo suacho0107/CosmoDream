@@ -14,7 +14,21 @@ public class EffectManager : MonoBehaviour
     public void JudgementEffect(int num, string lane)
     {
         Transform spawnTf = lane == "upper" ? upperEffectTf : lowerEffectTf;
+        GameObject effectInstance = null;
 
-
+        // num 값에 따라 생성할 이펙트를 결정
+        switch (num)
+        {
+            case 0:
+                effectInstance = Instantiate(perfectEffect, spawnTf);
+                break;
+            case 1:
+                effectInstance = Instantiate(greatEffect, spawnTf);
+                break;
+            case 2:
+                effectInstance = Instantiate(missEffect, spawnTf);
+                break;
+        }
+        Destroy(effectInstance, 1.0f);
     }
 }
