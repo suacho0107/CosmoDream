@@ -8,6 +8,10 @@ TagManager:
   - Enter
   - upperNote
   - lowerNote
+  - Left
+  - Right
+  - scenechanger
+  - GameChip
   layers:
   - Default
   - TransparentFX
