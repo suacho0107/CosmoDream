@@ -646,7 +646,6 @@ MonoBehaviour:
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
-  canvas: {fileID: 0}
 --- !u!212 &186529173
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1316,7 +1315,7 @@ GameObject:
   - component: {fileID: 548351072}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1625,7 +1624,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a289e9e4750836438416fd99bc283dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portraitArr: []
+  portraitArr:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &695012429
 Transform:
   m_ObjectHideFlags: 0
@@ -1823,7 +1825,6 @@ MonoBehaviour:
   isNpc: 0
   objectType: 2
   Display: {fileID: 1629199229}
-  canvas: {fileID: 0}
 --- !u!114 &761904124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2030,6 +2031,7 @@ GameObject:
   - component: {fileID: 901795859}
   - component: {fileID: 901795858}
   - component: {fileID: 901795857}
+  - component: {fileID: 901795861}
   m_Layer: 8
   m_Name: Box1
   m_TagString: Untagged
@@ -2094,7 +2096,6 @@ MonoBehaviour:
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
-  canvas: {fileID: 0}
 --- !u!114 &901795859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2160,6 +2161,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &901795861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901795855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77d8921ffa80b7c4bba73157ac8c6ce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chipsToGive: 1
 --- !u!1 &930917931
 GameObject:
   m_ObjectHideFlags: 0
@@ -3537,7 +3551,6 @@ MonoBehaviour:
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
-  canvas: {fileID: 0}
 --- !u!61 &2004427560
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3731,6 +3744,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   talkManager: {fileID: 695012428}
   bubbleManager: {fileID: 531159761}
+  chipsToGive: 1
+  gamechips: 0
   talkPanel: {fileID: 1042158800}
   UINameText: {fileID: 1184542208}
   UITalkText: {fileID: 1262543817}

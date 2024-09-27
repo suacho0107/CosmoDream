@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     private TalkManager talkManager;
     public BubbleManager bubbleManager;
     PlayerController playerController;
+    public int chipsToGive = 1;
+    public int gamechips = 0;
 
     public GameObject talkPanel;
     public Text UINameText;
@@ -39,7 +41,26 @@ public class GameManager : MonoBehaviour
         {
             case ObjData.ObjectType.Talkable:
                 Talk(objData.id, objData.isNpc);
-                break;
+                if (scanObj.CompareTag("GameChip"))
+                {
+                    Talk(objData.id, objData.isNpc);
+                    gamechips += chipsToGive;  // 게임 칩 추가
+                    Debug.Log("현재 게임 칩: " + gamechips);
+                    Destroy(scanObj);  // 오브젝트 파괴
+                }
+                if (scanObj.CompareTag("LineGame"))
+                {
+                    if (gamechips >= 1)
+                    {
+                        Debug.Log("씬 전환");//씬 전환
+                        gamechips -= 1;
+                    }
+                    else
+                    {
+                        //대화창 출력
+                    }
+                }
+                   break;
 
             case ObjData.ObjectType.SceneChange:
                 if (objData.id == 0) // id가 0인 경우 대화창 없이 바로 씬 전환
@@ -83,12 +104,13 @@ public class GameManager : MonoBehaviour
             case ObjData.ObjectType.NpcBubble:
                 bubbleManager.StartBubbleInteraction(scanObject, objData.id);
                 break;
+
         }
-    
         talkPanel.SetActive(isTalk);
+
     }
 
-    void Talk(int id, bool isNpc)
+    public void Talk(int id, bool isNpc)
     {
         string speakerName;
         string talkData = talkManager.GetTalk(id, talkIndex, out speakerName);
