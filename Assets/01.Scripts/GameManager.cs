@@ -48,6 +48,18 @@ public class GameManager : MonoBehaviour
                     Debug.Log("현재 게임 칩: " + gamechips);
                     Destroy(scanObj);  // 오브젝트 파괴
                 }
+                if (scanObj.CompareTag("LineGame"))
+                {
+                    if (gamechips >= 1)
+                    {
+                        Debug.Log("씬 전환");//씬 전환
+                        gamechips -= 1;
+                    }
+                    else
+                    {
+                        //대화창 출력
+                    }
+                }
                    break;
 
             case ObjData.ObjectType.SceneChange:
@@ -98,7 +110,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void Talk(int id, bool isNpc)
+    public void Talk(int id, bool isNpc)
     {
         string speakerName;
         string talkData = talkManager.GetTalk(id, talkIndex, out speakerName);

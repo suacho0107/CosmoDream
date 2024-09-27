@@ -8,6 +8,7 @@ public class TalkManager : MonoBehaviour
     Dictionary<int, Sprite> portraitData;
     public Sprite[] portraitArr;
 
+
     void Awake()
     {
         talkData = new Dictionary<int, string[]>();
@@ -100,6 +101,7 @@ public class TalkManager : MonoBehaviour
         talkData.Add(31005, new string[] { "내 모습이다." }); // 거울
         talkData.Add(31006, new string[] { "소파 사이에 시험지와 화이트가 숨겨져 있다.","시험지에 점수를 조작한 흔적이 보인다. 동생은 항상 100점을 맞아왔지만, 나는 그러지 못했던 기억이 든다.","— 화이트를 획득했다 —" }); // 소파
         talkData.Add(31007, new string[] { "퍼즐부터 다 풀자" }); // 다른 방 문
+        talkData.Add(31008, new string[] { "퍼즐을 풀어보자" });
 
 
 
