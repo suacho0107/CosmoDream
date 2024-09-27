@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public TalkManager talkManager;
+    private TalkManager talkManager;
     public BubbleManager bubbleManager;
     PlayerController playerController;
     public int chipsToGive = 1;

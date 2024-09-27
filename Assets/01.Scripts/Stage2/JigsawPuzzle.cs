@@ -5,8 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class JigsawPuzzle : MonoBehaviour
 {
+    private JigsawManager jigsawManager;
     public Transform puzzlePosSet;
     public Transform puzzlePieceSet;
+    public int puzzleNumber;
+
+    void Start()
+    {
+        jigsawManager = FindObjectOfType<JigsawManager>();
+    }
 
     public bool IsClear()
     {
@@ -22,6 +29,7 @@ public class JigsawPuzzle : MonoBehaviour
                 return false;
             }
         }
+        jigsawManager.CompletePuzzle(puzzleNumber);
         return true;
     }
 

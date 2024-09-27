@@ -207,7 +207,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2126703352}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: JigsawPuzzle, Assembly-CSharp
         m_MethodName: RetryGame
         m_Mode: 1
@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapOffset: 50
-  puzzle: {fileID: 2126703352}
+  puzzle: {fileID: 465758739}
   PiecePos: {fileID: 1726342319}
   piece_no: 0
 --- !u!114 &137513808
@@ -521,7 +521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapOffset: 50
-  puzzle: {fileID: 2126703352}
+  puzzle: {fileID: 465758739}
   PiecePos: {fileID: 363395205}
   piece_no: 0
 --- !u!114 &293417103
@@ -655,7 +655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapOffset: 50
-  puzzle: {fileID: 2126703352}
+  puzzle: {fileID: 465758739}
   PiecePos: {fileID: 706440241}
   piece_no: 0
 --- !u!114 &318758075
@@ -975,7 +975,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapOffset: 50
-  puzzle: {fileID: 2126703352}
+  puzzle: {fileID: 465758739}
   PiecePos: {fileID: 1866404128}
   piece_no: 0
 --- !u!114 &373700983
@@ -1066,6 +1066,8 @@ GameObject:
   - component: {fileID: 465758738}
   - component: {fileID: 465758737}
   - component: {fileID: 465758736}
+  - component: {fileID: 465758739}
+  - component: {fileID: 465758740}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1123,6 +1125,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &465758739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465758735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8e69ac9ab9c04f7d915e82d26ef8f9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzlePosSet: {fileID: 1689750155}
+  puzzlePieceSet: {fileID: 1833510534}
+  puzzleNumber: 1
+--- !u!114 &465758740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465758735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16d31b5f86a3346a3aa7bd9b32c94a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &500323498
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,7 +1206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapOffset: 50
-  puzzle: {fileID: 2126703352}
+  puzzle: {fileID: 465758739}
   PiecePos: {fileID: 279844535}
   piece_no: 0
 --- !u!114 &500323501
@@ -1463,7 +1492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapOffset: 50
-  puzzle: {fileID: 2126703352}
+  puzzle: {fileID: 465758739}
   PiecePos: {fileID: 1900305846}
   piece_no: 0
 --- !u!114 &790121030
@@ -1899,7 +1928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapOffset: 50
-  puzzle: {fileID: 2126703352}
+  puzzle: {fileID: 465758739}
   PiecePos: {fileID: 660326862}
   piece_no: 0
 --- !u!114 &918720846
@@ -2189,7 +2218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapOffset: 50
-  puzzle: {fileID: 2126703352}
+  puzzle: {fileID: 465758739}
   PiecePos: {fileID: 1828679237}
   piece_no: 0
 --- !u!114 &968404874
@@ -2559,7 +2588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapOffset: 50
-  puzzle: {fileID: 2126703352}
+  puzzle: {fileID: 465758739}
   PiecePos: {fileID: 1774368760}
   piece_no: 0
 --- !u!114 &1060684498
@@ -2693,7 +2722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapOffset: 50
-  puzzle: {fileID: 2126703352}
+  puzzle: {fileID: 465758739}
   PiecePos: {fileID: 1026083785}
   piece_no: 0
 --- !u!114 &1092079507
@@ -2865,7 +2894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapOffset: 50
-  puzzle: {fileID: 2126703352}
+  puzzle: {fileID: 465758739}
   PiecePos: {fileID: 330395640}
   piece_no: 0
 --- !u!114 &1294758397
@@ -3329,7 +3358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapOffset: 50
-  puzzle: {fileID: 2126703352}
+  puzzle: {fileID: 465758739}
   PiecePos: {fileID: 1456496065}
   piece_no: 0
 --- !u!114 &1513397420
@@ -3499,7 +3528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapOffset: 50
-  puzzle: {fileID: 2126703352}
+  puzzle: {fileID: 465758739}
   PiecePos: {fileID: 1948359038}
   piece_no: 0
 --- !u!114 &1541775237
@@ -4364,7 +4393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapOffset: 50
-  puzzle: {fileID: 2126703352}
+  puzzle: {fileID: 465758739}
   PiecePos: {fileID: 1748801461}
   piece_no: 0
 --- !u!114 &1782366496
@@ -4931,7 +4960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapOffset: 50
-  puzzle: {fileID: 2126703352}
+  puzzle: {fileID: 465758739}
   PiecePos: {fileID: 1023520914}
   piece_no: 0
 --- !u!114 &1850180195
@@ -5293,7 +5322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snapOffset: 50
-  puzzle: {fileID: 2126703352}
+  puzzle: {fileID: 465758739}
   PiecePos: {fileID: 1661407348}
   piece_no: 0
 --- !u!114 &1906941549
@@ -5649,7 +5678,6 @@ GameObject:
   - component: {fileID: 2126703350}
   - component: {fileID: 2126703349}
   - component: {fileID: 2126703348}
-  - component: {fileID: 2126703352}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -5743,17 +5771,3 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &2126703352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2126703347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8e69ac9ab9c04f7d915e82d26ef8f9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puzzlePosSet: {fileID: 1689750155}
-  puzzlePieceSet: {fileID: 1833510534}
