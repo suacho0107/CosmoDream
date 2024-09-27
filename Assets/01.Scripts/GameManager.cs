@@ -1,35 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private TalkManager talkManager;
-    public BubbleManager bubbleManager;
-    PlayerController playerController;
-    public int chipsToGive = 1;
-    public int gamechips = 0;
+    private static GameManager instance;
 
-    public GameObject talkPanel;
-    public Text UINameText;
-    public Text UITalkText;
-    public Image portraitImg;
+    #region Singleton
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        transform.SetParent(null);
+        DontDestroyOnLoad(gameObject);
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    #endregion
 
     public GameObject scanObject;
-    public bool isTalk; // 대화창 표시중인지 여부
-    public string playerName = "player1"; // 나중에 다 구현되면 다른 스크립트에서 받아서 사용
+    
+    TalkManager talkManager;
+    BubbleManager bubbleManager;
+    ObjData objData;
+    public bool isTalk;
 
-    private ObjData objData;
-    public int talkIndex;
-
-    void Start()
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         talkManager = FindObjectOfType<TalkManager>();
-        playerController = FindObjectOfType<PlayerController>();
-        talkPanel.SetActive(false);
+        bubbleManager = FindObjectOfType<BubbleManager>();
     }
-
+    
     public void Action(GameObject scanObj)
     {
         scanObject = scanObj;
@@ -40,41 +46,22 @@ public class GameManager : MonoBehaviour
         switch (objData.objectType)
         {
             case ObjData.ObjectType.Talkable:
-                Talk(objData.id, objData.isNpc);
-                if (scanObj.CompareTag("GameChip"))
-                {
-                    Talk(objData.id, objData.isNpc);
-                    gamechips += chipsToGive;  // 게임 칩 추가
-                    Debug.Log("현재 게임 칩: " + gamechips);
-                    Destroy(scanObj);  // 오브젝트 파괴
-                }
-                if (scanObj.CompareTag("LineGame"))
-                {
-                    if (gamechips >= 1)
-                    {
-                        Debug.Log("씬 전환");//씬 전환
-                        gamechips -= 1;
-                    }
-                    else
-                    {
-                        //대화창 출력
-                    }
-                }
-                   break;
+                talkManager.Talk(objData.id);
+                break;
 
             case ObjData.ObjectType.SceneChange:
                 if (objData.id == 0) // id가 0인 경우 대화창 없이 바로 씬 전환
                 {
-                SceneChange sceneChanger = scanObj.GetComponent<SceneChange>();
-                sceneChanger.ChangeScene();
+                    SceneChange sceneChanger = scanObj.GetComponent<SceneChange>();
+                    sceneChanger.ChangeScene();
                 return;
                 }
                 else
                 {
-                Talk(objData.id, objData.isNpc);
-                SceneChange sceneChanger = scanObj.GetComponent<SceneChange>();
-                if (!isTalk)
-                    sceneChanger.ChangeScene();
+                    talkManager.Talk(objData.id);
+                    SceneChange sceneChanger = scanObj.GetComponent<SceneChange>();
+                    if (!isTalk)
+                        sceneChanger.ChangeScene();
                 }
                 break;
 
@@ -90,13 +77,14 @@ public class GameManager : MonoBehaviour
                 else
                 {
                     DisplayImage(scanObj);
-                    Talk(objData.id, objData.isNpc);
+                    talkManager.Talk(objData.id);
                 }
                 if (!isTalk)
                 {
                     HideImage(scanObj);
                     if (objData.id == 24001)
-                    // 한번만 대화 가능하게 하고 싶을 때 여기에 '|| id코드' 적어주시면 됩니다
+                    // 한번만 대화 가능하게 하고 싶을 때 여기에 '|| id코드' 적어주시면 됩니다,
+                    // 오브젝트 복붙해서 상호작용 불가능한 오브젝트 하나 남겨두면 돼요
                         Destroy(scanObj);
                 }
                 break;
@@ -104,46 +92,7 @@ public class GameManager : MonoBehaviour
             case ObjData.ObjectType.NpcBubble:
                 bubbleManager.StartBubbleInteraction(scanObject, objData.id);
                 break;
-
         }
-        talkPanel.SetActive(isTalk);
-
-    }
-
-    public void Talk(int id, bool isNpc)
-    {
-        string speakerName;
-        string talkData = talkManager.GetTalk(id, talkIndex, out speakerName);
-
-        if (talkData == null)
-        {
-            isTalk = false;
-            playerController.SetMove(true);
-            talkIndex = 0;
-            return;
-        }
-
-        UINameText.text = (speakerName == "플레이어") ? playerName : speakerName;
-        UITalkText.text = talkData;
-
-        // portraitImg.sprite = talkManager.GetPortrait(id,int.Parse(talkData.Split(':')[1]));
-        // portraitImg.color = isNpc ? new Color(1, 1, 1, 1) : new Color(1, 1, 1, 0);
-
-        isTalk = true;
-        talkIndex++;
-    }
-
-    public void EnterTalk(GameObject obj)
-    {
-        ObjData objData = obj.GetComponent<ObjData>();
-        int id = objData.id;
-        string speakerName;
-        string talkData = talkManager.GetTalk(id, talkIndex, out speakerName);
-
-        isTalk = true;
-        UINameText.text = "";
-        UITalkText.text = talkData;
-        talkPanel.SetActive(true);
     }
 
     void DisplayImage(GameObject obj)
@@ -152,7 +101,7 @@ public class GameManager : MonoBehaviour
         objData.Display.SetActive(true);
     }
 
-    public void HideImage(GameObject obj)
+    void HideImage(GameObject obj)
     {
         ObjData objData = obj.GetComponent<ObjData>();
         objData.Display.SetActive(false);

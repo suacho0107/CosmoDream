@@ -4,6 +4,28 @@ using UnityEngine;
 
 public class CursorManager : MonoBehaviour
 {
+    private static CursorManager instance;
+    public static CursorManager Instance
+    {
+        get
+        { return instance; }
+    }
+    
+    #region Singleton
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        transform.SetParent(null);
+        DontDestroyOnLoad(gameObject);
+    }
+    #endregion
+
     public Sprite handSprite;
     public Sprite originalSprite;
     private Texture2D hand;

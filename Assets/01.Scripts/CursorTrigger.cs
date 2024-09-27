@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class CursorTrigger : MonoBehaviour
 {
-    public CursorManager cursorManager;
+    private CursorManager cursorManager;
+
+    void Start()
+    {
+        cursorManager = CursorManager.Instance;
+    }
 
     void OnMouseOver()
     {

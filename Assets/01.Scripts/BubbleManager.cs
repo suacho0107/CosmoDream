@@ -5,21 +5,21 @@ using UnityEngine.UI;
 
 public class BubbleManager : MonoBehaviour
 {
-    public TalkManager talkManager;
     public GameObject bubbleCanvas;
     public GameObject bubblePrefab;
-    private Queue<GameObject> bubblePool = new Queue<GameObject>();
+
+    Queue<GameObject> bubblePool = new Queue<GameObject>();
+    TalkManager talkManager;
     
     public int bubbleIndex; // 대화 인덱스
     public bool isBubble; // 말풍선 표시 여부
-    private int id;
-    private GameObject scanObject; // 현재 상호작용 중인 객체
+    int id;
+    GameObject scanObject;
 
     void Start()
     {
         InitBubblePool(5);
-
-
+        talkManager = FindObjectOfType<TalkManager>();
     }
 
     void InitBubblePool(int count)
@@ -69,7 +69,7 @@ public class BubbleManager : MonoBehaviour
             bubble.transform.position = scanTransform.position + new Vector3(0, 2.5f, 0);
             
             isBubble = true;
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(2f);
             bubble.SetActive(false);
             bubblePool.Enqueue(bubble);
 

@@ -1,4 +1,3 @@
-// PlayerController.cs
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,14 +9,16 @@ public class PlayerController : MonoBehaviour
     public float movePower = 6.0f;
     public bool isMove;
 
-    public GameManager manager;
-    private GameObject scanObject;
-    private RaycastHit2D rayHit;
+    GameManager manager;
+    TalkManager talkManager;
+    GameObject scanObject;
+    RaycastHit2D rayHit;
     Vector3 dirVec;
 
     void Start()
     {
         manager = FindObjectOfType<GameManager>();
+        talkManager = FindObjectOfType<TalkManager>();
         rigid = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         dirVec = Vector2.right; // 기본 방향 오른쪽
@@ -62,40 +63,30 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 moveVelocity = Vector3.zero;
 
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.LeftShift)) // Shift키로 달리기
         {
-            animator.SetBool("isWalking", true);
+            movePower = 10.0f;
         }
         else
         {
-            animator.SetBool("isWalking", false);
+            movePower = 6.0f;
         }
-
+        
         if (Input.GetAxisRaw("Horizontal") < 0)
         {
-            //animator.SetBool("isWalking", true);
-            moveVelocity = Vector3.left;
+            moveVelocity = Vector2.left;
             transform.localScale = new Vector3(-1, 1, 1);
             dirVec = Vector2.left;
         }
         else if (Input.GetAxisRaw("Horizontal") > 0)
         {
-            //animator.SetBool("isWalking", true);
-            moveVelocity = Vector3.right;
+            moveVelocity = Vector2.right;
             transform.localScale = new Vector3(1, 1, 1);
             dirVec = Vector2.right;
         }
 
         transform.position += moveVelocity * movePower * Time.deltaTime;
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Enter"))
-        {
-            manager.EnterTalk(other.gameObject);
-            Destroy(other.gameObject);
-        }
+        animator.SetBool("isWalking", moveVelocity != Vector3.zero);
     }
 
     // 외부에서 isMove 변수 설정을 위한 메서드
