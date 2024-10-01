@@ -30,6 +30,9 @@ public class GameManager : MonoBehaviour
     ObjData objData;
     public bool isTalk;
 
+    // 게임 진행 변수
+    public bool hasScissors = false;
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         talkManager = FindObjectOfType<TalkManager>();
@@ -70,8 +73,7 @@ public class GameManager : MonoBehaviour
                 {
                     DisplayImage(scanObj);
                     isTalk = true;
-                    Invoke("HideImage", 3f);
-                    isTalk = false;
+                    Invoke("HideImageNoParam", 3f);
                     return;
                 }
                 else
@@ -101,9 +103,16 @@ public class GameManager : MonoBehaviour
         objData.Display.SetActive(true);
     }
 
+    void HideImageNoParam()
+{
+    // scanObject를 사용해서 대상 오브젝트를 숨김
+    HideImage(scanObject);
+}
+
     void HideImage(GameObject obj)
     {
         ObjData objData = obj.GetComponent<ObjData>();
         objData.Display.SetActive(false);
+        isTalk = false;
     }
 }

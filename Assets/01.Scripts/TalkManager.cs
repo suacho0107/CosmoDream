@@ -5,32 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TalkManager : MonoBehaviour
-{
-    // private static TalkManager instance;
-    // public static TalkManager Instance
-    // {
-    //     get
-    //     { return instance; }
-    // }
-
-    // #region Singleton
-    // private void Awake()
-    // {
-    //     if (instance != null)
-    //     {
-    //         Destroy(gameObject);
-    //         return;
-    //     }
-
-    //     instance = this;
-    //     transform.SetParent(null);
-    //     DontDestroyOnLoad(gameObject);
-
-    //     var canvas = talkPanel.transform.root.gameObject;
-    //     DontDestroyOnLoad(canvas); // 캔버스1도 같이 싱글톤화
-    // }
-    // #endregion
-    
+{    
     public GameObject talkPanel;
     public Text UINameText;
     public Text UITalkText;
@@ -62,6 +37,7 @@ public class TalkManager : MonoBehaviour
 
         if (talkData == null)
         {
+            EndTalk(id); // 대화 종료 후 이벤트변수 처리
             talkPanel.SetActive(false);
             gameManager.isTalk = false;
             playerController.SetMove(true);
@@ -124,6 +100,15 @@ public class TalkManager : MonoBehaviour
         {
             speakerName = "";
             return talkEntry;
+        }
+    }
+
+    void EndTalk(int talkId)
+    {
+        if (talkId == 24001) // 가족앨범 - 가위
+        {
+            gameManager.hasScissors = true;
+            Debug.Log("플레이어가 가위를 획득했습니다.");
         }
     }
 }
