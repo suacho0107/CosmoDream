@@ -49,6 +49,7 @@ public class Note : MonoBehaviour
     {
         //Destroy(this);
         noteImage.enabled = false;
+        Debug.Log("제발제발제발");
     }
     
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FadeController : MonoBehaviour
 {
-    public float fadeDuration = 0.5f;
+    private float fadeDuration = 0.5f;
 
     public bool isFade = false;
     public IEnumerator FadeIn(CanvasGroup fadeTarget)
