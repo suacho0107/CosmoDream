@@ -12,6 +12,7 @@ TagManager:
   - Right
   - scenechanger
   - GameChip
+  - LineGame
   layers:
   - Default
   - TransparentFX

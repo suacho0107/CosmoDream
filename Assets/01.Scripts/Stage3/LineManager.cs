@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; // UI 사용을 위한 네임스페이스 추가
-
+using UnityEngine.SceneManagement;
 public class LineManager : MonoBehaviour
 {
     public GameObject linePrefab; // LineRenderer prefab
@@ -66,6 +66,7 @@ public class LineManager : MonoBehaviour
                 if (connectedPairs.Count / 2 == maxConnections)
                 {
                     Debug.Log("Game Complete!");
+                    SceneManager.LoadScene("Stage3");
                     // 다음 맵으로 가는 코드 넣어야 함.
                 }
             }

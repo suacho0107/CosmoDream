@@ -45,6 +45,7 @@ public class TalkManager : MonoBehaviour
     // public Sprite[] portraitArr;
     TalkData talkDataScript;
 
+
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();

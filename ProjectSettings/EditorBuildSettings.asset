@@ -50,4 +50,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/00.Scenes/Prologue/Prologue 3.unity
     guid: 17f92ab8cb4d40f4a9a095be54e00c04
+  - enabled: 1
+    path: Assets/00.Scenes/Stage3/GameController.unity
+    guid: 043384fe726fc0a40bcb41660250713e
+  - enabled: 1
+    path: Assets/00.Scenes/Stage3/Flower.unity
+    guid: 0ab66f13640c6774fb105bc37f78979d
+  - enabled: 1
+    path: Assets/00.Scenes/Stage3/building.unity
+    guid: 3cf4f936b308f23409e139e201754c12
   m_configObjects: {}

@@ -29,7 +29,8 @@ public class GameManager : MonoBehaviour
     BubbleManager bubbleManager;
     ObjData objData;
     public bool isTalk;
-
+    public int chipsToGive = 1;
+    public int gamechips = 0;
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         talkManager = FindObjectOfType<TalkManager>();
@@ -47,6 +48,24 @@ public class GameManager : MonoBehaviour
         {
             case ObjData.ObjectType.Talkable:
                 talkManager.Talk(objData.id);
+                if (scanObj.CompareTag("GameChip"))
+                {
+                    gamechips += chipsToGive;  // 게임 칩 추가
+                    Debug.Log("현재 게임 칩: " + gamechips);
+                    Destroy(scanObj);  // 오브젝트 파괴
+                }
+                else if (scanObj.CompareTag("LineGame"))
+                {
+                    if (gamechips >= 1 && !isTalk)
+                    {
+                        Debug.Log("씬 전환");//씬 전환
+                        gamechips -= 1;
+                        Destroy(scanObj);
+                        SceneChange sceneChanger = scanObj.GetComponent<SceneChange>();
+                        if (!isTalk)
+                            sceneChanger.ChangeScene();
+                    }
+                }
                 break;
 
             case ObjData.ObjectType.SceneChange:
@@ -63,6 +82,9 @@ public class GameManager : MonoBehaviour
                     if (!isTalk)
                         sceneChanger.ChangeScene();
                 }
+               
+                
+
                 break;
 
             case ObjData.ObjectType.ImageDisplay:
