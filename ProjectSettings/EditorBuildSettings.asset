@@ -50,4 +50,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/00.Scenes/Prologue/Prologue 3.unity
     guid: 17f92ab8cb4d40f4a9a095be54e00c04
+  - enabled: 1
+    path: Assets/00.Scenes/Stage1/1-6 Puzzle1.unity
+    guid: cc615d83b2feb471382f7c5f6395b61b
+  - enabled: 1
+    path: Assets/00.Scenes/Stage1/1-6 Puzzle2.unity
+    guid: b4ae536135e1044009cabf2d2d672bf6
+  - enabled: 1
+    path: Assets/00.Scenes/Stage1/1-6 Puzzle3.unity
+    guid: 56daba5625c9948eba1bc85ca1547388
+  - enabled: 1
+    path: Assets/00.Scenes/Stage1/1-6 Puzzle4.unity
+    guid: 3f289a4db2b2548bb86dc4d42c6e9bd2
   m_configObjects: {}

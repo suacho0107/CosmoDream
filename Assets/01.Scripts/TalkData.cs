@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,10 +7,12 @@ public class TalkData : MonoBehaviour
 {
     // Dictionary<int, Sprite> portraitData;
     Dictionary<int, string[]> talkData;
+    Dictionary<int, Choice[]> choiceData;
 
     void Awake()
     {
         talkData = new Dictionary<int, string[]>();
+        choiceData = new Dictionary<int, Choice[]>();
         // portraitData = new Dictionary<int, Sprite>();
         GenerateData();
     }
@@ -28,6 +31,7 @@ public class TalkData : MonoBehaviour
         talkData.Add(92002, new string[] { "가족사진이다.", "나와 부모님, 동생이 있다." });
         talkData.Add(92003, new string[] { "정리할 건 이거밖에 없네." });
 
+
         // 110
         talkData.Add(11011, new string[] { "플레이어:여긴 뭐하는 곳이죠…?",
         "타 플레이어:그것도 모르고 게임을 샀어요? 제2의 인생을 사는 게임이잖아요." });
@@ -36,6 +40,7 @@ public class TalkData : MonoBehaviour
         "플레이어:... 네?", "타 플레이어:어? 아니구나. 죄송합니다, 친한 NPC랑 착각했어요!" });
         talkData.Add(11004, new string[] { "현실 날짜와 시간이 똑같다.", "실시간 동기화가 되어있나.." });
         talkData.Add(11005, new string[] { "꿈꾸는 인생을 이뤄봐요!" });
+
 
         // 120
         talkData.Add(12001, new string[] { "굉장히 친숙하게 생겼다. 우리 집 아파트와 거의 유사하다." });
@@ -61,7 +66,12 @@ public class TalkData : MonoBehaviour
 
         // 151
         talkData.Add(15111, new string[] { "YUNOH:여기가 내 방이야! 내가 직접 만든 퍼즐들이 있으니까 심심하진 않을거야.",
-        "YUNOH:퍼즐들을 풀어볼래? (선택지)" });
+        "YUNOH:퍼즐들을 풀어볼래? (선택지)"});
+
+        choiceData.Add(15111, new Choice[] {
+            new Choice("응", 15),
+            new Choice("아직", -1) });
+
         talkData.Add(15102, new string[] { "YUNOH:퍼즐은 풀고 가!"});
 
         // 152
@@ -134,6 +144,15 @@ public class TalkData : MonoBehaviour
         talkData.Add(51005, new string[] { "구급 상자가 두개나 있다. 하나는 상비약이 가지런히 정리되어있다.", "다른 하나는 먹다 만 약들이 가득하다. 동생이 먹었었던 약과 똑같다." }); //FirstAidKit
     }
 
+    public Choice[] GetChoices(int id)
+    {
+        if (choiceData.ContainsKey(id))
+        {
+            return choiceData[id];
+        }
+        return null;
+    }
+
     public string[] GetTalkData(int id)
     {
         if (talkData.ContainsKey(id))
@@ -141,5 +160,17 @@ public class TalkData : MonoBehaviour
             return talkData[id];
         }
         return null;
+    }
+}
+
+public class Choice
+{
+    public string Text { get; private set; }
+    public int SceneIndex { get; private set; }
+
+    public Choice(string text, int id)
+    {
+        Text = text;
+        SceneIndex = id;
     }
 }
