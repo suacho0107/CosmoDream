@@ -33,6 +33,7 @@ public class DataController : MonoBehaviour
     #endregion
 
     public string GameDataFileName = "save.json"; //변경 절대 xxxx
+    public string InitDataFileName = "Init.json";
 
     public GameData _gameData;
     public GameData gameData
@@ -48,9 +49,24 @@ public class DataController : MonoBehaviour
         }
     }
 
+    public void newGameData()
+    {
+        string filePath = "Assets/" + InitDataFileName;
+        if (File.Exists(filePath))
+        {
+            //초기화
+            string fromJsonData = File.ReadAllText(filePath);
+            _gameData = JsonUtility.FromJson<GameData>(fromJsonData);
+        }
+        else
+        {
+            _gameData = new GameData();
+        }
+    }
+
     public void LoadGameData()
     {
-        string filePath = Application.persistentDataPath + GameDataFileName;
+        string filePath = "Assets/" + GameDataFileName;
         if (File.Exists(filePath))
         {
             Debug.Log("불러오기 성공");
@@ -61,15 +77,32 @@ public class DataController : MonoBehaviour
         {
             Debug.Log("새로운 파일 생성");
             _gameData = new GameData();
+            SaveGameData();
         }
     }
 
     public void SaveGameData()
     {
         string ToJsonData = JsonUtility.ToJson(gameData);
-        string filePath = Application.persistentDataPath + GameDataFileName;
+        string filePath = "Assets/" + GameDataFileName;
         File.WriteAllText(filePath, ToJsonData);
         Debug.Log("저장 완료");
+    }
+
+    //jsonFile있는지 검사
+
+    public bool isSave()
+    {
+        string filePath = "Assets/" + GameDataFileName;
+
+        if (File.Exists(filePath))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     /*
