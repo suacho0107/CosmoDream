@@ -69,14 +69,6 @@ public class GameManager : MonoBehaviour
                 break;
 
             case ObjData.ObjectType.ImageDisplay:
-                if (objData.id == 0) // id가 0인 경우 대화창 없이 바로 이미지 띄움
-                {
-                    DisplayImage(scanObj);
-                    isTalk = true;
-                    Invoke("HideImageNoParam", 3f);
-                    return;
-                }
-                else
                 {
                     DisplayImage(scanObj);
                     talkManager.Talk(objData.id);
@@ -102,12 +94,6 @@ public class GameManager : MonoBehaviour
         ObjData objData = obj.GetComponent<ObjData>();
         objData.Display.SetActive(true);
     }
-
-    void HideImageNoParam()
-{
-    // scanObject를 사용해서 대상 오브젝트를 숨김
-    HideImage(scanObject);
-}
 
     void HideImage(GameObject obj)
     {

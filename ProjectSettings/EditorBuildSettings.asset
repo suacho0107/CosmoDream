@@ -52,7 +52,7 @@ EditorBuildSettings:
     guid: 17f92ab8cb4d40f4a9a095be54e00c04
   - enabled: 1
     path: Assets/00.Scenes/Stage1/1-6 Puzzle1.unity
-    guid: cc615d83b2feb471382f7c5f6395b61b
+    guid: 54af92649afee466a9b8a8e593419af4
   - enabled: 1
     path: Assets/00.Scenes/Stage1/1-6 Puzzle2.unity
     guid: b4ae536135e1044009cabf2d2d672bf6

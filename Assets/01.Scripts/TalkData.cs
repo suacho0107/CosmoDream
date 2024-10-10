@@ -63,6 +63,7 @@ public class TalkData : MonoBehaviour
         talkData.Add(14102, new string[] { "그 방이 아니야!"});
         talkData.Add(14103, new string[] { "어릴 때 우리 집에 있었던 쇼파랑 똑같이 생겼다."});
         talkData.Add(14304, new string[] { "도시 전체가 보인다. 메타버스 세계라 그런가, 확실히 비현실적이야."});
+        talkData.Add(14401, new string[] { "내 모습이다." });
 
         // 151
         talkData.Add(15111, new string[] { "YUNOH:여기가 내 방이야! 내가 직접 만든 퍼즐들이 있으니까 심심하진 않을거야.",

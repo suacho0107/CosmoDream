@@ -265,9 +265,12 @@ MonoBehaviour:
   textbox: {fileID: 854357141}
   EndCursor: {fileID: 532137119}
   ScriptText_dialogue: {fileID: 1020029631}
+  DialogueName: {fileID: 1017848709}
+  Name: 
   dialogue:
   - "\uBB50\uB4E0 \uC788\uB294 \uCC3D\uACE0\uB2E4. "
   dialogue_count: 0
+  WaitTime: 0
 --- !u!114 &98683065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,7 +397,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e51ae88bca1f4960b77bbd6e4661254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  talkManager: {fileID: 695012428}
   bubbleCanvas: {fileID: 2062527707}
   bubblePrefab: {fileID: 2513834186045841962, guid: 0cbef6f5cb43f466e98e3295c7f222f5, type: 3}
   bubbleIndex: 91000
@@ -411,10 +413,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a289e9e4750836438416fd99bc283dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portraitArr:
-  - {fileID: 21300000, guid: e53995475705e1f4297d12ff18ec0ca3, type: 3}
-  - {fileID: 21300000, guid: 9647480f3d3ec164e863f4b175beb913, type: 3}
-  - {fileID: 21300000, guid: 727a5eacd692eb149976a8aac02c7228, type: 3}
+  talkPanel: {fileID: 0}
+  UINameText: {fileID: 0}
+  UITalkText: {fileID: 0}
+  playerName: "\uD50C\uB808\uC774\uC5B4"
+  talkIndex: 0
 --- !u!1 &244404246
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,7 +543,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 432b553b363918048b7bffc340344ced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorManager: {fileID: 123946794}
 --- !u!114 &244404251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -557,7 +559,6 @@ MonoBehaviour:
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
-  canvas: {fileID: 0}
 --- !u!1 &379112488
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,7 +1019,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movePower: 6
   isMove: 0
-  manager: {fileID: 0}
 --- !u!212 &548351070
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1575,7 +1575,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 432b553b363918048b7bffc340344ced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorManager: {fileID: 123946794}
 --- !u!114 &657167327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1592,7 +1591,6 @@ MonoBehaviour:
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
-  canvas: {fileID: 0}
 --- !u!1 &695012427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,7 +1620,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a289e9e4750836438416fd99bc283dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portraitArr: []
+  talkPanel: {fileID: 0}
+  UINameText: {fileID: 0}
+  UITalkText: {fileID: 0}
+  playerName: "\uD50C\uB808\uC774\uC5B4"
+  talkIndex: 0
 --- !u!4 &695012429
 Transform:
   m_ObjectHideFlags: 0
@@ -1667,7 +1669,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b52fb56c60fed945a3f839c6e89a188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 1
   isFade: 0
 --- !u!4 &700330212
 Transform:
@@ -2005,6 +2006,7 @@ RectTransform:
   m_Children:
   - {fileID: 1020029630}
   - {fileID: 532137120}
+  - {fileID: 1017848708}
   m_Father: {fileID: 98683063}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2348,6 +2350,86 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985252842}
+  m_CullTransparentMesh: 1
+--- !u!1 &1017848707
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1017848708}
+  - component: {fileID: 1017848710}
+  - component: {fileID: 1017848709}
+  m_Layer: 5
+  m_Name: Name
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1017848708
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017848707}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 854357142}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 80, y: 53}
+  m_SizeDelta: {x: -160, y: 52.3144}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!114 &1017848709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017848707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.08627451, g: 0.03529412, b: 0.40784317, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: a61bdb99b33a78c4c8e7b02a43b9b130, type: 3}
+    m_FontSize: 35
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1017848710
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017848707}
   m_CullTransparentMesh: 1
 --- !u!1 &1020029629
 GameObject:
@@ -2936,7 +3018,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 432b553b363918048b7bffc340344ced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorManager: {fileID: 123946794}
 --- !u!114 &1465753850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2953,7 +3034,6 @@ MonoBehaviour:
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
-  canvas: {fileID: 0}
 --- !u!1 &1551772461
 GameObject:
   m_ObjectHideFlags: 0
@@ -3079,7 +3159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 432b553b363918048b7bffc340344ced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorManager: {fileID: 123946794}
 --- !u!114 &1551772466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3096,7 +3175,6 @@ MonoBehaviour:
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
-  canvas: {fileID: 0}
 --- !u!1 &1744292949
 GameObject:
   m_ObjectHideFlags: 0
@@ -3222,7 +3300,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 432b553b363918048b7bffc340344ced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorManager: {fileID: 123946794}
 --- !u!114 &1744292954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3239,7 +3316,6 @@ MonoBehaviour:
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
-  canvas: {fileID: 0}
 --- !u!1 &1842379307
 GameObject:
   m_ObjectHideFlags: 0
@@ -3563,16 +3639,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82befdfa03a4f41409cdeeef70f80b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  talkManager: {fileID: 695012428}
-  bubbleManager: {fileID: 148361949}
-  talkPanel: {fileID: 1150026179}
-  UINameText: {fileID: 1035417876}
-  UITalkText: {fileID: 985252844}
-  portraitImg: {fileID: 0}
   scanObject: {fileID: 0}
   isTalk: 0
-  playerName: player1
-  talkIndex: 0
+  hasScissors: 0
 --- !u!4 &2042916036
 Transform:
   m_ObjectHideFlags: 0
@@ -3735,7 +3804,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b52fb56c60fed945a3f839c6e89a188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 1
   isFade: 0
 --- !u!225 &2065000463
 CanvasGroup:
