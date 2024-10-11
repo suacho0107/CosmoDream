@@ -2,27 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
+
 [Serializable]
 public class GameData
 {
-    //저장할 내용들 구현
+    public string name;
 
-    //ex)
-    //오브젝트 활성화/비활성화는 int 1 / 0 으로
-    //플레이어 이름은 string
-    //진행도에 따라 달라지는 오브젝트나 정보들은 전부 이쪽에 플래그/데이터화 시켜주세욥
-    //천천히 이어집니다 . . .
+    public bool[] PuzzleProgress01 = new bool[4];
+    public bool[] PuzzleProgress02 = new bool[3]; 
+    public bool[] PuzzleProgress03 = new bool[3]; 
+    public bool[] PuzzleProgress04 = new bool[3]; 
+    public bool[] PuzzleProgress05 = new bool[3]; 
+    public bool[] PuzzleProgress06 = new bool[4]; 
+
+    //이 아래로 아이템 기록
+    public GameData()
+    {
+        // 모든 배열의 값이 false로 기본 초기화됨
+        InitializeProgress();
+    }
+
+    private void InitializeProgress()
+    {
+        name = "";
+        for (int i = 0; i < PuzzleProgress01.Length; i++) PuzzleProgress01[i] = false;
+        for (int i = 0; i < PuzzleProgress02.Length; i++) PuzzleProgress02[i] = false;
+        for (int i = 0; i < PuzzleProgress03.Length; i++) PuzzleProgress03[i] = false;
+        for (int i = 0; i < PuzzleProgress04.Length; i++) PuzzleProgress04[i] = false;
+        for (int i = 0; i < PuzzleProgress05.Length; i++) PuzzleProgress05[i] = false;
+        for (int i = 0; i < PuzzleProgress06.Length; i++) PuzzleProgress06[i] = false;
+    }
 }
-
-/*
- json{
-
-
-
-Chip01{0}
-
-
-]
- 
- 
- */
