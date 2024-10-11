@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
     public bool isTalk;
     public int chipsToGive = 1;
     public int gamechips = 0;
+    public bool hasScissors = false;
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         talkManager = FindObjectOfType<TalkManager>();
