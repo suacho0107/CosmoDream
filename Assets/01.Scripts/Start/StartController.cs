@@ -11,8 +11,8 @@ public class StartController : MonoBehaviour
 
     public CanvasGroup fade;
 
-    private DataController datacontroller = new DataController();
-    private FadeController fadecontroller = new FadeController();
+    private DataController datacontroller;
+    private FadeController fadecontroller;
 
     private void Start()
     {
@@ -65,6 +65,7 @@ public class StartController : MonoBehaviour
         yield return StartCoroutine(fadecontroller.FadeIn(fade));
         yield return new WaitForSeconds(1f);
         //이름입력창으로 이동
+
         Debug.Log("게임 시작됨");
     }
 
