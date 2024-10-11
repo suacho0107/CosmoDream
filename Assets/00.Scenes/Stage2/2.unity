@@ -450,7 +450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95373465de42240cc9b48904f201dd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneIndex: 10
+  SceneIndex: 9
   isEdge: 0
 --- !u!114 &200414838
 MonoBehaviour:
@@ -2976,7 +2976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95373465de42240cc9b48904f201dd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneIndex: 8
+  SceneIndex: 7
   isEdge: 0
 --- !u!61 &1630255741
 BoxCollider2D:
@@ -3051,7 +3051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95373465de42240cc9b48904f201dd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneIndex: 9
+  SceneIndex: 8
   isEdge: 0
 --- !u!114 &1664335994
 MonoBehaviour:
@@ -3489,6 +3489,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scanObject: {fileID: 0}
   isTalk: 0
+  chipsToGive: 1
+  gamechips: 0
   hasScissors: 0
 --- !u!114 &1700227884
 MonoBehaviour:

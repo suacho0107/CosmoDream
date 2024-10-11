@@ -8,8 +8,9 @@ public class JigsawManager : MonoBehaviour
     public bool isPuzzle1Complete = false;
     public bool isPuzzle2Complete = false;
     public bool isPuzzle3Complete = false;
+    public bool isPuzzle4Complete = false;
 
-    public bool AllJigsawClear()
+    public bool stage2AllClear()
     {
         return isPuzzle1Complete && isPuzzle2Complete && isPuzzle3Complete;
     }
@@ -27,9 +28,15 @@ public class JigsawManager : MonoBehaviour
             case 3:
                 isPuzzle3Complete = true;
                 break;
+            case 4:
+                {
+                    isPuzzle4Complete = true;
+                    SceneManager.LoadScene(5);
+                    break;
+                }
         }
 
-        if (AllJigsawClear())
+        if (stage2AllClear())
         {
             GoNextStage();
         }

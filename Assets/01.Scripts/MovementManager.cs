@@ -22,6 +22,7 @@ public class MovementManager : MonoBehaviour
 
     private FadeController fadeController;
     private PlayerController playerController;
+    YunohMove yunohMove;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -36,6 +37,7 @@ public class MovementManager : MonoBehaviour
 
         fadeController = FindObjectOfType<FadeController>();
         playerController = FindObjectOfType<PlayerController>();
+        yunohMove = FindObjectOfType<YunohMove>();
 
         // 씬 시작 시 페이드 기능을 사용할 경우
         if (useFadeOnStart)
@@ -183,6 +185,11 @@ public class MovementManager : MonoBehaviour
                 ActivateOnly(leftMap);
             }
         }
+        if (yunohMove != null)
+        {
+            yunohMove.PositionBehindPlayer(dir);
+        }
+
         yield return new WaitForSeconds(0.5f);
         yield return StartCoroutine(fadeController.FadeOut(fadePanel));
         playerController.SetMove(true);

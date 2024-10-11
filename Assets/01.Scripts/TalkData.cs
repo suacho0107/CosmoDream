@@ -60,14 +60,13 @@ public class TalkData : MonoBehaviour
         "YUNOH:빈 방이 없어… 미안해. \n새로운 공간을 다 지을 때까지 내 집에서 지내야겠다! 내 집 구경시켜줄게!"});
 
         // 141~143
-        talkData.Add(14102, new string[] { "그 방이 아니야!"});
+        talkData.Add(14102, new string[] { "YUNOH:그 방이 아니야!"});
         talkData.Add(14103, new string[] { "어릴 때 우리 집에 있었던 쇼파랑 똑같이 생겼다."});
         talkData.Add(14304, new string[] { "도시 전체가 보인다. 메타버스 세계라 그런가, 확실히 비현실적이야."});
         talkData.Add(14401, new string[] { "내 모습이다." });
 
         // 151
-        talkData.Add(15111, new string[] { "YUNOH:여기가 내 방이야! 내가 직접 만든 퍼즐들이 있으니까 심심하진 않을거야.",
-        "YUNOH:퍼즐들을 풀어볼래? (선택지)"});
+        talkData.Add(15111, new string[] { "YUNOH:퍼즐들을 풀어볼래? (선택지)"});
 
         choiceData.Add(15111, new Choice[] {
             new Choice("응", 15),
@@ -81,7 +80,7 @@ public class TalkData : MonoBehaviour
         talkData.Add(15202, new string[] { "YUNOH:그건 다른 NPC들이랑 찍은 스크린샷이야!" });
 
         // 153
-        talkData.Add(15301, new string[] { "YUNOH:이건 선 하나로 모든 점들을 빈틈없이 이어주면 돼. 쉽지?" });
+        talkData.Add(15301, new string[] { "장난감들이 들어 있다." });
 
         //이건 사진 퍼즐이야. 사진을 잘 이어지게 붙여주면 돼!
         //이건 선 하나로 모든 점들을 빈틈없이 이어주면 돼. 쉽지?
