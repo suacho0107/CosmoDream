@@ -1,21 +1,39 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; // UI 사용을 위한 네임스페이스 추가
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
 public class LineManager : MonoBehaviour
 {
-    public GameObject linePrefab; // LineRenderer prefab
+    public GameObject linePrefab; // LineRenderer 프리팹
     public Button resetButton; // 초기화 버튼
+   // public string sceneType; // 씬 구분을 위한 변수 ("Flower" 또는 "Building")
 
     private LineRenderer currentLineRenderer;
     private List<LineRenderer> lineRenderers = new List<LineRenderer>();
     private HashSet<(Vector3, Vector3)> connectedPairs = new HashSet<(Vector3, Vector3)>();
     private bool isDrawing = false;
     private GameObject lastConnectedObject = null;
-    private const int maxConnections = 7;
+    private int maxConnections;
 
     void Start()
     {
+        // 현재 씬의 이름에 따라 maxConnections 설정
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        if (sceneName == "GameController")
+        {
+            maxConnections = 7;
+        }
+        else if (sceneName == "Flower")
+        {
+            maxConnections = 12;
+        }
+        else if (sceneName == "Building")
+        {
+            maxConnections = 14;
+        }
+
         // 초기화 버튼 클릭 이벤트 설정
         resetButton.onClick.AddListener(ResetLines);
     }
@@ -50,30 +68,29 @@ public class LineManager : MonoBehaviour
             {
                 currentLineRenderer.SetPosition(1, endPos);
                 connectedPairs.Add((currentLineRenderer.GetPosition(0), endPos));
-                connectedPairs.Add((endPos, currentLineRenderer.GetPosition(0))); // Bidirectional connection
+                connectedPairs.Add((endPos, currentLineRenderer.GetPosition(0))); // 양방향 연결
 
                 if (lastConnectedObject != null && lastConnectedObject != connectedObject)
                 {
-                    //  lastConnectedObject.GetComponent<LinkedObject>().SetSelected(false);
+                    // lastConnectedObject.GetComponent<LinkedObject>().SetSelected(false); // 선택 해제
                 }
 
                 lastConnectedObject = connectedObject;
-                // lastConnectedObject.GetComponent<LinkedObject>().SetSelected(true);
+                // lastConnectedObject.GetComponent<LinkedObject>().SetSelected(true); // 선택 표시
 
-                Debug.Log(currentLineRenderer.GetPosition(0) + " is connected to " + endPos);
+                Debug.Log(currentLineRenderer.GetPosition(0) + "이(가) " + endPos + "에 연결되었습니다!");
 
-                // 게임 성공
+                // 게임 성공: 최대 연결 수에 도달했을 때
                 if (connectedPairs.Count / 2 == maxConnections)
                 {
-                    Debug.Log("Game Complete!");
+                    Debug.Log("게임 완료!");
                     SceneManager.LoadScene("Stage3");
-                    // 다음 맵으로 가는 코드 넣어야 함.
                 }
             }
             else
             {
-                Destroy(currentLineRenderer.gameObject); // 이미 연결되어있다면 지워짐
-                Debug.Log(currentLineRenderer.GetPosition(0) + " is already connected to " + endPos);
+                Destroy(currentLineRenderer.gameObject); // 이미 연결된 경우 삭제
+                Debug.Log(currentLineRenderer.GetPosition(0) + "이(가) " + endPos + "에 이미 연결되었습니다.");
             }
 
             currentLineRenderer = null;

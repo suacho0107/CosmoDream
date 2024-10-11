@@ -1140,7 +1140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95373465de42240cc9b48904f201dd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneIndex: 15
+  SceneIndex: 14
   isEdge: 0
 --- !u!1 &370722519
 GameObject:
@@ -4280,7 +4280,6 @@ GameObject:
   - component: {fileID: 1945496021}
   - component: {fileID: 1945496022}
   - component: {fileID: 1945496024}
-  - component: {fileID: 1945496023}
   m_Layer: 0
   m_Name: TalkManager
   m_TagString: Untagged
@@ -4320,18 +4319,6 @@ MonoBehaviour:
   UITalkText: {fileID: 658635705}
   playerName: "\uD50C\uB808\uC774\uC5B4"
   talkIndex: 0
---- !u!114 &1945496023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1945496020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 842ae6e3965fc414797daa529580ca4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1945496024
 MonoBehaviour:
   m_ObjectHideFlags: 0
