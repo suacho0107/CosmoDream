@@ -7,6 +7,7 @@ public class EffectManager : MonoBehaviour
     public GameObject perfectEffect;
     public GameObject greatEffect;
     public GameObject missEffect;
+    public GameObject JudgEffect;
 
     public Transform upperEffectTf;
     public Transform lowerEffectTf;

@@ -8,7 +8,7 @@ public class TimingManager : MonoBehaviour
     public List<GameObject> lowerLaneNotes = new List<GameObject>();
 
     // 0: Perfect, 1: Great, 2: Miss
-    [SerializeField] RectTransform[] timingRect = null;
+    [SerializeField] public RectTransform[] timingRect = null;
     Vector2[] timingBoxs = null;
 
     private EffectManager effectManager;
@@ -47,6 +47,7 @@ public class TimingManager : MonoBehaviour
                 if (timingBoxs[x].x <= t_notePosX && t_notePosX <= timingBoxs[x].y)
                 {
                     noteList[i].GetComponent<Note>().HideNote(); // 노트 숨김
+
                     noteList.RemoveAt(i); // 리스트에서 제거
                     effectManager.JudgementEffect(x, lane); // x에 해당하는 판정 출력 (0: Perfect, 1: Great, 2: Miss)
 
@@ -55,9 +56,6 @@ public class TimingManager : MonoBehaviour
                 }
             }
         }
-
-        // 해당 범위에 없는 경우 Miss 처리
-        //effectManager.JudgementEffect(timingBoxs.Length);
     }
 
     public void CheckMiss(string lane)

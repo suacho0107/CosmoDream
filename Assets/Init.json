@@ -1,0 +1,51 @@
+{
+  "name": "",
+  //씬, 번호
+  "lastMap": [ "맵이름", 0 ],
+  "mapProgress": [
+    {
+      "puzzle01": 0,
+      "puzzle02": 0,
+      "puzzle03": 0,
+      "puzzle04": 0
+    },
+    {
+      "puzzle01": 0,
+      "puzzle02": 0,
+      "puzzle03": 0,
+      "puzzle04": 0
+    },
+    {
+      "puzzle01": 0,
+      "puzzle02": 0,
+      "puzzle03": 0,
+      "puzzle04": 0
+    },
+    {
+      "puzzle01": 0,
+      "puzzle02": 0,
+      "puzzle03": 0,
+      "puzzle04": 0
+    },
+    {
+      "puzzle01": 0,
+      "puzzle02": 0,
+      "puzzle03": 0,
+      "puzzle04": 0
+    },
+    {
+      "puzzle01": 0,
+      "puzzle02": 0,
+      "puzzle03": 0,
+      "puzzle04": 0
+    }
+  ]
+
+  "Item"
+
+  //스테이지1 퍼즐 네개 (사진 선 리듬 조립)
+
+  //가위(파괴아이템, 스테이지2)
+  //사진퍼즐 세개
+
+}
