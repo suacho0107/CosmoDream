@@ -94,4 +94,5 @@ public class PlayerController : MonoBehaviour
     {
         isMove = canMove;
     }
+    
 }

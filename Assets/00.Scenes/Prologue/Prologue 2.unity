@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ea363ed3f098067459a9561f8da38114, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 896e8844933cfa945ab823eb90fbae9b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -736,7 +736,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &258172335
 Transform:
   m_ObjectHideFlags: 0
@@ -1702,7 +1702,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b52fb56c60fed945a3f839c6e89a188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 1
   isFade: 0
 --- !u!225 &673427831
 CanvasGroup:
@@ -1828,7 +1827,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b52fb56c60fed945a3f839c6e89a188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 1
   isFade: 0
 --- !u!4 &700330212
 Transform:
@@ -2880,7 +2878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 92003
   isNpc: 0
-  objectType: 0
+  objectType: 3
   Display: {fileID: 0}
 --- !u!114 &1726061008
 MonoBehaviour:
@@ -3296,6 +3294,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scanObject: {fileID: 0}
   isTalk: 0
+  chipsToGive: 1
+  gamechips: 0
 --- !u!114 &1969759205
 MonoBehaviour:
   m_ObjectHideFlags: 0

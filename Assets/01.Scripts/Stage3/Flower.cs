@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class building : MonoBehaviour
+public class Flower : MonoBehaviour
 {
     private LineManager lineManager;
     private bool isDrawing = false;

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PuzzleManager : MonoBehaviour
 {
@@ -24,5 +25,6 @@ public class PuzzleManager : MonoBehaviour
         }
 
         Debug.Log("게임 성공!"); // 모든 퍼즐 조각이 고정된 경우
+        SceneManager.LoadScene("Stage5");
     }
 }

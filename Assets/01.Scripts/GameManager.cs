@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
-    #endregion
+    
 
     public GameObject scanObject;
     
@@ -128,4 +128,5 @@ public class GameManager : MonoBehaviour
         ObjData objData = obj.GetComponent<ObjData>();
         objData.Display.SetActive(false);
     }
+    #endregion
 }
