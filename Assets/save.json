@@ -1,8 +1,35 @@
 {
-  "name": "",
-  //씬, 번호
-  "lastMap": [ 0, 0 ],
-  {},
-  {},
-  {}
+    "name": "",
+    "PuzzleProgress01": [
+        false,
+        false,
+        false,
+        false
+    ],
+    "PuzzleProgress02": [
+        false,
+        false,
+        false,
+        false
+    ],
+    "PuzzleProgress03": [
+        false,
+        false,
+        false
+    ],
+    "PuzzleProgress04": [
+        false,
+        false,
+        false
+    ],
+    "PuzzleProgress05": [
+        false,
+        false,
+        true
+    ],
+    "PuzzleProgress06": [
+        false,
+        false,
+        false
+    ]
 }

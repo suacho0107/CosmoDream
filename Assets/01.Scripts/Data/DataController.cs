@@ -51,17 +51,9 @@ public class DataController : MonoBehaviour
 
     public void newGameData()
     {
-        string filePath = "Assets/" + InitDataFileName;
-        if (File.Exists(filePath))
-        {
-            //초기화
-            string fromJsonData = File.ReadAllText(filePath);
-            _gameData = JsonUtility.FromJson<GameData>(fromJsonData);
-        }
-        else
-        {
-            _gameData = new GameData();
-        }
+        _gameData = new GameData();
+
+        SaveGameData();
     }
 
     public void LoadGameData()
@@ -75,7 +67,7 @@ public class DataController : MonoBehaviour
         }
         else
         {
-            Debug.Log("새로운 파일 생성");
+            // GameData 객체 초기화
             _gameData = new GameData();
             SaveGameData();
         }
@@ -83,7 +75,7 @@ public class DataController : MonoBehaviour
 
     public void SaveGameData()
     {
-        string ToJsonData = JsonUtility.ToJson(gameData);
+        string ToJsonData = JsonUtility.ToJson(gameData, true);
         string filePath = "Assets/" + GameDataFileName;
         File.WriteAllText(filePath, ToJsonData);
         Debug.Log("저장 완료");
