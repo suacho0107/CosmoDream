@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,10 +7,12 @@ public class TalkData : MonoBehaviour
 {
     // Dictionary<int, Sprite> portraitData;
     Dictionary<int, string[]> talkData;
+    Dictionary<int, Choice[]> choiceData;
 
     void Awake()
     {
         talkData = new Dictionary<int, string[]>();
+        choiceData = new Dictionary<int, Choice[]>();
         // portraitData = new Dictionary<int, Sprite>();
         GenerateData();
     }
@@ -28,14 +31,16 @@ public class TalkData : MonoBehaviour
         talkData.Add(92002, new string[] { "가족사진이다.", "나와 부모님, 동생이 있다." });
         talkData.Add(92003, new string[] { "정리할 건 이거밖에 없네." });
 
+
         // 110
         talkData.Add(11011, new string[] { "플레이어:여긴 뭐하는 곳이죠…?",
-        "그것도 모르고 게임을 샀어요? 제2의 인생을 사는 게임이잖아요." });
+        "타 플레이어:그것도 모르고 게임을 샀어요? 제2의 인생을 사는 게임이잖아요." });
         talkData.Add(11012, new string[] { "코스모역에 오신 것을 환영합니다!", "즐거운 메타버스 생활 되세요!" });
-        talkData.Add(11013, new string[] { "헉 지정 영역 밖으로 빠져나오다니! 여긴 웬일이야?",
-        "플레이어:...네?", "어? 아니구나. 죄송합니다, 친한 NPC랑 착각했어요!" });
+        talkData.Add(11013, new string[] { "타 플레이어:헉?! 지정 영역 밖으로 빠져나오다니! \n여긴 웬일이야?",
+        "플레이어:... 네?", "타 플레이어:어? 아니구나. 죄송합니다, 친한 NPC랑 착각했어요!" });
         talkData.Add(11004, new string[] { "현실 날짜와 시간이 똑같다.", "실시간 동기화가 되어있나.." });
         talkData.Add(11005, new string[] { "꿈꾸는 인생을 이뤄봐요!" });
+
 
         // 120
         talkData.Add(12001, new string[] { "굉장히 친숙하게 생겼다. 우리 집 아파트와 거의 유사하다." });
@@ -55,14 +60,19 @@ public class TalkData : MonoBehaviour
         "YUNOH:빈 방이 없어… 미안해. \n새로운 공간을 다 지을 때까지 내 집에서 지내야겠다! 내 집 구경시켜줄게!"});
 
         // 141~143
-        talkData.Add(14111, new string[] { "플레이어:(우리 집을 뒤집어 놓은 것 같이 생겼어.)"});
         talkData.Add(14102, new string[] { "그 방이 아니야!"});
         talkData.Add(14103, new string[] { "어릴 때 우리 집에 있었던 쇼파랑 똑같이 생겼다."});
         talkData.Add(14304, new string[] { "도시 전체가 보인다. 메타버스 세계라 그런가, 확실히 비현실적이야."});
+        talkData.Add(14401, new string[] { "내 모습이다." });
 
         // 151
         talkData.Add(15111, new string[] { "YUNOH:여기가 내 방이야! 내가 직접 만든 퍼즐들이 있으니까 심심하진 않을거야.",
-        "퍼즐들을 풀어볼래? (선택지)" });
+        "YUNOH:퍼즐들을 풀어볼래? (선택지)"});
+
+        choiceData.Add(15111, new Choice[] {
+            new Choice("응", 15),
+            new Choice("아직", -1) });
+
         talkData.Add(15102, new string[] { "YUNOH:퍼즐은 풀고 가!"});
 
         // 152
@@ -71,8 +81,15 @@ public class TalkData : MonoBehaviour
         talkData.Add(15202, new string[] { "YUNOH:그건 다른 NPC들이랑 찍은 스크린샷이야!" });
 
         // 153
-        talkData.Add(15301, new string[] { "이건 선 하나로 모든 점들을 빈틈없이 이어주면 돼. 쉽지?" });
+        talkData.Add(15301, new string[] { "YUNOH:이건 선 하나로 모든 점들을 빈틈없이 이어주면 돼. 쉽지?" });
 
+        //이건 사진 퍼즐이야. 사진을 잘 이어지게 붙여주면 돼!
+        //이건 선 하나로 모든 점들을 빈틈없이 이어주면 돼. 쉽지?
+        //리듬을 타봐. 난 음악이 좋아! 넌 어떤 음악을 좋아해?
+        //이건 부품을 잘 조립하면 돼. 조립했다가 분해가 자유로운 재밌는 장난감이야. 내가 만들었어!
+
+        // 클리어시
+        //talkData.Add(15301, new string[] { "YUNOH:이 집 곳곳에 퍼즐을 뒀어! 너의 집을 만들 동안 여기서 편히 지내길 바라." });
 
                
         //portraitData.Add(1000 + 0,);
@@ -82,13 +99,19 @@ public class TalkData : MonoBehaviour
 
         // 210~240
         talkData.Add(21001, new string[] { "화장대 위에 사진 퍼즐이 놓여있다." });
-        talkData.Add(22001, new string[] { "퍼즐을 찾았다." });
+        talkData.Add(22001, new string[] { "어릴 때 내가 부모님께 선물로 드린 오르골이 있다.",
+        "내가 유치원에서 조립시간에 만든 것이다.", "내 물건들이 왜 있는 거지?"});
         talkData.Add(23001, new string[] { "베개에 사진이 끼어있다." });
         talkData.Add(24001, new string[] { "가족앨범이다. 분명 우리 가족사진과 똑같지만….. 내가 빠져있다.",
         "맨 끝에 이건 뭐지?",
         "...",
         "가족앨범 사이에 끼워져 있는 가위를 얻었다." });
         talkData.Add(24002, new string[] { "퍼즐을 찾았다." });
+
+        // 클리어시
+        //talkData.Add(15301, new string[] { "퍼즐을 다 풀었다." });
+        // 다음 스테이지로 이동
+
 
         // 310
         talkData.Add(31001, new string[] { "TV 화면에 콘솔 게임이 떠있다.", "13년 전에 히트를 쳤던 게임이다. ", 
@@ -124,6 +147,15 @@ public class TalkData : MonoBehaviour
         talkData.Add(51005, new string[] { "구급 상자가 두개나 있다. 하나는 상비약이 가지런히 정리되어있다.", "다른 하나는 먹다 만 약들이 가득하다. 동생이 먹었었던 약과 똑같다." }); //FirstAidKit
     }
 
+    public Choice[] GetChoices(int id)
+    {
+        if (choiceData.ContainsKey(id))
+        {
+            return choiceData[id];
+        }
+        return null;
+    }
+
     public string[] GetTalkData(int id)
     {
         if (talkData.ContainsKey(id))
@@ -131,5 +163,17 @@ public class TalkData : MonoBehaviour
             return talkData[id];
         }
         return null;
+    }
+}
+
+public class Choice
+{
+    public string Text { get; private set; }
+    public int SceneIndex { get; private set; }
+
+    public Choice(string text, int id)
+    {
+        Text = text;
+        SceneIndex = id;
     }
 }

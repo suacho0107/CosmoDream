@@ -3,34 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TalkManager : MonoBehaviour
 {
-    // private static TalkManager instance;
-    // public static TalkManager Instance
-    // {
-    //     get
-    //     { return instance; }
-    // }
-
-    // #region Singleton
-    // private void Awake()
-    // {
-    //     if (instance != null)
-    //     {
-    //         Destroy(gameObject);
-    //         return;
-    //     }
-
-    //     instance = this;
-    //     transform.SetParent(null);
-    //     DontDestroyOnLoad(gameObject);
-
-    //     var canvas = talkPanel.transform.root.gameObject;
-    //     DontDestroyOnLoad(canvas); // 캔버스1도 같이 싱글톤화
-    // }
-    // #endregion
-    
     public GameObject talkPanel;
     public Text UINameText;
     public Text UITalkText;
@@ -41,9 +17,9 @@ public class TalkManager : MonoBehaviour
     ObjData objData;
     GameManager gameManager;
     PlayerController playerController;
-
     // public Sprite[] portraitArr;
     TalkData talkDataScript;
+    Dictionary<int, Choice[]> choiceData = new Dictionary<int, Choice[]>();
 
 
     void Start()
@@ -63,24 +39,30 @@ public class TalkManager : MonoBehaviour
 
         if (talkData == null)
         {
-            talkPanel.SetActive(false);
-            gameManager.isTalk = false;
-            playerController.SetMove(true);
-            talkIndex = 0;
+            EndTalk(id);
             return;
         }
 
-        // UI 업데이트
         UINameText.text = (speakerName == "플레이어") ? playerName : speakerName;
-        UITalkText.text = talkData;
-        
+
+        if (talkData.Contains("(선택지)"))
+        {
+            string talkData_trim = talkData.Replace("(선택지)", "").Trim();
+            UITalkText.text = talkData_trim;
+            ChoiceManager choiceManager = FindObjectOfType<ChoiceManager>();
+            choiceManager.ShowChoices();
+        }
+        else
+        {
+            UITalkText.text = talkData;
+            talkPanel.SetActive(true); // 대화 패널 표시
+            talkIndex++; // 다음 대사로 이동
+        }
+
         // portraitImg.sprite = talkManager.GetPortrait(id,int.Parse(talkData.Split(':')[1]));
         // portraitImg.color = isNpc ? new Color(1, 1, 1, 1) : new Color(1, 1, 1, 0);
-        
-        talkPanel.SetActive(true);
-        talkIndex++;
     }
-    
+
     public string GetTalk(int id, int talkIndex)
     {
         string[] talkArray = talkDataScript.GetTalkData(id);
@@ -125,6 +107,20 @@ public class TalkManager : MonoBehaviour
         {
             speakerName = "";
             return talkEntry;
+        }
+    }
+
+    public void EndTalk(int talkId)
+    {
+        talkPanel.SetActive(false);
+        gameManager.isTalk = false;
+        playerController.SetMove(true);
+        talkIndex = 0;
+
+        if (talkId == 24001) // 가족앨범 - 가위
+        {
+            gameManager.hasScissors = true;
+            Debug.Log("플레이어가 가위를 획득했습니다.");
         }
     }
 }
