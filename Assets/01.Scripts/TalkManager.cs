@@ -81,7 +81,7 @@ public class TalkManager : MonoBehaviour
         }
         else
         {
-            return talkEntry; // 이름 없는 대사 반환ㅇ
+            return talkEntry; // 이름 없는 대사 반환
         }
     }
 

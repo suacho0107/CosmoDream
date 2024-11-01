@@ -3,11 +3,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class LineManager : MonoBehaviour
+public class LineManagerT : MonoBehaviour
 {
     public GameObject linePrefab; // LineRenderer 프리팹
     public Button resetButton; // 초기화 버튼
-   // public string sceneType; // 씬 구분을 위한 변수 ("Flower" 또는 "Building")
+                               // public string sceneType; // 씬 구분을 위한 변수 ("Flower" 또는 "Building")
 
     private LineRenderer currentLineRenderer;
     private List<LineRenderer> lineRenderers = new List<LineRenderer>();
@@ -21,19 +21,10 @@ public class LineManager : MonoBehaviour
         // 현재 씬의 이름에 따라 maxConnections 설정
         string sceneName = SceneManager.GetActiveScene().name;
 
-        if (sceneName == "GameController")
+        if (sceneName == "1-6 Puzzle2")
         {
-            maxConnections = 7;
+            maxConnections = 6;
         }
-        else if (sceneName == "Flower")
-        {
-            maxConnections = 12;
-        }
-        else if (sceneName == "Building")
-        {
-            maxConnections = 14;
-        }
-       
         // 초기화 버튼 클릭 이벤트 설정
         resetButton.onClick.AddListener(ResetLines);
     }
@@ -84,7 +75,7 @@ public class LineManager : MonoBehaviour
                 if (connectedPairs.Count / 2 == maxConnections)
                 {
                     Debug.Log("게임 완료!");
-                    SceneManager.LoadScene("Stage3");
+                    SceneManager.LoadScene("Stage3"); //씬 변경
                 }
             }
             else
@@ -92,7 +83,7 @@ public class LineManager : MonoBehaviour
                 Destroy(currentLineRenderer.gameObject); // 이미 연결된 경우 삭제
                 Debug.Log(currentLineRenderer.GetPosition(0) + "이(가) " + endPos + "에 이미 연결되었습니다.");
             }
-            
+
 
             currentLineRenderer = null;
             isDrawing = false;
