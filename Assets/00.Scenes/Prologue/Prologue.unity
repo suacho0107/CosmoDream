@@ -781,6 +781,8 @@ MonoBehaviour:
   textbox: {fileID: 1318601093}
   EndCursor: {fileID: 1603162186}
   ScriptText_dialogue: {fileID: 797525771}
+  DialogueName: {fileID: 1184542208}
+  Name: 
   dialogue:
   - "\uB09C \uB0A8\uC740 \uC9D0\uC744 \uB9C8\uC800 \uC815\uB9AC\uD574\uC57C \uD55C\uB2E4."
   - "\uD0DC\uC5B4\uB098\uC11C \uCCAB \uC774\uC0AC. \uBD80\uBAA8\uB2D8\uC740 \uBA3C\uC800
@@ -3748,6 +3750,7 @@ MonoBehaviour:
   isTalk: 0
   chipsToGive: 1
   gamechips: 0
+  hasScissors: 0
 --- !u!4 &2042916036
 Transform:
   m_ObjectHideFlags: 0

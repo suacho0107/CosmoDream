@@ -9,7 +9,6 @@
     "PuzzleProgress02": [
         false,
         false,
-        false,
         false
     ],
     "PuzzleProgress03": [
@@ -25,9 +24,10 @@
     "PuzzleProgress05": [
         false,
         false,
-        true
+        false
     ],
     "PuzzleProgress06": [
+        false,
         false,
         false,
         false
