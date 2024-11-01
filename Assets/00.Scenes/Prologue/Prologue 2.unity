@@ -1104,7 +1104,6 @@ GameObject:
   - component: {fileID: 483125741}
   - component: {fileID: 483125745}
   - component: {fileID: 483125744}
-  - component: {fileID: 483125743}
   - component: {fileID: 483125742}
   m_Layer: 8
   m_Name: door
@@ -1192,20 +1191,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 432b553b363918048b7bffc340344ced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &483125743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 483125739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95373465de42240cc9b48904f201dd26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneIndex: 22
-  isEdge: 0
 --- !u!114 &483125744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1220,7 +1205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   isNpc: 0
-  objectType: 2
+  objectType: 0
   Display: {fileID: 0}
 --- !u!61 &483125745
 BoxCollider2D:
@@ -2873,6 +2858,7 @@ GameObject:
   - component: {fileID: 1726061009}
   - component: {fileID: 1726061008}
   - component: {fileID: 1726061007}
+  - component: {fileID: 1726061010}
   m_Layer: 8
   m_Name: toybox
   m_TagString: Untagged
@@ -2961,7 +2947,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 92003
   isNpc: 0
-  objectType: 0
+  objectType: 2
   Display: {fileID: 0}
 --- !u!114 &1726061008
 MonoBehaviour:
@@ -3001,6 +2987,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.2538805, y: 4.217166}
   m_EdgeRadius: 0
+--- !u!114 &1726061010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726061004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95373465de42240cc9b48904f201dd26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneIndex: 21
+  isEdge: 0
 --- !u!1 &1852684765
 GameObject:
   m_ObjectHideFlags: 0
@@ -3212,7 +3212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1916525617
 Transform:
   m_ObjectHideFlags: 0
@@ -3377,6 +3377,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scanObject: {fileID: 0}
   isTalk: 0
+  chipsToGive: 1
+  gamechips: 0
   hasScissors: 0
 --- !u!114 &1969759205
 MonoBehaviour:

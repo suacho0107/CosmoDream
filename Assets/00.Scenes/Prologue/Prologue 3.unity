@@ -1528,7 +1528,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b52fb56c60fed945a3f839c6e89a188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 1
   isFade: 0
 --- !u!225 &673427831
 CanvasGroup:
@@ -1754,7 +1753,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b52fb56c60fed945a3f839c6e89a188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeDuration: 1
   isFade: 0
 --- !u!4 &700330212
 Transform:
@@ -1983,7 +1981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95373465de42240cc9b48904f201dd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneIndex: 21
+  SceneIndex: 12
   isEdge: 0
 --- !u!1 &788074600
 GameObject:
@@ -2774,6 +2772,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scanObject: {fileID: 0}
   isTalk: 0
+  chipsToGive: 1
+  gamechips: 0
+  hasScissors: 0
 --- !u!114 &1871444120
 MonoBehaviour:
   m_ObjectHideFlags: 0

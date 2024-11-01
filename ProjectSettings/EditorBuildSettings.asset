@@ -42,7 +42,7 @@ EditorBuildSettings:
     path: Assets/00.Scenes/Stage3/stage3.unity
     guid: e9f4ca2a237680646b9417edf6b22760
   - enabled: 1
-    path: Assets/00.Scenes/Prologue/Prologue.unity
+    path: Assets/00.Scenes/Prologue/Prologue 1.unity
     guid: df392e810f803264d91964f3e7240a38
   - enabled: 1
     path: Assets/00.Scenes/Prologue/Prologue 2.unity
@@ -71,4 +71,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/00.Scenes/Stage5/stage5.unity
     guid: 1329de27c94612d4cb60dab6aa556b3f
+  - enabled: 1
+    path: Assets/00.Scenes/Prologue/Prologue 4.unity
+    guid: 6a69d495d34b9ea428f68bccdf5abcef
   m_configObjects: {}
