@@ -21,10 +21,15 @@ public class StartDialogue : MonoBehaviour
         // PlayerController ?????????? ????
         playerController = FindObjectOfType<PlayerController>();
 
+        if (GameManager.instance != null && GameManager.instance.startDialogHasRun)
+        {
+            SwitchPanel(false);
+            return;
+        }
+
         // ???????? ?????? ????????
-        ScriptText_dialogue.gameObject.SetActive(false);
-        textbox.gameObject.SetActive(false);
-        EndCursor.gameObject.SetActive(false);
+        GameManager.instance.startDialogHasRun = true;
+        SwitchPanel(false);
         DialogueName.text = Name;
 
         // 1?? ?? ???? ????
@@ -36,10 +41,7 @@ public class StartDialogue : MonoBehaviour
         yield return new WaitForSeconds(WaitTime); // n?? ????
 
         // ?? ???? ???? ?? ?????? ??????
-        textbox.gameObject.SetActive(true);
-        ScriptText_dialogue.gameObject.SetActive(true);
-
-        EndCursor.gameObject.SetActive(true);
+        SwitchPanel(true);
 
         // ?????? ???????? ???????? ???? ????????
         if (playerController != null)
@@ -74,9 +76,7 @@ public class StartDialogue : MonoBehaviour
         else
         {
             // If no more dialogues, deactivate the dialogue text
-            ScriptText_dialogue.gameObject.SetActive(false);
-            textbox.gameObject.SetActive(false);
-            EndCursor.gameObject.SetActive(false);
+            SwitchPanel(false);
 
             // ?????? ?????? ???????? ???? ???? ??????
             if (playerController != null)
@@ -84,5 +84,12 @@ public class StartDialogue : MonoBehaviour
                 playerController.SetMove(true);
             }
         }
+    }
+
+    public void SwitchPanel(bool tf) // true false
+    {
+        ScriptText_dialogue.gameObject.SetActive(tf);
+        textbox.gameObject.SetActive(tf);
+        EndCursor.gameObject.SetActive(tf);
     }
 }

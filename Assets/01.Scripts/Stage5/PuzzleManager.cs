@@ -6,9 +6,11 @@ public class PuzzleManager : MonoBehaviour
 {
     public List<Puzzle> puzzles; // ???? ???????? ??????
     public string sceneName;
+    PuzzleClear puzzleClear;
 
     void Start()
     {
+        puzzleClear = FindObjectOfType<PuzzleClear>();
         foreach (var puzzle in puzzles)
         {
             puzzle.SetPuzzleManager(this); // ?? ???? ?????? PuzzleManager?? ????
@@ -26,6 +28,10 @@ public class PuzzleManager : MonoBehaviour
         }
 
         Debug.Log("???? ????!"); // ???? ???? ?????? ?????? ????
-        SceneManager.LoadScene(sceneName);
+        if(sceneName == "0")
+        {
+            puzzleClear.CompletePuzzle();
+        }
+        else SceneManager.LoadScene(sceneName);
     }
 }

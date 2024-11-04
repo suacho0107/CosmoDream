@@ -10,7 +10,6 @@ public class PuzzlePiece : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginD
     public JigsawPuzzle puzzle;
     public GameObject PiecePos;
     public int piece_no;
-    public bool isPuzzleActive = false;
 
     private Image image;
 
@@ -36,25 +35,13 @@ public class PuzzlePiece : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginD
             piece_no = int.Parse(numberString);
         }
 
+        puzzle = FindObjectOfType<JigsawPuzzle>();
         image = GetComponent<Image>();
-    }
-
-    void Update()
-    {
-        // 스페이스 바를 누르면 퍼즐 풀기 시작
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            isPuzzleActive = true;
-            Debug.Log("Puzzle started! Arrange the pieces to complete.");
-        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (puzzle.IsPuzzleActive()) // 퍼즐이 활성화된 경우에만 드래그 가능
-        {
-            transform.SetAsLastSibling();
-        }
+        transform.SetAsLastSibling();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -64,12 +51,9 @@ public class PuzzlePiece : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginD
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        // 스냅 위치에 맞지 않으면 조각은 현재 위치에 그대로 남아 있음
-        CheckSnapPuzzle();
-
-        if (puzzle.IsClear())
+        if (CheckSnapPuzzle())
         {
-            Debug.Log("Clear");
+            puzzle.UpdatePuzzlePieceStatus(piece_no); // JigsawPuzzle에 조각 번호 전달
         }
     }
 
@@ -81,7 +65,7 @@ public class PuzzlePiece : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginD
             {
                 continue;
             }
-            else if (Vector2.Distance(puzzle.puzzlePosSet.transform.GetChild(i).position, transform.position) < snapOffset)
+            if (Vector2.Distance(puzzle.puzzlePosSet.transform.GetChild(i).position, transform.position) < snapOffset)
             {
                 transform.SetParent(puzzle.puzzlePosSet.transform.GetChild(i).transform);
                 transform.localPosition = Vector3.zero;

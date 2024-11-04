@@ -153,6 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82befdfa03a4f41409cdeeef70f80b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSecondLoad: 0
+  hasRun: 0
+  completedPuzzles: 0
   scanObject: {fileID: 0}
   isTalk: 0
   chipsToGive: 1
@@ -1172,7 +1175,6 @@ GameObject:
   - component: {fileID: 465758737}
   - component: {fileID: 465758736}
   - component: {fileID: 465758739}
-  - component: {fileID: 465758740}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1245,22 +1247,8 @@ MonoBehaviour:
   puzzlePosSet: {fileID: 1689750155}
   puzzlePieceSet: {fileID: 1833510534}
   puzzleNumber: 1
---- !u!114 &465758740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 465758735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16d31b5f86a3346a3aa7bd9b32c94a63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPuzzle1Complete: 0
-  isPuzzle2Complete: 0
-  isPuzzle3Complete: 0
-  isPuzzle4Complete: 0
+  startMessage: {fileID: 0}
+  clearMessage: {fileID: 0}
 --- !u!1 &500323498
 GameObject:
   m_ObjectHideFlags: 0
@@ -3809,6 +3797,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726342319}
   m_CullTransparentMesh: 1
+--- !u!1 &1747860181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1747860183}
+  - component: {fileID: 1747860182}
+  m_Layer: 0
+  m_Name: PuzzleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1747860182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747860181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b96cf289be6c74c6d92aa219bd2c714f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageNumber: 2
+  totalPuzzles: 3
+  nextSceneName: 2
+  originalSceneName: 2
+  Clear: 0
+--- !u!4 &1747860183
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747860181}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 945.869, y: 532.90826, z: -16.624607}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1748801461
 GameObject:
   m_ObjectHideFlags: 0

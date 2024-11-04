@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FadeController : MonoBehaviour
 {
+    public static FadeController instance;
+    
     private float fadeDuration = 0.5f;
 
     public bool isFade = false;

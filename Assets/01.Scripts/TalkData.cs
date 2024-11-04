@@ -73,6 +73,7 @@ public class TalkData : MonoBehaviour
             new Choice("아직", -1) });
 
         talkData.Add(15102, new string[] { "YUNOH:퍼즐은 풀고 가!"});
+        talkData.Add(15103, new string[] { "YUNOH:이 집 곳곳에 퍼즐을 뒀어! 너의 집을 만들 동안 여기서 편히 지내길 바라."});
 
         // 152
         talkData.Add(15201, new string[] { "플레이어:부모님이랑 너야?", "YUNOH:응!", "플레이어:너 혹시 형제는 없어?",
@@ -81,15 +82,6 @@ public class TalkData : MonoBehaviour
 
         // 153
         talkData.Add(15301, new string[] { "장난감들이 들어 있다." });
-
-        //이건 사진 퍼즐이야. 사진을 잘 이어지게 붙여주면 돼!
-        //이건 선 하나로 모든 점들을 빈틈없이 이어주면 돼. 쉽지?
-        //리듬을 타봐. 난 음악이 좋아! 넌 어떤 음악을 좋아해?
-        //이건 부품을 잘 조립하면 돼. 조립했다가 분해가 자유로운 재밌는 장난감이야. 내가 만들었어!
-
-        // 클리어시
-        //talkData.Add(15301, new string[] { "YUNOH:이 집 곳곳에 퍼즐을 뒀어! 너의 집을 만들 동안 여기서 편히 지내길 바라." });
-
                
         //portraitData.Add(1000 + 0,);
         //portraitData.Add(1000 + 1,);
@@ -97,6 +89,7 @@ public class TalkData : MonoBehaviour
         //portraitData.Add(1000 + 3,);
 
         // 210~240
+        talkData.Add(21000, new string[] { "이건 이미 푼 퍼즐이다." });
         talkData.Add(21001, new string[] { "화장대 위에 사진 퍼즐이 놓여있다." });
         talkData.Add(22001, new string[] { "어릴 때 내가 부모님께 선물로 드린 오르골이 있다.",
         "내가 유치원에서 조립시간에 만든 것이다.", "내 물건들이 왜 있는 거지?"});

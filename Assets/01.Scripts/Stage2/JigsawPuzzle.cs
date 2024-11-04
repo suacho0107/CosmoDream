@@ -5,75 +5,55 @@ using UnityEngine.SceneManagement;
 
 public class JigsawPuzzle : MonoBehaviour
 {
-    private JigsawManager jigsawManager;
+    PuzzleClear puzzleClear;
+
     public Transform puzzlePosSet;
     public Transform puzzlePieceSet;
-    public int puzzleNumber;
-    public bool isPuzzleActive = false;
+    public int puzzleNumber; // 현재 퍼즐이 몇번째 퍼즐인지
 
+    HashSet<int> completedPieces = new HashSet<int>(); // 맞춘 퍼즐 조각의 번호를 저장
+    
     public GameObject startMessage;
     public GameObject clearMessage;
 
     void Start()
     {
-        jigsawManager = FindObjectOfType<JigsawManager>();
+        puzzleClear = FindObjectOfType<PuzzleClear>();
         if (startMessage != null) startMessage.SetActive(true);
         if (clearMessage != null) clearMessage.SetActive(false);
+    }
+
+    public void UpdatePuzzlePieceStatus(int pieceNumber)
+    {
+        // 퍼즐 조각이 맞춰진 상태를 추가
+        if (!completedPieces.Contains(pieceNumber))
+        {
+            completedPieces.Add(pieceNumber); 
+        }
+
+        // 퍼즐 완료 여부를 확인
+        IsClear();
+    }
+
+    public bool IsClear()
+    {
+        if (completedPieces.Count == puzzlePosSet.childCount)
+        {
+            // 모든 퍼즐 조각이 맞춰졌다면 End UI 활성화
+            if (clearMessage != null) clearMessage.SetActive(true);
+            return true;
+        }
+        return false;
     }
 
     public void HideStartUI()
     {
         if (startMessage != null) startMessage.SetActive(false);
-    }
-    
-    public bool IsClear()
-    {
-        for (int i = 0; i < puzzlePosSet.transform.childCount; i++)
-        {
-            if (puzzlePosSet.transform.GetChild(i).childCount == 0)
-            {
-                return false;
-            }
-
-            if (puzzlePosSet.transform.GetChild(i).GetChild(0).GetComponent<PuzzlePiece>().piece_no != i+1)
-            {
-                return false;
-            }
-        }
-        jigsawManager.CompletePuzzle(puzzleNumber);
-        if (clearMessage != null) clearMessage.SetActive(true);
-        return true;
+        if (clearMessage != null) clearMessage.SetActive(false);
     }
 
-    void Update()
+    public void NextStageButton()
     {
-        // 스페이스 바로 퍼즐 풀기 시작
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartPuzzle();
-        }
-    }
-
-    public void StartPuzzle()
-    {
-        // 시작 메시지 숨기기
-        if (startMessage != null) startMessage.SetActive(false);
-        isPuzzleActive = true;
-    }
-
-    public bool IsPuzzleActive()
-    {
-        return isPuzzleActive;
-    }
-
-    public void GoToNextScene()
-    {
-        // 원하는 다음 씬 번호로 변경
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-
-    public void RetryGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        puzzleClear.CompletePuzzle();
     }
 }

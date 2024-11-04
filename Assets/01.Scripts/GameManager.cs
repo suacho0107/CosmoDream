@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager instance;
+    public static GameManager instance;
 
     #region Singleton
-    private void Awake()
+    void Awake()
     {
         if (instance != null)
         {
@@ -28,15 +28,36 @@ public class GameManager : MonoBehaviour
     TalkManager talkManager;
     BubbleManager bubbleManager;
     ObjData objData;
-    public bool isTalk;
+    public bool isTalk = false;
+
     public int chipsToGive = 1;
     public int gamechips = 0;
     public bool hasScissors = false;
+
+    public bool isSecondLoad = false;
+    string lastSceneName = "";
+    public bool startDialogHasRun = false; // 대화 실행 여부
+    public int completedPuzzles = 0;
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         talkManager = FindObjectOfType<TalkManager>();
         bubbleManager = FindObjectOfType<BubbleManager>();
+        isTalk = false;
+
+        if (scene.name == "1-5 room" && lastSceneName == "1-6 Puzzle4" // 예: 1-6이 퍼즐 씬이고 1-5가 돌아오는 씬
+        || scene.name == "2" && lastSceneName != "1-5 room" && lastSceneName != "2" )
+        {
+            startDialogHasRun = true;  // 퍼즐 씬에서 돌아왔을 때는 StartDialogue를 실행하지 않음
+            isSecondLoad = true;
+        }
+        else
+        {
+            startDialogHasRun = false;  // 새로운 스테이지에서는 StartDialogue를 다시 실행하도록 초기화
+        }
+        
+        // 현재 씬 이름을 lastSceneName에 저장
+        lastSceneName = scene.name;
     }
     
     public void Action(GameObject scanObj)
@@ -50,6 +71,7 @@ public class GameManager : MonoBehaviour
         {
             case ObjData.ObjectType.Talkable:
                 talkManager.Talk(objData.id);
+
                 if (scanObj.CompareTag("GameChip"))
                 {
                     gamechips += chipsToGive;  // 게임 칩 추가
@@ -77,6 +99,16 @@ public class GameManager : MonoBehaviour
                     sceneChanger.ChangeScene();
                 return;
                 }
+                else if (objData.id == 21001)
+                {
+                    talkManager.Talk(objData.id);
+                    SceneChange sceneChanger = scanObj.GetComponent<SceneChange>();
+                    if (!isTalk)
+                    {
+                        Destroy(scanObj);
+                        sceneChanger.ChangeScene();
+                    }
+                }
                 else
                 {
                     talkManager.Talk(objData.id);
@@ -84,9 +116,6 @@ public class GameManager : MonoBehaviour
                     if (!isTalk)
                         sceneChanger.ChangeScene();
                 }
-               
-                
-
                 break;
 
             case ObjData.ObjectType.ImageDisplay:
