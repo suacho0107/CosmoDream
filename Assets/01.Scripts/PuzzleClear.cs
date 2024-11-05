@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PuzzleClear : MonoBehaviour
 {
@@ -16,6 +15,8 @@ public class PuzzleClear : MonoBehaviour
     void Start()
     {
         objData = FindObjectOfType<ObjData>();
+        GameManager.instance.completedPuzzles = 0;
+        Clear = false;
     }
 
     void Update() // 디버깅용
@@ -24,6 +25,7 @@ public class PuzzleClear : MonoBehaviour
         {
             CompletePuzzle();
             GameManager.instance.isSecondLoad = true;
+            Clear=false;
         }
     }
 
@@ -36,11 +38,11 @@ public class PuzzleClear : MonoBehaviour
         if (GameManager.instance.completedPuzzles >= totalPuzzles)
         {
             OnStageComplete();
-            Debug.Log("모든 퍼즐이 완료되었습니다");
         }
         else
         {
-            SceneManager.LoadScene(nextSceneName); // 다음 퍼즐 씬으로 이동
+            FadeManager.instance.ChangeScene(nextSceneName); // 다음 퍼즐 씬으로 이동
+            GameManager.instance.isSecondLoad = true;
             Debug.Log($"현재 완료된 퍼즐 수: {GameManager.instance.completedPuzzles}/{totalPuzzles}");  // 퍼즐 개수 확인용 로그
         }
     }
@@ -48,15 +50,12 @@ public class PuzzleClear : MonoBehaviour
     // 스테이지가 완료되었을 때 호출
     public void OnStageComplete()
     {
-        Debug.Log("OnStageComplete 호출됨");
-        // 스테이지별 완료 처리 (필요하다면..)
-        if (stageNumber == 1 || stageNumber == 2)
-        {
-            GameManager.instance.isSecondLoad = true;
-            Debug.Log("isSecondLoad가 true로 설정되었습니다.");
-        }
+        Debug.Log("모든 퍼즐 완료, OnStageComplete 호출됨");
+        GameManager.instance.isSecondLoad = true; // 1-5로 돌아갈 때는 true 유지
+        GameManager.instance.completedPuzzles = 0; // 퍼즐 완료 상태 초기화
 
-        // 원래 씬으로 이동
-        SceneManager.LoadScene(originalSceneName);
+        FadeManager.instance.ChangeScene(originalSceneName);
+        // 스테이지별 완료 처리 (필요하다면..)
+        // if (stageNumber == 1 || stageNumber == 2)
     }
 }

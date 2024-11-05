@@ -29,6 +29,7 @@ public class JigsawPuzzle : MonoBehaviour
         if (!completedPieces.Contains(pieceNumber))
         {
             completedPieces.Add(pieceNumber); 
+            Debug.Log($"{pieceNumber}번 퍼즐 맞춤");
         }
 
         // 퍼즐 완료 여부를 확인
@@ -40,7 +41,11 @@ public class JigsawPuzzle : MonoBehaviour
         if (completedPieces.Count == puzzlePosSet.childCount)
         {
             // 모든 퍼즐 조각이 맞춰졌다면 End UI 활성화
-            if (clearMessage != null) clearMessage.SetActive(true);
+            if (clearMessage != null)
+            {
+                clearMessage.SetActive(true);
+                Debug.Log("클리어");
+            }
             return true;
         }
         return false;
@@ -55,5 +60,17 @@ public class JigsawPuzzle : MonoBehaviour
     public void NextStageButton()
     {
         puzzleClear.CompletePuzzle();
+    }
+
+    public void RetryGame()
+    {
+        completedPieces.Clear(); // 맞춘 퍼즐 상태 초기화
+
+        // 각 퍼즐 조각을 원래 위치로 리셋
+        foreach (Transform piece in puzzlePieceSet)
+        {
+            Scene currentScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(currentScene.buildIndex); // 현재 씬 다시 로드
+        }
     }
 }

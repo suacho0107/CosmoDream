@@ -13,6 +13,7 @@ TagManager:
   - scenechanger
   - GameChip
   - LineGame
+  - FadeCanvas
   layers:
   - Default
   - TransparentFX

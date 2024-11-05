@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StartDialogue : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class StartDialogue : MonoBehaviour
     public Text DialogueName;
     public string Name;
     public string[] dialogue = { };   // Array for dialogue strings
+    string sceneName;
 
     public int dialogue_count = 0;    // To track current dialogue index
     private PlayerController playerController;  // PlayerController reference
@@ -20,20 +22,19 @@ public class StartDialogue : MonoBehaviour
     {
         // PlayerController ?????????? ????
         playerController = FindObjectOfType<PlayerController>();
-
-        if (GameManager.instance != null && GameManager.instance.startDialogHasRun)
+        sceneName = SceneManager.GetActiveScene().name;
+        if (GameManager.instance != null && GameManager.instance.HasDialogueRun(sceneName))
         {
-            SwitchPanel(false);
+            Destroy(gameObject);
             return;
         }
 
-        // ???????? ?????? ????????
-        GameManager.instance.startDialogHasRun = true;
         SwitchPanel(false);
         DialogueName.text = Name;
 
         // 1?? ?? ???? ????
         StartCoroutine(ShowDialogueWithDelay());
+        GameManager.instance.SetDialogueRun(sceneName);
     }
 
     IEnumerator ShowDialogueWithDelay()

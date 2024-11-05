@@ -15,7 +15,7 @@ public class YunohMove : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         float distance = Vector3.Distance(transform.position, player.position);
         if (distance > followDistance)

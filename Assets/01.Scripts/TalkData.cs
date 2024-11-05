@@ -94,6 +94,7 @@ public class TalkData : MonoBehaviour
         talkData.Add(22001, new string[] { "어릴 때 내가 부모님께 선물로 드린 오르골이 있다.",
         "내가 유치원에서 조립시간에 만든 것이다.", "내 물건들이 왜 있는 거지?"});
         talkData.Add(23001, new string[] { "베개에 사진이 끼어있다." });
+        talkData.Add(24000, new string[] { "가족앨범이다."});
         talkData.Add(24001, new string[] { "가족앨범이다. 분명 우리 가족사진과 똑같지만….. 내가 빠져있다.",
         "맨 끝에 이건 뭐지?",
         "...",

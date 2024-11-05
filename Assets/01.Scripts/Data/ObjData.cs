@@ -5,18 +5,27 @@ using UnityEngine;
 public class ObjData : MonoBehaviour
 {
     public int id;
+    public int objIndex; // 고유인덱스
+
     public bool isNpc;
     public ObjectType objectType;
     public GameObject Display;
     
     public bool idChange = false; // 대사가 달라지는 오브젝트만 체크해주세요.
-    public int secondId = 0; // 바꿀 대사가 들어있는 아이디를 입력해주세요. (인스펙터 창에서)
+    public int secondId = 0; // 변경할 아이디를 입력해주세요. (인스펙터 창에서)
 
-    void Start() {
+    void Start()
+    {
+        if (GameManager.isInteracted != null &&
+            objIndex >= 0 &&
+            objIndex < GameManager.isInteracted.Length &&
+            GameManager.isInteracted[objIndex])
+        {
+            TryChangeId();
+        }
+        
         if (Display == null)
         return;
-        else
-        Display.SetActive(false);
     }
 
     public enum ObjectType
@@ -27,23 +36,17 @@ public class ObjData : MonoBehaviour
         ImageDisplay
     }
 
-    private void OnEnable()
-    {
-        TryChangeId();
-    }
-
     public void TryChangeId()
     {
-        if(idChange && GameManager.instance != null
-        && GameManager.instance.isSecondLoad )
+        if (idChange)
         {
             id = secondId;
-            Debug.Log($"{gameObject.name}의 ID가 {id}로 변경되었습니다.");
+            Debug.Log($"{gameObject.name} ID가 {id}로 변경"); // 변경 여부 디버깅
 
             if (id == 15103)
-            {
                 objectType = ObjectType.SceneChange;
-            }
+            if (id == 21000)
+                objectType = ObjectType.Talkable;
         }
     }
 }
