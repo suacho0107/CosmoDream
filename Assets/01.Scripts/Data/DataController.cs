@@ -78,7 +78,6 @@ public class DataController : MonoBehaviour
         string ToJsonData = JsonUtility.ToJson(gameData, true);
         string filePath = "Assets/" + GameDataFileName;
         File.WriteAllText(filePath, ToJsonData);
-        Debug.Log("저장 완료");
     }
 
     //jsonFile있는지 검사

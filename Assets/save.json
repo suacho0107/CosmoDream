@@ -1,5 +1,5 @@
 {
-    "name": "안녕핫에ㅛ반갑습니다저의이름은플레이어123567899-90-1823749 입니다",
+    "name": "DISSION",
     "PuzzleProgress01": [
         false,
         false,
@@ -24,9 +24,56 @@
     "PuzzleProgress05": [
         false,
         false,
-        false
+        true
     ],
     "PuzzleProgress06": [
+        false,
+        false,
+        false,
+        false
+    ],
+    "PuzzleItem01": [
+        false,
+        false,
+        false,
+        false
+    ],
+    "PuzzleItem02": [
+        false,
+        false,
+        false
+    ],
+    "PuzzleItem03": [
+        false,
+        false,
+        false
+    ],
+    "PuzzleItem04": [
+        false,
+        false,
+        false
+    ],
+    "PuzzleItem05": [
+        false,
+        false,
+        false
+    ],
+    "PuzzleItem06": [
+        false,
+        false,
+        false,
+        false
+    ],
+    "puzzle3_1": false,
+    "puzzle3_2": false,
+    "puzzle3_3": false,
+    "puzzle4_1": false,
+    "puzzle4_2": false,
+    "puzzle4_3": false,
+    "puzzle5_1": false,
+    "puzzle5_2": false,
+    "puzzle5_3": false,
+    "Item": [
         false,
         false,
         false,
