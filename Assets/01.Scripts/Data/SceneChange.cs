@@ -10,12 +10,17 @@ public class SceneChange : MonoBehaviour
 
     public void ChangeScene()
     {
-        SceneManager.LoadScene(SceneIndex);
+        FadeManager.instance.ChangeScene(SceneIndex);
+    }
+
+    public void ChangeScene(string sceneName)
+    {
+        FadeManager.instance.ChangeScene(sceneName);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(isEdge)
-        SceneManager.LoadScene(SceneIndex);
+        FadeManager.instance.ChangeScene(SceneIndex);
     }
 }

@@ -49,6 +49,7 @@ public class TalkManager : MonoBehaviour
         {
             string talkData_trim = talkData.Replace("(선택지)", "").Trim();
             UITalkText.text = talkData_trim;
+            talkPanel.SetActive(true);
             ChoiceManager choiceManager = FindObjectOfType<ChoiceManager>();
             choiceManager.ShowChoices();
         }

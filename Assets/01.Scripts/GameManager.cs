@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager instance;
+    public static GameManager instance;
 
     #region Singleton
-    private void Awake()
+    void Awake()
     {
         if (instance != null)
         {
@@ -20,6 +20,15 @@ public class GameManager : MonoBehaviour
         transform.SetParent(null);
         DontDestroyOnLoad(gameObject);
         SceneManager.sceneLoaded += OnSceneLoaded;
+
+        int maxIndex = 30;
+        isInteracted = new bool[maxIndex];
+
+        // 모든 값을 false로 초기화
+        for (int i = 0; i < isInteracted.Length; i++)
+        {
+            isInteracted[i] = false;
+        }
     }
     
 
@@ -28,15 +37,24 @@ public class GameManager : MonoBehaviour
     TalkManager talkManager;
     BubbleManager bubbleManager;
     ObjData objData;
-    public bool isTalk;
+    Dictionary<string, bool> dialogueExecuted = new Dictionary<string, bool>();
+
     public int chipsToGive = 1;
     public int gamechips = 0;
     public bool hasScissors = false;
+
+    public bool isTalk = false;
+    public bool isSecondLoad = false;
+    public int completedPuzzles = 0;
+
+    public static bool[] isInteracted;
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         talkManager = FindObjectOfType<TalkManager>();
         bubbleManager = FindObjectOfType<BubbleManager>();
+        
+        isTalk = false;
     }
     
     public void Action(GameObject scanObj)
@@ -50,6 +68,7 @@ public class GameManager : MonoBehaviour
         {
             case ObjData.ObjectType.Talkable:
                 talkManager.Talk(objData.id);
+
                 if (scanObj.CompareTag("GameChip"))
                 {
                     gamechips += chipsToGive;  // 게임 칩 추가
@@ -75,18 +94,20 @@ public class GameManager : MonoBehaviour
                 {
                     SceneChange sceneChanger = scanObj.GetComponent<SceneChange>();
                     sceneChanger.ChangeScene();
-                return;
+                    return;
                 }
                 else
                 {
                     talkManager.Talk(objData.id);
+
                     SceneChange sceneChanger = scanObj.GetComponent<SceneChange>();
                     if (!isTalk)
+                    {   
                         sceneChanger.ChangeScene();
+                        SetInteraction(objData.objIndex);
+                        Debug.Log($"오브젝트 {objData.objIndex} 상호작용 완료");
+                    }
                 }
-               
-                
-
                 break;
 
             case ObjData.ObjectType.ImageDisplay:
@@ -106,10 +127,9 @@ public class GameManager : MonoBehaviour
                 if (!isTalk)
                 {
                     HideImage(scanObj);
-                    if (objData.id == 24001)
-                    // 한번만 대화 가능하게 하고 싶을 때 여기에 '|| id코드' 적어주시면 됩니다,
-                    // 오브젝트 복붙해서 상호작용 불가능한 오브젝트 하나 남겨두면 돼요
-                        Destroy(scanObj);
+                    SetInteraction(objData.objIndex);
+                    objData.TryChangeId();
+                    Debug.Log($"오브젝트 {objData.objIndex} 상호작용 완료");
                 }
                 break;
 
@@ -130,5 +150,28 @@ public class GameManager : MonoBehaviour
         ObjData objData = obj.GetComponent<ObjData>();
         objData.Display.SetActive(false);
     }
+
+    public bool HasDialogueRun(string sceneName)
+    {
+        return dialogueExecuted.ContainsKey(sceneName) && dialogueExecuted[sceneName];
+    }
+
+    public void SetDialogueRun(string sceneName)
+    {
+        if (!dialogueExecuted.ContainsKey(sceneName))
+        {
+            dialogueExecuted[sceneName] = true;
+        }
+    }
+
+    public void SetInteraction(int index)
+    {
+        if (index >= 0 && index < isInteracted.Length)
+        {
+            isInteracted[index] = true;
+            Debug.Log($"SetInteraction 호출됨: 인덱스 {index} 상호작용 완료로 설정됨");
+        }
+    }
+
     #endregion
 }

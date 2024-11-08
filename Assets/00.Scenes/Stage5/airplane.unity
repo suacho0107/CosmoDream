@@ -325,6 +325,7 @@ MonoBehaviour:
   - {fileID: 272095938}
   - {fileID: 1680619076}
   - {fileID: 1052850072}
+  sceneName: 
 --- !u!4 &362526206
 Transform:
   m_ObjectHideFlags: 0

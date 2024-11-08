@@ -60,20 +60,20 @@ public class TalkData : MonoBehaviour
         "YUNOH:빈 방이 없어… 미안해. \n새로운 공간을 다 지을 때까지 내 집에서 지내야겠다! 내 집 구경시켜줄게!"});
 
         // 141~143
-        talkData.Add(14102, new string[] { "그 방이 아니야!"});
+        talkData.Add(14102, new string[] { "YUNOH:그 방이 아니야!"});
         talkData.Add(14103, new string[] { "어릴 때 우리 집에 있었던 쇼파랑 똑같이 생겼다."});
         talkData.Add(14304, new string[] { "도시 전체가 보인다. 메타버스 세계라 그런가, 확실히 비현실적이야."});
         talkData.Add(14401, new string[] { "내 모습이다." });
 
         // 151
-        talkData.Add(15111, new string[] { "YUNOH:여기가 내 방이야! 내가 직접 만든 퍼즐들이 있으니까 심심하진 않을거야.",
-        "YUNOH:퍼즐들을 풀어볼래? (선택지)"});
+        talkData.Add(15111, new string[] { "YUNOH:퍼즐들을 풀어볼래? (선택지)"});
 
         choiceData.Add(15111, new Choice[] {
             new Choice("응", 15),
             new Choice("아직", -1) });
 
         talkData.Add(15102, new string[] { "YUNOH:퍼즐은 풀고 가!"});
+        talkData.Add(15103, new string[] { "YUNOH:이 집 곳곳에 퍼즐을 뒀어! 너의 집을 만들 동안 여기서 편히 지내길 바라."});
 
         // 152
         talkData.Add(15201, new string[] { "플레이어:부모님이랑 너야?", "YUNOH:응!", "플레이어:너 혹시 형제는 없어?",
@@ -81,16 +81,7 @@ public class TalkData : MonoBehaviour
         talkData.Add(15202, new string[] { "YUNOH:그건 다른 NPC들이랑 찍은 스크린샷이야!" });
 
         // 153
-        talkData.Add(15301, new string[] { "YUNOH:이건 선 하나로 모든 점들을 빈틈없이 이어주면 돼. 쉽지?" });
-
-        //이건 사진 퍼즐이야. 사진을 잘 이어지게 붙여주면 돼!
-        //이건 선 하나로 모든 점들을 빈틈없이 이어주면 돼. 쉽지?
-        //리듬을 타봐. 난 음악이 좋아! 넌 어떤 음악을 좋아해?
-        //이건 부품을 잘 조립하면 돼. 조립했다가 분해가 자유로운 재밌는 장난감이야. 내가 만들었어!
-
-        // 클리어시
-        //talkData.Add(15301, new string[] { "YUNOH:이 집 곳곳에 퍼즐을 뒀어! 너의 집을 만들 동안 여기서 편히 지내길 바라." });
-
+        talkData.Add(15301, new string[] { "장난감들이 들어 있다." });
                
         //portraitData.Add(1000 + 0,);
         //portraitData.Add(1000 + 1,);
@@ -98,10 +89,12 @@ public class TalkData : MonoBehaviour
         //portraitData.Add(1000 + 3,);
 
         // 210~240
+        talkData.Add(21000, new string[] { "이건 이미 푼 퍼즐이다." });
         talkData.Add(21001, new string[] { "화장대 위에 사진 퍼즐이 놓여있다." });
         talkData.Add(22001, new string[] { "어릴 때 내가 부모님께 선물로 드린 오르골이 있다.",
         "내가 유치원에서 조립시간에 만든 것이다.", "내 물건들이 왜 있는 거지?"});
         talkData.Add(23001, new string[] { "베개에 사진이 끼어있다." });
+        talkData.Add(24000, new string[] { "가족앨범이다."});
         talkData.Add(24001, new string[] { "가족앨범이다. 분명 우리 가족사진과 똑같지만….. 내가 빠져있다.",
         "맨 끝에 이건 뭐지?",
         "...",
