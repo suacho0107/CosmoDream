@@ -1,35 +1,42 @@
 {
-    "name": "",
-    "PuzzleProgress01": [
-        false,
-        false,
-        false,
-        false
-    ],
-    "PuzzleProgress02": [
-        false,
-        false,
-        false
-    ],
-    "PuzzleProgress03": [
-        false,
-        false,
-        false
-    ],
-    "PuzzleProgress04": [
-        false,
-        false,
-        false
-    ],
-    "PuzzleProgress05": [
-        false,
-        false,
-        false
-    ],
-    "PuzzleProgress06": [
-        false,
-        false,
-        false,
-        false
-    ]
-}
+  "name": "",
+  "PuzzleProgress01": [
+    false,
+    false,
+    false,
+    false
+  ],
+  "PuzzleProgress02": [
+    false,
+    false,
+    false
+  ],
+  "PuzzleProgress03": [
+    false,
+    false,
+    false
+  ],
+  "PuzzleProgress04": [
+    false,
+    false,
+    false
+  ],
+  "PuzzleProgress05": [
+    false,
+    false,
+    false,
+    false
+  ],
+  "PuzzleProgress06": [
+    false,
+    false,
+    false,
+    false
+  ],
+  "lastScene": "stage5", // 플레이어가 저장된 마지막 씬 이름
+  "playerPosition": { // 플레이어의 마지막 위치
+    "x": 1.0,
+    "y": 2.0,
+    "z": 3.0
+  }
+  }

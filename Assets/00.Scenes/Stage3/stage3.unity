@@ -3146,7 +3146,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1289634891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3244,7 +3244,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1289634897
 RectTransform:
@@ -4470,8 +4470,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 0}
   cameraPosition: {x: 0, y: 0, z: 0}
-  center: {x: 0, y: 0}
-  mapSize: {x: 11.6, y: 5.3}
+  center: {x: 0, y: -0.19}
+  mapSize: {x: 11.32, y: 4.82}
   cameraMoveSpeed: 6
 --- !u!1 &2102290236
 GameObject:
