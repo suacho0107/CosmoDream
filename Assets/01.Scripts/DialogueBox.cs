@@ -11,7 +11,7 @@ public class DialogueBox : MonoBehaviour
     public Text DialogueName;
     public string Name;
     public string[] dialogue = { };   // Array for dialogue strings
-    public GameObject fam;            // 첫 번째 이미지
+   // public GameObject fam;            // 첫 번째 이미지
     public GameObject headset;        // 두 번째 이미지
 
     public int dialogue_count = 0;    // To track current dialogue index
@@ -28,8 +28,8 @@ public class DialogueBox : MonoBehaviour
         EndCursor.gameObject.SetActive(false);
         DialogueName.text = Name;
 
-        fam.SetActive(true);            // 초기 이미지 설정
-        headset.SetActive(false);
+        //fam.SetActive(true);            // 초기 이미지 설정
+        headset.SetActive(true);
 
         StartCoroutine(ShowDialogueWithDelay());
     }
@@ -69,12 +69,12 @@ public class DialogueBox : MonoBehaviour
         {
             ScriptText_dialogue.text = dialogue[dialogue_count];
 
-            // 특정 대화 인덱스에서 이미지 변경
-            if (dialogue_count == 4)  // 예시로 4번째 대화에서 이미지를 변경
-            {
-                fam.SetActive(false);
-                headset.SetActive(true);
-            }
+            //// 특정 대화 인덱스에서 이미지 변경
+            //if (dialogue_count == 4)  // 예시로 4번째 대화에서 이미지를 변경
+            //{
+            //    fam.SetActive(false);
+            //    headset.SetActive(true);
+            //}
 
         }
         else
