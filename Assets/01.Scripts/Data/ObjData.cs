@@ -8,6 +8,8 @@ public class ObjData : MonoBehaviour
     public bool isNpc;
     public ObjectType objectType;
     public GameObject Display;
+    public bool canPickupItem;
+    public string PickedItem = "None";
 
     void Start() {
         if (Display == null)
