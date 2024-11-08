@@ -494,6 +494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 15201
+  objIndex: 0
   isNpc: 0
   objectType: 3
   Display: {fileID: 976121857}
@@ -730,6 +731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 15111
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
@@ -860,6 +862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 15301
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
@@ -1407,6 +1410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 15202
+  objIndex: 0
   isNpc: 0
   objectType: 3
   Display: {fileID: 570601975}
@@ -1590,6 +1594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 15102
+  objIndex: 1
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
@@ -2267,7 +2272,7 @@ GameObject:
   - component: {fileID: 1255484520}
   m_Layer: 5
   m_Name: FadeCanvas
-  m_TagString: Untagged
+  m_TagString: FadeCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -486,6 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
@@ -779,6 +780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  objIndex: 0
   isNpc: 0
   objectType: 2
   Display: {fileID: 0}
@@ -1240,7 +1242,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeCanvasGroup: {fileID: 0}
   stageTextUI: {fileID: 0}
-  fadeDuration: 0.5
 --- !u!4 &885607989
 Transform:
   m_ObjectHideFlags: 0
@@ -1391,7 +1392,6 @@ MonoBehaviour:
   hasScissors: 0
   isTalk: 0
   isSecondLoad: 0
-  startDialogHasRun: 0
   completedPuzzles: 0
 --- !u!114 &1069367651
 MonoBehaviour:
@@ -1587,6 +1587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 13111
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
@@ -1633,7 +1634,7 @@ GameObject:
   - component: {fileID: 1188573600}
   m_Layer: 5
   m_Name: FadeCanvas
-  m_TagString: Untagged
+  m_TagString: FadeCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

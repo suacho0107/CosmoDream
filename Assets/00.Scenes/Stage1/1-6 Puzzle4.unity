@@ -328,7 +328,7 @@ MonoBehaviour:
   - {fileID: 1060947126}
   - {fileID: 1060947126}
   - {fileID: 1215823480}
-  sceneName: 0
+  playerTransform: {fileID: 0}
 --- !u!4 &213432057
 Transform:
   m_ObjectHideFlags: 0
@@ -2364,7 +2364,7 @@ GameObject:
   - component: {fileID: 1965944002}
   m_Layer: 5
   m_Name: FadeCanvas
-  m_TagString: Untagged
+  m_TagString: FadeCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
