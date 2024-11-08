@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca23454ebe7f8d34883277a98c086b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 31005
+  id: 31007
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
@@ -796,7 +796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca23454ebe7f8d34883277a98c086b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 31005
+  id: 31007
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
@@ -2185,6 +2185,7 @@ MonoBehaviour:
   isTalk: 0
   chipsToGive: 1
   gamechips: 0
+  hasScissors: 0
 --- !u!114 &742663767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2249,6 +2250,8 @@ MonoBehaviour:
   textbox: {fileID: 870203734}
   EndCursor: {fileID: 1309914449}
   ScriptText_dialogue: {fileID: 1348235824}
+  DialogueName: {fileID: 195717052}
+  Name: 
   dialogue:
   - "\uAC70\uC2E4\uB85C \uB098\uC654\uB2E4."
   - "\uC5EC\uAE30\uC5D0\uB3C4 \uD37C\uC990\uC774 \uC228\uACA8\uC838\uC788\uC744 \uAC83\uC774\uB2E4."
@@ -3143,7 +3146,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1289634891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3241,7 +3244,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1289634897
 RectTransform:
@@ -4467,8 +4470,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 0}
   cameraPosition: {x: 0, y: 0, z: 0}
-  center: {x: 0, y: 0}
-  mapSize: {x: 11.6, y: 5.3}
+  center: {x: 0, y: -0.19}
+  mapSize: {x: 11.32, y: 4.82}
   cameraMoveSpeed: 6
 --- !u!1 &2102290236
 GameObject:

@@ -265,6 +265,8 @@ MonoBehaviour:
   textbox: {fileID: 854357141}
   EndCursor: {fileID: 532137119}
   ScriptText_dialogue: {fileID: 1020029631}
+  DialogueName: {fileID: 1035417876}
+  Name: 
   dialogue:
   - "\uBB50\uB4E0 \uC788\uB294 \uCC3D\uACE0\uB2E4. "
   dialogue_count: 0
@@ -3485,6 +3487,7 @@ MonoBehaviour:
   isTalk: 0
   chipsToGive: 1
   gamechips: 0
+  hasScissors: 0
 --- !u!4 &2042916036
 Transform:
   m_ObjectHideFlags: 0
