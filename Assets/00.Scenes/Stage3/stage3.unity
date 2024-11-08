@@ -293,9 +293,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 31007
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
+  idChange: 0
+  secondId: 0
 --- !u!61 &45816099
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -463,9 +466,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 31002
+  objIndex: 0
   isNpc: 0
   objectType: 2
   Display: {fileID: 0}
+  idChange: 0
+  secondId: 0
 --- !u!61 &121041540
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -656,9 +662,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 31001
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
+  idChange: 0
+  secondId: 0
 --- !u!61 &125696922
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -797,9 +806,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 31007
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
+  idChange: 0
+  secondId: 0
 --- !u!61 &134093883
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1047,9 +1059,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 31001
+  objIndex: 0
   isNpc: 0
   objectType: 2
   Display: {fileID: 0}
+  idChange: 0
+  secondId: 0
 --- !u!61 &253894993
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1254,9 +1269,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 31009
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
+  idChange: 0
+  secondId: 0
 --- !u!61 &370722524
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1411,9 +1429,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 31003
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
+  idChange: 0
+  secondId: 0
 --- !u!61 &470184028
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1604,9 +1625,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 31008
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
+  idChange: 0
+  secondId: 0
 --- !u!61 &476042903
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2182,10 +2206,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanObject: {fileID: 0}
-  isTalk: 0
   chipsToGive: 1
   gamechips: 0
   hasScissors: 0
+  isTalk: 0
+  isSecondLoad: 0
+  completedPuzzles: 0
 --- !u!114 &742663767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2725,9 +2751,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 31007
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
+  idChange: 0
+  secondId: 0
 --- !u!61 &995751156
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2955,9 +2984,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 31006
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
+  idChange: 0
+  secondId: 0
 --- !u!61 &1277267905
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3096,9 +3128,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 31007
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
+  idChange: 0
+  secondId: 0
 --- !u!61 &1286688488
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3146,7 +3181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1289634891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3159,7 +3194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c91d20f154307b4d9a9921bec153921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeTarget: {fileID: 1289634893}
+  fadeCanvasGroup: {fileID: 0}
+  stageTextUI: {fileID: 0}
 --- !u!114 &1289634892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3582,9 +3618,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 31004
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
+  idChange: 0
+  secondId: 0
 --- !u!61 &1396790549
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3809,9 +3848,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 31007
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
+  idChange: 0
+  secondId: 0
 --- !u!61 &1516193204
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4014,9 +4056,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 31002
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
+  idChange: 0
+  secondId: 0
 --- !u!61 &1847668330
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4633,9 +4678,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 31005
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
+  idChange: 0
+  secondId: 0
 --- !u!61 &2119252960
 BoxCollider2D:
   m_ObjectHideFlags: 0

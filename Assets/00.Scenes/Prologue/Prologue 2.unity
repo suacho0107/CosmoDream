@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ea363ed3f098067459a9561f8da38114, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 896e8844933cfa945ab823eb90fbae9b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -680,9 +680,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 92002
+  objIndex: 0
   isNpc: 0
   objectType: 3
   Display: {fileID: 10654556}
+  idChange: 0
+  secondId: 0
 --- !u!61 &245841378
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -954,9 +957,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 92001
+  objIndex: 0
   isNpc: 0
   objectType: 3
   Display: {fileID: 1349970907}
+  idChange: 0
+  secondId: 0
 --- !u!61 &418542555
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1204,9 +1210,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
+  idChange: 0
+  secondId: 0
 --- !u!61 &483125745
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1676,7 +1685,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c91d20f154307b4d9a9921bec153921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeTarget: {fileID: 673427831}
+  fadeCanvasGroup: {fileID: 0}
+  stageTextUI: {fileID: 0}
 --- !u!114 &673427830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2946,9 +2956,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 92003
+  objIndex: 0
   isNpc: 0
   objectType: 2
   Display: {fileID: 0}
+  idChange: 0
+  secondId: 0
 --- !u!114 &1726061008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2999,7 +3012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95373465de42240cc9b48904f201dd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneIndex: 21
+  SceneIndex: 25
   isEdge: 0
 --- !u!1 &1852684765
 GameObject:
@@ -3376,10 +3389,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanObject: {fileID: 0}
-  isTalk: 0
   chipsToGive: 1
   gamechips: 0
   hasScissors: 0
+  isTalk: 0
+  isSecondLoad: 0
+  completedPuzzles: 0
 --- !u!114 &1969759205
 MonoBehaviour:
   m_ObjectHideFlags: 0

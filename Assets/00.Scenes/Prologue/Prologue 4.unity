@@ -631,17 +631,9 @@ MonoBehaviour:
   textbox: {fileID: 801550776}
   EndCursor: {fileID: 1792515065}
   ScriptText_dialogue: {fileID: 31204533}
-  DialogueName: {fileID: 1646550828}
-  Name: "\uCE5C\uCC99 1"
+  DialogueName: {fileID: 1384087616}
+  Name: 
   dialogue:
-  - "\uCE5C\uCC99\uC5B4\uB9781: \u3147\u3147\uC774\uB3C4 \uCC38 \uC548\uD0C0\uAE5D\uC9C0...
-    \uC5B4\uB9B0 \uC560\uC778\uB370 \uC544\uD30C\uC11C \uB5A0\uB098\uBC84\uB9AC\uB2E4\uB2C8\u2026."
-  - "\uCE5C\uCC99\uC5B4\uB9782: \uADF8\uB7EC\uAC8C \uB9D0\uC774\uC57C\u2026. \uC7AC\uB2A5
-    \uC788\uB294 \uC544\uC774\uC600\uB294\uB370\u2026."
-  - "\u201C\uADF8 \uB54C\uB294 \uC724\uC624\uB3C4 \uB098\uB3C4 \uC5B4\uB838\uC5C8\uC9C0.
-    \u201C"
-  - "\uB3D9\uC0DD\uC774 \uB5A0\uB098\uACE0 \uB09C \uB4A4\uB85C \uC774 \uBC29\uC740
-    \uC4F0\uC9C0 \uC54A\uAC8C \uB418\uC5C8\uB2E4."
   - "\u201C\uC774\uAC74\u2026 \uCC98\uC74C \uBCF4\uB294 \uAC83 \uAC19\uC740\uB370?\u201D"
   - "hdm \uAE30\uAE30\uAC00 \uCF1C\uC9C0\uACE0 vr UI\uAC00 \uB098\uD0C0\uB0AC\uB2E4.
     \uBC14\uB85C \uB208\uC55E\uC5D0 \uD06C\uAC8C \uB5A0\uC788\uB294 \uAC83\uC740
@@ -649,11 +641,10 @@ MonoBehaviour:
   - "\u201CCosmo Dream\u2026? \uC774\uAC8C \uB300\uCCB4\u2026. \uBB50\uC9C0?\u201D"
   - "\uBB34\uC758\uC2DD\uC801\uC73C\uB85C, \uD640\uB9B0 \uB4EF\uC774 \uAC8C\uC784\uC744
     \uCF1C\uBC84\uB838\uB2E4."
-  fam: {fileID: 1677861292}
   headset: {fileID: 187187474}
   dialogue_count: 0
   WaitTime: 0
-  NextSceneName: 
+  NextSceneName: 1-1 train
 --- !u!1 &1317401111
 GameObject:
   m_ObjectHideFlags: 0

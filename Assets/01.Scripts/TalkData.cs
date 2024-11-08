@@ -19,6 +19,7 @@ public class TalkData : MonoBehaviour
 
     void GenerateData()
     {
+        //Prologue
         // 910
         talkData.Add(91000, new string[] { "난 남은 짐을 마저 정리해야 한다. ", "태어나서 첫 이사. 부모님은 먼저 새로운 집으로 가셨다." });
         talkData.Add(91001, new string[] { "내 모습이다." });
@@ -28,7 +29,8 @@ public class TalkData : MonoBehaviour
 
         //920
         talkData.Add(92001, new string[] { "아주 어릴 때 찍은 동생과 나." });
-        talkData.Add(92002, new string[] { "가족사진이다.", "나와 부모님, 동생이 있다." });
+        talkData.Add(92002, new string[] { "가족사진이다.", "나와 부모님, 동생이 있다.","", "친척어른 1 : OO이도 참 안타깝지… 어린 애인데 아파서 떠나버리다니….", "친척어른 2 : 그러게 말이야…. 재능 있는 아이였는데…." +
+            "“그 때는 윤오도 나도 어렸었지. “","동생이 떠나고 난 뒤로 이 방은 쓰지 않게 되었다." });
         talkData.Add(92003, new string[] { "정리할 건 이거밖에 없네." });
 
 
