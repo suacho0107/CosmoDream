@@ -788,7 +788,7 @@ MonoBehaviour:
   - "\uD0DC\uC5B4\uB098\uC11C \uCCAB \uC774\uC0AC. \uBD80\uBAA8\uB2D8\uC740 \uBA3C\uC800
     \uC0C8\uB85C\uC6B4 \uC9D1\uC73C\uB85C \uAC00\uC168\uB2E4."
   dialogue_count: 0
-  WaitTime: 0
+  WaitTime: 2
 --- !u!1 &389020738
 GameObject:
   m_ObjectHideFlags: 0
@@ -3403,7 +3403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3421872f2b499a499149defad58dbce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 548351071}
   cameraPosition: {x: 0, y: 0, z: 0}
   center: {x: 0, y: 0}
   mapSize: {x: 14, y: 5.3}
