@@ -7,8 +7,12 @@ public class NoteManager : MonoBehaviour
 {
     public int bpm = 0;
     private double currentTime = 0d;
-    private bool isStart =true;
+    private double startDspTime = 0d;
+    public bool isStart = false;
     private float distanceToJudge;
+    bool isPlay = false;
+
+    public AudioSource audioSource;
 
     //노트 생성 위치
     [SerializeField] Transform tfNoteAppearUpper = null;
@@ -72,63 +76,73 @@ public class NoteManager : MonoBehaviour
     {
         if (isStart)
         {
-            currentTime += Time.deltaTime;
-        }
-
-        if (noteIndex < chartData.notes.Count)
-        {
-            // 노트가 판정 구역에 도착해야 하는 시간
-            float targetTime = chartData.notes[noteIndex].time;
-
-            // 거리를 noteSpeed로 이동하는데 걸리는 시간
-            float travelTime = distanceToJudge / noteSpeed;
-            Debug.Log(travelTime);
-
-            // 노트가 travelTime 만큼 일찍 생성되어야 판정 구역에 정확히 targetTime에 도착함
-            if (currentTime >= targetTime - travelTime)
+            if (!isPlay)
             {
-                // 노트가 생성될 라인 결정
-                Transform noteAppearPosition = chartData.notes[noteIndex].lane == "upper" ? tfNoteAppearUpper : tfNoteAppearLower;
-
-                // 노트 생성
-                if (chartData.notes[noteIndex].lane == "upper")
-                {
-                    GameObject t_note = Instantiate(goNoteUpper, noteAppearPosition.position, Quaternion.identity);
-                    t_note.transform.SetParent(this.transform);
-                    timingManager.upperLaneNotes.Add(t_note); //노트 리스트에 노트 추가
-                }
-                else
-                {
-                    GameObject t_note = Instantiate(goNoteLower, noteAppearPosition.position, Quaternion.identity);
-                    t_note.transform.SetParent(this.transform);
-                    timingManager.lowerLaneNotes.Add(t_note); //노트 리스트에 노트 추가
-                }
-
-                noteIndex++;
+                startDspTime = AudioSettings.dspTime + 0.05;  // 0.1초 지연 후 dspTime 기준 재생 시작
+                audioSource.PlayScheduled(startDspTime);      // AudioSource를 dspTime에 맞춰 재생 예약
+                isPlay = true;
             }
+            currentTime = AudioSettings.dspTime - startDspTime;
+
+            if (noteIndex < chartData.notes.Count)
+            {
+                // 노트가 판정 구역에 도착해야 하는 시간
+                float targetTime = chartData.notes[noteIndex].time;
+                // 거리를 noteSpeed로 이동하는데 걸리는 시간
+                float travelTime = distanceToJudge / noteSpeed;
+                Debug.Log(travelTime);
+
+                // 노트가 travelTime 만큼 일찍 생성되어야 판정 구역에 정확히 targetTime에 도착함
+                if (currentTime >= targetTime - travelTime)
+                {
+                    // 노트가 생성될 라인 결정
+                    Transform noteAppearPosition = chartData.notes[noteIndex].lane == "upper" ? tfNoteAppearUpper : tfNoteAppearLower;
+
+                    // 노트 생성
+                    if (chartData.notes[noteIndex].lane == "upper")
+                    {
+                        GameObject t_note = Instantiate(goNoteUpper, noteAppearPosition.position, Quaternion.identity);
+                        t_note.transform.SetParent(this.transform);
+                        timingManager.upperLaneNotes.Add(t_note); //노트 리스트에 노트 추가
+                    }
+                    else
+                    {
+                        GameObject t_note = Instantiate(goNoteLower, noteAppearPosition.position, Quaternion.identity);
+                        t_note.transform.SetParent(this.transform);
+                        timingManager.lowerLaneNotes.Add(t_note); //노트 리스트에 노트 추가
+                    }
+
+                    noteIndex++;
+                }
+            }
+            //if (noteIndex < chartData.notes.Count)
+            //{
+            //    float targetTime = chartData.notes[noteIndex].time;
+            //    float travelTime = distanceToJudge / noteSpeed;
+
+            //    if (currentTime >= targetTime - travelTime)
+            //    {
+            //        Transform noteAppearPosition = chartData.notes[noteIndex].lane == "upper" ? tfNoteAppearUpper : tfNoteAppearLower;
+
+            //        if (chartData.notes[noteIndex].lane == "upper")
+            //        {
+            //            GameObject t_note = Instantiate(goNoteUpper, noteAppearPosition.position, Quaternion.identity);
+            //            t_note.transform.SetParent(this.transform);
+            //            timingManager.upperLaneNotes.Add(t_note);
+            //        }
+            //        else
+            //        {
+            //            GameObject t_note = Instantiate(goNoteLower, noteAppearPosition.position, Quaternion.identity);
+            //            t_note.transform.SetParent(this.transform);
+            //            timingManager.lowerLaneNotes.Add(t_note);
+            //        }
+
+            //        noteIndex++;
+            //    }
+            //}
         }
-        //노트 출현 관련
-        //if(noteIndex < chartData.notes.Count && currentTime >= chartData.notes[noteIndex].time)
-        //{
-        //    //노트가 생성될 라인 결정
-        //    Transform noteAppearPosition = chartData.notes[noteIndex].lane == "upper" ? tfNoteAppearUpper : tfNoteAppearLower;
 
-        //    //노트 생성
-        //    if(chartData.notes[noteIndex].lane == "upper")
-        //    {
-        //        GameObject t_note = Instantiate(goNoteUpper, noteAppearPosition.position, Quaternion.identity);
-        //        t_note.transform.SetParent(this.transform);
-        //        timingManager.upperLaneNotes.Add(t_note); //노트 리스트에 노트 추가
-        //    }
-        //    else
-        //    {
-        //        GameObject t_note = Instantiate(goNoteLower, noteAppearPosition.position, Quaternion.identity);
-        //        t_note.transform.SetParent(this.transform);
-        //        timingManager.lowerLaneNotes.Add(t_note); //노트 리스트에 노트 추가
-        //    }
-
-        //    noteIndex++;
-        //}
+        
     }
 
     private void LoadChartFile(string path)

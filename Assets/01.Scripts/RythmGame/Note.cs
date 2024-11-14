@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Note : MonoBehaviour
 {
     //노트 속도
-    public float noteSpeed = 400f;
+    public float noteSpeed = 3000f;
 
     private Image noteImage;
     private Animator animator;
@@ -21,7 +21,8 @@ public class Note : MonoBehaviour
     void Update()
     {
         //노트 이동
-        transform.localPosition -= Vector3.right * noteSpeed * Time.deltaTime;
+        float adjustedSpeed = noteSpeed * Time.deltaTime;
+        transform.localPosition -= Vector3.right * adjustedSpeed;
     }
 
     public void HideNote()
