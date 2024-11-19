@@ -38,8 +38,12 @@ public class FadeManager : MonoBehaviour
         {
             StartCoroutine(FadeInAndOutText());
         }
-        StartCoroutine(FadeOut());
-        Debug.Log($"씬 시작할때 로드되는 페이드: {scene.name}");
+        else
+        {
+            // 텍스트가 없을 경우에만 페이드 아웃 실행
+            StartCoroutine(FadeOut());
+            Debug.Log($"씬 시작할때 로드되는 페이드: {scene.name}");
+        }
     }
 
     // 씬 이름으로 씬 전환
@@ -115,12 +119,15 @@ public class FadeManager : MonoBehaviour
             time += Time.deltaTime;
             color.a = Mathf.Clamp01(time / fadeDuration);
             stageTextUI.color = color;
+            fadeCanvasGroup.alpha = Mathf.Clamp01(time / fadeDuration);
             yield return null;
         }
         stageTextUI.color = new Color(color.r, color.g, color.b, 1f);
+        fadeCanvasGroup.alpha = 1f;
 
         // 텍스트 유지 시간
-        yield return new WaitForSeconds(fadeDuration);
+        yield return new WaitForSeconds(fadeDuration + 0.5f);
+        
 
         // 텍스트 페이드 아웃
         time = 0f;
@@ -130,9 +137,11 @@ public class FadeManager : MonoBehaviour
                 time += Time.deltaTime;
                 color.a = 1f - Mathf.Clamp01(time / fadeDuration);
                 stageTextUI.color = color;
+                fadeCanvasGroup.alpha = 1f - Mathf.Clamp01(time / fadeDuration);  // 배경도 동시에 페이드 아웃
                 yield return null;
             }
 
         stageTextUI.color = new Color(color.r, color.g, color.b, 0f);
+        fadeCanvasGroup.alpha = 0f;
     }
 }

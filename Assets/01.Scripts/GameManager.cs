@@ -66,9 +66,20 @@ public class GameManager : MonoBehaviour
 
         switch (objData.objectType)
         {
+            case ObjData.ObjectType.None:
+                break;
+            
             case ObjData.ObjectType.Talkable:
                 talkManager.Talk(objData.id);
-
+                if (objData.id == 13211)
+                {
+                    if(!isTalk)
+                    {
+                        ypMove YpMove = FindObjectOfType<ypMove>();
+                        YpMove.StartMovement();
+                        objData.TryChangeId();
+                    }
+                }
                 if (scanObj.CompareTag("GameChip"))
                 {
                     gamechips += chipsToGive;  // 게임 칩 추가
