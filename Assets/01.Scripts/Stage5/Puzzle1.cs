@@ -54,11 +54,9 @@ public class Puzzle1 : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
             Vector2 localPoint;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(boundaryObject, eventData.position, eventData.pressEventCamera, out localPoint);
 
-            // �̵� ������ ���� �������� �̵��ϵ��� �����մϴ�.
             float clampedX = Mathf.Clamp(localPoint.x, -boundarySize.x, boundarySize.x);
             float clampedY = Mathf.Clamp(localPoint.y, -boundarySize.y, boundarySize.y);
 
-            // ��ġ�� ������Ʈ�մϴ�.
             rectTransform.anchoredPosition = new Vector2(clampedX, clampedY);
         }
     }

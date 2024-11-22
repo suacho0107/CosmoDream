@@ -109,17 +109,23 @@ public class TalkData : MonoBehaviour
 
 
         // 310
-        talkData.Add(31001, new string[] { "TV 화면에 콘솔 게임이 떠있다.", "13년 전에 히트를 쳤던 게임이다. ", 
-            "게임 칩 하나를 얻었다. 한붓그리기 게임을 해보자" }); // TV 최초 상호작용
-        talkData.Add(31002, new string[] { "“게임 칩을 찾아보자.”" }); // TV 상호작용 (게임칩 x)
+        talkData.Add(31001, new string[] { "TV 화면에 콘솔 게임이 떠있다. ", "13년 전에 히트를 쳤던 게임인 것 같다. ", 
+            "게임 칩 하나를 얻었다. " }); // TV 최초 상호작용
+        talkData.Add(31002, new string[] { "“게임 칩을 더 찾아보자.”" }); // TV 상호작용 (게임칩 x)
         talkData.Add(31003, new string[] { "도시 전체가 보인다. \n메타버스 세계라 그런가, 확실히 비현실적이다. ", "창틀에 아슬아슬하게 놓여있는 게임칩을 찾았다.","왜 여기에 게임칩이 있지…?"});
         talkData.Add(31004, new string[] { "13년 전에 멈춰있다.","달력 사이에서 게임 칩을 찾았다.","왜 여기에 게임칩이 있지…?" });
         talkData.Add(31005, new string[] { "내 모습이다." }); // 거울
         talkData.Add(31006, new string[] { "소파 사이에 시험지와 화이트가 숨겨져 있다.","시험지에 점수를 조작한 흔적이 보인다.\n 동생은 항상 100점을 맞아왔지만, 나는 그러지 못했던 기억이 든다.","— 화이트를 획득했다 —" }); // 소파
         talkData.Add(31007, new string[] { "퍼즐부터 다 풀자" }); // 다른 방 문
-        talkData.Add(31008, new string[] { "13년 전에 멈춰있다.", "여기서 게임칩을 주웠다."});
-        talkData.Add(31009, new string[] { "도시 전체가 보인다. \n메타버스 세계라 그런가, 확실히 비현실적이다. ", "여기서 게임칩을 주웠다." });
-
+        talkData.Add(31008, new string[] { "13년 전에 멈춰있다."});
+        talkData.Add(31009, new string[] { "도시 전체가 보인다. \n메타버스 세계라 그런가, 확실히 비현실적이다. " });
+        talkData.Add(31011, new string[] { "“게임 칩 3개가 있으니 이제 콘솔 게임을 할 수 있다.”" });
+        talkData.Add(31012, new string[] { "여긴 창고 방이다." });
+        talkData.Add(31013, new string[] { "아 여긴 부모님 방이었지 ..." });
+        talkData.Add(31014, new string[] { "여긴 [YUNOH]의 방이네?" });
+        talkData.Add(31015, new string[] { "서재 방을 찾았다!" });
+        talkData.Add(31016, new string[] { "콘솔 게임은 다 풀었다.","서재 방을 찾아봐야 한다." });
+        talkData.Add(31017, new string[] { "서재 방을 찾아보자." });
 
         talkData.Add(40001, new string[] { "그 당시에 유행했던 LP판. \nLP판 3개를 찾아서 리듬게임을 해보자." }); //LP판
         talkData.Add(40002, new string[] { "13년 전에 개봉한 영화다. \n포스터 뒤에 LP판이 아슬아슬하게 숨겨져 있다.", "LP판을 얻었다." }); //포스터

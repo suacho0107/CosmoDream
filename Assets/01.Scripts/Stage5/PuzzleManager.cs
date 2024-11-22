@@ -29,14 +29,15 @@ public class PuzzleManager : MonoBehaviour
     void Start()
     {
         // 저장 경로 설정
-        saveFilePath = Application.persistentDataPath + "/save.json";
+        // saveFilePath = Application.persistentDataPath + "/save.json";
 
         // Stage5로 돌아올 때 저장된 위치 복원
+        /*
         if (SceneManager.GetActiveScene().name == "stage5")
         {
             LoadGameData();
         }
-
+        */
         foreach (var puzzle in puzzles)
         {
             puzzle.SetPuzzleManager(this); // 각 퍼즐 조각에 PuzzleManager를 설정
@@ -56,12 +57,12 @@ public class PuzzleManager : MonoBehaviour
         Debug.Log("게임 성공!"); // 모든 퍼즐 조각이 고정된 경우
 
         // Stage5로 돌아가기 전에 플레이어 위치 저장
-        SaveGameData();
+        //SaveGameData();
 
         // Stage5로 이동
         SceneManager.LoadScene("stage5");
     }
-
+    /*
     private void SaveGameData()
     {
         GameSaveData data = new GameSaveData
@@ -108,4 +109,5 @@ public class PuzzleManager : MonoBehaviour
             Debug.Log("저장된 게임 상태가 없습니다.");
         }
     }
+    */
 }

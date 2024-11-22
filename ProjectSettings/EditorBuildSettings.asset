@@ -36,9 +36,6 @@ EditorBuildSettings:
     path: Assets/00.Scenes/Stage2/2-5 puzzle3.unity
     guid: 7884e7bc63b93498c82653e0135d53ef
   - enabled: 1
-    path: Assets/00.Scenes/Stage3/stage3.unity
-    guid: e9f4ca2a237680646b9417edf6b22760
-  - enabled: 1
     path: Assets/00.Scenes/Prologue/Prologue 1.unity
     guid: df392e810f803264d91964f3e7240a38
   - enabled: 1
@@ -48,6 +45,9 @@ EditorBuildSettings:
     path: Assets/00.Scenes/Prologue/Prologue 3.unity
     guid: 17f92ab8cb4d40f4a9a095be54e00c04
   - enabled: 1
+    path: Assets/00.Scenes/Stage3/stage3.unity
+    guid: e9f4ca2a237680646b9417edf6b22760
+  - enabled: 1
     path: Assets/00.Scenes/Stage3/GameController.unity
     guid: 043384fe726fc0a40bcb41660250713e
   - enabled: 1
@@ -56,6 +56,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/00.Scenes/Stage3/Building.unity
     guid: 3cf4f936b308f23409e139e201754c12
+  - enabled: 1
+    path: Assets/00.Scenes/Stage3/stage3 2.unity
+    guid: c1facb38f5e41ae46a96f08798c7e28a
   - enabled: 1
     path: Assets/00.Scenes/Stage5/airplane.unity
     guid: d6d0b102da507a143a542a25938cbf18

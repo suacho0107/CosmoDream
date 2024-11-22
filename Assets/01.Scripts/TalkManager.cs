@@ -123,5 +123,12 @@ public class TalkManager : MonoBehaviour
             gameManager.hasScissors = true;
             Debug.Log("플레이어가 가위를 획득했습니다.");
         }
+
+        if (talkId == 31006) // 가족앨범 - 가위
+        {
+            gameManager.hasWhite = true;
+            Debug.Log("플레이어가 화이트를 획득했습니다.");
+        }
+
     }
 }

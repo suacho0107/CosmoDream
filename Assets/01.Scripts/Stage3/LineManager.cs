@@ -7,14 +7,19 @@ public class LineManager : MonoBehaviour
 {
     public GameObject linePrefab; // LineRenderer 프리팹
     public Button resetButton; // 초기화 버튼
-   // public string sceneType; // 씬 구분을 위한 변수 ("Flower" 또는 "Building")
+    public GameObject completionCanvas; // 게임 완료 캔버스
+   // public Text completionMessage; // 완료 메시지
+    public Button nextSceneButton; // 다음 씬으로 가는 버튼
 
     private LineRenderer currentLineRenderer;
     private List<LineRenderer> lineRenderers = new List<LineRenderer>();
     private HashSet<(Vector3, Vector3)> connectedPairs = new HashSet<(Vector3, Vector3)>();
     private bool isDrawing = false;
     private GameObject lastConnectedObject = null;
-    private int maxConnections;
+    private int GmaxConnections;
+    private int FmaxConnections;
+    private int BmaxConnections;
+    private string nextSceneName; // 전환할 씬 이름
 
     void Start()
     {
@@ -23,19 +28,30 @@ public class LineManager : MonoBehaviour
 
         if (sceneName == "GameController")
         {
-            maxConnections = 7;
+            GmaxConnections = 7;
         }
         else if (sceneName == "Flower")
         {
-            maxConnections = 12;
+            FmaxConnections = 12;
         }
         else if (sceneName == "Building")
         {
-            maxConnections = 14;
+            BmaxConnections = 14;
         }
-       
+
         // 초기화 버튼 클릭 이벤트 설정
         resetButton.onClick.AddListener(ResetLines);
+
+        // 캔버스와 버튼 초기 설정
+        if (completionCanvas != null)
+        {
+            completionCanvas.SetActive(false); // 기본적으로 캔버스 비활성화
+        }
+
+        if (nextSceneButton != null)
+        {
+            nextSceneButton.onClick.AddListener(LoadNextScene);
+        }
     }
 
     void Update()
@@ -81,10 +97,17 @@ public class LineManager : MonoBehaviour
                 Debug.Log(currentLineRenderer.GetPosition(0) + "이(가) " + endPos + "에 연결되었습니다!");
 
                 // 게임 성공: 최대 연결 수에 도달했을 때
-                if (connectedPairs.Count / 2 == maxConnections)
+                if (connectedPairs.Count / 2 == GmaxConnections)
                 {
-                    Debug.Log("게임 완료!");
-                    SceneManager.LoadScene("Stage3");
+                    ShowCompletionUI("Flower");
+                }
+                else if (connectedPairs.Count / 2 == FmaxConnections)
+                {
+                    ShowCompletionUI("Building");
+                }
+                else if (connectedPairs.Count / 2 == BmaxConnections)
+                {
+                    ShowCompletionUI("Stage5 2");
                 }
             }
             else
@@ -92,7 +115,6 @@ public class LineManager : MonoBehaviour
                 Destroy(currentLineRenderer.gameObject); // 이미 연결된 경우 삭제
                 Debug.Log(currentLineRenderer.GetPosition(0) + "이(가) " + endPos + "에 이미 연결되었습니다.");
             }
-            
 
             currentLineRenderer = null;
             isDrawing = false;
@@ -125,5 +147,24 @@ public class LineManager : MonoBehaviour
         isDrawing = false;
 
         Debug.Log("라인 초기화 완료.");
+    }
+
+    private void ShowCompletionUI(string sceneName)
+    {
+        nextSceneName = sceneName;
+
+        if (completionCanvas != null)
+        {
+            completionCanvas.SetActive(true); // 캔버스 활성화
+           // completionMessage.text = $"{sceneName} 씬으로 이동합니다. 버튼을 클릭하세요.";
+        }
+    }
+
+    private void LoadNextScene()
+    {
+        if (!string.IsNullOrEmpty(nextSceneName))
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
     }
 }
