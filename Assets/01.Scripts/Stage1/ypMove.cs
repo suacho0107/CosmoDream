@@ -7,10 +7,9 @@ public class ypMove : MonoBehaviour
     public GameObject player;  // 플레이어 오브젝트
     public GameObject yunoh;   // 유노 오브젝트
 
-    Vector3 yunohTargetPosition = new Vector3(27.48f, -1.592959f, 0f);  // 유노의 목표 위치
-    Vector3 playerTargetPosition = new Vector3(20.09f, -1.592959f, 0f);
+    public Vector3 yunohTargetPosition = new Vector3(27.48f, -1.592959f, 0f);  // 유노의 목표 위치
+    public Vector3 playerTargetPosition = new Vector3(20.09f, -1.592959f, 0f);
     
-    public float playerFollowDelay = 0.5f; // 플레이어가 뒤따를 간격
     public float stopDistance = 0.5f; // 유노가 정지할 거리
 
     private Animator yunohAnimator;
@@ -65,8 +64,7 @@ public class ypMove : MonoBehaviour
         {
             playerController.SetMove(false);
         }
-
-        playerAnimator.SetBool("isWalking", true);
+        playerAnimator.SetBool("isWalking", true); // 걷는 애니메이션 활성화
         
         while (Vector3.Distance(player.transform.position, playerTargetPosition) > stopDistance)
         {
@@ -75,10 +73,14 @@ public class ypMove : MonoBehaviour
                 playerTargetPosition,
                 5.0f * Time.deltaTime
             );
+
+            if (!playerAnimator.GetBool("isWalking")) 
+            {
+                playerAnimator.SetBool("isWalking", true); // 매 프레임 애니메이션 활성화 확인
+            }
             yield return null;
         }
-        
-        playerAnimator.SetBool("isWalking", false);
+
         playerController.SetMove(true);
     }
 }

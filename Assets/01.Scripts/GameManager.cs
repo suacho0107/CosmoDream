@@ -71,10 +71,12 @@ public class GameManager : MonoBehaviour
             
             case ObjData.ObjectType.Talkable:
                 talkManager.Talk(objData.id);
-                if (objData.id == 13211)
+                if (objData.id == 13111 || objData.id == 13211)
                 {
                     if(!isTalk)
                     {
+                        PlayerController playerController = FindObjectOfType<PlayerController>();
+                        playerController.SetMove(false);
                         ypMove YpMove = FindObjectOfType<ypMove>();
                         YpMove.StartMovement();
                         objData.TryChangeId();

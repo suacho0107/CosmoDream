@@ -9,7 +9,7 @@ public class FadeManager : MonoBehaviour
     public static FadeManager instance;
     public CanvasGroup fadeCanvasGroup;
     public Text stageTextUI;
-    float fadeDuration = 1f;
+    float fadeDuration = 0.6f;
 
     void Awake()
     {
