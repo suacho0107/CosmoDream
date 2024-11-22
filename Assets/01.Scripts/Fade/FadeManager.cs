@@ -10,6 +10,7 @@ public class FadeManager : MonoBehaviour
     public CanvasGroup fadeCanvasGroup;
     public Text stageTextUI;
     float fadeDuration = 0.6f;
+    PlayerController playerController;
 
     void Awake()
     {
@@ -27,6 +28,7 @@ public class FadeManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        playerController = FindObjectOfType<PlayerController>();
         fadeCanvasGroup = GameObject.FindGameObjectWithTag("FadeCanvas")
         ?.GetComponent<CanvasGroup>();
 
@@ -46,6 +48,13 @@ public class FadeManager : MonoBehaviour
         }
     }
 
+    private void SetPlayerControl(bool enabled)
+    {
+        if (playerController != null)
+        {
+            playerController.SetMove(enabled);
+        }
+    }
     // 씬 이름으로 씬 전환
     public void ChangeScene(string sceneName)
     {
@@ -74,6 +83,7 @@ public class FadeManager : MonoBehaviour
 
     private IEnumerator FadeIn()
     {
+        SetPlayerControl(false);
         float time = 0f;
         fadeCanvasGroup.alpha = 0f;
         while (time < fadeDuration)
@@ -87,6 +97,11 @@ public class FadeManager : MonoBehaviour
 
     private IEnumerator FadeOut()
     {
+        SetPlayerControl(false);
+        if (playerController != null)
+        {
+            playerController.SetMove(false); // 입력 차단
+        }
         float time = 0f;
         fadeCanvasGroup.alpha = 1f;
         while (time < fadeDuration)
@@ -96,10 +111,16 @@ public class FadeManager : MonoBehaviour
             yield return null;
         }
         fadeCanvasGroup.alpha = 0f;
+
+        if (!GameManager.instance.isTalk)
+            SetPlayerControl(true);
+        else
+            SetPlayerControl(false);
     }
 
     private IEnumerator FadeInAndOutText()
     {
+        SetPlayerControl(false);
         Debug.Log("스테이지 텍스트가 있을 때의 페이드");
 
         if (stageTextUI == null)
@@ -143,5 +164,10 @@ public class FadeManager : MonoBehaviour
 
         stageTextUI.color = new Color(color.r, color.g, color.b, 0f);
         fadeCanvasGroup.alpha = 0f;
+        
+        if (!GameManager.instance.isTalk)
+            SetPlayerControl(true);
+        else
+            SetPlayerControl(false);
     }
 }

@@ -15,7 +15,6 @@ public class PuzzleClear : MonoBehaviour
     void Start()
     {
         objData = FindObjectOfType<ObjData>();
-        GameManager.instance.completedPuzzles = 0;
         Clear = false;
     }
 

@@ -18,6 +18,7 @@ public class JigsawPuzzle : MonoBehaviour
 
     void Start()
     {
+        Debug.Log(puzzlePosSet.childCount);
         puzzleClear = FindObjectOfType<PuzzleClear>();
         if (startMessage != null) startMessage.SetActive(true);
         if (clearMessage != null) clearMessage.SetActive(false);
@@ -30,6 +31,7 @@ public class JigsawPuzzle : MonoBehaviour
         {
             completedPieces.Add(pieceNumber); 
             Debug.Log($"{pieceNumber}번 퍼즐 맞춤");
+            Debug.Log(completedPieces.Count);
         }
 
         // 퍼즐 완료 여부를 확인
