@@ -115,9 +115,15 @@ public class TalkManager : MonoBehaviour
     {
         talkPanel.SetActive(false);
         gameManager.isTalk = false;
-        playerController.SetMove(true);
         talkIndex = 0;
 
+        if (talkId == 13211) // 1-3-2
+        {
+            playerController.SetMove(false);
+        }
+        else
+            playerController.SetMove(true);
+        
         if (talkId == 24001) // 가족앨범 - 가위
         {
             gameManager.hasScissors = true;

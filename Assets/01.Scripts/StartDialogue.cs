@@ -35,6 +35,7 @@ public class StartDialogue : MonoBehaviour
         // 1?? ?? ???? ????
         StartCoroutine(ShowDialogueWithDelay());
         GameManager.instance.SetDialogueRun(sceneName);
+        GameManager.instance.isTalk = true;
     }
 
     IEnumerator ShowDialogueWithDelay()
@@ -78,6 +79,7 @@ public class StartDialogue : MonoBehaviour
         {
             // If no more dialogues, deactivate the dialogue text
             SwitchPanel(false);
+            GameManager.instance.isTalk = false;
 
             // ?????? ?????? ???????? ???? ???? ??????
             if (playerController != null)
