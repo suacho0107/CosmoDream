@@ -6,8 +6,8 @@ using UnityEngine.UI;
 //Note 프리팹에 저장
 public class Note : MonoBehaviour
 {
-    //노트 속도
-    public float noteSpeed = 400f;
+    //초 당 움직일 값
+    public float noteSpeed = 1200f;
 
     private Image noteImage;
     private Animator animator;
@@ -20,7 +20,6 @@ public class Note : MonoBehaviour
 
     void Update()
     {
-        //노트 이동
         transform.localPosition -= Vector3.right * noteSpeed * Time.deltaTime;
     }
 
