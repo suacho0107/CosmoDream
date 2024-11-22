@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 9138681870795414609}
   - component: {fileID: 9138681870795414612}
   - component: {fileID: 9138681870795414615}
-  - component: {fileID: 9138681870795414614}
   - component: {fileID: 5873100282839816297}
   - component: {fileID: 1329606462900029489}
   - component: {fileID: 1274099716853903745}
+  - component: {fileID: 5449937425570942387}
   m_Layer: 5
   m_Name: upperNote
   m_TagString: upperNote
@@ -80,19 +80,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &9138681870795414614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9138681870795414608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c690b529b4244c408f980dc03a4184e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  noteSpeed: 400
 --- !u!61 &5873100282839816297
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -160,3 +147,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &5449937425570942387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9138681870795414608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c690b529b4244c408f980dc03a4184e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noteSpeed: 1100
