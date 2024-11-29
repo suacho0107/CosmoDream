@@ -19,6 +19,7 @@ public class TalkData : MonoBehaviour
 
     void GenerateData()
     {
+        talkData.Add(6, new string[] {"YUNOH:여기가 내 집이야."});
         //Prologue
         // 910
         talkData.Add(91000, new string[] { "난 남은 짐을 마저 정리해야 한다. ", "태어나서 첫 이사. 부모님은 먼저 새로운 집으로 가셨다." });

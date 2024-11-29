@@ -9,7 +9,8 @@ public class FadeManager : MonoBehaviour
     public static FadeManager instance;
     public CanvasGroup fadeCanvasGroup;
     public Text stageTextUI;
-    float fadeDuration = 1f;
+    float fadeDuration = 0.6f;
+    PlayerController playerController;
 
     void Awake()
     {
@@ -27,6 +28,7 @@ public class FadeManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        playerController = FindObjectOfType<PlayerController>();
         fadeCanvasGroup = GameObject.FindGameObjectWithTag("FadeCanvas")
         ?.GetComponent<CanvasGroup>();
 
@@ -38,10 +40,21 @@ public class FadeManager : MonoBehaviour
         {
             StartCoroutine(FadeInAndOutText());
         }
-        StartCoroutine(FadeOut());
-        Debug.Log($"씬 시작할때 로드되는 페이드: {scene.name}");
+        else
+        {
+            // 텍스트가 없을 경우에만 페이드 아웃 실행
+            StartCoroutine(FadeOut());
+            Debug.Log($"씬 시작할때 로드되는 페이드: {scene.name}");
+        }
     }
 
+    private void SetPlayerControl(bool enabled)
+    {
+        if (playerController != null)
+        {
+            playerController.SetMove(enabled);
+        }
+    }
     // 씬 이름으로 씬 전환
     public void ChangeScene(string sceneName)
     {
@@ -70,6 +83,7 @@ public class FadeManager : MonoBehaviour
 
     private IEnumerator FadeIn()
     {
+        SetPlayerControl(false);
         float time = 0f;
         fadeCanvasGroup.alpha = 0f;
         while (time < fadeDuration)
@@ -83,6 +97,11 @@ public class FadeManager : MonoBehaviour
 
     private IEnumerator FadeOut()
     {
+        SetPlayerControl(false);
+        if (playerController != null)
+        {
+            playerController.SetMove(false); // 입력 차단
+        }
         float time = 0f;
         fadeCanvasGroup.alpha = 1f;
         while (time < fadeDuration)
@@ -92,10 +111,16 @@ public class FadeManager : MonoBehaviour
             yield return null;
         }
         fadeCanvasGroup.alpha = 0f;
+
+        if (!GameManager.instance.isTalk)
+            SetPlayerControl(true);
+        else
+            SetPlayerControl(false);
     }
 
     private IEnumerator FadeInAndOutText()
     {
+        SetPlayerControl(false);
         Debug.Log("스테이지 텍스트가 있을 때의 페이드");
 
         if (stageTextUI == null)
@@ -115,12 +140,15 @@ public class FadeManager : MonoBehaviour
             time += Time.deltaTime;
             color.a = Mathf.Clamp01(time / fadeDuration);
             stageTextUI.color = color;
+            fadeCanvasGroup.alpha = Mathf.Clamp01(time / fadeDuration);
             yield return null;
         }
         stageTextUI.color = new Color(color.r, color.g, color.b, 1f);
+        fadeCanvasGroup.alpha = 1f;
 
         // 텍스트 유지 시간
-        yield return new WaitForSeconds(fadeDuration);
+        yield return new WaitForSeconds(fadeDuration + 0.5f);
+        
 
         // 텍스트 페이드 아웃
         time = 0f;
@@ -130,9 +158,16 @@ public class FadeManager : MonoBehaviour
                 time += Time.deltaTime;
                 color.a = 1f - Mathf.Clamp01(time / fadeDuration);
                 stageTextUI.color = color;
+                fadeCanvasGroup.alpha = 1f - Mathf.Clamp01(time / fadeDuration);  // 배경도 동시에 페이드 아웃
                 yield return null;
             }
 
         stageTextUI.color = new Color(color.r, color.g, color.b, 0f);
+        fadeCanvasGroup.alpha = 0f;
+        
+        if (!GameManager.instance.isTalk)
+            SetPlayerControl(true);
+        else
+            SetPlayerControl(false);
     }
 }

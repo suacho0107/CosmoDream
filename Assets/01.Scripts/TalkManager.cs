@@ -115,20 +115,26 @@ public class TalkManager : MonoBehaviour
     {
         talkPanel.SetActive(false);
         gameManager.isTalk = false;
-        playerController.SetMove(true);
         talkIndex = 0;
 
+        if (talkId == 13211) // 1-3-2
+        {
+            playerController.SetMove(false);
+        }
+        else
+            playerController.SetMove(true);
+        
         if (talkId == 24001) // 가족앨범 - 가위
         {
             gameManager.hasScissors = true;
             Debug.Log("플레이어가 가위를 획득했습니다.");
         }
 
-        if (talkId == 31006) // 가족앨범 - 가위
-        {
-            gameManager.hasWhite = true;
-            Debug.Log("플레이어가 화이트를 획득했습니다.");
-        }
+       // if (talkId == 31006) // 가족앨범 - 가위
+        //{
+       //     gameManager.hasWhite = true;
+        //    Debug.Log("플레이어가 화이트를 획득했습니다.");
+        //}
 
     }
 }

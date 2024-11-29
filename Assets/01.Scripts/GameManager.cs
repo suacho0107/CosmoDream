@@ -42,7 +42,6 @@ public class GameManager : MonoBehaviour
     public int chipsToGive = 1;
     public int gamechips = 0;
     public bool hasScissors = false;
-    public bool hasWhite = false;
 
     public bool isTalk = false;
     public bool isSecondLoad = false;
@@ -67,15 +66,39 @@ public class GameManager : MonoBehaviour
 
         switch (objData.objectType)
         {
+            case ObjData.ObjectType.None:
+                break;
+            
             case ObjData.ObjectType.Talkable:
-                
                 talkManager.Talk(objData.id);
-                
+                if (objData.id == 13111 || objData.id == 13211)
+                {
+                    if(!isTalk)
+                    {
+                        PlayerController playerController = FindObjectOfType<PlayerController>();
+                        playerController.SetMove(false);
+                        ypMove YpMove = FindObjectOfType<ypMove>();
+                        YpMove.StartMovement();
+                        objData.TryChangeId();
+                    }
+                }
                 if (scanObj.CompareTag("GameChip"))
                 {
                     gamechips += chipsToGive;  // 게임 칩 추가
                     Debug.Log("현재 게임 칩: " + gamechips);
                     Destroy(scanObj);  // 오브젝트 파괴
+                }
+                else if (scanObj.CompareTag("LineGame"))
+                {
+                    if (gamechips >= 1 && !isTalk)
+                    {
+                        Debug.Log("씬 전환");//씬 전환
+                        gamechips -= 1;
+                        Destroy(scanObj);
+                        SceneChange sceneChanger = scanObj.GetComponent<SceneChange>();
+                        if (!isTalk)
+                            sceneChanger.ChangeScene();
+                    }
                 }
                 break;
 
@@ -85,21 +108,6 @@ public class GameManager : MonoBehaviour
                     SceneChange sceneChanger = scanObj.GetComponent<SceneChange>();
                     sceneChanger.ChangeScene();
                     return;
-                }
-                else if (objData.id==31002){
-                    if (gamechips == 3)
-                    {
-                        objData.id = 31011; // gamechips가 3개면 objData.id를 31004로 변경
-                    }
-                    talkManager.Talk(objData.id);
-                    if (gamechips == 3 && !isTalk)
-                    {
-                        Debug.Log("씬 전환");//씬 전환
-                       // gamechips -= 1;
-                       //Destroy(scanObj);
-                        SceneChange sceneChanger = scanObj.GetComponent<SceneChange>();    
-                        sceneChanger.ChangeScene();
-                    }
                 }
                 else
                 {
@@ -112,20 +120,7 @@ public class GameManager : MonoBehaviour
                         SetInteraction(objData.objIndex);
                         Debug.Log($"오브젝트 {objData.objIndex} 상호작용 완료");
                     }
-                    /*
-                    if(scanObj.CompareTag("LineGame"))
-                    {
-                        if (gamechips == 3)//&& !isTalk)
-                        {
-                            Debug.Log("씬 전환");//씬 전환
-                            // gamechips -= 1;
-                            //Destroy(scanObj);
-                            //SceneChange sceneChanger = scanObj.GetComponent<SceneChange>();    
-                            sceneChanger.ChangeScene();
-                        }
-                    }*/
                 }
-                
                 break;
 
             case ObjData.ObjectType.ImageDisplay:

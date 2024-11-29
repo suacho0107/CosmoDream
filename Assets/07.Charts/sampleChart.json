@@ -2,16 +2,150 @@
   "bpm": 120,
   "notes": [
     {
-      "time": 5.0,
+      "time": 2.1,
       "lane": "upper"
     },
     {
-      "time": 5.5,
+      "time": 2.1,
       "lane": "lower"
     },
     {
-      "time": 6.0,
+      "time": 2.3,
       "lane": "upper"
+    },
+    {
+      "time": 3.14,
+      "lane": "upper"
+    },
+    {
+      "time": 3.14,
+      "lane": "lower"
+    },
+    {
+      "time": 4.0,
+      "lane": "upper"
+    },
+    {
+      "time": 4.18,
+      "lane": "upper"
+    },
+    {
+      "time": 4.18,
+      "lane": "lower"
+    },
+    {
+      "time": 4.26,
+      "lane": "upper"
+    },
+    {
+      "time": 5.05,
+      "lane": "lower"
+    },
+    {
+      "time": 5.13,
+      "lane": "upper"
+    },
+    {
+      "time": 6.09,
+      "lane": "lower"
+    },
+    {
+      "time": 6.26,
+      "lane": "upper"
+    },
+    {
+      "time": 6.26,
+      "lane": "lower"
+    },
+    {
+      "time": 7.14,
+      "lane": "upper"
+    },
+    {
+      "time": 8.01,
+      "lane": "upper"
+    },
+    {
+      "time": 8.08,
+      "lane": "lower"
+    },
+    {
+      "time": 8.17,
+      "lane": "upper"
+    },
+    {
+      "time": 8.26,
+      "lane": "lower"
+    },
+    {
+      "time": 11.13,
+      "lane": "upper"
+    },
+    {
+      "time": 11.13,
+      "lane": "lower"
+    },
+    {
+      "time": 12.01,
+      "lane": "upper"
+    },
+    {
+      "time": 12.18,
+      "lane": "upper"
+    },
+    {
+      "time": 12.18,
+      "lane": "lower"
+    },
+    {
+      "time": 13.04,
+      "lane": "upper"
+    },
+    {
+      "time": 13.22,
+      "lane": "upper"
+    },
+    {
+      "time": 13.22,
+      "lane": "lower"
+    },
+    {
+      "time": 14,
+      "lane": "upper"
+    },
+    {
+      "time": 14.09,
+      "lane": "lower"
+    },
+    {
+      "time": 14.17,
+      "lane": "upper"
+    },
+    {
+      "time": 15.13,
+      "lane": "lower"
+    },
+    {
+      "time": 16,
+      "lane": "upper"
+    },
+    {
+      "time": 16,
+      "lane": "lower"
+    },
+    {
+      "time": 16.18,
+      "lane": "upper"
+    },
+    {
+      "time": 17.05,
+      "lane": "upper"
+    },
+    {
+      "time": 17.05,
+      "lane": "lower"
     }
+
+
   ]
 }

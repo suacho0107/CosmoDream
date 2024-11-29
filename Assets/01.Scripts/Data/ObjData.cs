@@ -33,13 +33,17 @@ public class ObjData : MonoBehaviour
         Talkable,
         NpcBubble,
         SceneChange,
-        ImageDisplay
+        ImageDisplay,
+        None
     }
 
     public void TryChangeId()
     {
         if (idChange)
         {
+            if (id == 13211)
+                objectType = ObjectType.None;
+            else {
             id = secondId;
             Debug.Log($"{gameObject.name} ID가 {id}로 변경"); // 변경 여부 디버깅
 
@@ -47,6 +51,7 @@ public class ObjData : MonoBehaviour
                 objectType = ObjectType.SceneChange;
             if (id == 21000)
                 objectType = ObjectType.Talkable;
+            }
         }
     }
 }
