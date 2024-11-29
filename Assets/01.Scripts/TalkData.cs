@@ -127,6 +127,7 @@ public class TalkData : MonoBehaviour
         talkData.Add(31015, new string[] { "서재 방을 찾았다!" });
         talkData.Add(31016, new string[] { "콘솔 게임은 다 풀었다.","서재 방을 찾아봐야 한다." });
         talkData.Add(31017, new string[] { "서재 방을 찾아보자." });
+        //talkData.Add(31018, new string[] { "여기서 화이트를 찾았었다." });
 
         talkData.Add(40001, new string[] { "그 당시에 유행했던 LP판. \nLP판 3개를 찾아서 리듬게임을 해보자." }); //LP판
         talkData.Add(40002, new string[] { "13년 전에 개봉한 영화다. \n포스터 뒤에 LP판이 아슬아슬하게 숨겨져 있다.", "LP판을 얻었다." }); //포스터
