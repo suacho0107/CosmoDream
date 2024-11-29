@@ -280,9 +280,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   linePrefab: {fileID: 2022210705452156018, guid: 2bf5b2d5cee4cbb47858b606a6117ca1, type: 3}
-  resetButton: {fileID: 0}
-  completionCanvas: {fileID: 0}
-  nextSceneButton: {fileID: 0}
+  resetButton: {fileID: 389564320}
+  completionCanvas: {fileID: 1663912097}
+  nextSceneButton: {fileID: 1518563648}
 --- !u!4 &107052491
 Transform:
   m_ObjectHideFlags: 0

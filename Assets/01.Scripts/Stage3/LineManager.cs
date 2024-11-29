@@ -164,7 +164,7 @@ public class LineManager : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(nextSceneName))
         {
-            SceneManager.LoadScene(nextSceneName);
+            SceneManager.LoadScene("stage3 2");
         }
     }
 }
