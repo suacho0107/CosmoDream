@@ -33,7 +33,6 @@ public class DataController : MonoBehaviour
     #endregion
 
     public string GameDataFileName = "save.json"; //변경 절대 xxxx
-    public string InitDataFileName = "Init.json";
 
     public GameData _gameData;
     public GameData gameData

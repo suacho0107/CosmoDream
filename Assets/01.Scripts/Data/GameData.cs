@@ -8,10 +8,6 @@ public class GameData
 {
     public string name;
 
-    //맵 진행도를 enum으로 기록?
-    //힘들어요... 걍 마지막 스테이지 씬만 기록해주세요 껐다켜도 눈치못챔
-
-
     //퍼즐 진행도
     public bool[] PuzzleProgress01 = new bool[4];
     public bool[] PuzzleProgress02 = new bool[3]; 
@@ -45,8 +41,12 @@ public class GameData
     public bool puzzle5_2 = false;
     public bool puzzle5_3 = false;
 
-    //엔딩용 아이템 배열(간이 인벤토리)
-    public bool[] Item = new bool[4];
+    //엔딩용 아이템
+    public bool _scissors = false;
+    public bool _white = false;
+    public bool _awl = false;
+    public bool _hammer = false;
+
     public GameData()
     {
         // 모든 배열의 값이 false로 기본 초기화됨
@@ -69,7 +69,5 @@ public class GameData
         for (int i = 0; i < PuzzleItem04.Length; i++) PuzzleItem04[i] = false;
         for (int i = 0; i < PuzzleItem05.Length; i++) PuzzleItem05[i] = false;
         for (int i = 0; i < PuzzleItem06.Length; i++) PuzzleItem06[i] = false;
-
-        for (int i = 0; i < Item.Length; i++) Item[i] = false;
     }
 }
