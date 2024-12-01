@@ -9,6 +9,7 @@ public class PuzzleClear : MonoBehaviour
     public string nextSceneName; // 다음으로 이동할 씬 이름
     public string originalSceneName; // 모든 퍼즐 다 풀었을때 돌아갈 씬
     ObjData objData; // 대사 변경을 위한 ObjData 참조
+    public GameObject startMessage;
 
     public bool Clear=false; // 디버깅용
 
@@ -56,5 +57,10 @@ public class PuzzleClear : MonoBehaviour
         FadeManager.instance.ChangeScene(originalSceneName);
         // 스테이지별 완료 처리 (필요하다면..)
         // if (stageNumber == 1 || stageNumber == 2)
+    }
+
+    public void HideStartUI()
+    {
+        if (startMessage != null) startMessage.SetActive(false);
     }
 }

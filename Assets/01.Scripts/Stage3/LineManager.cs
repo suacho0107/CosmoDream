@@ -19,6 +19,7 @@ public class LineManager : MonoBehaviour
     private int GmaxConnections;
     private int FmaxConnections;
     private int BmaxConnections;
+    private int Puz2maxConnections;
     private string nextSceneName; // 전환할 씬 이름
 
     void Start()
@@ -37,6 +38,10 @@ public class LineManager : MonoBehaviour
         else if (sceneName == "Building")
         {
             BmaxConnections = 14;
+        }
+        else if (sceneName == "1-6 Puzzle2")
+        {
+            Puz2maxConnections = 6;
         }
 
         // 초기화 버튼 클릭 이벤트 설정
@@ -109,6 +114,12 @@ public class LineManager : MonoBehaviour
                 {
                     ShowCompletionUI("Stage5 2");
                 }
+                else if (connectedPairs.Count / 2 == Puz2maxConnections)
+                {
+                    Debug.Log("끝");
+                    GameManager.instance.completedPuzzles++;
+                    ShowCompletionUI("1-6 Puzzle3");
+                }
             }
             else
             {
@@ -137,7 +148,10 @@ public class LineManager : MonoBehaviour
         // 현재 그려진 모든 라인 제거
         foreach (var lineRenderer in lineRenderers)
         {
-            Destroy(lineRenderer.gameObject);
+            if (lineRenderer != null)
+            {
+                Destroy(lineRenderer.gameObject);
+            }
         }
 
         // 상태 초기화
@@ -152,6 +166,7 @@ public class LineManager : MonoBehaviour
     private void ShowCompletionUI(string sceneName)
     {
         nextSceneName = sceneName;
+        Debug.Log("ㄱㄱ");
 
         if (completionCanvas != null)
         {

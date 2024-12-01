@@ -15,8 +15,6 @@ public class ypMove : MonoBehaviour
     private Animator yunohAnimator;
     private Animator playerAnimator;
 
-    bool isWalking = false;
-
     void Start()
     {
         yunohAnimator = yunoh.GetComponent<Animator>();
