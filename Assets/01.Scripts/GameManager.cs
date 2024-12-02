@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
                         objData.TryChangeId();
                     }
                 }
-                if (scanObj.CompareTag("GameChip"))
+                else if (scanObj.CompareTag("GameChip"))
                 {
                    // ObjData objData = scanObj.GetComponent<ObjData>();
                     if (objData == null) return;
@@ -113,20 +113,15 @@ public class GameManager : MonoBehaviour
                         }
                     }
                 }
-                else if (scanObj.CompareTag("GameChip"))
+                else if (objData.id==31011&&!isTalk)
                 {
                     talkManager.Talk(objData.id); // 대화 시작
                     SceneChange sceneChanger = scanObj.GetComponent<SceneChange>();
-                    if (!isTalk && gamechips==3)
-                    {
-                        sceneChanger.ChangeScene();
-                        // ID를 씬 전환용으로 설정
-                        objData.objectType = ObjData.ObjectType.Talkable; // 대화 가능 상태로 변경
-                        sceneChanger.ChangeScene("GameController");
-                    }
 
+                    objData.objectType = ObjData.ObjectType.Talkable; // 대화 가능 상태로 변경
+                    Debug.Log($"씬 전환을 시도합니다.");
+                    SceneManager.LoadScene("GameController"); // GameController 씬으로 전환
                 }
-
 
                 break;
 
