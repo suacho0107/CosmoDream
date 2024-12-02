@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class Puzzle2Brush : MonoBehaviour
 {
-    private LineManager lineManager;
+    private LineManagerT lineManagerT;
     private bool isDrawing = false;
     private SpriteRenderer spriteRenderer;
 
     void Start()
     {
-        lineManager = FindObjectOfType<LineManager>();
+        lineManagerT = FindObjectOfType<LineManagerT>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.enabled = true; // 처음에는 모두 보이도록 설정
     }
 
     private void OnMouseDown()
     {
-        if (!lineManager.CanSelect(gameObject))
+        if (!lineManagerT.CanSelect(gameObject))
             return;
 
         isDrawing = true;
-        lineManager.StartNewLine(transform.position);
+        lineManagerT.StartNewLine(transform.position);
     }
 
     private void OnMouseUp()
@@ -38,19 +38,19 @@ public class Puzzle2Brush : MonoBehaviour
         {
             if (IsPosConnection(gameObject, hit.collider.gameObject))
             {
-                lineManager.EndCurrentLine(hit.collider.gameObject.transform.position, hit.collider.gameObject);
-                Debug.Log(hit.collider.gameObject.name + "에 연결되었습니다!");
+                lineManagerT.EndCurrentLine(hit.collider.gameObject.transform.position, hit.collider.gameObject);
+                // Debug.Log(hit.collider.gameObject.name + "에 연결되었습니다!");
             }
             else
             {
-                lineManager.EndCurrentLine(transform.position, null);
-                Debug.Log("연결할 수 없습니다.");
+                lineManagerT.EndCurrentLine(transform.position, null);
+                // Debug.Log("연결할 수 없습니다.");
             }
         }
         else
         {
-            lineManager.EndCurrentLine(transform.position, null);
-            Debug.Log("연결 실패");
+            lineManagerT.EndCurrentLine(transform.position, null);
+            // Debug.Log("연결 실패");
         }
     }
 

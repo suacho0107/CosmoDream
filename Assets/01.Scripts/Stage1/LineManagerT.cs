@@ -7,6 +7,8 @@ public class LineManagerT : MonoBehaviour
 {
     public GameObject linePrefab; // LineRenderer 프리팹
     public Button resetButton; // 초기화 버튼
+    public GameObject endMessage; // 게임 완료 캔버스
+    public Button nextSceneButton; // 다음 씬으로 가는 버튼
 
     private LineRenderer currentLineRenderer;
     private List<LineRenderer> lineRenderers = new List<LineRenderer>();
@@ -19,6 +21,17 @@ public class LineManagerT : MonoBehaviour
     {
         // 초기화 버튼 클릭 이벤트 설정
         resetButton.onClick.AddListener(ResetLines);
+
+        // 캔버스와 버튼 초기 설정
+        if (endMessage != null)
+        {
+            endMessage.SetActive(false); // 기본적으로 캔버스 비활성화
+        }
+
+        if (nextSceneButton != null)
+        {
+            nextSceneButton.onClick.AddListener(LoadNextScene);
+        }
     }
 
     void Update()
@@ -56,14 +69,14 @@ public class LineManagerT : MonoBehaviour
                 lastConnectedObject = connectedObject;
                 // lastConnectedObject.GetComponent<LinkedObject>().SetSelected(true); // 선택 표시
                 // Debug.Log(currentLineRenderer.GetPosition(0) + "이(가) " + endPos + "에 연결되었습니다!");
+                Debug.Log("현재 연결된 선의 개수: " + connectedPairs.Count / 2);
+
 
                 // 게임 성공: 최대 연결 수에 도달했을 때
                 if (connectedPairs.Count / 2 == maxConnections)
                 {
                     Debug.Log("게임 완료!");
-                    PuzzleClear puzzleClear = FindObjectOfType<PuzzleClear>();
-                    puzzleClear.CompletePuzzle();
-
+                    endMessage.SetActive(true);
                 }
             }
             else
@@ -94,7 +107,10 @@ public class LineManagerT : MonoBehaviour
         // 현재 그려진 모든 라인 제거
         foreach (var lineRenderer in lineRenderers)
         {
-            Destroy(lineRenderer.gameObject);
+            if (lineRenderer != null)
+            {
+                Destroy(lineRenderer.gameObject);
+            }
         }
 
         // 상태 초기화
@@ -104,5 +120,11 @@ public class LineManagerT : MonoBehaviour
         isDrawing = false;
 
         Debug.Log("라인 초기화 완료.");
+    }
+
+    private void LoadNextScene()
+    {
+        PuzzleClear puzzleClear = FindObjectOfType<PuzzleClear>();
+        puzzleClear.CompletePuzzle();
     }
 }
