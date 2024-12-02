@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -42,7 +43,7 @@ public class GameManager : MonoBehaviour
     public int chipsToGive = 1;
     public int gamechips = 0;
     public bool hasScissors = false;
-
+    public bool hasWhite = false;
     public bool isTalk = false;
     public bool isSecondLoad = false;
     public int completedPuzzles = 0;
@@ -63,7 +64,7 @@ public class GameManager : MonoBehaviour
         ObjData objData = scanObject.GetComponent<ObjData>();
 
         if (objData == null) return;
-
+        
         switch (objData.objectType)
         {
             case ObjData.ObjectType.None:
@@ -84,22 +85,49 @@ public class GameManager : MonoBehaviour
                 }
                 if (scanObj.CompareTag("GameChip"))
                 {
-                    gamechips += chipsToGive;  // 게임 칩 추가
-                    Debug.Log("현재 게임 칩: " + gamechips);
-                    Destroy(scanObj);  // 오브젝트 파괴
-                }
-                else if (scanObj.CompareTag("LineGame"))
-                {
-                    if (gamechips >= 1 && !isTalk)
+                   // ObjData objData = scanObj.GetComponent<ObjData>();
+                    if (objData == null) return;
+
+                    // 게임 칩 추가 및 상호작용 상태 기록
+                    if (!isTalk)
                     {
-                        Debug.Log("씬 전환");//씬 전환
-                        gamechips -= 1;
-                        Destroy(scanObj);
-                        SceneChange sceneChanger = scanObj.GetComponent<SceneChange>();
-                        if (!isTalk)
-                            sceneChanger.ChangeScene();
+                        Destroy(scanObj); // 오브젝트 파괴
+                        gamechips += chipsToGive; // 게임 칩 추가
+                        Debug.Log("현재 게임 칩: " + gamechips);
+
+                        // 상호작용 완료로 설정
+                        SetInteraction(objData.objIndex);
+                        
+                        if (gamechips == 3)
+                        {
+                            GameObject[] chipObjects = GameObject.FindGameObjectsWithTag("LineGame");
+                            foreach (GameObject chip in chipObjects)
+                            {
+                                ObjData chipObjData = chip.GetComponent<ObjData>();
+                                if (chipObjData != null)
+                                {
+                                    chipObjData.id = 31011;
+                                    Debug.Log($"태그가 LineGame인 오브젝트 {chip.name}의 ID가 {chipObjData.id}로 변경되었습니다.");
+                                }
+                            }
+                        }
                     }
                 }
+                else if (scanObj.CompareTag("GameChip"))
+                {
+                    talkManager.Talk(objData.id); // 대화 시작
+                    SceneChange sceneChanger = scanObj.GetComponent<SceneChange>();
+                    if (!isTalk&& objData.id == 31011)
+                    {
+                        sceneChanger.ChangeScene();
+                        // ID를 씬 전환용으로 설정
+                        objData.objectType = ObjData.ObjectType.Talkable; // 대화 가능 상태로 변경
+                        sceneChanger.ChangeScene("GameController");
+                    }
+
+                }
+
+
                 break;
 
             case ObjData.ObjectType.SceneChange:
@@ -112,7 +140,6 @@ public class GameManager : MonoBehaviour
                 else
                 {
                     talkManager.Talk(objData.id);
-
                     SceneChange sceneChanger = scanObj.GetComponent<SceneChange>();
                     if (!isTalk)
                     {   
@@ -121,6 +148,7 @@ public class GameManager : MonoBehaviour
                         Debug.Log($"오브젝트 {objData.objIndex} 상호작용 완료");
                     }
                 }
+               
                 break;
 
             case ObjData.ObjectType.ImageDisplay:

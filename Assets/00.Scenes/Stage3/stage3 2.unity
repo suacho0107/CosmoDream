@@ -2445,7 +2445,7 @@ MonoBehaviour:
   objectType: 0
   Display: {fileID: 0}
   idChange: 0
-  secondId: 0
+  secondId: 31018
 --- !u!61 &1277267905
 BoxCollider2D:
   m_ObjectHideFlags: 0
