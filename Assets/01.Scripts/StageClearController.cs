@@ -18,7 +18,7 @@ public class StageClearController : MonoBehaviour
         datacontroller = FindObjectOfType<DataController>();
     }
 
-    private void ClearStage()
+    public void ClearStage()
     {
         if (datacontroller.gameData.puzzle1Clear &&
             datacontroller.gameData.puzzle2Clear &&
