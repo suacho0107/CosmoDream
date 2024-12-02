@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public Vector3 savedPosition = new Vector3(-9.3f, -1.6f, 0);
+
     Rigidbody2D rigid;
     Animator animator;
     public float movePower = 6.0f;
@@ -16,14 +18,6 @@ public class PlayerController : MonoBehaviour
     RaycastHit2D rayHit;
     Vector3 dirVec;
 
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        //좌표 저장
-        Vector3 currentPosition = transform.position;
-        currentPosition.x = PlayerPosData.posX;
-        transform.position = currentPosition;
-    }
-
     void Start()
     {
         manager = FindObjectOfType<GameManager>();
@@ -32,6 +26,11 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         dirVec = Vector2.right; // 기본 방향 오른쪽
         isMove = true;
+
+        //좌표 저장
+        Vector3 currentPosition = transform.position;
+        currentPosition.x = PlayerPosData.posX;
+        transform.position = currentPosition;
     }
 
     void Update()
