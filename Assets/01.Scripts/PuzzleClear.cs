@@ -9,6 +9,7 @@ public class PuzzleClear : MonoBehaviour
     public string nextSceneName; // 다음으로 이동할 씬 이름
     public string originalSceneName; // 모든 퍼즐 다 풀었을때 돌아갈 씬
     ObjData objData; // 대사 변경을 위한 ObjData 참조
+    public GameObject startMessage;
 
     public bool Clear=false; // 디버깅용
 
@@ -50,11 +51,16 @@ public class PuzzleClear : MonoBehaviour
     public void OnStageComplete()
     {
         Debug.Log("모든 퍼즐 완료, OnStageComplete 호출됨");
-        GameManager.instance.isSecondLoad = true; // 1-5로 돌아갈 때는 true 유지
+        GameManager.instance.isSecondLoad = true;
         GameManager.instance.completedPuzzles = 0; // 퍼즐 완료 상태 초기화
 
         FadeManager.instance.ChangeScene(originalSceneName);
         // 스테이지별 완료 처리 (필요하다면..)
         // if (stageNumber == 1 || stageNumber == 2)
+    }
+
+    public void HideStartUI()
+    {
+        if (startMessage != null) startMessage.SetActive(false);
     }
 }

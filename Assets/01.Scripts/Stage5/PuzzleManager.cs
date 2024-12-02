@@ -60,7 +60,12 @@ public class PuzzleManager : MonoBehaviour
         //SaveGameData();
 
         // Stage5∑Œ ¿Ãµø
-        SceneManager.LoadScene("stage5");
+        if (SceneManager.GetActiveScene().name == "1-6 Puzzle4")
+        {
+            PuzzleClear puzzleClear = FindObjectOfType<PuzzleClear>();
+            puzzleClear.CompletePuzzle();
+        }
+        else SceneManager.LoadScene("stage5");
     }
     /*
     private void SaveGameData()
