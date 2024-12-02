@@ -2190,7 +2190,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150922075}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.3, y: -1.6, z: 0}
+  m_LocalPosition: {x: -8.15, y: -1.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2282,7 +2282,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 256d853a84c86a9419c4ba9afc39794d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  savedPosition: {x: -9.3, y: -1.6, z: 0}
   movePower: 6
   isMove: 0
 --- !u!212 &1150922082
@@ -2972,7 +2971,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630255736}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.28, y: -3.6738234, z: 10.001057}
+  m_LocalPosition: {x: 4.85, y: -3.6738234, z: 10.001057}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3088,7 +3087,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.94, y: 5.92}
+  m_Size: {x: 3.43, y: 5.92}
   m_EdgeRadius: 0
 --- !u!1 &1664335991
 GameObject:
@@ -3743,6 +3742,53 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &2029120139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2029120141}
+  - component: {fileID: 2029120140}
+  m_Layer: 0
+  m_Name: StageClearController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2029120140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029120139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64fdd4a8d509ec14bb731f916c50eff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NowStgScene: 2
+  NextStgScene: stage3
+  initPosition: {x: -10, y: -1.6, z: 0}
+--- !u!4 &2029120141
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029120139}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.74803, y: 1.2711962, z: -10.047567}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2057908104
 GameObject:
   m_ObjectHideFlags: 0

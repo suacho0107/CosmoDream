@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     public int gamechips = 0;
     public bool hasWhite = false;
     public bool isTalk = false;
-    public bool isSecondLoad = false;
+    public bool isSecondLoad = false; // 퍼즐 풀고 다시 돌아왔을 때 텍스트ui 안뜨도록
     public int completedPuzzles = 0;
 
     public static bool[] isInteracted;
