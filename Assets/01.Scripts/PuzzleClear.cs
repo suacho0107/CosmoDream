@@ -32,10 +32,31 @@ public class PuzzleClear : MonoBehaviour
     // 퍼즐이 완료될 때마다 호출되는 메서드
     public void CompletePuzzle()
     {
-        GameManager.instance.completedPuzzles++;
+        // 스테이지 번호에 따라 퍼즐 완료 상태를 갱신합니다.
+        switch (stageNumber)
+        {
+            case 1:
+                if (!GameData.puzzle1_1)
+                    GameData.puzzle1_1 = true;
+                else if (!GameData.puzzle1_2)
+                    GameData.puzzle1_2 = true;
+                else if (!GameData.puzzle1_3)
+                    GameData.puzzle1_3 = true;
+                else if (!GameData.puzzle1_4)
+                    GameData.puzzle1_4 = true;
+                break;
 
+            case 2:
+                if (!GameData.puzzle2_1)
+                    GameData.puzzle2_1 = true;
+                else if (!GameData.puzzle2_2)
+                    GameData.puzzle2_2 = true;
+                else if (!GameData.puzzle2_3)
+                    GameData.puzzle2_3 = true;
+                break;
+        }
         // 모든 퍼즐이 완료되었는지 확인
-        if (GameManager.instance.completedPuzzles >= totalPuzzles)
+        if (IsStageComplete())
         {
             OnStageComplete();
         }
@@ -43,20 +64,33 @@ public class PuzzleClear : MonoBehaviour
         {
             FadeManager.instance.ChangeScene(nextSceneName); // 다음 퍼즐 씬으로 이동
             GameManager.instance.isSecondLoad = true;
-            Debug.Log($"현재 완료된 퍼즐 수: {GameManager.instance.completedPuzzles}/{totalPuzzles}");  // 퍼즐 개수 확인용 로그
+            Debug.Log($"현재 스테이지 {stageNumber} 퍼즐 완료 상태를 갱신하였습니다.");
         }
     }
+
+    private bool IsStageComplete()
+    {
+        switch (stageNumber)
+        {
+            case 1:
+                return GameData.puzzle1_1 && GameData.puzzle1_2 && GameData.puzzle1_3 && GameData.puzzle1_4;
+
+            case 2:
+                return GameData.puzzle2_1 && GameData.puzzle2_2 && GameData.puzzle2_3;
+
+            default:
+                return false;
+        }
+    }
+
 
     // 스테이지가 완료되었을 때 호출
     public void OnStageComplete()
     {
         Debug.Log("모든 퍼즐 완료, OnStageComplete 호출됨");
         GameManager.instance.isSecondLoad = true;
-        GameManager.instance.completedPuzzles = 0; // 퍼즐 완료 상태 초기화
 
         FadeManager.instance.ChangeScene(originalSceneName);
-        // 스테이지별 완료 처리 (필요하다면..)
-        // if (stageNumber == 1 || stageNumber == 2)
     }
 
     public void HideStartUI()

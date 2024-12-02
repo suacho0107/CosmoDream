@@ -7,24 +7,16 @@ public class LineManagerT : MonoBehaviour
 {
     public GameObject linePrefab; // LineRenderer 프리팹
     public Button resetButton; // 초기화 버튼
-                               // public string sceneType; // 씬 구분을 위한 변수 ("Flower" 또는 "Building")
 
     private LineRenderer currentLineRenderer;
     private List<LineRenderer> lineRenderers = new List<LineRenderer>();
     private HashSet<(Vector3, Vector3)> connectedPairs = new HashSet<(Vector3, Vector3)>();
     private bool isDrawing = false;
     private GameObject lastConnectedObject = null;
-    private int maxConnections;
+    private int maxConnections = 6;
 
     void Start()
     {
-        // 현재 씬의 이름에 따라 maxConnections 설정
-        string sceneName = SceneManager.GetActiveScene().name;
-
-        if (sceneName == "1-6 Puzzle2")
-        {
-            maxConnections = 6;
-        }
         // 초기화 버튼 클릭 이벤트 설정
         resetButton.onClick.AddListener(ResetLines);
     }
@@ -61,21 +53,17 @@ public class LineManagerT : MonoBehaviour
                 connectedPairs.Add((currentLineRenderer.GetPosition(0), endPos));
                 connectedPairs.Add((endPos, currentLineRenderer.GetPosition(0))); // 양방향 연결
 
-                if (lastConnectedObject != null && lastConnectedObject != connectedObject)
-                {
-                    // lastConnectedObject.GetComponent<LinkedObject>().SetSelected(false); // 선택 해제
-                }
-
                 lastConnectedObject = connectedObject;
                 // lastConnectedObject.GetComponent<LinkedObject>().SetSelected(true); // 선택 표시
-
-                Debug.Log(currentLineRenderer.GetPosition(0) + "이(가) " + endPos + "에 연결되었습니다!");
+                // Debug.Log(currentLineRenderer.GetPosition(0) + "이(가) " + endPos + "에 연결되었습니다!");
 
                 // 게임 성공: 최대 연결 수에 도달했을 때
                 if (connectedPairs.Count / 2 == maxConnections)
                 {
                     Debug.Log("게임 완료!");
-                    SceneManager.LoadScene("Stage3"); //씬 변경
+                    PuzzleClear puzzleClear = FindObjectOfType<PuzzleClear>();
+                    puzzleClear.CompletePuzzle();
+
                 }
             }
             else

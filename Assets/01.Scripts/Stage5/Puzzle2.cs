@@ -13,7 +13,6 @@ public class Puzzle2 : MonoBehaviour, IBeginDragHandler, IDragHandler//, IEndDra
 
     private RectTransform rectTransform;
     private bool isLocked = false;
-    private float pressTime = 0f;
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();

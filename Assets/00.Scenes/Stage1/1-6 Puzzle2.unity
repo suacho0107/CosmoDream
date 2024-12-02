@@ -2275,7 +2275,7 @@ MonoBehaviour:
   scanObject: {fileID: 0}
   chipsToGive: 1
   gamechips: 0
-  hasScissors: 0
+  hasWhite: 0
   isTalk: 0
   isSecondLoad: 0
   completedPuzzles: 0
@@ -3088,6 +3088,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2122627071}
   - component: {fileID: 2122627070}
+  - component: {fileID: 2122627072}
   m_Layer: 0
   m_Name: LineManager
   m_TagString: Untagged
@@ -3126,6 +3127,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2122627072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122627069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bf6452ab6141644c96dac651056dbfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  linePrefab: {fileID: 2022210705452156018, guid: 2bf5b2d5cee4cbb47858b606a6117ca1, type: 3}
+  resetButton: {fileID: 681316492}
 --- !u!1 &2131235440
 GameObject:
   m_ObjectHideFlags: 0
