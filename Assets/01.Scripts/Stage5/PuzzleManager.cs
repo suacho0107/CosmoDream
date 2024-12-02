@@ -4,20 +4,12 @@ using UnityEngine.SceneManagement;
 using System.IO;
 
 [System.Serializable]
-public class PlayerPositionData
-{
-    public string sceneName;  // 씬 이름을 저장
-    public float positionX;
-    public float positionY;
-    public float positionZ;
-}
 
-[System.Serializable]
 public class GameSaveData
 {
     public string name;
     public string lastScene;
-    public PlayerPositionData playerPosition;
+
 }
 
 public class PuzzleManager : MonoBehaviour

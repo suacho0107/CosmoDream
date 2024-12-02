@@ -11,10 +11,12 @@ public class PuzzleClear : MonoBehaviour
     public bool Clear = false; // 디버깅용
 
     DataController datacontroller;
+    StageClearController stageClearController;
 
     private void Start()
     {
         datacontroller = FindObjectOfType<DataController>();
+        stageClearController = FindObjectOfType<StageClearController>();
     }
 
     void Update() // 디버깅용
@@ -30,6 +32,7 @@ public class PuzzleClear : MonoBehaviour
     // 퍼즐이 완료될 때마다 호출되는 메서드
     public void CompletePuzzle()
     {
+        stageClearController.ClearStage();
         // 스테이지 번호에 따라 퍼즐 완료 상태를 갱신합니다.
         switch (stageNumber)
         {
