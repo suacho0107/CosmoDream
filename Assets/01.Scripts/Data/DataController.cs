@@ -21,15 +21,12 @@ public class DataController : MonoBehaviour
     {
         get
         {
-            if (instance == null)
+            if (!instance)
             {
-                instance = FindObjectOfType<DataController>(); // 기존 오브젝트 검색
-                if (instance == null)
-                {
-                    container = new GameObject("DataController");
-                    instance = container.AddComponent<DataController>();
-                    DontDestroyOnLoad(container);
-                }
+                container = new GameObject();
+                container.name = "DataController";
+                instance = container.AddComponent(typeof(DataController)) as DataController;
+                DontDestroyOnLoad(container);
             }
             return instance;
         }
