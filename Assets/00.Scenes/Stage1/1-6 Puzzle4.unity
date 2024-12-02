@@ -341,7 +341,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &230155015
 GameObject:
@@ -893,7 +893,7 @@ MonoBehaviour:
   scanObject: {fileID: 0}
   chipsToGive: 1
   gamechips: 0
-  hasScissors: 0
+  hasWhite: 0
   isTalk: 0
   isSecondLoad: 0
   completedPuzzles: 0
@@ -1644,7 +1644,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1215823479
 GameObject:
@@ -1748,7 +1748,7 @@ GameObject:
   - component: {fileID: 1242292636}
   - component: {fileID: 1242292635}
   m_Layer: 0
-  m_Name: PuzzleManager (1)
+  m_Name: PuzzleClearManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1767,9 +1767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageNumber: 1
-  totalPuzzles: 4
-  nextSceneName: 1-5 room
-  originalSceneName: 1-5 room
+  s1_nextindex: 14
   startMessage: {fileID: 0}
   Clear: 0
 --- !u!4 &1242292636
@@ -1785,7 +1783,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1323508532
 GameObject:

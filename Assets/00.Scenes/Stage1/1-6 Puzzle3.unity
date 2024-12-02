@@ -2843,9 +2843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageNumber: 1
-  totalPuzzles: 4
-  nextSceneName: 1-6 Puzzle4
-  originalSceneName: 1-6 Puzzle4
+  s1_nextindex: 13
   startMessage: {fileID: 0}
   Clear: 0
 --- !u!4 &1727729436
