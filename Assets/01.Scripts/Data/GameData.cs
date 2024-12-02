@@ -29,14 +29,4 @@ public class GameData
     public bool _white = false;
     public bool _awl = false;
     public bool _hammer = false;
-
-    public GameData()
-    {
-        // 모든 배열의 값이 false로 기본 초기화됨
-        InitializeProgress();
-    }
-
-    private void InitializeProgress()
-    {
-    }
 }

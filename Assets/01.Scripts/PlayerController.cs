@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,6 +15,14 @@ public class PlayerController : MonoBehaviour
     GameObject scanObject;
     RaycastHit2D rayHit;
     Vector3 dirVec;
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        //좌표 저장
+        Vector3 currentPosition = transform.position;
+        currentPosition.x = PlayerPosData.posX;
+        transform.position = currentPosition;
+    }
 
     void Start()
     {
@@ -30,6 +39,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && scanObject != null)
         {
             manager.Action(scanObject); // 스페이스바 상호작용
+            PlayerPosData.posX = transform.position.x;
+            Debug.Log(PlayerPosData.posX); //위치 저장
         }
 
         if (manager.isTalk)

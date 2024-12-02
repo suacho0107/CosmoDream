@@ -36,7 +36,7 @@ public class NameManager : MonoBehaviour
         Debug.Log(playerName);
 
         datacontroller.gameData.name = playerName;
-        datacontroller.gameData.PuzzleProgress05[2] = true;
+        //datacontroller.gameData.PuzzleProgress05[2] = true;
         datacontroller.SaveGameData();
 
         //스테이지 1로 이동
