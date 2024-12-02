@@ -18,9 +18,9 @@ public class StageClearController : MonoBehaviour
         datacontroller = FindObjectOfType<DataController>();
     }
 
-    private void Update()
+    public void StageClear()
     {
-        if(datacontroller.gameData.puzzle1Clear&& datacontroller.gameData.puzzle2Clear&& datacontroller.gameData.puzzle3Clear)
+        if (datacontroller.gameData.puzzle1Clear && datacontroller.gameData.puzzle2Clear && datacontroller.gameData.puzzle3Clear)
         {
             //퍼즐 클리어 여부 되돌리기
             datacontroller.gameData.puzzle1Clear = false;

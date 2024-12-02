@@ -6,6 +6,7 @@ using System;
 
 public class DataController : MonoBehaviour
 {
+
     #region 싱글톤
     static GameObject container;
     static GameObject Container
@@ -20,18 +21,25 @@ public class DataController : MonoBehaviour
     {
         get
         {
-            if (!instance)
+            if (instance == null)
             {
-                container = new GameObject();
-                container.name = "DataController";
-                instance = container.AddComponent(typeof(DataController)) as DataController;
-                DontDestroyOnLoad(container);
+                instance = FindObjectOfType<DataController>(); // 기존 오브젝트 검색
+                if (instance == null)
+                {
+                    container = new GameObject("DataController");
+                    instance = container.AddComponent<DataController>();
+                    DontDestroyOnLoad(container);
+                }
             }
             return instance;
         }
     }
     #endregion
 
+    //private void Awake()
+    //{
+    //    DontDestroyOnLoad(this);
+    //}
     public string GameDataFileName = "save.json"; //변경 절대 xxxx
 
     public GameData _gameData;

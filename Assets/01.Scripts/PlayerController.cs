@@ -29,12 +29,15 @@ public class PlayerController : MonoBehaviour
         //좌표 불러오기
         if (PlayerPosData.pos != null)
         {
+            Debug.Log(PlayerPosData.pos);
             transform.position = PlayerPosData.pos;
         }
     }
 
     void Update()
     {
+        Debug.Log(PlayerPosData.pos);
+        Debug.Log(transform.position);
         if (Input.GetKeyDown(KeyCode.Space) && scanObject != null)
         {
             manager.Action(scanObject); // 스페이스바 상호작용
