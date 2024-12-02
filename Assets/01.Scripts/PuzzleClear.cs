@@ -55,8 +55,8 @@ public class PuzzleClear : MonoBehaviour
                     GameData.puzzle2_3 = true;
                 break;
         }
-        // 모든 퍼즐이 완료되었는지 확인
-        if (IsStageComplete())
+        
+        if (IsStageComplete()) // 모든 퍼즐이 완료되었는지
         {
             OnStageComplete();
         }
