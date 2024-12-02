@@ -10,6 +10,13 @@ public class PuzzleClear : MonoBehaviour
 
     public bool Clear = false; // 디버깅용
 
+    DataController datacontroller;
+
+    private void Start()
+    {
+        datacontroller = FindObjectOfType<DataController>();
+    }
+
     void Update() // 디버깅용
     {
         if (Clear)
@@ -31,20 +38,20 @@ public class PuzzleClear : MonoBehaviour
                 break;
 
             case 2:
-                if (!DataController.Instance.gameData.puzzle1Clear)
+                if (!datacontroller.gameData.puzzle1Clear)
                 {
-                    DataController.Instance.gameData.puzzle1Clear = true;
-                    Debug.Log(DataController.Instance.gameData.puzzle1Clear);
+                    datacontroller.gameData.puzzle1Clear = true;
+                    Debug.Log(datacontroller.gameData.puzzle1Clear);
                 }
-                else if (!!DataController.Instance.gameData.puzzle2Clear)
+                else if (!datacontroller.gameData.puzzle2Clear)
                 {
-                    DataController.Instance.gameData.puzzle2Clear = true;
-                    Debug.Log(DataController.Instance.gameData.puzzle2Clear);
+                    datacontroller.gameData.puzzle2Clear = true;
+                    Debug.Log(datacontroller.gameData.puzzle2Clear);
                 }
-                else if (!!DataController.Instance.gameData.puzzle3Clear)
+                else if (!datacontroller.gameData.puzzle3Clear)
                 {
-                    DataController.Instance.gameData.puzzle3Clear = true;
-                    Debug.Log(DataController.Instance.gameData.puzzle3Clear);
+                    datacontroller.gameData.puzzle3Clear = true;
+                    Debug.Log(datacontroller.gameData.puzzle3Clear);
                 }
                 break;
         }

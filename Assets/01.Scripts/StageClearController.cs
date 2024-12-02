@@ -11,26 +11,26 @@ public class StageClearController : MonoBehaviour
     public string NextStgScene; //스테이지 2이면 스테이지3 씬이름 넣기
     public Vector3 initPosition = new Vector3(-9.3f, -1.6f, 0); //스테이지 2이면 스테이지3 초기 플레이어 위치 넣기
 
-    //DataController datacontroller;
+   DataController datacontroller;
 
     private void Start()
     {
-        //datacontroller = FindObjectOfType<DataController>();
+        datacontroller = FindObjectOfType<DataController>();
     }
 
     private void Update()
     {
-        if(DataController.Instance.gameData.puzzle1Clear&& 
-            DataController.Instance.gameData.puzzle2Clear&& 
-            DataController.Instance.gameData.puzzle3Clear)
+        if (datacontroller.gameData.puzzle1Clear &&
+            datacontroller.gameData.puzzle2Clear &&
+            datacontroller.gameData.puzzle3Clear)
         {
             //퍼즐 클리어 여부 되돌리기
-            DataController.Instance.gameData.puzzle1Clear = false;
-            DataController.Instance.gameData.puzzle2Clear = false;
-            DataController.Instance.gameData.puzzle3Clear = false;
+            datacontroller.gameData.puzzle1Clear = false;
+            datacontroller.gameData.puzzle2Clear = false;
+            datacontroller.gameData.puzzle3Clear = false;
 
             //게임 껐다 켰을 때 시작될 스테이지 변경
-            DataController.Instance.gameData.nowStg++;
+            datacontroller.gameData.nowStg++;
 
             //플레이어 위치 초기값 넣어주기
             PlayerPosData.pos = initPosition;

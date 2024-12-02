@@ -8,35 +8,36 @@ public class DataController : MonoBehaviour
 {
 
     #region ½Ì±ÛÅæ
-    static GameObject container;
-    static GameObject Container
-    {
-        get
-        {
-            return container;
-        }
-    }
-    static DataController instance;
-    public static DataController Instance
-    {
-        get
-        {
-            if (!instance)
-            {
-                container = new GameObject();
-                container.name = "DataController";
-                instance = container.AddComponent(typeof(DataController)) as DataController;
-                DontDestroyOnLoad(container);
-            }
-            return instance;
-        }
-    }
+    //static GameObject container;
+    //static GameObject Container
+    //{
+    //    get
+    //    {
+    //        return container;
+    //    }
+    //}
+    //static DataController instance;
+    //public static DataController Instance
+    //{
+    //    get
+    //    {
+    //        if (!instance)
+    //        {
+    //            container = new GameObject();
+    //            container.name = "DataController";
+    //            instance = container.AddComponent(typeof(DataController)) as DataController;
+                
+    //            DontDestroyOnLoad(container);
+    //        }
+    //        return instance;
+    //    }
+    //}
     #endregion
 
-    //private void Awake()
-    //{
-    //    DontDestroyOnLoad(this);
-    //}
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
     public string GameDataFileName = "save.json"; //º¯°æ Àý´ë xxxx
 
     public GameData _gameData;

@@ -20,18 +20,20 @@ public class BreakStage : MonoBehaviour
     bool isTransition = false; //중복실행방지
     FadeController fadecontroller;
     CameraShake camerashake;
+    DataController datacontroller;
 
     private void Start()
     {
         Time.timeScale = 1f;
         fadecontroller = FindObjectOfType<FadeController>();
         camerashake = FindObjectOfType<CameraShake>();
+        datacontroller = FindObjectOfType<DataController>();
 
         //버튼 활성화 결정하기
-        bool activeScissors = DataController.Instance.gameData._scissors;
-        bool activeWhite = DataController.Instance.gameData._white;
-        bool activeAwl = DataController.Instance.gameData._awl;
-        bool activeHammer = DataController.Instance.gameData._hammer;
+        bool activeScissors = datacontroller.gameData._scissors;
+        bool activeWhite = datacontroller.gameData._white;
+        bool activeAwl = datacontroller.gameData._awl;
+        bool activeHammer = datacontroller.gameData._hammer;
 
         Scissors.interactable = activeScissors;
         White.interactable = activeWhite;
