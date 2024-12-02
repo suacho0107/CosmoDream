@@ -34,6 +34,7 @@ public class StageClearController : MonoBehaviour
 
             //플레이어 위치 초기값 넣어주기
             PlayerPosData.pos = initPosition;
+            PlayerPosData.room = null;
 
             //씬로드(NextStgScene)
             FadeManager.instance.ChangeScene(NextStgScene);
