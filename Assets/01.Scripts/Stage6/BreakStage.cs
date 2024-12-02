@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class BreakStage : MonoBehaviour
 {
+    public Image YUNOH;
+    public Sprite BAD;
     public Button Scissors;
     public Button White;
     public Button awl;
@@ -17,10 +19,13 @@ public class BreakStage : MonoBehaviour
 
     bool isTransition = false; //중복실행방지
     FadeController fadecontroller;
+    CameraShake camerashake;
 
     private void Start()
     {
+        Time.timeScale = 1f;
         fadecontroller = FindObjectOfType<FadeController>();
+        camerashake = FindObjectOfType<CameraShake>();
 
         //버튼 활성화 결정하기
         bool activeScissors = DataController.Instance.gameData._scissors;
@@ -56,17 +61,24 @@ public class BreakStage : MonoBehaviour
         if (isTransition) return;
         isTransition = true;
 
-        //파괴카운트
+        //이미지 교체
+        YUNOH.sprite = BAD;
 
+        //카메라 흔들림
+        camerashake.VibrateForTime(0.05f);
+
+        //파괴카운트
+        Count.destroyCount++;
+        Debug.Log(Count.destroyCount);
 
         //게임 정지
         Time.timeScale = 0;
+        Debug.Log(Time.timeScale);
 
         //페이드아웃
-        fadecontroller.FadeOut(fade);
+        //StartCoroutine(fadecontroller.FadeIn(fade));
 
-        Time.timeScale = 1;         //이거 괜찮아? 안괜찮으면 코루틴으로 변경
         //씬 로드 함수
-        SceneManager.LoadScene(nextScene);
+        //SceneManager.LoadScene(nextScene);
     }
 }

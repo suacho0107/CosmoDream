@@ -73,10 +73,8 @@
     "puzzle5_1": false,
     "puzzle5_2": false,
     "puzzle5_3": false,
-    "Item": [
-        false,
-        false,
-        false,
-        false
-    ]
+    "_scissors": false,
+    "_white": false,
+    "_awl": false,
+    "_hammer": false
 }
