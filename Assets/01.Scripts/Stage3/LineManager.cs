@@ -107,7 +107,7 @@ public class LineManager : MonoBehaviour
                 }
                 else if (connectedPairs.Count / 2 == BmaxConnections)
                 {
-                    ShowCompletionUI("Stage5 2");
+                    ShowCompletionUI("stage3 2");
                 }
             }
             else
@@ -163,12 +163,13 @@ public class LineManager : MonoBehaviour
            // completionMessage.text = $"{sceneName} 씬으로 이동합니다. 버튼을 클릭하세요.";
         }
     }
-
+    
     private void LoadNextScene()
     {
         if (!string.IsNullOrEmpty(nextSceneName))
         {
-            SceneManager.LoadScene("stage3 2");
+            SceneManager.LoadScene(nextSceneName);
+            Debug.Log($"씬 {nextSceneName}으로 전환 중...");
         }
     }
 }
