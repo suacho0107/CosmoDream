@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour
                 {
                     talkManager.Talk(objData.id); // 대화 시작
                     SceneChange sceneChanger = scanObj.GetComponent<SceneChange>();
-                    if (!isTalk&& objData.id == 31011)
+                    if (!isTalk && gamechips==3)
                     {
                         sceneChanger.ChangeScene();
                         // ID를 씬 전환용으로 설정
