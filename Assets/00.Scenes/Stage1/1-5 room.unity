@@ -2201,7 +2201,7 @@ MonoBehaviour:
   endCursor: {fileID: 1921650656}
   text1: {fileID: 67307894}
   text2: {fileID: 1658612587}
-  puzzleScene: 21
+  puzzleScene: 10
   is2Cliked: 0
 --- !u!4 &1180115615
 Transform:
@@ -2953,7 +2953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c91d20f154307b4d9a9921bec153921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeCanvasGroup: {fileID: 0}
+  fadeCanvasGroup: {fileID: 1255484520}
   stageTextUI: {fileID: 0}
 --- !u!4 &1490579559
 Transform:

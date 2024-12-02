@@ -41,7 +41,6 @@ public class GameManager : MonoBehaviour
 
     public int chipsToGive = 1;
     public int gamechips = 0;
-    public bool hasScissors = false;
 
     public bool isTalk = false;
     public bool isSecondLoad = false;

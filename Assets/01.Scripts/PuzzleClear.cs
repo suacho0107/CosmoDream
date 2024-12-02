@@ -51,7 +51,7 @@ public class PuzzleClear : MonoBehaviour
     public void OnStageComplete()
     {
         Debug.Log("모든 퍼즐 완료, OnStageComplete 호출됨");
-        GameManager.instance.isSecondLoad = true; // 1-5로 돌아갈 때는 true 유지
+        GameManager.instance.isSecondLoad = true;
         GameManager.instance.completedPuzzles = 0; // 퍼즐 완료 상태 초기화
 
         FadeManager.instance.ChangeScene(originalSceneName);
