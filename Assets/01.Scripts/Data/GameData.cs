@@ -8,11 +8,19 @@ public class GameData
 {
     public string name;
 
+    public int nowStg;
+
+    public bool puzzle1Clear = false;
+    public bool puzzle2Clear = false;
+    public bool puzzle3Clear = false;
+
     public static bool puzzle1_1 = false;
     public static bool puzzle1_2 = false;
     public static bool puzzle1_3 = false;
     public static bool puzzle1_4 = false;
 
+
+    //퍼즐2~5 삭제 예정, puzzle1Clear~puzzle3Clear 대신 사용하기
     public static bool puzzle2_1 = false;
     public static bool puzzle2_2 = false;
     public static bool puzzle2_3 = false;

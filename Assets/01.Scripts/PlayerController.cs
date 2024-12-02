@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public Vector3 savedPosition = new Vector3(-9.3f, -1.6f, 0);
 
     Rigidbody2D rigid;
     Animator animator;
@@ -27,10 +26,11 @@ public class PlayerController : MonoBehaviour
         dirVec = Vector2.right; // 기본 방향 오른쪽
         isMove = true;
 
-        //좌표 저장
-        Vector3 currentPosition = transform.position;
-        currentPosition.x = PlayerPosData.posX;
-        transform.position = currentPosition;
+        //좌표 불러오기
+        if (PlayerPosData.pos != null)
+        {
+            transform.position = PlayerPosData.pos;
+        }
     }
 
     void Update()
@@ -38,8 +38,9 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && scanObject != null)
         {
             manager.Action(scanObject); // 스페이스바 상호작용
-            PlayerPosData.posX = transform.position.x;
-            Debug.Log(PlayerPosData.posX); //위치 저장
+            //위치 저장
+            PlayerPosData.pos = transform.position;
+            Debug.Log(PlayerPosData.pos);
         }
 
         if (manager.isTalk)

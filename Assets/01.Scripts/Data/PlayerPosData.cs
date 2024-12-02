@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerPosData
 {
-    public static float posX;
-    public static float posY;
+    public static Vector3 pos;
 
     //사용법
     //PlayerPosData.posX=(플레이어).transform.position.x;
