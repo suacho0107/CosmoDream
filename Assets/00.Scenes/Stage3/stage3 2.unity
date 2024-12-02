@@ -1665,7 +1665,6 @@ MonoBehaviour:
   scanObject: {fileID: 0}
   chipsToGive: 1
   gamechips: 0
-  hasScissors: 0
   hasWhite: 0
   isTalk: 0
   isSecondLoad: 0
@@ -2485,8 +2484,9 @@ GameObject:
   - component: {fileID: 1286688488}
   - component: {fileID: 1286688487}
   - component: {fileID: 1286688486}
+  - component: {fileID: 1286688489}
   m_Layer: 8
-  m_Name: door
+  m_Name: door_library
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2586,7 +2586,7 @@ MonoBehaviour:
   id: 31015
   objIndex: 0
   isNpc: 0
-  objectType: 0
+  objectType: 2
   Display: {fileID: 0}
   idChange: 0
   secondId: 0
@@ -2616,6 +2616,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.83, y: 6.79}
   m_EdgeRadius: 0
+--- !u!114 &1286688489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286688483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95373465de42240cc9b48904f201dd26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneIndex: 23
+  isEdge: 0
 --- !u!1 &1309914449
 GameObject:
   m_ObjectHideFlags: 0
