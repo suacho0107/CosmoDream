@@ -121,7 +121,12 @@ public class GameManager : MonoBehaviour
                     Debug.Log($"씬 전환을 시도합니다.");
                     SceneManager.LoadScene("GameController"); // GameController 씬으로 전환
                 }
-
+                if (!isTalk)
+                {
+                    SetInteraction(objData.objIndex);
+                    objData.TryChangeId();
+                    Debug.Log($"오브젝트 {objData.objIndex} 상호작용 완료");
+                }
                 break;
 
             case ObjData.ObjectType.SceneChange:
