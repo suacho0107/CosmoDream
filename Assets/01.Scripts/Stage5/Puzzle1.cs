@@ -13,7 +13,7 @@ public class Puzzle1 : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
     private RectTransform rectTransform;
     private Canvas canvas;
     private bool isLocked = false; // 고정 여부
-    private float pressTime = 0f; // 버튼을 누르고 있는 시간을 저장하는 변수
+    // private float pressTime = 0f; // 버튼을 누르고 있는 시간을 저장하는 변수
     private PuzzleManager puzzleManager; // 퍼즐 매니저 참조
     void Start()
     {

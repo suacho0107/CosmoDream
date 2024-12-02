@@ -8,6 +8,11 @@ public class GameData
 {
     public string name;
 
+    public static bool puzzle1_1 = false;
+    public static bool puzzle1_2 = false;
+    public static bool puzzle1_3 = false;
+    public static bool puzzle1_4 = false;
+
     public static bool puzzle2_1 = false;
     public static bool puzzle2_2 = false;
     public static bool puzzle2_3 = false;
