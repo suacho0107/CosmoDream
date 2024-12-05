@@ -25,7 +25,7 @@ public class CameraShake : MonoBehaviour
         if (ShakeTime > 0)
         {
             transform.position = Random.insideUnitSphere * ShakeAmount + initialPosition;
-            ShakeTime -= Time.unscaledDeltaTime;
+            ShakeTime -= Time.deltaTime;
         }
         else
         {

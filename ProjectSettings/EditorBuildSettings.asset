@@ -98,4 +98,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/00.Scenes/Stage5/Chicken.unity
     guid: 8d2ccd1f2dd8e4b46a0d981a48830a5b
+  - enabled: 1
+    path: Assets/00.Scenes/Stage6/6-0.unity
+    guid: 90b3ccff571940847801fc8a329d8241
+  - enabled: 1
+    path: Assets/00.Scenes/Stage6/6-1.unity
+    guid: e474581e8b2e99d4ea5bc1aa71478314
+  - enabled: 1
+    path: Assets/00.Scenes/Stage6/6-2.unity
+    guid: 5af27a7029b5be04985bb8771f952982
+  - enabled: 1
+    path: Assets/00.Scenes/Stage6/6-3.unity
+    guid: 76776e790633e5b4c82c4e5f0ff11b47
+  - enabled: 1
+    path: Assets/00.Scenes/Stage6/6-4.unity
+    guid: e41d57b44293499499852d75f4bb93c8
   m_configObjects: {}

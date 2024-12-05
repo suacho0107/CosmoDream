@@ -6,34 +6,6 @@ using System;
 
 public class DataController : MonoBehaviour
 {
-
-    #region ΩÃ±€≈Ê
-    //static GameObject container;
-    //static GameObject Container
-    //{
-    //    get
-    //    {
-    //        return container;
-    //    }
-    //}
-    //static DataController instance;
-    //public static DataController Instance
-    //{
-    //    get
-    //    {
-    //        if (!instance)
-    //        {
-    //            container = new GameObject();
-    //            container.name = "DataController";
-    //            instance = container.AddComponent(typeof(DataController)) as DataController;
-                
-    //            DontDestroyOnLoad(container);
-    //        }
-    //        return instance;
-    //    }
-    //}
-    #endregion
-
     private void Awake()
     {
         DontDestroyOnLoad(this);

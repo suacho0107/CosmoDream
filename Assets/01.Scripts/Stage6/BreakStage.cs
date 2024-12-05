@@ -19,14 +19,14 @@ public class BreakStage : MonoBehaviour
 
     bool isTransition = false; //중복실행방지
     FadeController fadecontroller;
-    CameraShake camerashake;
+    CanvasShake canvasShake;
     DataController datacontroller;
 
     private void Start()
     {
         Time.timeScale = 1f;
         fadecontroller = FindObjectOfType<FadeController>();
-        camerashake = FindObjectOfType<CameraShake>();
+        canvasShake = FindObjectOfType<CanvasShake>();
         datacontroller = FindObjectOfType<DataController>();
 
         //버튼 활성화 결정하기
@@ -41,18 +41,20 @@ public class BreakStage : MonoBehaviour
         hammer.interactable = activeHammer;
 
         //넘어갈 씬 결정
-        if (nextScene == "대충 마지막")
+        if (nextScene == "Route")
         {
-            //if(파괴 완){
-            //    nextScene = "파괴엔딩";
-            //}
-            //else if(파괴 완 아님){
-            //    nextScene = "덜파괴엔딩";
-            //}
-            //else if (파괴안함)
-            //{
-            //    nextScene = "순수엔딩";
-            //}
+            if (Count.destroyCount == 4)
+            {
+                nextScene = "00.Scenes/Stage6/RouteDestroy";
+            }
+            else if (Count.destroyCount == 0)
+            {
+                nextScene = "00.Scenes/Stage6/RouteDontDestroy";
+            }
+            else
+            {
+                nextScene = "00.Scenes/Stage6/RouteNormal";
+            }
         }
     }
 
@@ -63,11 +65,20 @@ public class BreakStage : MonoBehaviour
         if (isTransition) return;
         isTransition = true;
 
+        StartCoroutine(BreakReference());
+    }
+
+    IEnumerator BreakReference()
+    {
         //이미지 교체
         YUNOH.sprite = BAD;
 
         //카메라 흔들림
-        camerashake.VibrateForTime(0.05f);
+        //canvasShake.VibrateForTime(0.5f);
+
+        //오디오 정지
+
+        //필요시 쿵 하는 오디오 삽입
 
         //파괴카운트
         Count.destroyCount++;
@@ -75,12 +86,10 @@ public class BreakStage : MonoBehaviour
 
         //게임 정지
         Time.timeScale = 0;
-        Debug.Log(Time.timeScale);
 
-        //페이드아웃
-        //StartCoroutine(fadecontroller.FadeIn(fade));
+        yield return new WaitForSecondsRealtime(1f);
 
         //씬 로드 함수
-        //SceneManager.LoadScene(nextScene);
+        SceneManager.LoadScene(nextScene);
     }
 }
