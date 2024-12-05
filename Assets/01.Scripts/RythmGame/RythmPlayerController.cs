@@ -19,12 +19,12 @@ public class RythmPlayerController : MonoBehaviour
     {
         if(Input.GetKeyDown(upperLaneKey1) || Input.GetKeyDown(upperLaneKey2))
         {
-            Debug.Log("키 입력");
+            Debug.Log("key enter");
             timingManager.CheckTiming("upper");
         }
         if (Input.GetKeyDown(lowerLaneKey1) || Input.GetKeyDown(lowerLaneKey2))
         {
-            Debug.Log("키 입력");
+            Debug.Log("key enter");
             timingManager.CheckTiming("down");
         }
 

@@ -22,7 +22,6 @@ public class EndingManager : MonoBehaviour
                     "[유노? 그런 NPC가 있었나?]",
                     "다른 NPC들은 유노에 대한 기억이 전혀 없었다.",
                     "마치 처음부터 없었던 것처럼.",
-                    "",
                     "[예전에 그런 NPC가 있었는데, 어느 날 갑자기 없어졌어. 다른 NPC들도 기억을 못한다니까?]",
                     "그렇게 유노는 코스모 드림의 괴담이 되었다. "
                 };
@@ -42,7 +41,7 @@ public class EndingManager : MonoBehaviour
                 };
                 break;
             default:
-                endingDialogues = new string[] { "이 엔딩은 아직 준비되지 않았습니다." };
+                endingDialogues = new string[] { "오류" };
                 break;
         }
 
@@ -76,7 +75,8 @@ public class EndingManager : MonoBehaviour
         }
         else
         {
-            dialogueText.text = "모든 대사가 끝났습니다.";
+            Debug.Log("모든 대사가 끝났습니다.");
+            FadeManager.instance.ChangeScene("StartMenu");
         }
     }
 }

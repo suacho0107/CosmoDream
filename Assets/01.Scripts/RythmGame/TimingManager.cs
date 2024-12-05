@@ -33,7 +33,7 @@ public class TimingManager : MonoBehaviour
 
     public void CheckTiming(string lane)
     {
-        Debug.Log("함수 실행");
+        // Debug.Log("CheckTiming Called");
         // 해당 라인의 노트 리스트 선택 (윗줄, 아랫줄)
         List<GameObject> noteList = lane == "upper" ? upperLaneNotes : lowerLaneNotes;
 
@@ -51,7 +51,7 @@ public class TimingManager : MonoBehaviour
                     noteList.RemoveAt(i); // 리스트에서 제거
                     effectManager.JudgementEffect(x, lane); // x에 해당하는 판정 출력 (0: Perfect, 1: Great, 2: Miss)
 
-                    Debug.Log("실행됨");
+                    Debug.Log("enter");
                     return;
                 }
             }
@@ -71,7 +71,7 @@ public class TimingManager : MonoBehaviour
             {
                 noteList.RemoveAt(i); // 리스트에서 제거
                 effectManager.JudgementEffect(2, lane); // Miss 판정 출력
-                Debug.Log("Miss 처리됨");
+                Debug.Log("Miss");
                 return;
             }
         }

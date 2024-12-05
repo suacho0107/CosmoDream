@@ -1186,7 +1186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStart: 0
-  FileName: sampleChart
+  FileName: tutorialChart
   nextScene: 
   audioSource: {fileID: 1704264049}
   tfNoteAppearUpper: {fileID: 62776517}
