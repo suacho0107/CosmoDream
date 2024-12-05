@@ -48,11 +48,6 @@ public class FadeManager : MonoBehaviour
         }
     }
 
-    public void SetFadeDuration(float duration)
-    {
-        fadeDuration = duration;
-    }
-
     private void SetPlayerControl(bool enabled)
     {
         if (playerController != null)
@@ -71,6 +66,11 @@ public class FadeManager : MonoBehaviour
     {
         StartCoroutine(FadeAndLoadScene(sceneIndex));
     }
+    // (지정된 페이드 지속 시간 사용)
+    public void ChangeScene(int sceneIndex, float customFadeDuration)
+    {
+        StartCoroutine(FadeAndLoadScene(sceneIndex, customFadeDuration));
+    }
 
     private IEnumerator FadeAndLoadScene(string sceneName)
     {
@@ -82,20 +82,31 @@ public class FadeManager : MonoBehaviour
     private IEnumerator FadeAndLoadScene(int sceneIndex)
     {
         yield return StartCoroutine(FadeIn());
-        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene(sceneIndex);
+        yield return StartCoroutine(FadeOut());
+    }
+
+    private IEnumerator FadeAndLoadScene(int sceneIndex, float duration)
+    {
+        yield return StartCoroutine(FadeIn(duration));
         SceneManager.LoadScene(sceneIndex);
         yield return StartCoroutine(FadeOut());
     }
 
     private IEnumerator FadeIn()
     {
+        yield return StartCoroutine(FadeIn(fadeDuration));
+    }
+
+    private IEnumerator FadeIn(float duration)
+    {
         SetPlayerControl(false);
         float time = 0f;
         fadeCanvasGroup.alpha = 0f;
-        while (time < fadeDuration)
+        while (time < duration)
         {
             time += Time.deltaTime;
-            fadeCanvasGroup.alpha = Mathf.Clamp01(time / fadeDuration);
+            fadeCanvasGroup.alpha = Mathf.Clamp01(time / duration);
             yield return null;
         }
         fadeCanvasGroup.alpha = 1f;

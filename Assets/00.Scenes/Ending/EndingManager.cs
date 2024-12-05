@@ -76,8 +76,7 @@ public class EndingManager : MonoBehaviour
         else
         {
             Debug.Log("모든 대사가 끝났습니다.");
-            FadeManager.instance.ChangeScene("StartMenu");
-            FadeManager.instance.SetFadeDuration(0.6f);
+            FadeManager.instance.ChangeScene(0, 2.5f);
         }
     }
 }
