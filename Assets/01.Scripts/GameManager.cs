@@ -31,10 +31,10 @@ public class GameManager : MonoBehaviour
             isInteracted[i] = false;
         }
     }
-    
+
 
     public GameObject scanObject;
-    
+
     TalkManager talkManager;
     BubbleManager bubbleManager;
     ObjData objData;
@@ -42,9 +42,10 @@ public class GameManager : MonoBehaviour
 
     public int chipsToGive = 1;
     public int gamechips = 0;
+    public bool hasScissors = false;
     public bool hasWhite = false;
     public bool isTalk = false;
-    public bool isSecondLoad = false; // 퍼즐 풀고 다시 돌아왔을 때 텍스트ui 안뜨도록
+    public bool isSecondLoad = false;
     public int completedPuzzles = 0;
 
     public static bool[] isInteracted;
@@ -53,27 +54,27 @@ public class GameManager : MonoBehaviour
     {
         talkManager = FindObjectOfType<TalkManager>();
         bubbleManager = FindObjectOfType<BubbleManager>();
-        
+
         isTalk = false;
     }
-    
+
     public void Action(GameObject scanObj)
     {
         scanObject = scanObj;
         ObjData objData = scanObject.GetComponent<ObjData>();
 
         if (objData == null) return;
-        
+
         switch (objData.objectType)
         {
             case ObjData.ObjectType.None:
                 break;
-            
+
             case ObjData.ObjectType.Talkable:
                 talkManager.Talk(objData.id);
                 if (objData.id == 13111 || objData.id == 13211)
                 {
-                    if(!isTalk)
+                    if (!isTalk)
                     {
                         PlayerController playerController = FindObjectOfType<PlayerController>();
                         playerController.SetMove(false);
@@ -84,7 +85,7 @@ public class GameManager : MonoBehaviour
                 }
                 else if (scanObj.CompareTag("GameChip"))
                 {
-                   // ObjData objData = scanObj.GetComponent<ObjData>();
+                    // ObjData objData = scanObj.GetComponent<ObjData>();
                     if (objData == null) return;
 
                     // 게임 칩 추가 및 상호작용 상태 기록
@@ -96,7 +97,7 @@ public class GameManager : MonoBehaviour
 
                         // 상호작용 완료로 설정
                         SetInteraction(objData.objIndex);
-                        
+
                         if (gamechips == 3)
                         {
                             GameObject[] chipObjects = GameObject.FindGameObjectsWithTag("LineGame");
@@ -112,7 +113,7 @@ public class GameManager : MonoBehaviour
                         }
                     }
                 }
-                else if (objData.id==31011&&!isTalk)
+                else if (objData.id == 31011 && !isTalk)
                 {
                     talkManager.Talk(objData.id); // 대화 시작
                     SceneChange sceneChanger = scanObj.GetComponent<SceneChange>();
@@ -141,13 +142,13 @@ public class GameManager : MonoBehaviour
                     talkManager.Talk(objData.id);
                     SceneChange sceneChanger = scanObj.GetComponent<SceneChange>();
                     if (!isTalk)
-                    {   
+                    {
                         sceneChanger.ChangeScene();
                         SetInteraction(objData.objIndex);
                         Debug.Log($"오브젝트 {objData.objIndex} 상호작용 완료");
                     }
                 }
-               
+
                 break;
 
             case ObjData.ObjectType.ImageDisplay:
@@ -215,3 +216,4 @@ public class GameManager : MonoBehaviour
 
     #endregion
 }
+
