@@ -1,0 +1,27 @@
+{
+  "bpm": 120,
+  "notes": [
+    { "time": 1.7, "lane": "upper" },
+    { "time": 2.275, "lane": "upper" },
+    { "time": 2.85, "lane": "upper" },
+    { "time": 3.425, "lane": "upper" },
+
+    { "time": 4.0, "lane": "upper" },
+    { "time": 4.2875, "lane": "upper" },
+    { "time": 4.575, "lane": "upper" },
+    { "time": 4.8625, "lane": "upper" },
+    { "time": 5.75, "lane": "upper" },
+
+    { "time": 6.3, "lane": "upper" },
+    { "time": 6.875, "lane": "upper" },
+    { "time": 7.45, "lane": "upper" },
+    { "time": 7.7375, "lane": "upper" },
+    { "time": 8.025, "lane": "upper" },
+    { "time": 8.3125, "lane": "upper" },
+
+    // 여기부터안맞음
+    { "time": 9.2, "lane": "upper" },
+    { "time": 9.4875, "lane": "upper" },
+    { "time": 9.775, "lane": "upper" }
+  ]
+}

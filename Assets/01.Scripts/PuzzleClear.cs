@@ -32,7 +32,8 @@ public class PuzzleClear : MonoBehaviour
     // 퍼즐이 완료될 때마다 호출되는 메서드
     public void CompletePuzzle()
     {
-        
+        if (stageClearController != null)
+            stageClearController.ClearStage();
         // 스테이지 번호에 따라 퍼즐 완료 상태를 갱신합니다.
         switch (stageNumber)
         {
@@ -57,9 +58,7 @@ public class PuzzleClear : MonoBehaviour
                     Debug.Log(datacontroller.gameData.puzzle3Clear);
                 }
                 break;
-
         }
-        stageClearController.ClearStage();
     }
 
     public void HideStartUI()
