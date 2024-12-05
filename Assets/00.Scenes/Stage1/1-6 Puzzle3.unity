@@ -1213,7 +1213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isStart: 0
   FileName: tutorialChart
-  nextScene: 
+  nextScene: 1-6 Puzzle4
   audioSource: {fileID: 335035174}
   tfNoteAppearUpper: {fileID: 19095364}
   tfNoteAppearLower: {fileID: 1647893673}
@@ -1867,7 +1867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageNumber: 1
-  s1_nextindex: 13
+  s1_nextindex: 15
   startMessage: {fileID: 0}
   Clear: 0
 --- !u!4 &1727729436
