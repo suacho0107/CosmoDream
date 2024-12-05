@@ -714,7 +714,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 349091948}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.33, y: -1.5929594, z: 0}
+  m_LocalPosition: {x: -2.82, y: -1.5929594, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1383,6 +1383,7 @@ MonoBehaviour:
   chipsToGive: 1
   gamechips: 0
   hasScissors: 0
+  hasWhite: 0
   isTalk: 0
   isSecondLoad: 0
   completedPuzzles: 0
@@ -1559,7 +1560,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 941109252}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.57, y: -2.5648232, z: 10.001057}
+  m_LocalPosition: {x: 2.57, y: -2.5648232, z: 10.001057}
   m_LocalScale: {x: 0.925, y: 0.925, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2201,7 +2202,7 @@ MonoBehaviour:
   endCursor: {fileID: 1921650656}
   text1: {fileID: 67307894}
   text2: {fileID: 1658612587}
-  puzzleScene: 10
+  puzzleScene: 12
   is2Cliked: 0
 --- !u!4 &1180115615
 Transform:
@@ -3967,7 +3968,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2101357479}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5899999, y: -1.6, z: 0}
+  m_LocalPosition: {x: -6.1099997, y: -1.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

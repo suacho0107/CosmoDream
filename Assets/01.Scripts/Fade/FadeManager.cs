@@ -48,6 +48,11 @@ public class FadeManager : MonoBehaviour
         }
     }
 
+    public void SetFadeDuration(float duration)
+    {
+        fadeDuration = duration;
+    }
+
     private void SetPlayerControl(bool enabled)
     {
         if (playerController != null)
@@ -77,6 +82,7 @@ public class FadeManager : MonoBehaviour
     private IEnumerator FadeAndLoadScene(int sceneIndex)
     {
         yield return StartCoroutine(FadeIn());
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(sceneIndex);
         yield return StartCoroutine(FadeOut());
     }
