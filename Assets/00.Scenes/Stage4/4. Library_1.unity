@@ -430,11 +430,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 40001
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
-  canPickupItem: 0
-  PickedItem: None
+  idChange: 0
+  secondId: 0
 --- !u!212 &221058104
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -560,11 +561,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 40003
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
-  canPickupItem: 0
-  PickedItem: None
+  idChange: 0
+  secondId: 0
 --- !u!212 &223814518
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1006,10 +1008,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanObject: {fileID: 0}
-  isTalk: 0
   chipsToGive: 1
   gamechips: 0
-  hasScissors: 0
+  hasWhite: 0
+  isTalk: 0
+  isSecondLoad: 0
+  completedPuzzles: 0
 --- !u!114 &360295114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1405,11 +1409,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 40004
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
-  canPickupItem: 0
-  PickedItem: None
+  idChange: 0
+  secondId: 0
 --- !u!212 &557469795
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1992,11 +1997,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 40004
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
-  canPickupItem: 0
-  PickedItem: None
+  idChange: 0
+  secondId: 0
 --- !u!212 &1259326417
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2211,11 +2217,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
-  canPickupItem: 0
-  PickedItem: None
+  idChange: 0
+  secondId: 0
 --- !u!4 &1335686911
 Transform:
   m_ObjectHideFlags: 0
@@ -2279,11 +2286,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 40001
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
-  canPickupItem: 0
-  PickedItem: None
+  idChange: 0
+  secondId: 0
 --- !u!212 &1420162027
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2772,11 +2780,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 40002
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
-  canPickupItem: 0
-  PickedItem: None
+  idChange: 0
+  secondId: 0
 --- !u!212 &1726536477
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2902,11 +2911,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 40006
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
-  canPickupItem: 0
-  PickedItem: None
+  idChange: 0
+  secondId: 0
 --- !u!212 &1741826040
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3376,11 +3386,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 40005
+  objIndex: 0
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
-  canPickupItem: 0
-  PickedItem: None
+  idChange: 0
+  secondId: 0
 --- !u!212 &2060193855
 SpriteRenderer:
   m_ObjectHideFlags: 0

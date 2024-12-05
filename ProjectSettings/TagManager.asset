@@ -14,6 +14,7 @@ TagManager:
   - GameChip
   - LineGame
   - FadeCanvas
+  - Rooms
   layers:
   - Default
   - TransparentFX

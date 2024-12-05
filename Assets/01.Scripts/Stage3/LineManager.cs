@@ -107,7 +107,7 @@ public class LineManager : MonoBehaviour
                 }
                 else if (connectedPairs.Count / 2 == BmaxConnections)
                 {
-                    ShowCompletionUI("Stage5 2");
+                    ShowCompletionUI("stage3 2");
                 }
             }
             else
@@ -137,7 +137,10 @@ public class LineManager : MonoBehaviour
         // 현재 그려진 모든 라인 제거
         foreach (var lineRenderer in lineRenderers)
         {
-            Destroy(lineRenderer.gameObject);
+            if (lineRenderer != null)
+            {
+                Destroy(lineRenderer.gameObject);
+            }
         }
 
         // 상태 초기화
@@ -152,6 +155,7 @@ public class LineManager : MonoBehaviour
     private void ShowCompletionUI(string sceneName)
     {
         nextSceneName = sceneName;
+        Debug.Log("ㄱㄱ");
 
         if (completionCanvas != null)
         {
@@ -159,12 +163,13 @@ public class LineManager : MonoBehaviour
            // completionMessage.text = $"{sceneName} 씬으로 이동합니다. 버튼을 클릭하세요.";
         }
     }
-
+    
     private void LoadNextScene()
     {
         if (!string.IsNullOrEmpty(nextSceneName))
         {
             SceneManager.LoadScene(nextSceneName);
+            Debug.Log($"씬 {nextSceneName}으로 전환 중...");
         }
     }
 }

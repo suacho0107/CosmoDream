@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+
     Rigidbody2D rigid;
     Animator animator;
     public float movePower = 6.0f;
@@ -23,13 +25,25 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         dirVec = Vector2.right; // 기본 방향 오른쪽
         isMove = true;
+
+        //좌표 불러오기
+        if (PlayerPosData.pos != null)
+        {
+            //Debug.Log(PlayerPosData.pos);
+            transform.position = PlayerPosData.pos;
+        }
     }
 
     void Update()
     {
+        //Debug.Log(PlayerPosData.pos);
+        //Debug.Log(transform.position);
         if (Input.GetKeyDown(KeyCode.Space) && scanObject != null)
         {
             manager.Action(scanObject); // 스페이스바 상호작용
+            //위치 저장
+            PlayerPosData.pos = transform.position;
+            Debug.Log(PlayerPosData.pos);
         }
 
         if (manager.isTalk)

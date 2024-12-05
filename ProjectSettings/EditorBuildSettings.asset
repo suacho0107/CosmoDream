@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/00.Scenes/Prologue/Prologue 1.unity
+    guid: df392e810f803264d91964f3e7240a38
+  - enabled: 1
+    path: Assets/00.Scenes/Prologue/Prologue 2.unity
+    guid: 59d678ff3b109c847899d3acdc0f8b6f
+  - enabled: 1
+    path: Assets/00.Scenes/Prologue/Prologue 3.unity
+    guid: 17f92ab8cb4d40f4a9a095be54e00c04
+  - enabled: 1
+    path: Assets/00.Scenes/Prologue/Prologue 4.unity
+    guid: 6a69d495d34b9ea428f68bccdf5abcef
+  - enabled: 1
     path: Assets/00.Scenes/Stage1/1-1 train.unity
     guid: 218d80708c91844228f734678bde59af
   - enabled: 1
@@ -24,54 +36,6 @@ EditorBuildSettings:
     path: Assets/00.Scenes/Stage1/1-5 room.unity
     guid: 89694c470f86d486aa4667c966899568
   - enabled: 1
-    path: Assets/00.Scenes/Stage2/2.unity
-    guid: e852cf06f5be07847ac7d4085df65976
-  - enabled: 1
-    path: Assets/00.Scenes/Stage2/2-5 puzzle1.unity
-    guid: 15c58459b08154852af6ef3a17cc6919
-  - enabled: 1
-    path: Assets/00.Scenes/Stage2/2-5 puzzle2.unity
-    guid: 165bb6ee5ad8e4347b171453f5a6ff84
-  - enabled: 1
-    path: Assets/00.Scenes/Stage2/2-5 puzzle3.unity
-    guid: 7884e7bc63b93498c82653e0135d53ef
-  - enabled: 1
-    path: Assets/00.Scenes/Prologue/Prologue 1.unity
-    guid: df392e810f803264d91964f3e7240a38
-  - enabled: 1
-    path: Assets/00.Scenes/Prologue/Prologue 2.unity
-    guid: 59d678ff3b109c847899d3acdc0f8b6f
-  - enabled: 1
-    path: Assets/00.Scenes/Prologue/Prologue 3.unity
-    guid: 17f92ab8cb4d40f4a9a095be54e00c04
-  - enabled: 1
-    path: Assets/00.Scenes/Stage3/stage3.unity
-    guid: e9f4ca2a237680646b9417edf6b22760
-  - enabled: 1
-    path: Assets/00.Scenes/Stage3/GameController.unity
-    guid: 043384fe726fc0a40bcb41660250713e
-  - enabled: 1
-    path: Assets/00.Scenes/Stage3/Flower.unity
-    guid: 0ab66f13640c6774fb105bc37f78979d
-  - enabled: 1
-    path: Assets/00.Scenes/Stage3/Building.unity
-    guid: 3cf4f936b308f23409e139e201754c12
-  - enabled: 1
-    path: Assets/00.Scenes/Stage3/stage3 2.unity
-    guid: c1facb38f5e41ae46a96f08798c7e28a
-  - enabled: 1
-    path: Assets/00.Scenes/Stage5/airplane.unity
-    guid: d6d0b102da507a143a542a25938cbf18
-  - enabled: 1
-    path: Assets/00.Scenes/Stage5/car.unity
-    guid: 89176ac16d515664781cfee9388f11c9
-  - enabled: 1
-    path: Assets/00.Scenes/Stage5/Chicken.unity
-    guid: 8d2ccd1f2dd8e4b46a0d981a48830a5b
-  - enabled: 1
-    path: Assets/00.Scenes/Stage5/stage5.unity
-    guid: 1329de27c94612d4cb60dab6aa556b3f
-  - enabled: 1
     path: Assets/00.Scenes/Stage1/1-6 Puzzle1.unity
     guid: 54af92649afee466a9b8a8e593419af4
   - enabled: 1
@@ -84,6 +48,54 @@ EditorBuildSettings:
     path: Assets/00.Scenes/Stage1/1-6 Puzzle4.unity
     guid: 3f289a4db2b2548bb86dc4d42c6e9bd2
   - enabled: 1
-    path: Assets/00.Scenes/Prologue/Prologue 4.unity
-    guid: 6a69d495d34b9ea428f68bccdf5abcef
+    path: Assets/00.Scenes/Stage2/2.unity
+    guid: e852cf06f5be07847ac7d4085df65976
+  - enabled: 1
+    path: Assets/00.Scenes/Stage2/2-5 puzzle1.unity
+    guid: 15c58459b08154852af6ef3a17cc6919
+  - enabled: 1
+    path: Assets/00.Scenes/Stage2/2-5 puzzle2.unity
+    guid: 165bb6ee5ad8e4347b171453f5a6ff84
+  - enabled: 1
+    path: Assets/00.Scenes/Stage2/2-5 puzzle3.unity
+    guid: 7884e7bc63b93498c82653e0135d53ef
+  - enabled: 1
+    path: Assets/00.Scenes/Stage3/stage3.unity
+    guid: e9f4ca2a237680646b9417edf6b22760
+  - enabled: 1
+    path: Assets/00.Scenes/Stage3/stage3 2.unity
+    guid: c1facb38f5e41ae46a96f08798c7e28a
+  - enabled: 1
+    path: Assets/00.Scenes/Stage3/GameController.unity
+    guid: 043384fe726fc0a40bcb41660250713e
+  - enabled: 1
+    path: Assets/00.Scenes/Stage3/Flower.unity
+    guid: 0ab66f13640c6774fb105bc37f78979d
+  - enabled: 1
+    path: Assets/00.Scenes/Stage3/building.unity
+    guid: 3cf4f936b308f23409e139e201754c12
+  - enabled: 1
+    path: Assets/00.Scenes/Stage4/4. Library_1.unity
+    guid: bc0a09d84130d584c8b3eeccc6caf9d7
+  - enabled: 1
+    path: Assets/00.Scenes/Stage4/4-1.RythmGame.unity
+    guid: 26106f09ae7569044907181817315f47
+  - enabled: 1
+    path: Assets/00.Scenes/Stage4/4-2.RythmGame.unity
+    guid: 7bfa4cb359401cd4f88cde72f59a593c
+  - enabled: 1
+    path: Assets/00.Scenes/Stage4/4-3. RythmGame.unity
+    guid: 1387574ca546d03468976a6cdebe1b3b
+  - enabled: 1
+    path: Assets/00.Scenes/Stage5/stage5.unity
+    guid: 1329de27c94612d4cb60dab6aa556b3f
+  - enabled: 1
+    path: Assets/00.Scenes/Stage5/car.unity
+    guid: 89176ac16d515664781cfee9388f11c9
+  - enabled: 1
+    path: Assets/00.Scenes/Stage5/airplane.unity
+    guid: d6d0b102da507a143a542a25938cbf18
+  - enabled: 1
+    path: Assets/00.Scenes/Stage5/Chicken.unity
+    guid: 8d2ccd1f2dd8e4b46a0d981a48830a5b
   m_configObjects: {}

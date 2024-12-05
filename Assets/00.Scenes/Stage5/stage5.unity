@@ -511,7 +511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95373465de42240cc9b48904f201dd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneIndex: 19
+  SceneIndex: 30
   isEdge: 0
 --- !u!1 &469613838
 GameObject:
@@ -3039,7 +3039,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.5487844}
+  m_Offset: {x: 0, y: -0.40507388}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3050,7 +3050,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.08, y: 2.2775686}
+  m_Size: {x: 2.08, y: 2.5649896}
   m_EdgeRadius: 0
 --- !u!114 &1551772465
 MonoBehaviour:
@@ -3095,7 +3095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95373465de42240cc9b48904f201dd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneIndex: 18
+  SceneIndex: 28
   isEdge: 0
 --- !u!1 &1602799654
 GameObject:
@@ -3334,7 +3334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95373465de42240cc9b48904f201dd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneIndex: 17
+  SceneIndex: 29
   isEdge: 0
 --- !u!1 &1842379307
 GameObject:
@@ -3662,7 +3662,7 @@ MonoBehaviour:
   scanObject: {fileID: 0}
   chipsToGive: 1
   gamechips: 0
-  hasScissors: 0
+  hasWhite: 0
   isTalk: 0
   isSecondLoad: 0
   completedPuzzles: 0

@@ -17,6 +17,7 @@ public class TalkManager : MonoBehaviour
     ObjData objData;
     GameManager gameManager;
     PlayerController playerController;
+    DataController datacontroller;
     // public Sprite[] portraitArr;
     TalkData talkDataScript;
     Dictionary<int, Choice[]> choiceData = new Dictionary<int, Choice[]>();
@@ -27,12 +28,14 @@ public class TalkManager : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         playerController = FindObjectOfType<PlayerController>();
         talkDataScript = FindObjectOfType<TalkData>();
+        datacontroller = FindObjectOfType<DataController>();
         talkPanel.SetActive(false);
     }
 
     public void Talk(int id)
     {
         gameManager.isTalk = true;
+        Debug.Log(gameManager.isTalk);
         playerController.SetMove(false);
         string speakerName;
         string talkData = GetTalk(id, talkIndex, out speakerName);
@@ -115,6 +118,7 @@ public class TalkManager : MonoBehaviour
     {
         talkPanel.SetActive(false);
         gameManager.isTalk = false;
+        Debug.Log(gameManager.isTalk);
         talkIndex = 0;
 
         if (talkId == 13211) // 1-3-2
@@ -126,15 +130,15 @@ public class TalkManager : MonoBehaviour
         
         if (talkId == 24001) // 가족앨범 - 가위
         {
-            gameManager.hasScissors = true;
+            datacontroller.gameData._scissors = true;
             Debug.Log("플레이어가 가위를 획득했습니다.");
         }
 
-       // if (talkId == 31006) // 가족앨범 - 가위
-        //{
-       //     gameManager.hasWhite = true;
-        //    Debug.Log("플레이어가 화이트를 획득했습니다.");
-        //}
+        if (talkId == 31006) // 가족앨범 - 화이트
+        {
+            datacontroller.gameData._white = true;
+            Debug.Log("플레이어가 화이트를 획득했습니다.");
+        }
 
     }
 }

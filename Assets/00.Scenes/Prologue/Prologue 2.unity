@@ -2866,7 +2866,6 @@ GameObject:
   - component: {fileID: 1726061005}
   - component: {fileID: 1726061006}
   - component: {fileID: 1726061009}
-  - component: {fileID: 1726061008}
   - component: {fileID: 1726061007}
   - component: {fileID: 1726061010}
   m_Layer: 8
@@ -2962,18 +2961,6 @@ MonoBehaviour:
   Display: {fileID: 0}
   idChange: 0
   secondId: 0
---- !u!114 &1726061008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726061004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 432b553b363918048b7bffc340344ced, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1726061009
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3012,7 +2999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95373465de42240cc9b48904f201dd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneIndex: 25
+  SceneIndex: 26
   isEdge: 0
 --- !u!1 &1852684765
 GameObject:
@@ -3392,6 +3379,7 @@ MonoBehaviour:
   chipsToGive: 1
   gamechips: 0
   hasScissors: 0
+  hasWhite: 0
   isTalk: 0
   isSecondLoad: 0
   completedPuzzles: 0

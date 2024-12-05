@@ -33,7 +33,11 @@ public class MovementManager : MonoBehaviour
     private void Start()
     {
         //초기 설정
-        ActivateOnly(centerMap);
+        if (PlayerPosData.room == null)
+        {
+            PlayerPosData.room = centerMap;
+        }
+        ActivateOnly(PlayerPosData.room);
 
         fadeController = FindObjectOfType<FadeController>();
         playerController = FindObjectOfType<PlayerController>();
@@ -71,54 +75,6 @@ public class MovementManager : MonoBehaviour
         scanMoveTag = null;
     }
 
-    /*
-    private void MoveToLeft() //왼쪽으로 이동
-    {
-        if (leftMap.activeSelf)
-        {
-            ActivateOnly(backMap);
-        }
-        else if (centerMap.activeSelf)
-        {
-            ActivateOnly(leftMap);
-        }
-        else if (rightMap.activeSelf)
-        {
-            ActivateOnly(centerMap);
-        }
-        else if (backMap.activeSelf)
-        {
-            ActivateOnly(rightMap);
-        }
-
-        StartCoroutine(FadeAndMove(pos));
-    }
-    */
-
-    /*
-    private void MoveToRight() //오른쪽으로 이동
-    {
-        if (leftMap.activeSelf)
-        {
-            ActivateOnly(centerMap);
-        }
-        else if (centerMap.activeSelf)
-        {
-            ActivateOnly(rightMap);
-        }
-        else if (rightMap.activeSelf)
-        {
-            ActivateOnly(backMap);
-        }
-        else if (backMap.activeSelf)
-        {
-            ActivateOnly(leftMap);
-        }
-
-        StartCoroutine(FadeAndMove(-pos));
-    }
-    */
-
     private void ActivateOnly(GameObject toActive)
     {
         leftMap.SetActive(false);
@@ -127,6 +83,7 @@ public class MovementManager : MonoBehaviour
         backMap.SetActive(false);
 
         toActive.SetActive(true);
+        PlayerPosData.room = toActive;
     }
 
     private void movePlayer(int _pos)
