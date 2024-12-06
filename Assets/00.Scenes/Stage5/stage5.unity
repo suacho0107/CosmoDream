@@ -493,12 +493,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 51002
-  objIndex: 0
+  objIndex: 51
   isNpc: 0
   objectType: 2
   Display: {fileID: 0}
-  idChange: 0
-  secondId: 0
+  idChange: 1
+  secondId: 51006
 --- !u!114 &244404252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3077,12 +3077,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 51004
-  objIndex: 0
+  objIndex: 53
   isNpc: 0
   objectType: 2
   Display: {fileID: 0}
-  idChange: 0
-  secondId: 0
+  idChange: 1
+  secondId: 51006
 --- !u!114 &1551772467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3206,8 +3206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64fdd4a8d509ec14bb731f916c50eff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NowStgScene: 5
-  NextStgScene: stage6
+  NowStgScene: stage5
+  NextStgScene: 6-0
   initPosition: {x: -10, y: -1.6, z: 0}
 --- !u!4 &1694886830
 Transform:
@@ -3363,12 +3363,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 51003
-  objIndex: 0
+  objIndex: 52
   isNpc: 0
   objectType: 2
   Display: {fileID: 0}
-  idChange: 0
-  secondId: 0
+  idChange: 1
+  secondId: 51006
 --- !u!114 &1744292955
 MonoBehaviour:
   m_ObjectHideFlags: 0

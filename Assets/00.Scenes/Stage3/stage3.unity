@@ -2037,7 +2037,6 @@ MonoBehaviour:
   scanObject: {fileID: 0}
   chipsToGive: 1
   gamechips: 0
-  hasScissors: 0
   hasWhite: 0
   isTalk: 0
   isSecondLoad: 0
@@ -2966,7 +2965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 31006
-  objIndex: 5
+  objIndex: 35
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}

@@ -34,7 +34,7 @@ public class LineManager : MonoBehaviour
         {
             FmaxConnections = 12;
         }
-        else if (sceneName == "Building")
+        else if (sceneName == "building")
         {
             BmaxConnections = 14;
         }
