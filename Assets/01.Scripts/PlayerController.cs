@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
         isMove = true;
 
         //좌표 불러오기
-        if (PlayerPosData.pos != null)
+        if (PlayerPosData.pos != null && FindObjectOfType<StageClearController>() != null)
         {
             //Debug.Log(PlayerPosData.pos);
             transform.position = PlayerPosData.pos;
