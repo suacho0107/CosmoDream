@@ -1382,7 +1382,6 @@ MonoBehaviour:
   scanObject: {fileID: 0}
   chipsToGive: 1
   gamechips: 0
-  hasScissors: 0
   hasWhite: 0
   isTalk: 0
   isSecondLoad: 0
@@ -1636,7 +1635,7 @@ MonoBehaviour:
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
-  idChange: 1
+  idChange: 0
   secondId: 15103
 --- !u!61 &941109256
 BoxCollider2D:
@@ -1676,7 +1675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95373465de42240cc9b48904f201dd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneIndex: 6
+  SceneIndex: 16
   isEdge: 0
 --- !u!1 &956303573
 GameObject:

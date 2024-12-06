@@ -272,7 +272,7 @@ MonoBehaviour:
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
-  idChange: 1
+  idChange: 0
   secondId: 20001
 --- !u!1 &98521775
 GameObject:
@@ -3394,7 +3394,6 @@ MonoBehaviour:
   scanObject: {fileID: 0}
   chipsToGive: 1
   gamechips: 0
-  hasScissors: 0
   hasWhite: 0
   isTalk: 0
   isSecondLoad: 0
