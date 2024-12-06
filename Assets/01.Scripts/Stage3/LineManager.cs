@@ -154,6 +154,7 @@ public class LineManager : MonoBehaviour
 
     private void ShowCompletionUI(string sceneName)
     {
+
         nextSceneName = sceneName;
         Debug.Log("ㄱㄱ");
 
@@ -171,5 +172,8 @@ public class LineManager : MonoBehaviour
             SceneManager.LoadScene(nextSceneName);
             Debug.Log($"씬 {nextSceneName}으로 전환 중...");
         }
+        //여기?
+        PuzzleClear puzzleClear = FindObjectOfType<PuzzleClear>();
+        puzzleClear.CompletePuzzle();
     }
 }
