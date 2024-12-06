@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StartController : MonoBehaviour
 {
@@ -65,7 +66,7 @@ public class StartController : MonoBehaviour
         yield return StartCoroutine(fadecontroller.FadeIn(fade));
         yield return new WaitForSeconds(1f);
         //이름입력창으로 이동
-
+        SceneManager.LoadScene("00.Scenes/Start/NameScene");
         Debug.Log("게임 시작됨");
     }
 
