@@ -34,30 +34,29 @@ public class PuzzleClear : MonoBehaviour
     {
         if (stageClearController != null)
             stageClearController.ClearStage();
-        // 스테이지 번호에 따라 퍼즐 완료 상태를 갱신합니다.
-        switch (stageNumber)
+        
+        if (stageNumber == 1)
         {
-            case 1:
-                FadeManager.instance.ChangeScene(s1_nextindex);
-                break;
-
-            case 2:
-                if (!datacontroller.gameData.puzzle1Clear)
-                {
-                    datacontroller.gameData.puzzle1Clear = true;
-                    Debug.Log(datacontroller.gameData.puzzle1Clear);
-                }
-                else if (!datacontroller.gameData.puzzle2Clear)
-                {
-                    datacontroller.gameData.puzzle2Clear = true;
-                    Debug.Log(datacontroller.gameData.puzzle2Clear);
-                }
-                else if (!datacontroller.gameData.puzzle3Clear)
-                {
-                    datacontroller.gameData.puzzle3Clear = true;
-                    Debug.Log(datacontroller.gameData.puzzle3Clear);
-                }
-                break;
+            FadeManager.instance.ChangeScene(s1_nextindex);
+            return;
+        }
+        else
+        {
+            if (!datacontroller.gameData.puzzle1Clear)
+            {
+                datacontroller.gameData.puzzle1Clear = true;
+                Debug.Log(datacontroller.gameData.puzzle1Clear);
+            }
+            else if (!datacontroller.gameData.puzzle2Clear)
+            {
+                datacontroller.gameData.puzzle2Clear = true;
+                Debug.Log(datacontroller.gameData.puzzle2Clear);
+            }
+            else if (!datacontroller.gameData.puzzle3Clear)
+            {
+                datacontroller.gameData.puzzle3Clear = true;
+                Debug.Log(datacontroller.gameData.puzzle3Clear);
+            }
         }
     }
 
