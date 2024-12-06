@@ -91,5 +91,6 @@ public class BreakStage : MonoBehaviour
 
         //¾À ·Îµå ÇÔ¼ö
         SceneManager.LoadScene(nextScene);
+
     }
 }

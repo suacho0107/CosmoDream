@@ -32,21 +32,29 @@ public class MovementManager : MonoBehaviour
 
     private void Start()
     {
-        switch (PlayerPosData.romInx)
+        if(FindObjectOfType<StageClearController>() != null)
         {
-            case 0: //center
-                ActivateOnly(centerMap);
-                break;
-            case 1: //right
-                ActivateOnly(rightMap);
-                break;
-            case 2: //back
-                ActivateOnly(backMap);
-                break;
-            case 3: //left
-                ActivateOnly(leftMap);
-                break;
+            switch (PlayerPosData.romInx)
+            {
+                case 0: //center
+                    ActivateOnly(centerMap);
+                    break;
+                case 1: //right
+                    ActivateOnly(rightMap);
+                    break;
+                case 2: //back
+                    ActivateOnly(backMap);
+                    break;
+                case 3: //left
+                    ActivateOnly(leftMap);
+                    break;
+            }
         }
+        else
+        {
+            ActivateOnly(centerMap);
+        }
+        
 
         fadeController = FindObjectOfType<FadeController>();
         playerController = FindObjectOfType<PlayerController>();

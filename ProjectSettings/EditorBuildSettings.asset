@@ -120,6 +120,15 @@ EditorBuildSettings:
     path: Assets/00.Scenes/Stage6/6-4.unity
     guid: e41d57b44293499499852d75f4bb93c8
   - enabled: 1
+    path: Assets/00.Scenes/Stage6/RouteNormal.unity
+    guid: 54ac2a4e076797d47844d4fd547ab632
+  - enabled: 1
+    path: Assets/00.Scenes/Stage6/RouteDontDestroy.unity
+    guid: bb50dabbfee07034e82a1523f72c2400
+  - enabled: 1
+    path: Assets/00.Scenes/Stage6/RouteDestroy.unity
+    guid: 4c4272ccacaff3747b21c607fa20878b
+  - enabled: 1
     path: Assets/00.Scenes/Ending/EndingScene1.unity
     guid: 25eba1d5ac0bc4fd4a934e55ed93b590
   - enabled: 1
