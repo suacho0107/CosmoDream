@@ -51,7 +51,19 @@ public class PuzzleManager : MonoBehaviour
             puzzleClear.CompletePuzzle();
             //SceneManager.LoadScene("stage5");
         }
-            
+        else if (SceneManager.GetActiveScene().name == "airplane")
+        {
+            PuzzleClear puzzleClear = FindObjectOfType<PuzzleClear>();
+            puzzleClear.CompletePuzzle();
+            //SceneManager.LoadScene("stage5");
+        }
+        else if (SceneManager.GetActiveScene().name == "chicken")
+        {
+            PuzzleClear puzzleClear = FindObjectOfType<PuzzleClear>();
+            puzzleClear.CompletePuzzle();
+            //SceneManager.LoadScene("stage5");
+        }
+
     }
     
 }

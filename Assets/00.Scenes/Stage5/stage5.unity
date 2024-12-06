@@ -196,7 +196,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &46210985
 Transform:
   m_ObjectHideFlags: 0
@@ -3095,7 +3095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95373465de42240cc9b48904f201dd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneIndex: 28
+  SceneIndex: 30
   isEdge: 0
 --- !u!1 &1602799654
 GameObject:
@@ -3381,7 +3381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95373465de42240cc9b48904f201dd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneIndex: 29
+  SceneIndex: 31
   isEdge: 0
 --- !u!1 &1842379307
 GameObject:
@@ -3709,7 +3709,6 @@ MonoBehaviour:
   scanObject: {fileID: 0}
   chipsToGive: 1
   gamechips: 0
-  hasScissors: 0
   hasWhite: 0
   isTalk: 0
   isSecondLoad: 0
