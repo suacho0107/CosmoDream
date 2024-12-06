@@ -47,7 +47,7 @@ public class MovementManager : MonoBehaviour
         // 씬 시작 시 페이드 기능을 사용할 경우
         if (useFadeOnStart)
         {
-            StartCoroutine(StartSceneFade());
+            //StartCoroutine(StartSceneFade());
         }
 
     }
