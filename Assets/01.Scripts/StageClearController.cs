@@ -29,22 +29,28 @@ public class StageClearController : MonoBehaviour
             datacontroller.gameData.puzzle2Clear = false;
             datacontroller.gameData.puzzle3Clear = false;
 
+            //클리어 체크할 변수 = true;
+            //다음 스테이지로 넘어왔으면 ^꺼 다시 false로 변경
+
             //게임 껐다 켰을 때 시작될 스테이지 변경
             datacontroller.gameData.nowStg++;
 
             //플레이어 위치 초기값 넣어주기
             PlayerPosData.pos = initPosition;
-            PlayerPosData.room = null;
+            PlayerPosData.romInx = 0;
 
             //씬로드(NextStgScene)
             FadeManager.instance.ChangeScene(NextStgScene);
             GameManager.instance.isSecondLoad = true;
+            Debug.Log("다음 스테이지로 돌아갑니다. (" + NextStgScene + ")");
         }
         else
         {
             //씬로드(NowStgScene)
             FadeManager.instance.ChangeScene(NowStgScene);
             GameManager.instance.isSecondLoad = true;
+
+            Debug.Log("기존 스테이지로 돌아갑니다. (" + NowStgScene + ")");
         }
     }
 }

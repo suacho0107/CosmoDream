@@ -4071,7 +4071,6 @@ MonoBehaviour:
   scanObject: {fileID: 0}
   chipsToGive: 1
   gamechips: 0
-  hasScissors: 0
   hasWhite: 0
   isTalk: 0
   isSecondLoad: 0

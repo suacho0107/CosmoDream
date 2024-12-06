@@ -602,6 +602,7 @@ GameObject:
   - component: {fileID: 223814518}
   - component: {fileID: 223814517}
   - component: {fileID: 223814519}
+  - component: {fileID: 223814520}
   m_Layer: 8
   m_Name: drawer
   m_TagString: Untagged
@@ -721,6 +722,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.41, y: 6.46}
   m_EdgeRadius: 0
+--- !u!114 &223814520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223814515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95373465de42240cc9b48904f201dd26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneIndex: 27
+  isEdge: 0
 --- !u!1 &239235963
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,7 +1101,6 @@ MonoBehaviour:
   scanObject: {fileID: 0}
   chipsToGive: 1
   gamechips: 0
-  hasScissors: 0
   hasWhite: 0
   isTalk: 0
   isSecondLoad: 0
@@ -1120,7 +1134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &383215624
 Transform:
   m_ObjectHideFlags: 0
@@ -1451,6 +1465,7 @@ GameObject:
   - component: {fileID: 557469794}
   - component: {fileID: 557469796}
   - component: {fileID: 557469797}
+  - component: {fileID: 557469798}
   m_Layer: 8
   m_Name: bookshelf2
   m_TagString: Untagged
@@ -1596,6 +1611,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.162398, y: 7.32}
   m_EdgeRadius: 0
+--- !u!114 &557469798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557469792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95373465de42240cc9b48904f201dd26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneIndex: 28
+  isEdge: 0
 --- !u!1 &673142662
 GameObject:
   m_ObjectHideFlags: 0
@@ -1792,7 +1821,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &886914571
 Transform:
   m_ObjectHideFlags: 0
@@ -2983,6 +3012,7 @@ GameObject:
   - component: {fileID: 1726536477}
   - component: {fileID: 1726536476}
   - component: {fileID: 1726536478}
+  - component: {fileID: 1726536479}
   m_Layer: 8
   m_Name: poster
   m_TagString: Untagged
@@ -3102,6 +3132,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.57, y: 6.30951}
   m_EdgeRadius: 0
+--- !u!114 &1726536479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726536474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95373465de42240cc9b48904f201dd26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneIndex: 26
+  isEdge: 0
 --- !u!1 &1741826037
 GameObject:
   m_ObjectHideFlags: 0

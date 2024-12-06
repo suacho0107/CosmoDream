@@ -32,12 +32,21 @@ public class MovementManager : MonoBehaviour
 
     private void Start()
     {
-        //초기 설정
-        if (PlayerPosData.room == null)
+        switch (PlayerPosData.romInx)
         {
-            PlayerPosData.room = centerMap;
+            case 0: //center
+                ActivateOnly(centerMap);
+                break;
+            case 1: //right
+                ActivateOnly(rightMap);
+                break;
+            case 2: //back
+                ActivateOnly(backMap);
+                break;
+            case 3: //left
+                ActivateOnly(leftMap);
+                break;
         }
-        ActivateOnly(PlayerPosData.room);
 
         fadeController = FindObjectOfType<FadeController>();
         playerController = FindObjectOfType<PlayerController>();
@@ -83,7 +92,10 @@ public class MovementManager : MonoBehaviour
         backMap.SetActive(false);
 
         toActive.SetActive(true);
-        PlayerPosData.room = toActive;
+        if (toActive == centerMap) PlayerPosData.romInx = 0;
+        else if (toActive == rightMap) PlayerPosData.romInx = 1;
+        else if (toActive == backMap) PlayerPosData.romInx = 2;
+        else if (toActive == leftMap) PlayerPosData.romInx = 3;
     }
 
     private void movePlayer(int _pos)
