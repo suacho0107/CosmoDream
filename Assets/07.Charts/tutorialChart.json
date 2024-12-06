@@ -17,11 +17,6 @@
     { "time": 7.45, "lane": "upper" },
     { "time": 7.7375, "lane": "upper" },
     { "time": 8.025, "lane": "upper" },
-    { "time": 8.3125, "lane": "upper" },
-
-    // 여기부터안맞음
-    { "time": 9.2, "lane": "upper" },
-    { "time": 9.4875, "lane": "upper" },
-    { "time": 9.775, "lane": "upper" }
+    { "time": 8.3125, "lane": "upper" }
   ]
 }

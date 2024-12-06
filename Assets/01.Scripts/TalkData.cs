@@ -92,6 +92,9 @@ public class TalkData : MonoBehaviour
         //portraitData.Add(1000 + 3,);
 
         // 210~240
+        talkData.Add(20000, new string[] { "아직 남은 퍼즐이 있어." });
+        talkData.Add(20001, new string[] { "퍼즐을 다 풀었다." });
+        
         talkData.Add(21000, new string[] { "이건 이미 푼 퍼즐이다." });
         talkData.Add(21001, new string[] { "화장대 위에 사진 퍼즐이 놓여있다." });
         talkData.Add(22001, new string[] { "어릴 때 내가 부모님께 선물로 드린 오르골이 있다.",
@@ -103,11 +106,6 @@ public class TalkData : MonoBehaviour
         "...",
         "가족앨범 사이에 끼워져 있는 가위를 얻었다." });
         talkData.Add(24002, new string[] { "퍼즐을 찾았다." });
-
-        // 클리어시
-        //talkData.Add(15301, new string[] { "퍼즐을 다 풀었다." });
-        // 다음 스테이지로 이동
-
 
         // 310
         talkData.Add(31001, new string[] { "TV 화면에 콘솔 게임이 떠있다. ", "13년 전에 히트를 쳤던 게임인 것 같다. ", 

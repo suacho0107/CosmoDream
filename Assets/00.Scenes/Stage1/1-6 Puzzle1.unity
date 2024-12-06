@@ -156,6 +156,7 @@ MonoBehaviour:
   scanObject: {fileID: 0}
   chipsToGive: 1
   gamechips: 0
+  hasScissors: 0
   hasWhite: 0
   isTalk: 0
   isSecondLoad: 0
@@ -853,7 +854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageNumber: 1
-  s1_nextindex: 11
+  s1_nextindex: 13
   startMessage: {fileID: 0}
   Clear: 0
 --- !u!4 &313005544

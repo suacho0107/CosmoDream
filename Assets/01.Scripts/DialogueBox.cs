@@ -90,7 +90,7 @@ public class DialogueBox : MonoBehaviour
             }
 
             // 대화가 끝나면 씬 이동
-            SceneManager.LoadScene("1-1 train");
+            FadeManager.instance.ChangeScene("1-1 train");
         }
     }
 }
