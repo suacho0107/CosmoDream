@@ -694,7 +694,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ee39f5afe477e6e429b11ca193b5a12d, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -792,6 +792,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f3b19d53820e4105aa2454725336b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioSource: {fileID: 631559217}
+  MusicClips:
+  - {fileID: 8300000, guid: ee39f5afe477e6e429b11ca193b5a12d, type: 3}
+  - {fileID: 8300000, guid: 54e2e697239cb5a42916efd28fcb3c79, type: 3}
+  - {fileID: 8300000, guid: 33dffb4f4b087534889fb38c713715a2, type: 3}
+  - {fileID: 8300000, guid: 68817d01a841fda4eae1011a74153a9e, type: 3}
+  - {fileID: 8300000, guid: 544e85542d0ee4443a88b4850c4f05cb, type: 3}
+  - {fileID: 8300000, guid: 1387508729a698041af0c61799e3ff87, type: 3}
+  - {fileID: 8300000, guid: 1a184efde7c98314aade23080812675b, type: 3}
+  - {fileID: 8300000, guid: b0b36633cf406374a8809d9a7da1bec9, type: 3}
+  - {fileID: 8300000, guid: 37ba1f22d4f266d459f2594cc969a0cb, type: 3}
+  - {fileID: 8300000, guid: 16d0aad91212fb641bfa5f2643190f31, type: 3}
+  - {fileID: 8300000, guid: ae2edb494c5b5fd40a2d2767076f14d0, type: 3}
+  - {fileID: 8300000, guid: e4b92cdbfeffc8442a6f8d0d76c0eedd, type: 3}
+  - {fileID: 8300000, guid: 871cab089e10e4a4598073097791e14b, type: 3}
+  - {fileID: 8300000, guid: d620cd9710720f44998ea9b2ada8492b, type: 3}
+  - {fileID: 0}
+  SceneMappings:
+  - MusicIndex: 0
+    SceneIndexes: 0000000001000000
+  - MusicIndex: 1
+    SceneIndexes: 02000000030000000400000005000000
+  - MusicIndex: 2
+    SceneIndexes: 0600000007000000
+  - MusicIndex: 3
+    SceneIndexes: 0800000009000000
+  - MusicIndex: 4
+    SceneIndexes: 0a0000000b0000001d000000
+  - MusicIndex: 5
+    SceneIndexes: 10000000
+  - MusicIndex: 6
+    SceneIndexes: 1400000015000000
+  - MusicIndex: 7
+    SceneIndexes: 19000000
+  - MusicIndex: 8
+    SceneIndexes: 21000000
+  - MusicIndex: 9
+    SceneIndexes: 0c0000000d0000000f0000001100000012000000130000001600000017000000180000001e0000001f00000020000000
+  - MusicIndex: 10
+    SceneIndexes: 27000000
+  - MusicIndex: 11
+    SceneIndexes: 28000000
+  - MusicIndex: 12
+    SceneIndexes: 29000000
+  - MusicIndex: 14
+    SceneIndexes: 0e0000001a0000001b0000001c00000024000000
 --- !u!1 &635696197
 GameObject:
   m_ObjectHideFlags: 0
