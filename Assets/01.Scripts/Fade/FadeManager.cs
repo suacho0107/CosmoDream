@@ -38,7 +38,7 @@ public class FadeManager : MonoBehaviour
         }
         if (stageTextUI != null && GameManager.instance.isSecondLoad != true)
         {
-            StartCoroutine(FadeInAndOutText());
+            StartCoroutine(FadeOutWithText());
         }
         else
         {
@@ -76,21 +76,18 @@ public class FadeManager : MonoBehaviour
     {
         yield return StartCoroutine(FadeIn());
         SceneManager.LoadScene(sceneName);
-        yield return StartCoroutine(FadeOut());
     }
 
     private IEnumerator FadeAndLoadScene(int sceneIndex)
     {
         yield return StartCoroutine(FadeIn());
         SceneManager.LoadScene(sceneIndex);
-        yield return StartCoroutine(FadeOut());
     }
 
     private IEnumerator FadeAndLoadScene(int sceneIndex, float duration)
     {
         yield return StartCoroutine(FadeIn(duration));
         SceneManager.LoadScene(sceneIndex);
-        yield return StartCoroutine(FadeOut());
     }
 
     private IEnumerator FadeIn()
@@ -135,51 +132,44 @@ public class FadeManager : MonoBehaviour
             SetPlayerControl(false);
     }
 
-    private IEnumerator FadeInAndOutText()
+    private IEnumerator FadeOutWithText()
     {
+        Debug.Log("텍스트와함께 페이드아웃");
         SetPlayerControl(false);
-        Debug.Log("스테이지 텍스트가 있을 때의 페이드");
-
-        if (stageTextUI == null)
-        {
-            yield break;
-        }
-
-        // 텍스트 페이드 인
-        float time = 0f;
-        Color color = stageTextUI.color;
-        color.a = 0f;
-        stageTextUI.color = color;
-
-        while (time < fadeDuration)
-        {
-            if (stageTextUI == null) yield break;
-            time += Time.deltaTime;
-            color.a = Mathf.Clamp01(time / fadeDuration);
-            stageTextUI.color = color;
-            fadeCanvasGroup.alpha = Mathf.Clamp01(time / fadeDuration);
-            yield return null;
-        }
-        stageTextUI.color = new Color(color.r, color.g, color.b, 1f);
+       
         fadeCanvasGroup.alpha = 1f;
 
-        // 텍스트 유지 시간
-        yield return new WaitForSeconds(fadeDuration + 0.5f);
-        
+        // 페이드 인
+        float time = 0f;
+        Color textColor = stageTextUI.color;
+        textColor.a = 0f;
+        stageTextUI.color = textColor;
 
-        // 텍스트 페이드 아웃
+        while (time < 0.5f)
+        {
+            time += Time.deltaTime;
+            textColor.a = Mathf.Clamp01(time / 0.5f);
+            stageTextUI.color = textColor;
+            yield return null;
+        }
+
+        // 텍스트 유지
+        textColor.a = 1f;
+        stageTextUI.color = textColor;
+        yield return new WaitForSeconds(0.5f);
+
+        // 페이드 아웃
         time = 0f;
         while (time < fadeDuration)
-            {
-                if (stageTextUI == null) yield break;
-                time += Time.deltaTime;
-                color.a = 1f - Mathf.Clamp01(time / fadeDuration);
-                stageTextUI.color = color;
-                fadeCanvasGroup.alpha = 1f - Mathf.Clamp01(time / fadeDuration);  // 배경도 동시에 페이드 아웃
-                yield return null;
-            }
+        {
+            time += Time.deltaTime;
+            textColor.a = 1f - Mathf.Clamp01(time / fadeDuration);
+            stageTextUI.color = textColor;
+            fadeCanvasGroup.alpha = 1f - Mathf.Clamp01(time / fadeDuration); // 배경도 동시에 페이드 아웃
+            yield return null;
+        }
 
-        stageTextUI.color = new Color(color.r, color.g, color.b, 0f);
+        stageTextUI.color = new Color(textColor.r, textColor.g, textColor.b, 0f);
         fadeCanvasGroup.alpha = 0f;
         
         if (!GameManager.instance.isTalk)

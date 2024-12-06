@@ -165,6 +165,8 @@ GameObject:
   m_Component:
   - component: {fileID: 78011561}
   - component: {fileID: 78011562}
+  - component: {fileID: 78011564}
+  - component: {fileID: 78011563}
   m_Layer: 0
   m_Name: door
   m_TagString: Untagged
@@ -239,6 +241,39 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &78011563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78011560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95373465de42240cc9b48904f201dd26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneIndex: 20
+  isEdge: 0
+--- !u!114 &78011564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78011560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca23454ebe7f8d34883277a98c086b00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 20000
+  objIndex: 0
+  isNpc: 0
+  objectType: 0
+  Display: {fileID: 0}
+  idChange: 1
+  secondId: 20001
 --- !u!1 &98521775
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,7 +485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95373465de42240cc9b48904f201dd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneIndex: 17
+  SceneIndex: 19
   isEdge: 0
 --- !u!114 &200414838
 MonoBehaviour:
@@ -3061,7 +3096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95373465de42240cc9b48904f201dd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneIndex: 15
+  SceneIndex: 17
   isEdge: 0
 --- !u!61 &1630255741
 BoxCollider2D:
@@ -3136,7 +3171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95373465de42240cc9b48904f201dd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneIndex: 16
+  SceneIndex: 18
   isEdge: 0
 --- !u!114 &1664335994
 MonoBehaviour:
