@@ -146,6 +146,7 @@ public class TalkData : MonoBehaviour
         talkData.Add(51003, new string[] { "해체되어 있는 장난감이 눈에 띈다." }); //puzzle2
         talkData.Add(51004, new string[] { "바닥에 해체된 장난감이 널부러져 있다.", "조립해버려야겠다." }); //puzzle3
         talkData.Add(51005, new string[] { "구급 상자가 두개나 있다. 하나는 상비약이 가지런히 정리되어있다.", "다른 하나는 먹다 만 약들이 가득하다. 동생이 먹었었던 약과 똑같다." }); //FirstAidKit
+        talkData.Add(51006, new string[] { "이미 조립한 장난감이다." });
     }
 
     public Choice[] GetChoices(int id)

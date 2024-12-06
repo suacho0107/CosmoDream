@@ -352,8 +352,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64fdd4a8d509ec14bb731f916c50eff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NowStgScene: 2
-  NextStgScene: stage6
+  NowStgScene: stage5
+  NextStgScene: 6-0
   initPosition: {x: -2, y: -1.6, z: 0}
 --- !u!4 &703429407
 Transform:
