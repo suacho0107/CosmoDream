@@ -100,12 +100,20 @@ public class MovementManager : MonoBehaviour
         backMap.SetActive(false);
 
         toActive.SetActive(true);
+
+        if(FindObjectOfType<StageClearController>() != null)
+        {
+            saveMap(toActive);
+        }
+    }
+
+    void saveMap(GameObject toActive)
+    {
         if (toActive == centerMap) PlayerPosData.romInx = 0;
         else if (toActive == rightMap) PlayerPosData.romInx = 1;
         else if (toActive == backMap) PlayerPosData.romInx = 2;
         else if (toActive == leftMap) PlayerPosData.romInx = 3;
     }
-
     private void movePlayer(int _pos)
     {
         //플레이어 이동
