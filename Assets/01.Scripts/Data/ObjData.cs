@@ -46,7 +46,7 @@ public class ObjData : MonoBehaviour
             else {
             id = secondId;
             Debug.Log($"{gameObject.name} ID가 {id}로 변경"); // 변경 여부 디버깅
-
+             
             if (id == 15103)
                 objectType = ObjectType.SceneChange;
             if (id == 21000)

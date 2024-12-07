@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
                         // 상호작용 완료로 설정
                         SetInteraction(objData.objIndex);
 
-                        if (gamechips == 3)
+                        if (gamechips >= 3)
                         {
                             GameObject[] chipObjects = GameObject.FindGameObjectsWithTag("LineGame");
                             foreach (GameObject chip in chipObjects)
