@@ -19,6 +19,7 @@ public class LineManager : MonoBehaviour
     private int GmaxConnections;
     private int FmaxConnections;
     private int BmaxConnections;
+    int Stg6Connections;
     private string nextSceneName; // 전환할 씬 이름
 
     void Start()
@@ -37,6 +38,10 @@ public class LineManager : MonoBehaviour
         else if (sceneName == "building")
         {
             BmaxConnections = 14;
+        }
+        else if (sceneName == "6-2")
+        {
+            Stg6Connections = 17;
         }
 
         // 초기화 버튼 클릭 이벤트 설정
@@ -109,6 +114,10 @@ public class LineManager : MonoBehaviour
                 {
                     ShowCompletionUI("stage3 2");
                 }
+                else if (connectedPairs.Count / 2 == Stg6Connections)
+                {
+                    ShowCompletionUI("6-3");
+                }
             }
             else
             {
@@ -157,6 +166,10 @@ public class LineManager : MonoBehaviour
 
         nextSceneName = sceneName;
         Debug.Log("ㄱㄱ");
+        if (sceneName == "6-3")
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
 
         if (completionCanvas != null)
         {

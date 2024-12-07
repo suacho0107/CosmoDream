@@ -30,15 +30,15 @@ public class BreakStage : MonoBehaviour
         datacontroller = FindObjectOfType<DataController>();
 
         //버튼 활성화 결정하기
-        bool activeScissors = datacontroller.gameData._scissors;
-        bool activeWhite = datacontroller.gameData._white;
-        bool activeAwl = datacontroller.gameData._awl;
-        bool activeHammer = datacontroller.gameData._hammer;
+        //bool activeScissors = datacontroller.gameData._scissors;
+        //bool activeWhite = datacontroller.gameData._white;
+        //bool activeAwl = datacontroller.gameData._awl;
+        //bool activeHammer = datacontroller.gameData._hammer;
 
-        Scissors.interactable = activeScissors;
-        White.interactable = activeWhite;
-        awl.interactable = activeAwl;
-        hammer.interactable = activeHammer;
+        //Scissors.interactable = activeScissors;
+        //White.interactable = activeWhite;
+        //awl.interactable = activeAwl;
+        //hammer.interactable = activeHammer;
 
         //넘어갈 씬 결정
         if (nextScene == "Route")

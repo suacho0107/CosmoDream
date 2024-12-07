@@ -1256,7 +1256,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &708615525
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1645,7 +1645,7 @@ MonoBehaviour:
   isStart: 0
   FileName: sampleChart
   nextScene: 
-  audioSource: {fileID: 1704264049}
+  Target: {fileID: 0}
   tfNoteAppearUpper: {fileID: 62776517}
   tfNoteAppearLower: {fileID: 597459954}
   goNoteUpper: {fileID: 9138681870795414608, guid: 93339a1e6cb66f94a9a2e4277809ef4b, type: 3}
@@ -2470,7 +2470,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1753892561
 RectTransform:
   m_ObjectHideFlags: 0
