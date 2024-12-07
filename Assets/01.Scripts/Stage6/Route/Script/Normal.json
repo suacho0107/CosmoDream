@@ -18,6 +18,7 @@
     { "speaker": "YUNOH", "message": "너는 언제나 내가 주목받는 걸 방해했잖아!" },
     { "speaker": "YUNOH", "message": "더 재능있는 건 언제나 나였는데...... ." },
     { "speaker": "YUNOH", "message": "너랑 더이상 말하기 싫어. 내 꿈에서 꺼져!!" },
+    { "speaker": "CANCEL", "message": "...... ." },
     { "speaker": "PLAYER", "message": "기기가 꺼졌다."},
     { "speaker": "PLAYER", "message": "켜지지 않는 걸 보니 배터리가 방전되었나보다."},
     { "speaker": "PLAYER", "message": "우연이었던 걸까, 아니면 진짜 인격데이터 [유노]의 짓으로 꺼진 것일까."}
