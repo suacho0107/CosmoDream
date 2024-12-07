@@ -11,7 +11,7 @@ public class TalkManager : MonoBehaviour
     public Text UINameText;
     public Text UITalkText;
     // public Image portraitImg;
-    public string playerName = "플레이어"; // 나중에 다 구현되면 받아서 사용
+    public string playerName; // 나중에 다 구현되면 받아서 사용
     public int talkIndex;
 
     ObjData objData;
@@ -30,6 +30,8 @@ public class TalkManager : MonoBehaviour
         talkDataScript = FindObjectOfType<TalkData>();
         datacontroller = FindObjectOfType<DataController>();
         talkPanel.SetActive(false);
+
+        playerName = datacontroller.gameData.name;
     }
 
     public void Talk(int id)
