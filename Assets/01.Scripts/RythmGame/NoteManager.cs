@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class NoteManager : MonoBehaviour
 {
@@ -15,7 +16,8 @@ public class NoteManager : MonoBehaviour
     float distanceToJudge;
     bool isPlay = false;
 
-    public AudioSource audioSource;
+    AudioSource audioSource;
+    public GameObject Target;
     TimingManager timingManager;
 
     //노트 생성 위치
@@ -59,6 +61,7 @@ public class NoteManager : MonoBehaviour
     private void Start()
     {
         timingManager = FindObjectOfType<TimingManager>();
+        audioSource = Target.GetComponent<AudioSource>();
 
         //외부 JSON 파일 불러오기
         LoadChartFile("Assets/07.Charts/" + FileName + ".json");
@@ -123,5 +126,6 @@ public class NoteManager : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         Debug.Log(nextScene);
+        SceneManager.LoadScene(nextScene);
     }
 }

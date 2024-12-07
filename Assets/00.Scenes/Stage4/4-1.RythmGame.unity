@@ -1187,8 +1187,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isStart: 0
   FileName: tutorialChart
-  nextScene: 
-  audioSource: {fileID: 1704264049}
+  nextScene: 00.Scenes/Stage4/4. Library_1
+  Target: {fileID: 1704264047}
   tfNoteAppearUpper: {fileID: 62776517}
   tfNoteAppearLower: {fileID: 597459954}
   goNoteUpper: {fileID: 9138681870795414608, guid: 93339a1e6cb66f94a9a2e4277809ef4b, type: 3}
