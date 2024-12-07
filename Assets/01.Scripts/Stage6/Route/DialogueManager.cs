@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueTextYunoh;
     public Text dialogueTextPlayer;
     public string dialogueFilePath; // JSON 파일 경로
+    public string SceneName;
+    public CanvasGroup BlackOut;
+
 
     int currentIndex = 0;
 
@@ -21,7 +25,7 @@ public class DialogueManager : MonoBehaviour
 
     void LoadDialogue()
     {
-        string fullPath = "Assets/01.Scripts/Stage6/Route/" + dialogueFilePath +".json";
+        string fullPath = "Assets/01.Scripts/Stage6/Route/Script/" + dialogueFilePath +".json";
         if (File.Exists(fullPath))
         {
             string json = File.ReadAllText(fullPath);
@@ -37,6 +41,8 @@ public class DialogueManager : MonoBehaviour
         if (currentIndex >= dialogues.Length)
         {
             Debug.Log("대화 끝");
+
+            SceneManager.LoadScene(SceneName);
             return;
         }
         Dialogue currentDialogue = dialogues[currentIndex];
@@ -51,12 +57,23 @@ public class DialogueManager : MonoBehaviour
             dialogueTextYunoh.text = currentDialogue.message;
             dialogueTextPlayer.text = "";
         }
-        else if (currentDialogue.speaker == "Cancel")
+        else if (currentDialogue.speaker == "CANCEL")
         {
-
+            //화면 블랙아웃
+            BlackOut.alpha = 1;
+            dialogueTextYunoh.text = "";
+            dialogueTextPlayer.text = currentDialogue.message;
         }
 
         currentIndex++;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            NextDialogue();
+        }
     }
 
     public void NextDialogue()

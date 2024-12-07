@@ -37,6 +37,7 @@ public class PuzzleClear : MonoBehaviour
         
         if (stageNumber == 1)
         {
+            PlayerPosData.pos = new Vector3(-8.15f, -1.6f, 0);
             FadeManager.instance.ChangeScene(s1_nextindex);
             return;
         }

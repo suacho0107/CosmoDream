@@ -57,30 +57,41 @@ public class TV : MonoBehaviour
     private bool IsPosConnection(GameObject obj1, GameObject obj2)
     {
         // obj1과 obj2가 가능한 연결 조합에 포함되어 있는지 확인
-        return (obj1.name == "F1" || obj1.name == "F2") &&
-               (obj2.name == "F1" || obj2.name == "F2") ||
-               (obj1.name == "F1" || obj1.name == "F3") &&
-               (obj2.name == "F1" || obj2.name == "F3") ||
-               (obj1.name == "F2" || obj1.name == "F3") &&
-               (obj2.name == "F2" || obj2.name == "F3") ||
-               (obj1.name == "F2" || obj1.name == "F4") &&
-               (obj2.name == "F2" || obj2.name == "F4") ||
-               (obj1.name == "F2" || obj1.name == "F6") &&
-               (obj2.name == "F2" || obj2.name == "F6") ||
-               (obj1.name == "F3" || obj1.name == "F5") &&
-               (obj2.name == "F3" || obj2.name == "F5") ||
-               (obj1.name == "F3" || obj1.name == "F7") &&
-               (obj2.name == "F3" || obj2.name == "F7") ||
-               (obj1.name == "F4" || obj1.name == "F6") &&
-               (obj2.name == "F4" || obj2.name == "F6") ||
-               (obj1.name == "F5" || obj1.name == "F7") &&
-               (obj2.name == "F5" || obj2.name == "F7") ||
-               (obj1.name == "F6" || obj1.name == "F7") &&
-               (obj2.name == "F6" || obj2.name == "F7") ||
-               (obj1.name == "F6" || obj1.name == "F8") &&
-               (obj2.name == "F6" || obj2.name == "F8") ||
-               (obj1.name == "F7" || obj1.name == "F8") &&
-               (obj2.name == "F7" || obj2.name == "F8");
+        return (obj1.name == "B1" || obj1.name == "B2") &&
+               (obj2.name == "B1" || obj2.name == "B2") ||
+               (obj1.name == "B1" || obj1.name == "B3") &&
+               (obj2.name == "B1" || obj2.name == "B3") ||
+               (obj1.name == "B2" || obj1.name == "B3") &&
+               (obj2.name == "B2" || obj2.name == "B3") ||
+               (obj1.name == "B3" || obj1.name == "B4") &&
+               (obj2.name == "B3" || obj2.name == "B4") ||
+               (obj1.name == "B4" || obj1.name == "B1") &&
+               (obj2.name == "B4" || obj2.name == "B1") ||
+               (obj1.name == "B4" || obj1.name == "B5") &&
+               (obj2.name == "B4" || obj2.name == "B5") ||
+               (obj1.name == "B5" || obj1.name == "B6") &&
+               (obj2.name == "B5" || obj2.name == "B6") ||
+               (obj1.name == "B6" || obj1.name == "B7") &&
+               (obj2.name == "B7" || obj2.name == "B8") ||
+               (obj1.name == "B7" || obj1.name == "B8") &&
+               (obj2.name == "B8" || obj2.name == "B9") ||
+               (obj1.name == "B9" || obj1.name == "B10") &&
+               (obj2.name == "B9" || obj2.name == "B10") ||
+               (obj1.name == "B10" || obj1.name == "B11") &&
+               (obj2.name == "B10" || obj2.name == "B11") ||
+               (obj1.name == "B11" || obj1.name == "B12") &&
+               (obj2.name == "B11" || obj2.name == "B12") ||
+               (obj1.name == "B12" || obj1.name == "B13") &&
+               (obj2.name == "B12" || obj2.name == "B13") ||
+               (obj1.name == "B13" || obj1.name == "B14") &&
+               (obj2.name == "B13" || obj2.name == "B14") ||
+               (obj1.name == "B14" || obj1.name == "B15") &&
+               (obj2.name == "B14" || obj2.name == "B15") ||
+               (obj1.name == "B15" || obj1.name == "B16") &&
+               (obj2.name == "B15" || obj2.name == "B16") ||
+               (obj1.name == "B16" || obj1.name == "B5") &&
+               (obj2.name == "B16" || obj2.name == "B5")
+               ;
     }
 
 }
