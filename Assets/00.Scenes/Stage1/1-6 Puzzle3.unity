@@ -1214,7 +1214,7 @@ MonoBehaviour:
   isStart: 0
   FileName: tutorialChart
   nextScene: 1-6 Puzzle4
-  audioSource: {fileID: 335035174}
+  Target: {fileID: 335035172}
   tfNoteAppearUpper: {fileID: 19095364}
   tfNoteAppearLower: {fileID: 1647893673}
   goNoteUpper: {fileID: 9138681870795414608, guid: 93339a1e6cb66f94a9a2e4277809ef4b, type: 3}
@@ -1997,9 +1997,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanObject: {fileID: 0}
+  Edge: {fileID: 0}
   chipsToGive: 1
   gamechips: 0
-  hasWhite: 0
   isTalk: 0
   isSecondLoad: 0
   completedPuzzles: 0
