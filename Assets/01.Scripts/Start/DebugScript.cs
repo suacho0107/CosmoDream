@@ -7,6 +7,6 @@ public class DebugScript : MonoBehaviour
 {
     public void ChangeScene()
     {
-        SceneManager.LoadScene("stage5");
+        SceneManager.LoadScene("stage3");
     }
 }
