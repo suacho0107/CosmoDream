@@ -50,6 +50,7 @@ public class LineManager : MonoBehaviour
 
         if (nextSceneButton != null)
         {
+            
             nextSceneButton.onClick.AddListener(LoadNextScene);
         }
     }
@@ -103,7 +104,7 @@ public class LineManager : MonoBehaviour
                 }
                 else if (connectedPairs.Count / 2 == FmaxConnections)
                 {
-                    ShowCompletionUI("Building");
+                    ShowCompletionUI("building");
                 }
                 else if (connectedPairs.Count / 2 == BmaxConnections)
                 {
@@ -157,7 +158,7 @@ public class LineManager : MonoBehaviour
 
         nextSceneName = sceneName;
         Debug.Log("ㄱㄱ");
-
+        
         if (completionCanvas != null)
         {
             completionCanvas.SetActive(true); // 캔버스 활성화
