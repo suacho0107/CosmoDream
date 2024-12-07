@@ -37,7 +37,6 @@ public class TalkManager : MonoBehaviour
     public void Talk(int id)
     {
         gameManager.isTalk = true;
-        Debug.Log(gameManager.isTalk);
         playerController.SetMove(false);
         string speakerName;
         string talkData = GetTalk(id, talkIndex, out speakerName);
@@ -120,7 +119,6 @@ public class TalkManager : MonoBehaviour
     {
         talkPanel.SetActive(false);
         gameManager.isTalk = false;
-        Debug.Log(gameManager.isTalk);
         talkIndex = 0;
 
         if (talkId == 13211) // 1-3-2

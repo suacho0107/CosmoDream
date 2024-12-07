@@ -15,7 +15,7 @@ public class PuzzleClear : MonoBehaviour
 
     private void Start()
     {
-        datacontroller = FindObjectOfType<DataController>();
+        datacontroller = DataController.Instance;
         stageClearController = FindObjectOfType<StageClearController>();
     }
 
@@ -31,10 +31,7 @@ public class PuzzleClear : MonoBehaviour
 
     // 퍼즐이 완료될 때마다 호출되는 메서드
     public void CompletePuzzle()
-    {
-        if (stageClearController != null)
-            stageClearController.ClearStage();
-        
+    {        
         if (stageNumber == 1)
         {
             PlayerPosData.pos = new Vector3(-8.15f, -1.6f, 0);
@@ -46,19 +43,22 @@ public class PuzzleClear : MonoBehaviour
             if (!datacontroller.gameData.puzzle1Clear)
             {
                 datacontroller.gameData.puzzle1Clear = true;
-                Debug.Log(datacontroller.gameData.puzzle1Clear);
+                Debug.Log($"puzzle1Clear 상태: {datacontroller.gameData.puzzle1Clear}");
             }
             else if (!datacontroller.gameData.puzzle2Clear)
             {
                 datacontroller.gameData.puzzle2Clear = true;
-                Debug.Log(datacontroller.gameData.puzzle2Clear);
+                Debug.Log($"puzzle2Clear 상태: {datacontroller.gameData.puzzle2Clear}");
             }
             else if (!datacontroller.gameData.puzzle3Clear)
             {
                 datacontroller.gameData.puzzle3Clear = true;
-                Debug.Log(datacontroller.gameData.puzzle3Clear);
+                Debug.Log($"puzzle3Clear 상태: {datacontroller.gameData.puzzle3Clear}");
             }
         }
+
+        if (stageClearController != null)
+            stageClearController.ClearStage();
     }
 
     public void HideStartUI()
