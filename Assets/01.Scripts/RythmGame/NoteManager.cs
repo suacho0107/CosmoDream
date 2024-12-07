@@ -123,7 +123,7 @@ public class NoteManager : MonoBehaviour
     private IEnumerator EndPlay()
     {
         yield return new WaitForSeconds(audioSource.clip.length);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(1.3f);
 
         Debug.Log(nextScene);
         SceneManager.LoadScene(nextScene);

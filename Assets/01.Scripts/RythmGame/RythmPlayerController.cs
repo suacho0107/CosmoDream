@@ -5,6 +5,8 @@ using UnityEngine;
 public class RythmPlayerController : MonoBehaviour
 {
     private TimingManager timingManager;
+    public AudioSource audioSource;
+    public AudioClip KeySound;
 
     [SerializeField] private KeyCode upperLaneKey1 = KeyCode.D;
     [SerializeField] private KeyCode upperLaneKey2 = KeyCode.F;
@@ -14,6 +16,7 @@ public class RythmPlayerController : MonoBehaviour
     private void Start()
     {
         timingManager = FindObjectOfType<TimingManager>();
+        audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -21,11 +24,13 @@ public class RythmPlayerController : MonoBehaviour
         {
             Debug.Log("key enter");
             timingManager.CheckTiming("upper");
+            audioSource.PlayOneShot(KeySound);
         }
         if (Input.GetKeyDown(lowerLaneKey1) || Input.GetKeyDown(lowerLaneKey2))
         {
             Debug.Log("key enter");
             timingManager.CheckTiming("down");
+            audioSource.PlayOneShot(KeySound);
         }
 
     }

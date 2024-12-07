@@ -16,6 +16,7 @@ public class TimingManager : MonoBehaviour
     void Start()
     {
         effectManager = FindObjectOfType<EffectManager>();
+
         //타이밍 박스 perfect->miss
         timingBoxs = new Vector2[timingRect.Length];
         for (int i = 0; i < timingRect.Length; i++)
