@@ -108,7 +108,7 @@ public class LineManager : MonoBehaviour
                 }
                 else if (connectedPairs.Count / 2 == FmaxConnections)
                 {
-                    ShowCompletionUI("Building");
+                    ShowCompletionUI("building");
                 }
                 else if (connectedPairs.Count / 2 == BmaxConnections)
                 {
