@@ -15,19 +15,18 @@ public class StageClearController : MonoBehaviour
 
     private void Start()
     {
-        datacontroller = FindObjectOfType<DataController>();
+        datacontroller = DataController.Instance;
     }
 
     public void ClearStage()
     {
+        Debug.Log($"퍼즐 상태: puzzle1Clear={datacontroller.gameData.puzzle1Clear}, puzzle2Clear={datacontroller.gameData.puzzle2Clear}, puzzle3Clear={datacontroller.gameData.puzzle3Clear}");
+
         if (datacontroller.gameData.puzzle1Clear &&
             datacontroller.gameData.puzzle2Clear &&
             datacontroller.gameData.puzzle3Clear)
         {
-            //퍼즐 클리어 여부 되돌리기
-            datacontroller.gameData.puzzle1Clear = false;
-            datacontroller.gameData.puzzle2Clear = false;
-            datacontroller.gameData.puzzle3Clear = false;
+            Debug.Log("모든 퍼즐 완료 확인됨. 다음 스테이지로 이동.");
 
             //클리어 체크할 변수 = true;
             //다음 스테이지로 넘어왔으면 ^꺼 다시 false로 변경
@@ -41,16 +40,22 @@ public class StageClearController : MonoBehaviour
 
             //씬로드(NextStgScene)
             FadeManager.instance.ChangeScene(NextStgScene);
-            GameManager.instance.isSecondLoad = true;
+            GameManager.instance.isSecondLoad = false;
             Debug.Log("다음 스테이지로 돌아갑니다. (" + NextStgScene + ")");
+
+            //퍼즐 클리어 여부 되돌리기
+            datacontroller.gameData.puzzle1Clear = false;
+            datacontroller.gameData.puzzle2Clear = false;
+            datacontroller.gameData.puzzle3Clear = false;
         }
+
         else
         {
             //씬로드(NowStgScene)
             FadeManager.instance.ChangeScene(NowStgScene);
             GameManager.instance.isSecondLoad = true;
 
-            Debug.Log("기존 스테이지로 돌아갑니다. (" + NowStgScene + ")");
+            Debug.Log("퍼즐 완료되지 않음, 기존 스테이지로 돌아갑니다. (" + NowStgScene + ")");
         }
     }
 }

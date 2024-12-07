@@ -912,6 +912,8 @@ MonoBehaviour:
     SceneIndexes: 28000000
   - MusicIndex: 12
     SceneIndexes: 29000000
+  - MusicIndex: 13
+    SceneIndexes: 2a000000
   - MusicIndex: 14
     SceneIndexes: 0e0000001a0000001b0000001c00000024000000
 --- !u!1 &635696197
@@ -1231,9 +1233,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanObject: {fileID: 0}
+  Edge: {fileID: 0}
   chipsToGive: 1
   gamechips: 0
-  hasWhite: 0
   isTalk: 0
   isSecondLoad: 0
   completedPuzzles: 0
@@ -2006,6 +2008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df32853843d78d4f939a0df1d4884e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: 1-5 room
 --- !u!114 &2133622537
 MonoBehaviour:
   m_ObjectHideFlags: 0

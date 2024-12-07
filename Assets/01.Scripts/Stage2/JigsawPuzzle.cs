@@ -18,7 +18,6 @@ public class JigsawPuzzle : MonoBehaviour
 
     void Start()
     {
-        Debug.Log(puzzlePosSet.childCount);
         puzzleClear = FindObjectOfType<PuzzleClear>();
         if (startMessage != null) startMessage.SetActive(true);
         if (clearMessage != null) clearMessage.SetActive(false);

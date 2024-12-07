@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
 
 
     public GameObject scanObject;
+    public GameObject Edge;
 
     TalkManager talkManager;
     BubbleManager bubbleManager;
@@ -42,7 +43,6 @@ public class GameManager : MonoBehaviour
 
     public int chipsToGive = 1;
     public int gamechips = 0;
-    public bool hasWhite = false;
     public bool isTalk = false;
     public bool isSecondLoad = false;
     public int completedPuzzles = 0;
@@ -77,6 +77,12 @@ public class GameManager : MonoBehaviour
                     {
                         PlayerController playerController = FindObjectOfType<PlayerController>();
                         playerController.SetMove(false);
+
+                        if (Edge != null)
+                        {
+                            Edge.SetActive(false);
+                        }
+
                         ypMove YpMove = FindObjectOfType<ypMove>();
                         YpMove.StartMovement();
                         objData.TryChangeId();

@@ -6,10 +6,20 @@ using System;
 
 public class DataController : MonoBehaviour
 {
+    public static DataController Instance { get; private set; }
     private void Awake()
     {
-        DontDestroyOnLoad(this);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
+
     public string GameDataFileName = "save.json"; //변경 절대 xxxx
 
     public GameData _gameData;

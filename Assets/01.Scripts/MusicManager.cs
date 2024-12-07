@@ -133,13 +133,20 @@ public class MusicManager : MonoBehaviour
         }
 
         // 음악 전환 후 페이드 인
-        PlayMusic(musicIndex);
-        AudioSource.volume = 0f;
-
-        while (AudioSource.volume < 1.0f)
+        if (musicIndex != currentMusicIndex)
         {
-            AudioSource.volume += Time.deltaTime / 1.0f; // 1초 동안 페이드 인
-            yield return null;
+            Debug.Log($"음악 전환 시작: {musicIndex}");
+            currentMusicIndex = musicIndex; // 현재 음악 인덱스를 업데이트
+            AudioSource.clip = MusicClips[musicIndex];
+            AudioSource.volume = 0f; // 볼륨을 0으로 설정
+            AudioSource.loop = true; // 반복 재생 설정
+            AudioSource.Play(); // 음악 재생 시작
+
+            while (AudioSource.volume < 1.0f)
+            {
+                AudioSource.volume += Time.deltaTime / 1.0f; // 1초 동안 페이드 인
+                yield return null;
+            }
         }
     }
 }

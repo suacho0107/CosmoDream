@@ -26,7 +26,8 @@ public class ypMove : MonoBehaviour
         // Vector3 scale = yunoh.transform.localScale;
         // scale.x = -Mathf.Abs(scale.x);
         // yunoh.transform.localScale = scale;
-        AdjustDirection(yunoh, yunohTargetPosition); // 유노 방향 조정
+        SetDirection(yunoh, true);  // 유노는 오른쪽이 -1
+        SetDirection(player, false); // 플레이어는 오른쪽이 1
         StartCoroutine(moveYunoh());
     }
 
@@ -34,7 +35,7 @@ public class ypMove : MonoBehaviour
     {
         // 유노 이동 시작 - 애니메이션 활성화
         yunohAnimator.SetBool("isWalking", true);
-        
+
         // 플레이어 이동 시작
         yield return new WaitForSeconds(0.7f);
         StartCoroutine(movePlayer());
@@ -50,7 +51,6 @@ public class ypMove : MonoBehaviour
         }
 
         yunohAnimator.SetBool("isWalking", false);
-        AdjustDirection(yunoh, yunohTargetPosition);
     }
 
     private IEnumerator movePlayer()
@@ -61,8 +61,7 @@ public class ypMove : MonoBehaviour
             playerController.SetMove(false);
         }
         playerAnimator.SetBool("isWalking", true); // 걷는 애니메이션 활성화
-        AdjustDirection(player, playerTargetPosition); // 플레이어 방향 조정
-        
+
         while (Vector3.Distance(player.transform.position, playerTargetPosition) > stopDistance)
         {
             player.transform.position = Vector3.MoveTowards(
@@ -81,20 +80,19 @@ public class ypMove : MonoBehaviour
         playerController.SetMove(true);
     }
 
-    private void AdjustDirection(GameObject character, Vector3 targetPosition)
+    private void SetDirection(GameObject character, bool isYunoh)
     {
         Vector3 scale = character.transform.localScale;
 
-        // 목표 위치에 따라 방향 조정
-        if (character.transform.position.x < targetPosition.x)
+        if (isYunoh)
         {
-            // 오른쪽으로 이동 중
-            scale.x = Mathf.Abs(scale.x); // 오른쪽을 보도록 설정
+            // 유노: 오른쪽이 -1
+            scale.x = -Mathf.Abs(scale.x);
         }
-        else if (character.transform.position.x > targetPosition.x)
+        else
         {
-            // 왼쪽으로 이동 중
-            scale.x = -Mathf.Abs(scale.x); // 왼쪽을 보도록 설정
+            // 플레이어: 오른쪽이 1
+            scale.x = Mathf.Abs(scale.x);
         }
 
         character.transform.localScale = scale;
