@@ -23,10 +23,10 @@ public class ypMove : MonoBehaviour
 
     public void StartMovement()
     {
-        Vector3 scale = yunoh.transform.localScale;
-        scale.x = -Mathf.Abs(scale.x);
-        yunoh.transform.localScale = scale;
-
+        // Vector3 scale = yunoh.transform.localScale;
+        // scale.x = -Mathf.Abs(scale.x);
+        // yunoh.transform.localScale = scale;
+        AdjustDirection(yunoh, yunohTargetPosition); // 유노 방향 조정
         StartCoroutine(moveYunoh());
     }
 
@@ -50,9 +50,7 @@ public class ypMove : MonoBehaviour
         }
 
         yunohAnimator.SetBool("isWalking", false);
-        Vector3 scale = yunoh.transform.localScale;
-        scale.x = Mathf.Abs(scale.x);
-        yunoh.transform.localScale = scale;
+        AdjustDirection(yunoh, yunohTargetPosition);
     }
 
     private IEnumerator movePlayer()
@@ -63,6 +61,7 @@ public class ypMove : MonoBehaviour
             playerController.SetMove(false);
         }
         playerAnimator.SetBool("isWalking", true); // 걷는 애니메이션 활성화
+        AdjustDirection(player, playerTargetPosition); // 플레이어 방향 조정
         
         while (Vector3.Distance(player.transform.position, playerTargetPosition) > stopDistance)
         {
@@ -80,5 +79,24 @@ public class ypMove : MonoBehaviour
         }
 
         playerController.SetMove(true);
+    }
+
+    private void AdjustDirection(GameObject character, Vector3 targetPosition)
+    {
+        Vector3 scale = character.transform.localScale;
+
+        // 목표 위치에 따라 방향 조정
+        if (character.transform.position.x < targetPosition.x)
+        {
+            // 오른쪽으로 이동 중
+            scale.x = Mathf.Abs(scale.x); // 오른쪽을 보도록 설정
+        }
+        else if (character.transform.position.x > targetPosition.x)
+        {
+            // 왼쪽으로 이동 중
+            scale.x = -Mathf.Abs(scale.x); // 왼쪽을 보도록 설정
+        }
+
+        character.transform.localScale = scale;
     }
 }

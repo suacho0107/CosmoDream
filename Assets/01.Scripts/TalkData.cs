@@ -47,9 +47,11 @@ public class TalkData : MonoBehaviour
 
         // 120
         talkData.Add(12001, new string[] { "굉장히 친숙하게 생겼다. 우리 집 아파트와 거의 유사하다." });
-        talkData.Add(12002, new string[] { "(...)" });
-        talkData.Add(12003, new string[] { "오랜만에 접속하신 것 같은데..." });
-        talkData.Add(12004, new string[] { "(...)" });
+        talkData.Add(12002, new string[] { "새로운 플레이어 1명..." });
+        talkData.Add(12003, new string[] { "큰일 났다!!!!", "신상 헤어 아이템 세일 기간을 놓쳐버렸어!!!!!" });
+        talkData.Add(12004, new string[] { "플레이어:안녕하세요...?",
+        "타 플레이어:처음 보는 얼굴...? 뉴비인가?!!\n뭐 도와줄 건 없어??!!!!!",
+        "플레이어:아, 아뇨, 괜찮아요..." });
 
         // 131
         talkData.Add(13111, new string[] { "YUNOH:안녕! 새로운 친구네? 난 이곳의 관리자 유노야.",
