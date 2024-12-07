@@ -34,7 +34,6 @@ public class GameManager : MonoBehaviour
     #endregion
 
     public GameObject scanObject;
-    public GameObject Edge;
 
     TalkManager talkManager;
     BubbleManager bubbleManager;
@@ -78,6 +77,7 @@ public class GameManager : MonoBehaviour
                         PlayerController playerController = FindObjectOfType<PlayerController>();
                         playerController.SetMove(false);
 
+                        GameObject Edge = GameObject.Find("Right");
                         if (Edge != null)
                         {
                             Edge.SetActive(false);

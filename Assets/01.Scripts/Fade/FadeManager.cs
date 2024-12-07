@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic; 
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 public class FadeManager : MonoBehaviour
@@ -36,7 +36,7 @@ public class FadeManager : MonoBehaviour
         {
             stageTextUI = fadeCanvasGroup.GetComponentInChildren<Text>();
         }
-        if (stageTextUI != null && GameManager.instance.isSecondLoad != true)
+        if (stageTextUI != null)
         {
             StartCoroutine(FadeOutWithText());
         }
@@ -97,6 +97,11 @@ public class FadeManager : MonoBehaviour
 
     private IEnumerator FadeIn(float duration)
     {
+        if (stageTextUI != null)
+        {
+            Color textColor = stageTextUI.color;
+            textColor.a = 0f;
+        }
         SetPlayerControl(false);
         float time = 0f;
         fadeCanvasGroup.alpha = 0f;
@@ -136,7 +141,7 @@ public class FadeManager : MonoBehaviour
     {
         Debug.Log("텍스트와함께 페이드아웃");
         SetPlayerControl(false);
-       
+
         fadeCanvasGroup.alpha = 1f;
 
         // 페이드 인
@@ -171,7 +176,7 @@ public class FadeManager : MonoBehaviour
 
         stageTextUI.color = new Color(textColor.r, textColor.g, textColor.b, 0f);
         fadeCanvasGroup.alpha = 0f;
-        
+
         if (!GameManager.instance.isTalk)
             SetPlayerControl(true);
         else
