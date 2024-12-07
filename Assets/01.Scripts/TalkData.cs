@@ -112,7 +112,7 @@ public class TalkData : MonoBehaviour
         // 310
         talkData.Add(31001, new string[] { "TV 화면에 콘솔 게임이 떠있다. ", "13년 전에 히트를 쳤던 게임인 것 같다. ", 
             "게임 칩 하나를 얻었다. " }); // TV 최초 상호작용
-        talkData.Add(31002, new string[] { "“게임 칩은 3개가 필요하다.”" }); // TV 상호작용 (게임칩 x)
+        talkData.Add(31002, new string[] { "“3개의 게임 칩이 있어야 콘솔 게임을 할 수 있다.”" }); // TV 상호작용 (게임칩 x)
         talkData.Add(31003, new string[] { "도시 전체가 보인다. \n메타버스 세계라 그런가, 확실히 비현실적이다. ", "창틀에 아슬아슬하게 놓여있는 게임칩을 찾았다.","왜 여기에 게임칩이 있지…?"});
         talkData.Add(31004, new string[] { "13년 전에 멈춰있다.","달력 사이에서 게임 칩을 찾았다.","왜 여기에 게임칩이 있지…?" });
         talkData.Add(31005, new string[] { "내 모습이다." }); // 거울

@@ -599,6 +599,7 @@ GameObject:
   - component: {fileID: 125696922}
   - component: {fileID: 125696921}
   - component: {fileID: 125696920}
+  - component: {fileID: 125696923}
   m_Layer: 8
   m_Name: TV
   m_TagString: LineGame
@@ -698,12 +699,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 31002
-  objIndex: 0
+  objIndex: 37
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
-  idChange: 0
-  secondId: 0
+  idChange: 1
+  secondId: 31011
 --- !u!61 &125696922
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -730,6 +731,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.77, y: 5.8}
   m_EdgeRadius: 0
+--- !u!114 &125696923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125696917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95373465de42240cc9b48904f201dd26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneIndex: 22
+  isEdge: 0
 --- !u!1 &134093878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1422,7 +1437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 31003
-  objIndex: 0
+  objIndex: 32
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
@@ -3455,7 +3470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 31004
-  objIndex: 0
+  objIndex: 33
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
@@ -3925,7 +3940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 31001
-  objIndex: 0
+  objIndex: 31
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}

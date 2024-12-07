@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
                         objData.TryChangeId();
                     }
                 }
-                else if (scanObj.CompareTag("GameChip"))
+                if (scanObj.CompareTag("GameChip"))
                 {
                     // ObjData objData = scanObj.GetComponent<ObjData>();
                     if (objData == null) return;
@@ -97,22 +97,14 @@ public class GameManager : MonoBehaviour
                         // 상호작용 완료로 설정
                         SetInteraction(objData.objIndex);
 
-                        if (gamechips >= 3)
+                        if (gamechips > 2)
                         {
-                            GameObject[] chipObjects = GameObject.FindGameObjectsWithTag("LineGame");
-                            foreach (GameObject chip in chipObjects)
-                            {
-                                ObjData chipObjData = chip.GetComponent<ObjData>();
-                                if (chipObjData != null)
-                                {
-                                    chipObjData.id = 31011;
-                                    Debug.Log($"태그가 LineGame인 오브젝트 {chip.name}의 ID가 {chipObjData.id}로 변경되었습니다.");
-                                }
-                            }
+                            UpdateObjectIdsForChips();
                         }
                     }
                 }
-                else if (objData.id == 31011 && !isTalk)
+               
+                if (objData.id == 31011 && !isTalk)
                 {
                     talkManager.Talk(objData.id); // 대화 시작
                     SceneChange sceneChanger = scanObj.GetComponent<SceneChange>();
@@ -178,7 +170,21 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
+    private void UpdateObjectIdsForChips()
+    {
+        // 씬에 존재하는 모든 ObjData를 가져옴
+        ObjData[] allObjData = FindObjectsOfType<ObjData>();
 
+        foreach (ObjData obj in allObjData)
+        {
+            // id가 31002인 오브젝트를 찾아 id를 31011로 변경
+            if (obj.id == 31002)
+            {
+                obj.id = 31011;
+                Debug.Log($"{obj.gameObject.name}의 ID가 {obj.id}로 변경되었습니다.");
+            }
+        }
+    }
     void DisplayImage(GameObject obj)
     {
         ObjData objData = obj.GetComponent<ObjData>();
