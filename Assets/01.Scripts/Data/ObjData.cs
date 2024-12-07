@@ -61,7 +61,6 @@ public class ObjData : MonoBehaviour
                 objectType = ObjectType.Talkable;
             if (id == 51006)
                 objectType = ObjectType.Talkable;
-
             }
         }
     }

@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         SceneManager.sceneLoaded += OnSceneLoaded;
 
-        int maxIndex = 30;
+        int maxIndex = 100;
         isInteracted = new bool[maxIndex];
 
         // 모든 값을 false로 초기화
@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
             isInteracted[i] = false;
         }
     }
-
+    #endregion
 
     public GameObject scanObject;
     public GameObject Edge;
@@ -224,7 +224,5 @@ public class GameManager : MonoBehaviour
             Debug.Log($"SetInteraction 호출됨: 인덱스 {index} 상호작용 완료로 설정됨");
         }
     }
-
-    #endregion
 }
 

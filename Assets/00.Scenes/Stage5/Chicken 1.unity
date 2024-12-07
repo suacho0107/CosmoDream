@@ -567,6 +567,7 @@ MonoBehaviour:
   - {fileID: 535173302}
   - {fileID: 1184479836}
   - {fileID: 371069209}
+  playerTransform: {fileID: 0}
 --- !u!4 &725674039
 Transform:
   m_ObjectHideFlags: 0
