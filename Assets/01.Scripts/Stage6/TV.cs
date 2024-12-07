@@ -72,8 +72,10 @@ public class TV : MonoBehaviour
                (obj1.name == "B5" || obj1.name == "B6") &&
                (obj2.name == "B5" || obj2.name == "B6") ||
                (obj1.name == "B6" || obj1.name == "B7") &&
-               (obj2.name == "B7" || obj2.name == "B8") ||
+               (obj2.name == "B6" || obj2.name == "B7") ||
                (obj1.name == "B7" || obj1.name == "B8") &&
+               (obj2.name == "B7" || obj2.name == "B8") &&
+               (obj1.name == "B8" || obj1.name == "B9") ||
                (obj2.name == "B8" || obj2.name == "B9") ||
                (obj1.name == "B9" || obj1.name == "B10") &&
                (obj2.name == "B9" || obj2.name == "B10") ||
