@@ -51,7 +51,7 @@ public class NoteManager : MonoBehaviour
     private void Start()
     {
         // Inspector에서 timingManager, audioSource 할당되어 있다고 가정
-        LoadChartFile(Path.Combine(Application.dataPath, "07.Charts", FileName + ".json"));
+        LoadChartFile(FileName);
 
         distanceToJudge = Mathf.Abs(tfNoteAppearUpper.localPosition.x - timingManager.GetComponent<RectTransform>().localPosition.x);
         bpm = chartData.bpm;
@@ -100,10 +100,18 @@ public class NoteManager : MonoBehaviour
 
     private void LoadChartFile(string path)
     {
-        string json = File.ReadAllText(path);
-        chartData = JsonUtility.FromJson<ChartData>(json);
-        // 정렬 필요시
-        chartData.notes.Sort((a, b) => a.time.CompareTo(b.time));
+        TextAsset jsonFile = Resources.Load<TextAsset>(FileName);
+        if(jsonFile != null)
+        {
+            string json = jsonFile.text;
+            chartData = JsonUtility.FromJson<ChartData>(json);
+            // 정렬 필요시
+            chartData.notes.Sort((a, b) => a.time.CompareTo(b.time));
+        }
+        else
+        {
+            Debug.LogError("차트 파일을 찾을 수 없습니다");
+        }
     }
 
     private IEnumerator EndPlay()

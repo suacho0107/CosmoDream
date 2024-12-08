@@ -135,7 +135,6 @@ public class MusicManager : MonoBehaviour
         // 음악 전환 후 페이드 인
         if (musicIndex != currentMusicIndex)
         {
-            Debug.Log($"음악 전환 시작: {musicIndex}");
             currentMusicIndex = musicIndex; // 현재 음악 인덱스를 업데이트
             AudioSource.clip = MusicClips[musicIndex];
             AudioSource.volume = 0f; // 볼륨을 0으로 설정

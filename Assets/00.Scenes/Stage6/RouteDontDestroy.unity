@@ -244,7 +244,7 @@ MonoBehaviour:
   dialogues: []
   dialogueTextYunoh: {fileID: 785803827}
   dialogueTextPlayer: {fileID: 1008378038}
-  dialogueFilePath: DontDestroy
+  dialogueFilePath: 6.DontDestroy
   SceneName: 00.Scenes/Ending/EndingScene3
   BlackOut: {fileID: 99117441}
 --- !u!4 &178182076
