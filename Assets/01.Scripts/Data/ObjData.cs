@@ -45,21 +45,19 @@ public class ObjData : MonoBehaviour
                 objectType = ObjectType.None;
             else if (id == 31002)
             {
-               if (GameManager.instance.gamechips >= 3)
+                if (GameManager.instance.gamechips >= 3)
                 {
                     id = 31011;
                     objectType = ObjectType.SceneChange;
                 }
             }
             else {
-            id = secondId;
-            Debug.Log($"{gameObject.name} ID가 {id}로 변경"); // 변경 여부 디버깅
-             
-            if (id == 15103)
-                objectType = ObjectType.SceneChange;
-            if (id == 21000)
-                objectType = ObjectType.Talkable;
-            if (id == 51006)
+                id = secondId;
+                Debug.Log($"{gameObject.name} ID가 {id}로 변경"); // 변경 여부 디버깅
+
+                if (id == 15103)
+                    objectType = ObjectType.SceneChange;
+                if (id == 21000 || id == 51006)
                 objectType = ObjectType.Talkable;
             }
         }
