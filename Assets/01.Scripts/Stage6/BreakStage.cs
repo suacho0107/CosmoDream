@@ -89,7 +89,6 @@ public class BreakStage : MonoBehaviour
             if (Count.destroyCount == 4)
             {
                 nextScene = "00.Scenes/Stage6/RouteDestroy";
-                SceneManager.LoadScene(nextScene);
             }
             else if (Count.destroyCount == 0)
             {
