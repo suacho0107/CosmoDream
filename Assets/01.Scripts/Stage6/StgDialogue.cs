@@ -68,10 +68,10 @@ public class StgDialogue : MonoBehaviour
         }
         else if (currentDialogue.speaker == "CHOICE")
         {
-            Player.SetActive(true);
-            Yunoh.SetActive(false);
-            nameText.text = "";
-            dialogueText.text = "(퍼즐을 풀까?)";
+            Player.SetActive(false);
+            Yunoh.SetActive(true);
+            nameText.text = "YUNOH";
+            dialogueText.text = "내가 준비한 퍼즐이 더 있는데 풀어볼래?";
             Btn.SetActive(true);
         }
 
