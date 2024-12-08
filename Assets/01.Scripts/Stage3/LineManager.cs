@@ -112,7 +112,7 @@ public class LineManager : MonoBehaviour
                 }
                 else if (connectedPairs.Count / 2 == BmaxConnections)
                 {
-                    ShowCompletionUI("stage3 2");
+                    ShowCompletionUI("4. Library_1");
                 }
                 else if (connectedPairs.Count / 2 == Stg6Connections)
                 {
