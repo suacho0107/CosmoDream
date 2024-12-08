@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/00.Scenes/Prologue/Prologue 2.unity
     guid: 59d678ff3b109c847899d3acdc0f8b6f
   - enabled: 1
+    path: Assets/00.Scenes/Prologue/Prologue 5.unity
+    guid: 4359bb104a6463443b88d1585d422017
+  - enabled: 0
     path: Assets/00.Scenes/Prologue/Prologue 3.unity
     guid: 17f92ab8cb4d40f4a9a095be54e00c04
   - enabled: 1
