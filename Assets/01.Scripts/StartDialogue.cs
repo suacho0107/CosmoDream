@@ -22,6 +22,7 @@ public class StartDialogue : MonoBehaviour
     {
       
         playerController = FindObjectOfType<PlayerController>();
+
         sceneName = SceneManager.GetActiveScene().name;
         if (GameManager.instance != null && GameManager.instance.HasDialogueRun(sceneName))
         {
@@ -35,13 +36,14 @@ public class StartDialogue : MonoBehaviour
         StartCoroutine(ShowDialogueWithDelay());
         GameManager.instance.SetDialogueRun(sceneName);
         GameManager.instance.isTalk = true;
+        
     }
 
     IEnumerator ShowDialogueWithDelay()
     {
         yield return new WaitForSeconds(WaitTime);
         SwitchPanel(true);
-        playerController.SetMove(false);
+        //playerController.SetMove(false);
         if (playerController != null)
         {
             playerController.SetMove(false);
