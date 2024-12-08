@@ -183,15 +183,12 @@ public class LineManager : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(nextSceneName))
         {
-            SceneManager.LoadScene(nextSceneName);
-            Debug.Log($"씬 {nextSceneName}으로 전환 중...");
+            // SceneManager.LoadScene(nextSceneName);
+            // Debug.Log($"씬 {nextSceneName}으로 전환 중...");
             
                 //여기?
             PuzzleClear puzzleClear = FindObjectOfType<PuzzleClear>();
             puzzleClear.CompletePuzzle();
-            
-                
         }
-        
     }
 }

@@ -8,6 +8,6 @@ public class DebugScript : MonoBehaviour
     public string sceneName;
     public void ChangeScene()
     {
-        SceneManager.LoadScene("stage3");
+        SceneManager.LoadScene("1-5 room");
     }
 }
