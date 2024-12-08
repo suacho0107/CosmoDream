@@ -84,11 +84,12 @@ public class BreakStage : MonoBehaviour
 
     public void DontBreak()
     {
-        if (nextScene == "Route")
+        if (nextScene == "Flag")
         {
             if (Count.destroyCount == 4)
             {
                 nextScene = "00.Scenes/Stage6/RouteDestroy";
+                SceneManager.LoadScene(nextScene);
             }
             else if (Count.destroyCount == 0)
             {
@@ -101,6 +102,12 @@ public class BreakStage : MonoBehaviour
         }
 
         //StartCoroutine(fadecontroller.FadeIn(fade));
+        StartCoroutine(WaitBeforeMove());
+    }
+
+    IEnumerator WaitBeforeMove()
+    {
+        yield return new WaitForSecondsRealtime(0.2f);
         SceneManager.LoadScene(nextScene);
     }
 }
