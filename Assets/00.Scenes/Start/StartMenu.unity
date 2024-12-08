@@ -1122,7 +1122,7 @@ MonoBehaviour:
   - MusicIndex: 9
     SceneIndexes: 0c0000000d0000000f0000001100000012000000130000001600000017000000180000001e0000001f00000020000000
   - MusicIndex: 10
-    SceneIndexes: 22000000230000002400000025000000
+    SceneIndexes: 220000002300000025000000
   - MusicIndex: 11
     SceneIndexes: 2600000029000000
   - MusicIndex: 12
@@ -1130,7 +1130,7 @@ MonoBehaviour:
   - MusicIndex: 13
     SceneIndexes: 280000002b000000
   - MusicIndex: 14
-    SceneIndexes: 0e0000001a0000001b0000001c000000
+    SceneIndexes: 0e0000001a0000001b0000001c00000024000000
 --- !u!1 &635696197
 GameObject:
   m_ObjectHideFlags: 0
@@ -2885,7 +2885,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2133622535
 RectTransform:
   m_ObjectHideFlags: 0

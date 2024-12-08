@@ -1184,7 +1184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 231452ca12e97d94cab44565e36bc83d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FileName: sampleChart
+  FileName: rhythm403
   nextScene: 00.Scenes/Stage4/4. Library_1
   tfNoteAppearUpper: {fileID: 62776517}
   tfNoteAppearLower: {fileID: 597459954}
@@ -1194,7 +1194,7 @@ MonoBehaviour:
   audioSource: {fileID: 1704264049}
   Target: {fileID: 1704264047}
   isStart: 0
-  offset: 0.05
+  offset: 1
 --- !u!114 &937946040
 MonoBehaviour:
   m_ObjectHideFlags: 0

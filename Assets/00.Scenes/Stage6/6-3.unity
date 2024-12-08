@@ -586,7 +586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 231452ca12e97d94cab44565e36bc83d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FileName: rhythm403
+  FileName: rhythm603
   nextScene: 6-4
   tfNoteAppearUpper: {fileID: 319861120}
   tfNoteAppearLower: {fileID: 1361954308}
@@ -596,6 +596,7 @@ MonoBehaviour:
   audioSource: {fileID: 1649060017}
   Target: {fileID: 1649060015}
   isStart: 0
+  offset: 0.05
 --- !u!1 &529167916
 GameObject:
   m_ObjectHideFlags: 0
