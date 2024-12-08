@@ -346,7 +346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageNumber: 1
-  s1_nextindex: 14
+  s13_nextindex: 14
   startMessage: {fileID: 2131235440}
   Clear: 0
 --- !u!4 &333940521
@@ -2273,7 +2273,6 @@ MonoBehaviour:
   scanObject: {fileID: 0}
   chipsToGive: 1
   gamechips: 0
-  hasWhite: 0
   isTalk: 0
   isSecondLoad: 0
   completedPuzzles: 0
