@@ -21,6 +21,8 @@ public class DialogueManager : MonoBehaviour
     {
         LoadDialogue();
         ShowDialogue();
+        Time.timeScale = 1;
+        AudioListener.pause = false;
     }
 
     void LoadDialogue()

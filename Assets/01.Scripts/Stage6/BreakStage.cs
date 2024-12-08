@@ -84,7 +84,7 @@ public class BreakStage : MonoBehaviour
 
     public void DontBreak()
     {
-        SceneManager.LoadScene(nextScene);
+        StartCoroutine(WaitBeforeMove());
     }
 
     IEnumerator WaitBeforeMove()
