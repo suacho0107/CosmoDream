@@ -109,6 +109,11 @@ public class NoteManager : MonoBehaviour
     private IEnumerator EndPlay()
     {
         yield return new WaitForSeconds((float)audioSource.clip.length + 1.3f);
+        PuzzleClear puzzleclear = FindObjectOfType<PuzzleClear>();
+        if(puzzleclear != null)
+        {
+            puzzleclear.CompletePuzzle();
+        }
         SceneManager.LoadScene(nextScene);
     }
 
