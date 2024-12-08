@@ -1390,7 +1390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageNumber: 3
-  s1_nextindex: 0
+  s13_nextindex: 25
   startMessage: {fileID: 0}
   Clear: 0
 --- !u!4 &909754462
@@ -3723,7 +3723,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1952701987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3736,9 +3736,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64fdd4a8d509ec14bb731f916c50eff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NowStgScene: 3
+  NowStgScene: stage3
   NextStgScene: 4. Library_1
-  initPosition: {x: -2, y: -1.6, z: 0}
+  initPosition: {x: -9, y: -1.6, z: 0}
 --- !u!4 &1952701988
 Transform:
   m_ObjectHideFlags: 0
