@@ -30,15 +30,15 @@ public class StgDialogue : MonoBehaviour
 
     void LoadDialogue()
     {
-        string fullPath = "Assets/01.Scripts/Stage6/Route/Script/" + dialogueFilePath + ".json";
-        if (File.Exists(fullPath))
+        TextAsset jsonFile = Resources.Load<TextAsset>(dialogueFilePath);
+        if (jsonFile != null)
         {
-            string json = File.ReadAllText(fullPath);
+            string json = jsonFile.text;
             dialogues = jsonHelper.FromJson<Dialogue>(json);
         }
         else
         {
-            Debug.LogError("대화 파일을 찾을 수 없습니다: " + fullPath);
+            Debug.LogError("대화 파일을 찾을 수 없습니다");
         }
     }
     public void ShowDialogue()

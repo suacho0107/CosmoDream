@@ -3227,7 +3227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NowStgScene: 00.Scenes/Stage4/4. Library_1
   NextStgScene: 00.Scenes/Stage5/stage5
-  initPosition: {x: -9.3, y: -1.6, z: 0}
+  initPosition: {x: -1.473487, y: -1.473487, z: 0}
 --- !u!4 &1841047968
 Transform:
   m_ObjectHideFlags: 0

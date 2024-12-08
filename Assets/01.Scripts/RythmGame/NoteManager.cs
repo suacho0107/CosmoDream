@@ -120,11 +120,15 @@ public class NoteManager : MonoBehaviour
     {
         yield return new WaitForSeconds((float)audioSource.clip.length + 0.5f);
         PuzzleClear puzzleclear = FindObjectOfType<PuzzleClear>();
-        if(puzzleclear != null)
+        yield return new WaitForSeconds(0.2f);
+        if (puzzleclear != null)
         {
             puzzleclear.CompletePuzzle();
         }
-        FadeManager.instance.ChangeScene(nextScene);
+        else
+        {
+            FadeManager.instance.ChangeScene(nextScene);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
