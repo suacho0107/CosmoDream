@@ -4,128 +4,116 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.SceneManagement;
 
+public enum LaneType { Upper, Lower }
+
 public class NoteManager : MonoBehaviour
 {
+    [SerializeField] private string FileName = "sampleChart1";
+    [SerializeField] private string nextScene;
+    [SerializeField] private Transform tfNoteAppearUpper;
+    [SerializeField] private Transform tfNoteAppearLower;
+    [SerializeField] private GameObject goNoteUpper;
+    [SerializeField] private GameObject goNoteLower;
+    [SerializeField] private TimingManager timingManager;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private GameObject Target;
+
     public bool isStart = false;
-    public string FileName = "sampleChart1";
-    public string nextScene;
 
-    int bpm;
-    double currentTime = 0d; //현재 시간
-    double startDspTime = 0d; //재생 시간
-    float distanceToJudge;
-    bool isPlay = false;
+    private double currentTime = 0d;
+    private double startDspTime = 0d;
+    private bool isPlay = false;
+    private int noteIndex = 0;
 
-    AudioSource audioSource;
-    public GameObject Target;
-    TimingManager timingManager;
+    private float distanceToJudge;
+    private int bpm;
 
-    //노트 생성 위치
-    [SerializeField] Transform tfNoteAppearUpper = null;
-    [SerializeField] Transform tfNoteAppearLower = null;
-    //노트
-    [SerializeField] GameObject goNoteUpper = null;
-    [SerializeField] GameObject goNoteLower = null;
-
-    //JSON에서 읽어들일 데이터를 담을 클래스
     [System.Serializable]
     public class NoteData
     {
         public float time;
-        public string lane;
+        public string lane; // "upper" or "lower"
+        public LaneType LaneType
+        {
+            get { return lane.ToLower() == "upper" ? LaneType.Upper : LaneType.Lower; }
+        }
     }
+
     [System.Serializable]
     public class ChartData
     {
         public int bpm;
-        public List<NoteData> notes; //노트 데이터를 순서대로 불러와 저장
+        public List<NoteData> notes;
     }
 
     private ChartData chartData;
-    private int noteIndex = 0;
-
-    private void OnTriggerEnter2D(Collider2D collision) //영역 밖에서 노트 제거
-    {
-        if (collision.CompareTag("upperNote"))
-        {
-            timingManager.upperLaneNotes.Remove(collision.gameObject);  //노트 리스트에 노트 제거
-            Destroy(collision.gameObject);
-        }
-        else if (collision.CompareTag("lowerNote"))
-        {
-            timingManager.lowerLaneNotes.Remove(collision.gameObject);  //노트 리스트에 노트 제거
-            Destroy(collision.gameObject);
-        }
-    }
 
     private void Start()
     {
-        timingManager = FindObjectOfType<TimingManager>();
-        audioSource = Target.GetComponent<AudioSource>();
+        // Inspector에서 timingManager, audioSource 할당되어 있다고 가정
+        LoadChartFile(Path.Combine(Application.dataPath, "07.Charts", FileName + ".json"));
 
-        //외부 JSON 파일 불러오기
-        LoadChartFile("Assets/07.Charts/" + FileName + ".json");
-        // 노트가 이동해야 하는 거리
-        distanceToJudge = Mathf.Abs(tfNoteAppearUpper.localPosition.x - timingManager.timingRect[0].localPosition.x);
-        Debug.Log(distanceToJudge);
+        distanceToJudge = Mathf.Abs(tfNoteAppearUpper.localPosition.x - timingManager.GetComponent<RectTransform>().localPosition.x);
         bpm = chartData.bpm;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if (isStart)
+        if (!isStart) return;
+
+        if (!isPlay)
         {
-            if (!isPlay)
-            {
-                startDspTime = AudioSettings.dspTime + 0.05;  // +초 지연 후 dspTime 기준 재생 시작
-                audioSource.PlayScheduled(startDspTime);// AudioSource를 dspTime에 맞춰 재생 예약
-                StartCoroutine(EndPlay());
-                isPlay = !isPlay;
-            }
-
-            currentTime = AudioSettings.dspTime - startDspTime;
-
-            if (noteIndex < chartData.notes.Count)
-            {
-                float targetTime = chartData.notes[noteIndex].time;
-                float timeToPerfect = distanceToJudge / (1100f * (bpm / 60f));
-
-                if (currentTime >= targetTime - timeToPerfect)
-                {
-                    Transform noteAppearPosition = chartData.notes[noteIndex].lane == "upper" ? tfNoteAppearUpper : tfNoteAppearLower;
-                    GameObject t_note = chartData.notes[noteIndex].lane == "upper" ? goNoteUpper : goNoteLower;
-
-                    GameObject newNote = Instantiate(t_note, noteAppearPosition.position, Quaternion.identity);
-                    //newNote.GetComponent<Note>().Initialize(noteSpeedMultiplier, distanceToJudge / timeToPerfect);
-
-                    newNote.transform.SetParent(this.transform);
-
-                    if (chartData.notes[noteIndex].lane == "upper")
-                        timingManager.upperLaneNotes.Add(newNote);
-                    else
-                        timingManager.lowerLaneNotes.Add(newNote);
-
-                    noteIndex++;
-                }
-            }
-
+            startDspTime = AudioSettings.dspTime + 0.05;
+            audioSource.PlayScheduled(startDspTime);
+            StartCoroutine(EndPlay());
+            isPlay = true;
         }
 
-        
+        currentTime = AudioSettings.dspTime - startDspTime;
+        SpawnNotes();
+    }
+
+    private void SpawnNotes()
+    {
+        if (noteIndex >= chartData.notes.Count) return;
+
+        // noteSpeed는 Note와 동일하게 맞춰야 함
+        float noteSpeed = 1200f;
+        float timeToPerfect = distanceToJudge / noteSpeed;
+        double targetTime = chartData.notes[noteIndex].time;
+
+        if (currentTime >= targetTime - timeToPerfect)
+        {
+            LaneType laneType = chartData.notes[noteIndex].LaneType;
+            Transform spawnPos = (laneType == LaneType.Upper) ? tfNoteAppearUpper : tfNoteAppearLower;
+            GameObject notePrefab = (laneType == LaneType.Upper) ? goNoteUpper : goNoteLower;
+
+            GameObject newNoteObj = Instantiate(notePrefab, spawnPos.position, Quaternion.identity, this.transform);
+            Note newNote = newNoteObj.GetComponent<Note>();
+
+            // TimingManager에 바로 Note 추가
+            timingManager.AddNote(newNote, laneType);
+
+            noteIndex++;
+        }
     }
 
     private void LoadChartFile(string path)
     {
         string json = File.ReadAllText(path);
         chartData = JsonUtility.FromJson<ChartData>(json);
+        // 정렬 필요시
+        chartData.notes.Sort((a, b) => a.time.CompareTo(b.time));
     }
 
     private IEnumerator EndPlay()
     {
-        yield return new WaitForSeconds(audioSource.clip.length);
-        yield return new WaitForSeconds(1.3f);
-
-        Debug.Log(nextScene);
+        yield return new WaitForSeconds((float)audioSource.clip.length + 1.3f);
         SceneManager.LoadScene(nextScene);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(collision.gameObject);
     }
 }

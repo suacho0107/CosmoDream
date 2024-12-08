@@ -938,7 +938,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanObject: {fileID: 0}
-  Edge: {fileID: 0}
   chipsToGive: 1
   gamechips: 0
   isTalk: 0
@@ -2344,7 +2343,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC798\uD588\uC5B4 \uB2E4\uC74C \uD37C\uC990\uC744 \uD480\uC5B4\uBCF4\uC790!!"
+  m_Text: "\uC774 \uC9D1 \uACF3\uACF3\uC5D0 \uD37C\uC990\uC744 \uB480\uC5B4! \uB108\uC758
+    \uC9D1\uC744 \uB9CC\uB4E4 \uB3D9\uC548 \uC5EC\uAE30\uC11C \uD3B8\uD788 \uC9C0\uB0B4\uAE38
+    \uBC14\uB77C."
 --- !u!222 &1705732313
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -1,80 +1,78 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TimingManager : MonoBehaviour
 {
-    public List<GameObject> upperLaneNotes = new List<GameObject>();
-    public List<GameObject> lowerLaneNotes = new List<GameObject>();
+    [SerializeField] private RectTransform[] timingRect = null;
+    [SerializeField] private EffectManager effectManager;
 
-    // 0: Perfect, 1: Great, 2: Miss
-    [SerializeField] public RectTransform[] timingRect = null;
-    Vector2[] timingBoxs = null;
+    private Vector2[] timingBoxes;
+    private Queue<Note> upperLaneNotes = new Queue<Note>();
+    private Queue<Note> lowerLaneNotes = new Queue<Note>();
 
-    private EffectManager effectManager;
-
-    void Start()
+    private void Start()
     {
-        effectManager = FindObjectOfType<EffectManager>();
-
-        //타이밍 박스 perfect->miss
-        timingBoxs = new Vector2[timingRect.Length];
+        timingBoxes = new Vector2[timingRect.Length];
         for (int i = 0; i < timingRect.Length; i++)
         {
-            float rectCenterX = timingRect[i].localPosition.x;
-            timingBoxs[i].Set(rectCenterX - timingRect[i].rect.width / 2, rectCenterX + timingRect[i].rect.width / 2);
+            float centerX = timingRect[i].localPosition.x;
+            float halfW = timingRect[i].rect.width * 0.5f;
+            timingBoxes[i] = new Vector2(centerX - halfW, centerX + halfW);
         }
     }
 
-    void Update()
+    private void Update()
     {
-        CheckMiss("upper");
-        CheckMiss("lower");
+        CheckMiss(LaneType.Upper);
+        CheckMiss(LaneType.Lower);
     }
 
-    public void CheckTiming(string lane)
+    public void CheckTiming(LaneType lane)
     {
-        // Debug.Log("CheckTiming Called");
-        // 해당 라인의 노트 리스트 선택 (윗줄, 아랫줄)
-        List<GameObject> noteList = lane == "upper" ? upperLaneNotes : lowerLaneNotes;
+        Queue<Note> noteQueue = GetNoteQueue(lane);
+        if (noteQueue.Count == 0) return;
 
-        for (int i = 0; i < noteList.Count; i++)
+        Note firstNote = noteQueue.Peek();
+        float posX = firstNote.transform.localPosition.x;
+
+        // Perfect -> Great 판정
+        for (int i = 0; i < timingBoxes.Length - 1; i++)
         {
-            float t_notePosX = noteList[i].transform.localPosition.x;
-            
-            // 판정은 Perfect -> Great -> Miss 순서로 이루어짐 (작은 영역부터 검사)
-            for (int x = 0; x < timingBoxs.Length - 1; x++)
+            if (posX >= timingBoxes[i].x && posX <= timingBoxes[i].y)
             {
-                if (timingBoxs[x].x <= t_notePosX && t_notePosX <= timingBoxs[x].y)
-                {
-                    noteList[i].GetComponent<Note>().HideNote(); // 노트 숨김
-
-                    noteList.RemoveAt(i); // 리스트에서 제거
-                    effectManager.JudgementEffect(x, lane); // x에 해당하는 판정 출력 (0: Perfect, 1: Great, 2: Miss)
-
-                    Debug.Log("enter");
-                    return;
-                }
-            }
-        }
-    }
-
-    public void CheckMiss(string lane)
-    {
-        List<GameObject> noteList = lane == "upper" ? upperLaneNotes : lowerLaneNotes;
-
-        for (int i = 0; i < noteList.Count; i++)
-        {
-            float t_notePosX = noteList[i].transform.localPosition.x;
-
-            // Miss 영역에 해당하면 즉시 Miss 처리
-            if (timingBoxs[2].x <= t_notePosX && t_notePosX <= timingBoxs[2].y) // Miss 영역에 해당
-            {
-                noteList.RemoveAt(i); // 리스트에서 제거
-                effectManager.JudgementEffect(2, lane); // Miss 판정 출력
-                Debug.Log("Miss");
+                firstNote.HideNote();
+                noteQueue.Dequeue();
+                effectManager.JudgementEffect(i, lane);
                 return;
             }
         }
+    }
+
+    public void CheckMiss(LaneType lane)
+    {
+        Queue<Note> noteQueue = GetNoteQueue(lane);
+        if (noteQueue.Count == 0) return;
+
+        // Miss 영역을 마지막 인덱스로 가정
+        Vector2 missBox = timingBoxes[timingBoxes.Length - 1];
+        Note firstNote = noteQueue.Peek();
+        float posX = firstNote.transform.localPosition.x;
+
+        if (posX >= missBox.x && posX <= missBox.y)
+        {
+            noteQueue.Dequeue();
+            effectManager.JudgementEffect(2, lane);
+        }
+    }
+
+    private Queue<Note> GetNoteQueue(LaneType lane)
+    {
+        return (lane == LaneType.Upper) ? upperLaneNotes : lowerLaneNotes;
+    }
+
+    public void AddNote(Note note, LaneType lane)
+    {
+        if (lane == LaneType.Upper) upperLaneNotes.Enqueue(note);
+        else lowerLaneNotes.Enqueue(note);
     }
 }

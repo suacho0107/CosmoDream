@@ -1,25 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
-//Note 프리팹에 저장
 public class Note : MonoBehaviour
 {
-    //초 당 움직일 값
-    public float noteSpeed = 1200f;
-
+    [SerializeField] private float noteSpeed = 1200f;
     private Image noteImage;
     private Animator animator;
 
-    private void Start()
+    private void Awake()
     {
         animator = GetComponent<Animator>();
         noteImage = GetComponent<Image>();
     }
 
-    void Update()
+    private void Update()
     {
+        // 매 프레임 오른쪽 → 왼쪽으로 이동
         transform.localPosition -= Vector3.right * noteSpeed * Time.deltaTime;
     }
 
@@ -28,11 +25,11 @@ public class Note : MonoBehaviour
         StartCoroutine(JudgementNote());
     }
 
-    IEnumerator JudgementNote()
+    private IEnumerator JudgementNote()
     {
-        //애니메이션 재생
         animator.SetBool("isJud", true);
         yield return new WaitForSeconds(0.5f);
         noteImage.enabled = false;
+        // 필요하다면 이후 오브젝트 풀로 반환하는 등의 작업 가능
     }
 }

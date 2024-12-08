@@ -7,14 +7,13 @@ public class EffectManager : MonoBehaviour
     public GameObject perfectEffect;
     public GameObject greatEffect;
     public GameObject missEffect;
-    public GameObject JudgEffect;
 
     public Transform upperEffectTf;
     public Transform lowerEffectTf;
 
-    public void JudgementEffect(int num, string lane)
+    public void JudgementEffect(int num, LaneType lane)
     {
-        Transform spawnTf = lane == "upper" ? upperEffectTf : lowerEffectTf;
+        Transform spawnTf = (lane == LaneType.Upper) ? upperEffectTf : lowerEffectTf;
         GameObject effectInstance = null;
 
         // num 값에 따라 생성할 이펙트를 결정

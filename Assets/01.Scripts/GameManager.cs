@@ -30,6 +30,9 @@ public class GameManager : MonoBehaviour
         {
             isInteracted[i] = false;
         }
+
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
     }
     #endregion
 
