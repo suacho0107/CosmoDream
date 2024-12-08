@@ -559,7 +559,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &177885102
 GameObject:
@@ -780,6 +780,7 @@ GameObject:
   m_Component:
   - component: {fileID: 190739887}
   - component: {fileID: 190739886}
+  - component: {fileID: 190739888}
   m_Layer: 0
   m_Name: StageBreak
   m_TagString: Untagged
@@ -816,12 +817,25 @@ Transform:
   m_GameObject: {fileID: 190739885}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 641.3666, y: 540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &190739888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190739885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0ec8a5582648f4899d27e370f0da00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShakeAmount: 0.03
 --- !u!1 &258642722
 GameObject:
   m_ObjectHideFlags: 0
@@ -2375,70 +2389,6 @@ RectTransform:
   m_AnchoredPosition: {x: 637.5, y: 267.2}
   m_SizeDelta: {x: 328, y: 323}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &789905141
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 789905143}
-  - component: {fileID: 789905142}
-  m_Layer: 0
-  m_Name: DataController(Temp)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &789905142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 789905141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f0596a4d60518b4580872a953eecacc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GameDataFileName: save.json
-  _gameData:
-    name: 
-    nowStg: 0
-    puzzle1Clear: 0
-    puzzle2Clear: 0
-    puzzle3Clear: 0
-    puzzle3_1: 0
-    puzzle3_2: 0
-    puzzle3_3: 0
-    puzzle4_1: 0
-    puzzle4_2: 0
-    puzzle4_3: 0
-    puzzle5_1: 0
-    puzzle5_2: 0
-    puzzle5_3: 0
-    _scissors: 0
-    _white: 0
-    _awl: 0
-    _hammer: 0
---- !u!4 &789905143
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 789905141}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &831067612
 GameObject:
   m_ObjectHideFlags: 0
@@ -4622,7 +4572,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 190739886}
         m_TargetAssemblyTypeName: BreakStage, Assembly-CSharp
         m_MethodName: BreakRule
         m_Mode: 1
@@ -4740,7 +4690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageNumber: 2
-  s1_nextindex: 35
+  s13_nextindex: 0
   startMessage: {fileID: 0}
   Clear: 0
 --- !u!4 &1577853526
@@ -6224,7 +6174,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanObject: {fileID: 0}
-  Edge: {fileID: 0}
   chipsToGive: 1
   gamechips: 0
   isTalk: 0

@@ -13,14 +13,12 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
-        //GameLoad();
-        fadeController = FindObjectOfType<FadeController>();
     }
 
     void Update()
     {
         // 서브 메뉴
-        if (Input.GetButtonDown("Cancel") && !fadeController.isFade)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
             {
@@ -48,12 +46,23 @@ public class PauseMenu : MonoBehaviour
     public void GameExit()
     {
         //SceneManager.LoadScene("");
+        DataController datacontroller;
+        datacontroller = FindObjectOfType<DataController>();
+        datacontroller.SaveGameData();
+
         Debug.Log("종료");
+
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #else
+                Application.Quit();
+        #endif
     }
     void PauseGame()
     {
         menuSet.SetActive(true);
         Time.timeScale = 0f; // 게임 시간 정지
+        AudioListener.pause = true;
         isPaused = true;
     }
 
@@ -61,6 +70,7 @@ public class PauseMenu : MonoBehaviour
     {
         menuSet.SetActive(false);
         Time.timeScale = 1f; // 게임 시간 다시 진행
+        AudioListener.pause = false;
         isPaused = false;
     }
 }

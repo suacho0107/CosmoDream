@@ -19,29 +19,31 @@ public class BreakStage : MonoBehaviour
 
     bool isTransition = false; //중복실행방지
     FadeController fadecontroller;
-    CanvasShake canvasShake;
+    CameraShake camerashake;
     DataController datacontroller;
 
     private void Start()
     {
         Time.timeScale = 1f;
+
+        if (AudioListener.pause)
+        {
+            AudioListener.pause = false;
+        }
         fadecontroller = FindObjectOfType<FadeController>();
-        canvasShake = FindObjectOfType<CanvasShake>();
+        camerashake = FindObjectOfType<CameraShake>();
         datacontroller = FindObjectOfType<DataController>();
 
         //버튼 활성화 결정하기
-        //bool activeScissors = datacontroller.gameData._scissors;
-        //bool activeWhite = datacontroller.gameData._white;
-        //bool activeAwl = datacontroller.gameData._awl;
-        //bool activeHammer = datacontroller.gameData._hammer;
+        bool activeScissors = datacontroller.gameData._scissors;
+        bool activeWhite = datacontroller.gameData._white;
+        bool activeAwl = datacontroller.gameData._awl;
+        bool activeHammer = datacontroller.gameData._hammer;
 
-        //Scissors.interactable = activeScissors;
-        //White.interactable = activeWhite;
-        //awl.interactable = activeAwl;
-        //hammer.interactable = activeHammer;
-
-        //넘어갈 씬 결정
-
+        Scissors.interactable = activeScissors;
+        White.interactable = activeWhite;
+        awl.interactable = activeAwl;
+        hammer.interactable = activeHammer;
     }
 
     //버튼에 실행
@@ -60,10 +62,10 @@ public class BreakStage : MonoBehaviour
         YUNOH.sprite = BAD;
 
         //카메라 흔들림
-        //canvasShake.VibrateForTime(0.5f);
+        camerashake.VibrateForTime(0.5f);
 
         //오디오 정지
-
+        AudioListener.pause = true;
         //필요시 쿵 하는 오디오 삽입
 
         //파괴카운트

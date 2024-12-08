@@ -613,6 +613,7 @@ GameObject:
   m_Component:
   - component: {fileID: 626084238}
   - component: {fileID: 626084237}
+  - component: {fileID: 626084239}
   m_Layer: 0
   m_Name: StageBreak
   m_TagString: Untagged
@@ -655,6 +656,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &626084239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626084236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0ec8a5582648f4899d27e370f0da00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShakeAmount: 0.03
 --- !u!1 &698402711
 GameObject:
   m_ObjectHideFlags: 0
@@ -1715,7 +1729,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 626084237}
         m_TargetAssemblyTypeName: BreakStage, Assembly-CSharp
         m_MethodName: BreakRule
         m_Mode: 1
@@ -2207,6 +2221,8 @@ MonoBehaviour:
   - {fileID: 1331669083}
   - {fileID: 623010174}
   playerTransform: {fileID: 0}
+  endMessage: {fileID: 0}
+  endMessageButton: {fileID: 0}
 --- !u!4 &2003661056
 Transform:
   m_ObjectHideFlags: 0
