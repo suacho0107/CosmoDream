@@ -640,7 +640,7 @@ MonoBehaviour:
   id: 40003
   objIndex: 0
   isNpc: 0
-  objectType: 0
+  objectType: 2
   Display: {fileID: 0}
   idChange: 0
   secondId: 0
@@ -1471,7 +1471,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &557469793
 Transform:
   m_ObjectHideFlags: 0
@@ -1502,7 +1502,7 @@ MonoBehaviour:
   id: 40004
   objIndex: 0
   isNpc: 0
-  objectType: 0
+  objectType: 2
   Display: {fileID: 0}
   idChange: 0
   secondId: 0
@@ -1898,7 +1898,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &886914571
 Transform:
   m_ObjectHideFlags: 0
@@ -2774,7 +2774,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1508145060
 Transform:
   m_ObjectHideFlags: 0
@@ -2807,7 +2807,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1575410577
 Transform:
   m_ObjectHideFlags: 0
@@ -3127,7 +3127,7 @@ MonoBehaviour:
   id: 40002
   objIndex: 0
   isNpc: 0
-  objectType: 0
+  objectType: 2
   Display: {fileID: 0}
   idChange: 0
   secondId: 0
