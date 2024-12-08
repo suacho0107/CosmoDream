@@ -159,7 +159,7 @@ MonoBehaviour:
   White: {fileID: 917357206}
   awl: {fileID: 2041026142}
   hammer: {fileID: 1655097189}
-  nextScene: 00.Scenes/Stage6/6-3
+  nextScene: 00.Scenes/Stage6/6-4
   fade: {fileID: 2146829938}
 --- !u!4 &128161594
 Transform:
