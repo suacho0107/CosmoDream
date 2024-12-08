@@ -26,12 +26,22 @@ public class FadeManager : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        if (FadeManager.instance != null)
+        {
+            FadeManager.instance.fadeCanvasGroup = fadeCanvasGroup;
+            FadeManager.instance.stageTextUI = stageTextUI;
+
+            // FadeCanvas가 삭제되지 않도록 설정
+            DontDestroyOnLoad(fadeCanvasGroup.gameObject);
+        }
+    }
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         playerController = FindObjectOfType<PlayerController>();
-        fadeCanvasGroup = GameObject.FindGameObjectWithTag("FadeCanvas")
-        ?.GetComponent<CanvasGroup>();
-
+        
         if (fadeCanvasGroup != null)
         {
             stageTextUI = fadeCanvasGroup.GetComponentInChildren<Text>();
