@@ -33,6 +33,8 @@ public class TimingManager : MonoBehaviour
         if (noteQueue.Count == 0) return;
 
         Note firstNote = noteQueue.Peek();
+        if (firstNote == null) return;
+
         float posX = firstNote.transform.localPosition.x;
 
         // Perfect -> Great 판정
@@ -56,6 +58,8 @@ public class TimingManager : MonoBehaviour
         // Miss 영역을 마지막 인덱스로 가정
         Vector2 missBox = timingBoxes[timingBoxes.Length - 1];
         Note firstNote = noteQueue.Peek();
+        if (firstNote == null) return;
+
         float posX = firstNote.transform.localPosition.x;
 
         if (posX >= missBox.x && posX <= missBox.y)

@@ -78,18 +78,22 @@ public class BreakStage : MonoBehaviour
         yield return new WaitForSecondsRealtime(1f);
 
         //¾À ·Îµå ÇÔ¼ö
-        SceneManager.LoadScene(nextScene);
+        StartCoroutine(WaitBeforeMove());
 
     }
 
     public void DontBreak()
+    {
+        SceneManager.LoadScene(nextScene);
+    }
+
+    IEnumerator WaitBeforeMove()
     {
         if (nextScene == "Flag")
         {
             if (Count.destroyCount == 4)
             {
                 nextScene = "00.Scenes/Stage6/RouteDestroy";
-                SceneManager.LoadScene(nextScene);
             }
             else if (Count.destroyCount == 0)
             {
@@ -100,13 +104,6 @@ public class BreakStage : MonoBehaviour
                 nextScene = "00.Scenes/Stage6/RouteNormal";
             }
         }
-
-        //StartCoroutine(fadecontroller.FadeIn(fade));
-        StartCoroutine(WaitBeforeMove());
-    }
-
-    IEnumerator WaitBeforeMove()
-    {
         yield return new WaitForSecondsRealtime(0.2f);
         SceneManager.LoadScene(nextScene);
     }
