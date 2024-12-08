@@ -57,7 +57,7 @@ public class ObjData : MonoBehaviour
 
                 if (id == 15103)
                     objectType = ObjectType.SceneChange;
-                if (id == 21000 || id == 51006)
+                if (id == 21000 || id == 51006 || id == 40008)
                 objectType = ObjectType.Talkable;
             }
         }
