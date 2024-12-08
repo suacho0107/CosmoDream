@@ -1123,7 +1123,6 @@ MonoBehaviour:
   - {fileID: 1303668394}
   - {fileID: 700792590}
   - {fileID: 1515996096}
-  - {fileID: 1006366152}
   effectManager: {fileID: 1006366153}
 --- !u!114 &937946039
 MonoBehaviour:
@@ -1938,7 +1937,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 95245ff1f684dac4995b104ad7cc44c7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7e86356b68056a94d827053aa5791e43, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

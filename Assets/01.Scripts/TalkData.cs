@@ -129,6 +129,7 @@ public class TalkData : MonoBehaviour
         talkData.Add(31017, new string[] { "서재 방을 찾아보자." });
         talkData.Add(31018, new string[] { "소파 사이에 시험지와 화이트가 숨겨져 있다.","시험지에 점수를 조작한 흔적이 보인다.\n 동생은 항상 100점을 맞아왔지만, 나는 그러지 못했던 기억이 든다." });
 
+        talkData.Add(40000, new string[] { "퍼즐부터 다 풀자." });
         talkData.Add(40001, new string[] { "그 당시에 유행했던 LP판. \nLP판 3개를 찾아서 리듬게임을 해보자." }); //LP판
         talkData.Add(40002, new string[] { "13년 전에 개봉한 영화다. \n포스터 뒤에 LP판이 아슬아슬하게 숨겨져 있다.", "LP판을 얻었다." }); //포스터
         talkData.Add(40003, new string[] { "서랍 속에 여러가지 잡동사니들이 들어있다. \n필기구들이 어지럽혀져 있다.", "필기구들 사이에 파묻혀 있는 LP판을 찾아냈다!" }); //서랍
@@ -138,12 +139,13 @@ public class TalkData : MonoBehaviour
             "송곳을 챙겼다." }); //책상
         talkData.Add(40006, new string[] { "그 당시에 금지됐던 논란의 금서다.", "조금 불쾌하다. \n어떻게 사람을 데이터화 시키지?"}); //초록색 책
         talkData.Add(40007, new string[] { "응…?" }); //노란책 책장
-        talkData.Add(40008, new string[] { "마지막 음악까지 연주했다." }); //클리어
+        talkData.Add(40008, new string[] { "이미 연주한 LP판이다." }); //클리어
 
         //510
         talkData.Add(51001, new string[] { "나와 동생이 어릴 적 자주 갖고 놀던 장난감 상자다.",
             "동생은 항상 블록 놀이를 고집했었지만, 난 로봇 싸움 놀이를 좋아했다.",
-            "그땐 공룡같은 걸 좋아했었지…","내가 항상 이겼던 기억이 있다." });
+            "그땐 공룡같은 걸 좋아했었지…","내가 항상 이겼던 기억이 있다.",
+            "장난감상자 속에서 나무 망치를 얻었다."});
         talkData.Add(51002, new string[] { "뭐든 있는 창고의 선반이다.", "YUNOH가 만든 조립 장난감도 있다!" }); //puzzle1
         talkData.Add(51003, new string[] { "해체되어 있는 장난감이 눈에 띈다." }); //puzzle2
         talkData.Add(51004, new string[] { "바닥에 해체된 장난감이 널부러져 있다.", "조립해버려야겠다." }); //puzzle3

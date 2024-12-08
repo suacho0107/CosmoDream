@@ -133,11 +133,20 @@ public class TalkManager : MonoBehaviour
             datacontroller.gameData._scissors = true;
             Debug.Log("플레이어가 가위를 획득했습니다.");
         }
-
-        if (talkId == 31006) // 가족앨범 - 화이트
+        else if (talkId == 31006) // 가족앨범 - 화이트
         {
             datacontroller.gameData._white = true;
             Debug.Log("플레이어가 화이트를 획득했습니다.");
+        }
+        else if(talkId==40005)
+        {
+            datacontroller.gameData._awl = true;
+            Debug.Log("플레이어가 송곳을 획득했습니다.");
+        }
+        else if(talkId== 51001)
+        {
+            datacontroller.gameData._hammer = true;
+            Debug.Log("플레이어가 망치를 획득했습니다.");
         }
 
     }
