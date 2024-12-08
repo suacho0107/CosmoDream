@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BubbleManager : MonoBehaviour
 {
@@ -18,7 +19,10 @@ public class BubbleManager : MonoBehaviour
 
     void Start()
     {
-        InitBubblePool(5);
+        if(SceneManager.GetActiveScene().name=="1-1 train" || SceneManager.GetActiveScene().name=="1-2 street")
+        {
+            InitBubblePool(5);
+        }
         talkManager = FindObjectOfType<TalkManager>();
     }
 
