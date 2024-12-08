@@ -160,7 +160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -205}
+  m_AnchoredPosition: {x: 0, y: -157}
   m_SizeDelta: {x: 243.6321, y: 27.8222}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1946215
@@ -361,9 +361,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
-    m_FontSize: 13
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: a61bdb99b33a78c4c8e7b02a43b9b130, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
@@ -558,7 +558,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!224 &264031348
 RectTransform:
@@ -845,9 +845,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
-    m_FontSize: 13
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: a61bdb99b33a78c4c8e7b02a43b9b130, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
@@ -1122,15 +1122,15 @@ MonoBehaviour:
   - MusicIndex: 9
     SceneIndexes: 0c0000000d0000000f0000001100000012000000130000001600000017000000180000001e0000001f00000020000000
   - MusicIndex: 10
-    SceneIndexes: 22000000230000002400000025000000
+    SceneIndexes: 220000002300000025000000
   - MusicIndex: 11
-    SceneIndexes: 2600000029000000
+    SceneIndexes: 2800000029000000
   - MusicIndex: 12
     SceneIndexes: 270000002a000000
   - MusicIndex: 13
-    SceneIndexes: 280000002b000000
+    SceneIndexes: 260000002b000000
   - MusicIndex: 14
-    SceneIndexes: 0e0000001a0000001b0000001c000000
+    SceneIndexes: 0e0000001a0000001b0000001c00000024000000
 --- !u!1 &635696197
 GameObject:
   m_ObjectHideFlags: 0
@@ -1619,9 +1619,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
-    m_FontSize: 13
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: a61bdb99b33a78c4c8e7b02a43b9b130, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
@@ -2885,7 +2885,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2133622535
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2919,7 +2919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df32853843d78d4f939a0df1d4884e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: stage3
+  sceneName: 6-4
 --- !u!114 &2133622537
 MonoBehaviour:
   m_ObjectHideFlags: 0
