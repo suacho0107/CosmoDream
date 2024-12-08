@@ -36,6 +36,8 @@ public class FadeManager : MonoBehaviour
             // FadeCanvas가 삭제되지 않도록 설정
             DontDestroyOnLoad(fadeCanvasGroup.gameObject);
         }
+        else
+            Destroy(fadeCanvasGroup.gameObject);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
