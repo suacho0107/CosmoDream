@@ -80,11 +80,6 @@ public class PuzzleManager : MonoBehaviour
     }
     private void OnEndMessageButtonClicked()
     {
-        if (endMessage != null)
-        {
-            endMessage.SetActive(false); // 메시지 비활성화
-        }
-
         CallPuzzleClear(); // CallPuzzleClear 호출
     }
 

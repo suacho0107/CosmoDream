@@ -1284,7 +1284,7 @@ GameObject:
   - component: {fileID: 529250851}
   - component: {fileID: 529250855}
   m_Layer: 5
-  m_Name: FadeCanvas
+  m_Name: Fade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2113,7 +2113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.16470589, g: 0.16862746, b: 0.21568628, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2914,7 +2914,7 @@ GameObject:
   - component: {fileID: 1578625773}
   - component: {fileID: 1578625772}
   m_Layer: 5
-  m_Name: FadeCanvas (2)
+  m_Name: FadeCanvas
   m_TagString: FadeCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

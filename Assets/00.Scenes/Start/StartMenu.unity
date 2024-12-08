@@ -1076,15 +1076,15 @@ MonoBehaviour:
   - MusicIndex: 9
     SceneIndexes: 0c0000000d0000000f0000001100000012000000130000001600000017000000180000001e0000001f00000020000000
   - MusicIndex: 10
-    SceneIndexes: 27000000
+    SceneIndexes: 22000000230000002400000025000000
   - MusicIndex: 11
-    SceneIndexes: 28000000
+    SceneIndexes: 2600000029000000
   - MusicIndex: 12
-    SceneIndexes: 29000000
+    SceneIndexes: 270000002a000000
   - MusicIndex: 13
-    SceneIndexes: 2a000000
+    SceneIndexes: 280000002b000000
   - MusicIndex: 14
-    SceneIndexes: 0e0000001a0000001b0000001c00000024000000
+    SceneIndexes: 0e0000001a0000001b0000001c000000
 --- !u!1 &635696197
 GameObject:
   m_ObjectHideFlags: 0
@@ -2875,7 +2875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df32853843d78d4f939a0df1d4884e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: 2
+  sceneName: 4. Library_1
 --- !u!114 &2133622537
 MonoBehaviour:
   m_ObjectHideFlags: 0
