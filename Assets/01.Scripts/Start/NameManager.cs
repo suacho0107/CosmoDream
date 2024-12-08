@@ -21,7 +21,7 @@ public class NameManager : MonoBehaviour
 
         confirmBtn.onClick.AddListener(OnConfirm);
 
-        datacontroller = FindObjectOfType<DataController>();
+        datacontroller = DataController.Instance;
         fadecontroller = FindObjectOfType<FadeController>();
 
         StartCoroutine(fadecontroller.FadeOut(fade));

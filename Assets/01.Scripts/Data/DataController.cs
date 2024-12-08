@@ -13,6 +13,9 @@ public class DataController : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+            saveFilePath = Path.Combine(Application.persistentDataPath);
+            InitializeSaveFile();
         }
         else
         {
@@ -20,7 +23,8 @@ public class DataController : MonoBehaviour
         }
     }
 
-    public string GameDataFileName = "save.json"; //변경 절대 xxxx
+    string GameDataFileName = "save.json"; //변경 절대 xxxx
+    string saveFilePath;
 
     public GameData _gameData;
     public GameData gameData
@@ -43,18 +47,38 @@ public class DataController : MonoBehaviour
         SaveGameData();
     }
 
+    void InitializeSaveFile()
+    {
+        saveFilePath = Path.Combine(Application.persistentDataPath, GameDataFileName);
+        
+        if (!File.Exists(saveFilePath))
+        {
+            string sourcePath = Path.Combine(Application.streamingAssetsPath, GameDataFileName);
+            if (File.Exists(sourcePath))
+            {
+                File.Copy(sourcePath, saveFilePath);
+                Debug.Log("초기 save.json 파일 복사 완료");
+            }
+            else
+            {
+                Debug.LogWarning("StreamingAssets에 초기 save.json 파일이 없습니다. 기본 데이터로 시작합니다.");
+                _gameData = new GameData();
+                SaveGameData();
+            }
+        }
+    }
+
     public void LoadGameData()
     {
-        string filePath = "Assets/" + GameDataFileName;
-        if (File.Exists(filePath))
+        if (File.Exists(saveFilePath))
         {
             Debug.Log("불러오기 성공");
-            string FromJsonData = File.ReadAllText(filePath);
-            _gameData = JsonUtility.FromJson<GameData>(FromJsonData);
+            string json = File.ReadAllText(saveFilePath);
+            _gameData = JsonUtility.FromJson<GameData>(json);
         }
         else
         {
-            // GameData 객체 초기화
+            Debug.LogWarning("save.json 파일이 없어 초기화된 데이터를 생성합니다.");
             _gameData = new GameData();
             SaveGameData();
         }
@@ -62,25 +86,22 @@ public class DataController : MonoBehaviour
 
     public void SaveGameData()
     {
-        string ToJsonData = JsonUtility.ToJson(gameData, true);
-        string filePath = "Assets/" + GameDataFileName;
-        File.WriteAllText(filePath, ToJsonData);
+        try
+        {
+            string json = JsonUtility.ToJson(gameData, true);
+            File.WriteAllText(saveFilePath, json);
+        }
+        catch (IOException e)
+        {
+            Debug.LogError($"게임 데이터를 저장하는 중 오류 발생: {e.Message}");
+        }
     }
 
     //jsonFile있는지 검사
 
     public bool isSave()
     {
-        string filePath = "Assets/" + GameDataFileName;
-
-        if (File.Exists(filePath))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return File.Exists(saveFilePath);
     }
 
     /*
