@@ -639,7 +639,7 @@ MonoBehaviour:
   White: {fileID: 2133625370}
   awl: {fileID: 1340400594}
   hammer: {fileID: 1616300901}
-  nextScene: Route
+  nextScene: Flag
   fade: {fileID: 1543332032}
 --- !u!4 &626084238
 Transform:
