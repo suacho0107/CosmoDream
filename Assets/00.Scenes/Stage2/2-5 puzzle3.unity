@@ -1553,7 +1553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NowStgScene: 2
   NextStgScene: stage3
-  initPosition: {x: 1.58, y: -1.6, z: 0}
+  initPosition: {x: -9.29, y: -1.6, z: 0}
 --- !u!4 &544727253
 Transform:
   m_ObjectHideFlags: 0
@@ -2979,7 +2979,6 @@ MonoBehaviour:
   scanObject: {fileID: 0}
   chipsToGive: 1
   gamechips: 0
-  hasWhite: 0
   isTalk: 0
   isSecondLoad: 0
   completedPuzzles: 0
@@ -5328,6 +5327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageNumber: 2
+  s1_nextindex: 0
   startMessage: {fileID: 0}
   Clear: 0
 --- !u!4 &2076650988

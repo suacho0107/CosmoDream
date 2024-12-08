@@ -1233,7 +1233,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scanObject: {fileID: 0}
-  Edge: {fileID: 0}
   chipsToGive: 1
   gamechips: 0
   isTalk: 0
@@ -2008,7 +2007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df32853843d78d4f939a0df1d4884e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: 1-5 room
+  sceneName: 2
 --- !u!114 &2133622537
 MonoBehaviour:
   m_ObjectHideFlags: 0
