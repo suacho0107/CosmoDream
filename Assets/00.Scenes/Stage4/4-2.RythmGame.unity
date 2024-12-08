@@ -1294,7 +1294,7 @@ MonoBehaviour:
   audioSource: {fileID: 1704264049}
   Target: {fileID: 1704264047}
   isStart: 0
-  offset: 0.05
+  offset: 1
 --- !u!114 &937946040
 MonoBehaviour:
   m_ObjectHideFlags: 0
