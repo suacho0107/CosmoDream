@@ -60,6 +60,11 @@ public class PuzzleManager : MonoBehaviour
             PuzzleClear puzzleClear = FindObjectOfType<PuzzleClear>();
             puzzleClear.CompletePuzzle();
         }
+        else if (SceneManager.GetActiveScene().name == "6-4")
+        {
+            BreakStage breakstage = FindObjectOfType<BreakStage>();
+            breakstage.DontBreak();
+        }
 
     }
     
