@@ -166,6 +166,7 @@ public class LineManager : MonoBehaviour
 
         nextSceneName = sceneName;
         Debug.Log("ㄱㄱ");
+        
         if (sceneName == "6-3")
         {
             SceneManager.LoadScene(nextSceneName);
@@ -184,9 +185,13 @@ public class LineManager : MonoBehaviour
         {
             SceneManager.LoadScene(nextSceneName);
             Debug.Log($"씬 {nextSceneName}으로 전환 중...");
+            
+                //여기?
+            PuzzleClear puzzleClear = FindObjectOfType<PuzzleClear>();
+            puzzleClear.CompletePuzzle();
+            
+                
         }
-        //여기?
-        PuzzleClear puzzleClear = FindObjectOfType<PuzzleClear>();
-        puzzleClear.CompletePuzzle();
+        
     }
 }
