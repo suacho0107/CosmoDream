@@ -723,10 +723,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e500b0132bf79499de6b030118bcd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftMap: {fileID: 1575410576}
-  centerMap: {fileID: 886914570}
-  rightMap: {fileID: 1508145059}
-  backMap: {fileID: 383215623}
+  leftMap: {fileID: 886914570}
+  centerMap: {fileID: 1508145059}
+  rightMap: {fileID: 383215623}
+  backMap: {fileID: 1575410576}
   fadePanel: {fileID: 472871394}
   pos: 9
   useFadeOnStart: 1
@@ -1494,7 +1494,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.39887, y: 0}
+  m_Offset: {x: -1.6527848, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1505,7 +1505,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.104726, y: 7.32}
+  m_Size: {x: 6.6125555, y: 7.32}
   m_EdgeRadius: 0
 --- !u!61 &557469797
 BoxCollider2D:
@@ -2174,7 +2174,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.03926754, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2185,7 +2185,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 13.03, y: 7.17}
+  m_Size: {x: 9.024698, y: 7.17}
   m_EdgeRadius: 0
 --- !u!1 &1329239876
 GameObject:
@@ -3056,7 +3056,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &1730480492
 CanvasRenderer:
   m_ObjectHideFlags: 0
