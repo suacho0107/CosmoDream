@@ -47,7 +47,6 @@ public class GameManager : MonoBehaviour
     public int gamechips = 0;
     public bool isTalk = false;
     public bool isSecondLoad = false;
-    public int completedPuzzles = 0;
 
     public static bool[] isInteracted;
 
