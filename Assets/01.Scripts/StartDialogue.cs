@@ -14,13 +14,13 @@ public class StartDialogue : MonoBehaviour
     string sceneName;
 
     public int dialogue_count = 0;    // To track current dialogue index
-    private PlayerController playerController;  // PlayerController reference
+    private PlayerController playerController; 
 
     public float WaitTime;
 
     void Start()
     {
-        // PlayerController ?????????? ????
+      
         playerController = FindObjectOfType<PlayerController>();
         sceneName = SceneManager.GetActiveScene().name;
         if (GameManager.instance != null && GameManager.instance.HasDialogueRun(sceneName))
@@ -32,7 +32,6 @@ public class StartDialogue : MonoBehaviour
         SwitchPanel(false);
         DialogueName.text = Name;
 
-        // 1?? ?? ???? ????
         StartCoroutine(ShowDialogueWithDelay());
         GameManager.instance.SetDialogueRun(sceneName);
         GameManager.instance.isTalk = true;
@@ -40,12 +39,9 @@ public class StartDialogue : MonoBehaviour
 
     IEnumerator ShowDialogueWithDelay()
     {
-        yield return new WaitForSeconds(WaitTime); // n?? ????
-
-        // ?? ???? ???? ?? ?????? ??????
+        yield return new WaitForSeconds(WaitTime);
         SwitchPanel(true);
-
-        // ?????? ???????? ???????? ???? ????????
+        playerController.SetMove(false);
         if (playerController != null)
         {
             playerController.SetMove(false);
@@ -53,13 +49,15 @@ public class StartDialogue : MonoBehaviour
 
         if (dialogue.Length > 0)
         {
+            playerController.SetMove(false);
             ScriptText_dialogue.text = dialogue[dialogue_count];
+     
         }
     }
 
     void Update()
     {
-        // ???????????? ???? ??????
+        
         if (textbox.activeSelf && Input.GetKeyDown(KeyCode.Space))
         {
             NextDialogue();
@@ -72,6 +70,7 @@ public class StartDialogue : MonoBehaviour
         dialogue_count++;
         if (dialogue_count < dialogue.Length)
         {
+            
             // Display the next dialogue
             ScriptText_dialogue.text = dialogue[dialogue_count];
         }
@@ -81,7 +80,6 @@ public class StartDialogue : MonoBehaviour
             SwitchPanel(false);
             GameManager.instance.isTalk = false;
 
-            // ?????? ?????? ???????? ???? ???? ??????
             if (playerController != null)
             {
                 playerController.SetMove(true);
