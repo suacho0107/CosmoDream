@@ -5,7 +5,7 @@ using UnityEngine;
 public class PuzzleClear : MonoBehaviour
 {
     public int stageNumber;  // 현재 스테이지 번호 (1, 2, 3, 4, 5)
-    public int s1_nextindex;
+    public int s13_nextindex;
     public GameObject startMessage;
 
     public bool Clear = false; // 디버깅용
@@ -32,10 +32,10 @@ public class PuzzleClear : MonoBehaviour
     // 퍼즐이 완료될 때마다 호출되는 메서드
     public void CompletePuzzle()
     {        
-        if (stageNumber == 1)
+        if (stageNumber == 1 || stageNumber == 3)
         {
             PlayerPosData.pos = new Vector3(-8.15f, -1.6f, 0);
-            FadeManager.instance.ChangeScene(s1_nextindex);
+            FadeManager.instance.ChangeScene(s13_nextindex);
             return;
         }
         else
@@ -58,7 +58,10 @@ public class PuzzleClear : MonoBehaviour
         }
 
         if (stageClearController != null)
+        {
             stageClearController.ClearStage();
+            Debug.Log("스테이지클리어컨트롤러 실행");
+        }
     }
 
     public void HideStartUI()
