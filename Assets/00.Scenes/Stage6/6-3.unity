@@ -586,7 +586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 231452ca12e97d94cab44565e36bc83d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FileName: tutorialChart
+  FileName: rhythm403
   nextScene: 6-4
   tfNoteAppearUpper: {fileID: 319861120}
   tfNoteAppearLower: {fileID: 1361954308}
@@ -2211,7 +2211,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 95245ff1f684dac4995b104ad7cc44c7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1fb8ddff0e5340943b5942f597e7413a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
