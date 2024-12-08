@@ -1464,7 +1464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &930917932
 Transform:
   m_ObjectHideFlags: 0
@@ -1532,7 +1532,7 @@ MonoBehaviour:
   objIndex: 0
   isNpc: 0
   objectType: 3
-  Display: {fileID: 235879116}
+  Display: {fileID: 1257557384}
   idChange: 0
   secondId: 0
 --- !u!61 &936075028
@@ -2602,7 +2602,7 @@ MonoBehaviour:
   objIndex: 0
   isNpc: 0
   objectType: 3
-  Display: {fileID: 1257557384}
+  Display: {fileID: 235879116}
   idChange: 0
   secondId: 0
 --- !u!61 &1451735077
