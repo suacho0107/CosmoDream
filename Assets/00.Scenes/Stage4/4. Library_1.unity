@@ -4705,11 +4705,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 40005
-  objIndex: 0
+  objIndex: 88
   isNpc: 0
   objectType: 0
   Display: {fileID: 0}
-  idChange: 0
+  idChange: 1
   secondId: 0
 --- !u!212 &2060193855
 SpriteRenderer:
