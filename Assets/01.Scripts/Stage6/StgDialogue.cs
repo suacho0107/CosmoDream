@@ -56,7 +56,7 @@ public class StgDialogue : MonoBehaviour
         {
             Player.SetActive(true);
             Yunoh.SetActive(false);
-            //nameText.text = datacontroller.gameData.name;
+            nameText.text = datacontroller.gameData.name;
             dialogueText.text = currentDialogue.message;
         }
         else if (currentDialogue.speaker == "YUNOH")
