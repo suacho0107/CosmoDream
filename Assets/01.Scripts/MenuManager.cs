@@ -1,26 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour
+public class MenuManager: MonoBehaviour
 {
     public GameObject menuSet;
     private bool isPaused = false;
-
-    private FadeController fadeController;
-
     void Start()
     {
-        //GameLoad();
-        fadeController = FindObjectOfType<FadeController>();
+        GameLoad();
     }
 
     void Update()
     {
         // 서브 메뉴
-        if (Input.GetButtonDown("Cancel") && !fadeController.isFade)
+        if (Input.GetButtonDown("Cancel"))
         {
             if (isPaused)
             {
@@ -30,24 +25,22 @@ public class PauseMenu : MonoBehaviour
             {
                 PauseGame();
             }
-
         }
     }
-    
+
     public void GameSave()
     {
         //Playerprefs로 저장
         PlayerPrefs.Save();
-        menuSet.SetActive(false); // 저장 후 게임 재개
+        menuSet.SetActive(false);
     }
     public void GameLoad()
     {
 
     }
-    
     public void GameExit()
     {
-        //SceneManager.LoadScene("");
+        SceneManager.LoadScene("");
         Debug.Log("종료");
     }
     void PauseGame()
@@ -57,7 +50,7 @@ public class PauseMenu : MonoBehaviour
         isPaused = true;
     }
 
-    public void ResumeGame()
+    void ResumeGame()
     {
         menuSet.SetActive(false);
         Time.timeScale = 1f; // 게임 시간 다시 진행
