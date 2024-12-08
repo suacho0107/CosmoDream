@@ -126,6 +126,14 @@ public class NoteManager : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         Debug.Log(nextScene);
-        SceneManager.LoadScene(nextScene);
+        if(FindObjectOfType<StageClearController>() == null)
+        {
+            SceneManager.LoadScene(nextScene);
+        }
+        else
+        {
+            StageClearController stageclear = FindObjectOfType<StageClearController>();
+            stageclear.ClearStage();
+        }
     }
 }
