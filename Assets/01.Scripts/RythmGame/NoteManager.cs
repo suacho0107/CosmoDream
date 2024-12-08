@@ -28,6 +28,8 @@ public class NoteManager : MonoBehaviour
     private float distanceToJudge;
     private int bpm;
 
+    public float offset = 0.05f;
+
     [System.Serializable]
     public class NoteData
     {
@@ -63,7 +65,7 @@ public class NoteManager : MonoBehaviour
 
         if (!isPlay)
         {
-            startDspTime = AudioSettings.dspTime + 0.05;
+            startDspTime = AudioSettings.dspTime + offset;
             audioSource.PlayScheduled(startDspTime);
             StartCoroutine(EndPlay());
             isPlay = true;
@@ -77,13 +79,15 @@ public class NoteManager : MonoBehaviour
     {
         if (noteIndex >= chartData.notes.Count) return;
 
-        // noteSpeed는 Note와 동일하게 맞춰야 함
         float noteSpeed = 1200f;
         float timeToPerfect = distanceToJudge / noteSpeed;
-        double targetTime = chartData.notes[noteIndex].time;
 
-        if (currentTime >= targetTime - timeToPerfect)
+        // 정렬된 데이터를 기반으로 스폰
+        while (noteIndex < chartData.notes.Count)
         {
+            double targetTime = chartData.notes[noteIndex].time;
+            if (currentTime < targetTime - timeToPerfect) break;
+
             LaneType laneType = chartData.notes[noteIndex].LaneType;
             Transform spawnPos = (laneType == LaneType.Upper) ? tfNoteAppearUpper : tfNoteAppearLower;
             GameObject notePrefab = (laneType == LaneType.Upper) ? goNoteUpper : goNoteLower;
@@ -91,9 +95,7 @@ public class NoteManager : MonoBehaviour
             GameObject newNoteObj = Instantiate(notePrefab, spawnPos.position, Quaternion.identity, this.transform);
             Note newNote = newNoteObj.GetComponent<Note>();
 
-            // TimingManager에 바로 Note 추가
             timingManager.AddNote(newNote, laneType);
-
             noteIndex++;
         }
     }
