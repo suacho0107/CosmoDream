@@ -1123,7 +1123,6 @@ MonoBehaviour:
   - {fileID: 1303668394}
   - {fileID: 700792590}
   - {fileID: 1515996096}
-  - {fileID: 1006366152}
   effectManager: {fileID: 1006366153}
 --- !u!114 &937946039
 MonoBehaviour:

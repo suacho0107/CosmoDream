@@ -1736,8 +1736,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageNumber: 1
-  s1_nextindex: 16
+  s13_nextindex: 16
   startMessage: {fileID: 834533189}
+  endMessage: {fileID: 1458820978}
   Clear: 0
 --- !u!4 &1242292636
 Transform:
