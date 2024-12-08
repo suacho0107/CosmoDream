@@ -41,21 +41,7 @@ public class BreakStage : MonoBehaviour
         //hammer.interactable = activeHammer;
 
         //넘어갈 씬 결정
-        if (nextScene == "Route")
-        {
-            if (Count.destroyCount == 4)
-            {
-                nextScene = "00.Scenes/Stage6/RouteDestroy";
-            }
-            else if (Count.destroyCount == 0)
-            {
-                nextScene = "00.Scenes/Stage6/RouteDontDestroy";
-            }
-            else
-            {
-                nextScene = "00.Scenes/Stage6/RouteNormal";
-            }
-        }
+
     }
 
     //버튼에 실행
@@ -92,5 +78,27 @@ public class BreakStage : MonoBehaviour
         //씬 로드 함수
         SceneManager.LoadScene(nextScene);
 
+    }
+
+    public void DontBreak()
+    {
+        if (nextScene == "Route")
+        {
+            if (Count.destroyCount == 4)
+            {
+                nextScene = "00.Scenes/Stage6/RouteDestroy";
+            }
+            else if (Count.destroyCount == 0)
+            {
+                nextScene = "00.Scenes/Stage6/RouteDontDestroy";
+            }
+            else
+            {
+                nextScene = "00.Scenes/Stage6/RouteNormal";
+            }
+        }
+
+        //StartCoroutine(fadecontroller.FadeIn(fade));
+        SceneManager.LoadScene(nextScene);
     }
 }
